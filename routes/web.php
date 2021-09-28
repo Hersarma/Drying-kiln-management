@@ -13,12 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::middleware('auth')->group(function (){
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    /*Dashboard*/
+    Route::get('/','HomeController@index')->name('home');
+    //Route::get('dashboard','HomeController@index')->name('home');
+
+    /*Clients*/
+
+     Route::group(['prefix' => 'clients'], function(){
+        Route::get('/', 'ClientController@index')->name('clients-index');
+        Route::post('/', 'ClientController@store')->name('clients-store');
+        Route::post('/update/{client}', 'ClientController@update')->name('clients-update');
+        Route::get('/delete/{client}', 'ClientController@destroy')->name('clients-delete');
+        Route::post('/delete', 'ClientController@destroyChecked')->name('delete-checked-clients');
+        Route::post('/{client}', 'ClientController@update')->name('clients-update');
+        Route::get('//show/{client}', 'ClientController@show')->name('clients-show');
+    });
+
+    /*Timber
+
+    Route::group(['prefix' => 'timber'], function(){
+        Route::get('/')->name('timber-incoming')
+    }); */
+});
 
 require __DIR__.'/auth.php';
