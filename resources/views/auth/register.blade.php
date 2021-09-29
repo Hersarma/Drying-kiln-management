@@ -5,7 +5,7 @@
 <div class="min-h-screen flex items-center justify-center bg-gray-100">
         <div class="max-w-md w-full py-12 px-6">
             <img class="mx-auto h-24 w-auto" src="/img/europalete-text-logo-teal.png" alt="">
-            <p class="mt-6 text-sm text-center text-gray-900">Prijavite se na Vaš nalog</p>
+            <p class="mt-6 text-sm text-center text-gray-900">Registracija</p>
             <form class="mt-5" method="POST" action="{{ route('register') }}">
                 @csrf
                 <input type="hidden" name="remember" value="true">
@@ -68,6 +68,11 @@
                         <span class="px-2 bg-gray-100 text-gray-500">Europalete</span>
                     </div>
                 </div>
+                <div class="mt-6">
+                        <a href="{{ route('login') }}" class="block w-full text-center py-2 px-3 border border-gray-300 rounded-md text-gray-900 font-medium hover:border-gray-400 focus:outline-none focus:border-gray-400 sm:text-sm">
+                            Prijavite se
+                        </a>
+                    </div>
                 
             </div>
         </div>
