@@ -28,14 +28,15 @@ Route::middleware('auth')->group(function (){
         Route::get('/delete/{client}', 'ClientController@destroy')->name('clients-delete');
         Route::post('/delete', 'ClientController@destroyChecked')->name('delete-checked-clients');
         Route::post('/{client}', 'ClientController@update')->name('clients-update');
-        Route::get('//show/{client}', 'ClientController@show')->name('clients-show');
+        Route::get('/show/{client}', 'ClientController@show')->name('clients-show');
     });
 
-    /*Timber
+    /*Timber*/
 
     Route::group(['prefix' => 'timber'], function(){
-        Route::get('/')->name('timber-incoming')
-    }); */
+        Route::get('/incoming', 'TimberIncomingController@index')->name('timber-incoming');
+        Route::get('/outgoing', 'TimberOutgoingController@index')->name('timber-outgoing');
+    }); 
 });
 
 require __DIR__.'/auth.php';
