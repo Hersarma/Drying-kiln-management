@@ -11,4 +11,14 @@ class Client extends Model
 
     protected $fillable = ['name', 'city', 'address_1', 'address_2', 'pib', 'mb', 'contact', 'email', 'notes', 'website', 'state',];
 
+    public function timber_incoming(){
+
+        return $this->hasMany(TimberIncoming::class);
+    }
+
+    public function timber_outgoing(){
+        
+        return $this->hasMany(TimberOutgoing::class);
+    }
+
 }

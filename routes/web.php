@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function (){
     Route::group(['prefix' => 'timber'], function(){
         Route::get('/incoming', 'TimberIncomingController@index')->name('timber-incoming');
         Route::get('/outgoing', 'TimberOutgoingController@index')->name('timber-outgoing');
+        Route::post('/', 'TimberIncomingController@store')->name('store-timber-incoming');
     }); 
 });
 

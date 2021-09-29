@@ -1,9 +1,9 @@
-var side_bar = $("#side_bar");
-var hamburger_mobile = $('#hamburger_mobile');
-var hamburger = $('#hamburger');
-var user = $("#user_open");
-var user_profile = $("#user_profile");
-var content = $('#content');
+let side_bar = $("#side_bar");
+let hamburger_mobile = $('#hamburger_mobile');
+let hamburger = $('#hamburger');
+let user = $("#user_open");
+let user_profile = $("#user_profile");
+let content = $('#content');
 
 
 /*User profile toogle*/
@@ -14,18 +14,22 @@ user.click(function(e) {
 });
 
 /*Timber*/
-var open_timber = $('.open_timber');
-var timber_links = $('.timber_links');
+let open_timber = $('.open_timber');
+let timber_links = $('.timber_links');
+
+let open_modal_create_timber_incoming = $(".open_modal_create_timber_incoming");
+let close_modal_create_timber_incoming = $(".close_modal_create_timber_incoming");
+let modal_create_timber_incoming = $(".modal_create_timber_incoming");
 
 /*Client->create*/
-var open_modal_create_client = $(".open_modal_create_client");
-var close_modal_create_client = $(".close_modal_create_client");
-var modal_create_client = $(".modal_create_client");
+let open_modal_create_client = $(".open_modal_create_client");
+let close_modal_create_client = $(".close_modal_create_client");
+let modal_create_client = $(".modal_create_client");
 
 /*Client->edit*/
-var open_modal_edit_client = $(".open_modal_edit_client");
-var close_modal_edit_client = $(".close_modal_edit_client");
-var modal_edit_client = $(".modal_edit_client");
+let open_modal_edit_client = $(".open_modal_edit_client");
+let close_modal_edit_client = $(".close_modal_edit_client");
+let modal_edit_client = $(".modal_edit_client");
 
 
 /*Side bar toggle*/
@@ -82,6 +86,10 @@ close_modal_create_client.click(function(e) {
 });
 
 
+open_modal_create_timber_incoming.click(function(e) {
+    e.preventDefault();
+    modal_create_timber_incoming.toggle(500);
+});
 
 open_timber.click(function(e) {
     e.preventDefault();

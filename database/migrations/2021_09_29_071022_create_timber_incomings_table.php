@@ -15,7 +15,16 @@ class CreateTimberIncomingsTable extends Migration
     {
         Schema::create('timber_incomings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id');
+            $table->integer('number_of_pallets')->nullable();
+            $table->float('m3', 8, 2)->nullable();
+            $table->longText('notes')->nullable();
             $table->timestamps();
+
+            $table->foreign('client_id')
+            ->references('id')
+            ->on('clients')
+            ->onDelete('cascade');
         });
     }
 

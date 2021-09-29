@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Client;
 use App\Models\TimberIncoming;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,9 @@ class TimberIncomingController extends Controller
      */
     public function index()
     {
-        return view('timberincoming.index');
+        $client = Client::where('id', 1)->first();
+        //dd($client);
+        return view('timberincoming.index', compact('client'));
     }
 
     /**
