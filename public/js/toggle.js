@@ -91,6 +91,11 @@ open_modal_create_timber_incoming.click(function(e) {
     modal_create_timber_incoming.toggle(500);
 });
 
+close_modal_create_timber_incoming.click(function(e) {
+    e.preventDefault();
+    modal_create_timber_incoming.toggle(500);
+});
+
 open_timber.click(function(e) {
     e.preventDefault();
     timber_links.toggle(300);
