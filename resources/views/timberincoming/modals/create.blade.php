@@ -17,22 +17,44 @@
             <div class="w-full max-w-xl mx-auto">
                 <form method="post" action="{{ route('store-timber-incoming') }}" class="py-8 px-8 md:px-0">
                     @csrf
-                    <input id="client_id" class="hidden" name="client_id" value="{{ $client->id }}">
+                    <input id="client_id" class="hidden" name="client_id" value="">
 
                     <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
                         <div class="md:w-1/3">
                             <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
-                                Ime firme
+                                Klijent
+                            </label>
+                        </div>
+                        <div class="relative md:w-2/3">
+                            <div>
+                                <button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
+                            </div>
+                            <div class="clients hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
+                                <ul>
+                                    @foreach($clients as $client)
+                                    <li class="get_client_id py-3 cursor-pointer hover:text-turquoise-light">
+                                        {{ $client->name }}
+                                        <input class="hidden" type="text" name="" value="{{ $client->id }}">
+                                    </li>
+                                    @endforeach
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
+                        <div class="md:w-1/3">
+                            <label class="block  font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                                Vrsta gradje
                             </label>
                         </div>
                         <div class="md:w-2/3">
                             <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-                                   id="client_id" name="client_id">
-
+                                   id="number_of_pallets" name="number_of_pallets">
                             <p class="text-red-500 text-sm italic mt-4">
-                                {{ $errors->create_timber_incoming->first('name') }}
+                                {{ $errors->create_timber_incoming->first('type_of_wood') }}
                             </p>
-
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">

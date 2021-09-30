@@ -16,6 +16,7 @@ class CreateTimberIncomingsTable extends Migration
         Schema::create('timber_incomings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id');
+            $table->string('type_of_wood')->nullable();
             $table->integer('number_of_pallets')->nullable();
             $table->float('m3', 8, 2)->nullable();
             $table->longText('notes')->nullable();

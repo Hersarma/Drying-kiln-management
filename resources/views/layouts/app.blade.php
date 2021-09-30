@@ -14,6 +14,7 @@
         <script src="{{ asset('js/app.js?v=').time() }}" defer></script>
         <script src="{{ asset('js/search.js?v=').time() }}" defer></script>
         <script src="{{ asset('js/toggle.js?v=').time() }}" defer></script>
+        <script src="{{ asset('js/get_client_id.js?v=').time() }}" defer></script>
        
         <script src="{{ asset('js/select_file.js?v=').time() }}" defer></script>
         <script src="{{ asset('js/check_box.js?v=').time() }}" defer></script>

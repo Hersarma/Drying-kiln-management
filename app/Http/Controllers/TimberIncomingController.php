@@ -14,9 +14,10 @@ class TimberIncomingController extends Controller
      */
     public function index()
     {
-        $client = Client::where('id', 1)->first();
-        //dd($client);
-        return view('timberincoming.index', compact('client'));
+        $clients = Client::all();
+        $timberIncoming = TimberIncoming::with('clients')->paginate(10);
+        //dd($timberIncoming->clients->name);
+        return view('timberincoming.index', compact('timberIncoming', 'clients'));
     }
 
     /**
@@ -37,7 +38,15 @@ class TimberIncomingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = request()->validateWithBag('create_timber_incoming', [
+            'client_id' => 'required',
+            'number_of_pallets' => 'numeric|nullable',
+            'm3' => 'numeric|nullable',
+            'notes' => 'nullable'
+        ]);
+
+        TimberIncoming::create($validate);
+        return redirect(route('timber-incoming'))->with('message', 'Uspesan unos');
     }
 
     /**

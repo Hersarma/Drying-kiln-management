@@ -26,6 +26,21 @@ let open_modal_create_client = $(".open_modal_create_client");
 let close_modal_create_client = $(".close_modal_create_client");
 let modal_create_client = $(".modal_create_client");
 
+let client = $("#client");
+let clients = $(".clients");
+let get_client_id = $(".get_client_id");
+
+client.click(function(e) {
+    e.preventDefault();
+    clients.toggle(500);
+});
+
+get_client_id.click(function(e) {
+    e.preventDefault();
+    clients.toggle(500);
+});
+
+
 /*Client->edit*/
 let open_modal_edit_client = $(".open_modal_edit_client");
 let close_modal_edit_client = $(".close_modal_edit_client");
