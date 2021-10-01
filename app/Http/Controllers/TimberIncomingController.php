@@ -14,8 +14,8 @@ class TimberIncomingController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
-        $timberIncoming = TimberIncoming::with('clients')->paginate(10);
+        $clients = Client::orderBy('name', 'asc')->paginate(50);
+        $timberIncoming = TimberIncoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
         //dd($timberIncoming->clients->name);
         return view('timberincoming.index', compact('timberIncoming', 'clients'));
     }
@@ -40,6 +40,7 @@ class TimberIncomingController extends Controller
     {
         $validate = request()->validateWithBag('create_timber_incoming', [
             'client_id' => 'required',
+            'type_of_wood' => 'nullable',
             'number_of_pallets' => 'numeric|nullable',
             'm3' => 'numeric|nullable',
             'notes' => 'nullable'
