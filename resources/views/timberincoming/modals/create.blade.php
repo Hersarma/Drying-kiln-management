@@ -14,7 +14,7 @@
                     Ulaz gradje
                 </h3>
             </div>
-            <div class="w-full max-w-xl mx-auto">
+            <div class="w-full max-w-2xl mx-auto">
                 <form method="post" action="{{ route('store-timber-incoming') }}" class="py-8 px-8 md:px-0">
                     @csrf
                     <input id="client_id" class="hidden" name="client_id" value="">
@@ -94,8 +94,8 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-                                   id="notes" name="notes">
+                            <textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="notes" name="notes" rows="4">
+                            </textarea>
                             <p class="text-red-500 text-sm italic mt-4">
                                 {{ $errors->create_timber_incoming->first('notes') }}
                             </p>

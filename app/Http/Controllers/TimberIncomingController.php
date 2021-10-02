@@ -92,6 +92,15 @@ class TimberIncomingController extends Controller
      */
     public function destroy(TimberIncoming $timberIncoming)
     {
-        //
+        $timberIncoming->delete();
+
+        return redirect(route('timber-incoming'))->with('message', 'Ulaz uspesno obrisan');
+    }
+
+    public function destroyChecked(Request $request){
+
+        TimberIncoming::whereIn('id', $request->input('deleteChecked'))->delete();
+
+        return redirect(route('timber-incoming'))->with('message', 'Ulaz uspesno obrisan');
     }
 }

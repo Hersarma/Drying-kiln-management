@@ -58,12 +58,12 @@
                     @include('timberincoming.search')
                     @if($timberIncoming->isEmpty())
                         <tr>
-                            <td colspan="4" class="text-center text-gray-200 text-xl p-24">
+                            <td colspan="7" class="text-center text-gray-200 text-xl p-24">
                                 Baza je trenutno prazna
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="overflow-hidden">
+                            <td colspan="7" class="overflow-hidden">
                                 <div class="flex justify-center mt-5 md:mt-0">
                                     <button
                                             class="open_modal_create_timber_incoming transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md font-bold text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">

@@ -37,11 +37,15 @@ Route::middleware('auth')->group(function (){
         Route::get('/incoming', 'TimberIncomingController@index')->name('timber-incoming');
         Route::get('/outgoing', 'TimberOutgoingController@index')->name('timber-outgoing');
         Route::post('/', 'TimberIncomingController@store')->name('store-timber-incoming');
-        Route::get('/delete/{timber}', 'TimberIncomingController@destroy')->name('delete-timber');
+        Route::get('/delete/{timberIncoming}', 'TimberIncomingController@destroy')->name('delete-timber');
         Route::post('/delete', 'TimberIncomingController@destroyChecked')->name('delete-checked-timber');
         Route::get('/show/{timber}', 'TimberIncomingController@show')->name('show-timber');
     });
 
+    /*Dry kiln*/
+    Route::group(['prefix' => 'drykiln'], function(){
+        Route::get('/', 'DrykilnController@index')->name('drykiln-index');
+    });
     /*Serach*/
      Route::get('/clients/search_clients', 'SearchController@search_clients');
      Route::get('/timberincoming/clients/search_clients', 'SearchController@search_timber_incoming_clients');
