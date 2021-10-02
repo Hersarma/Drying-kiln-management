@@ -51,6 +51,20 @@ $(document).ready(function () {
 
         fetch_clients(query);
     });
+    function fetch_timber_incoming_clients(query) {
+        $.ajax({
+            url: "/timberincoming/clients/search_clients?query=" + query,
+            success: function (data) {
+                $('#searchTimberIncomingClient').html(data);
+            }
+        })
+    }
+
+    $(document).on('keyup', '#search_timber_incoming_clients', function () {
+        var query = $('#search_timber_incoming_clients').val();
+
+        fetch_timber_incoming_clients(query);
+    });
 
     //Vehicle//
     function fetch_vehicles(query) {

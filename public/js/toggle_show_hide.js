@@ -1,12 +1,6 @@
-let side_bar = $("#side_bar");
-let hamburger_mobile = $('#hamburger_mobile');
-let hamburger = $('#hamburger');
+/*User profile toogle*/
 let user = $("#user_open");
 let user_profile = $("#user_profile");
-let content = $('#content');
-
-
-/*User profile toogle*/
 
 user.click(function(e) {
     e.preventDefault();
@@ -26,6 +20,7 @@ let open_modal_create_client = $(".open_modal_create_client");
 let close_modal_create_client = $(".close_modal_create_client");
 let modal_create_client = $(".modal_create_client");
 
+/*Select client*/
 let client = $("#client");
 let clients = $(".clients");
 let get_client_id = $(".get_client_id");
@@ -35,12 +30,6 @@ client.click(function(e) {
     clients.toggle(500);
 });
 
-get_client_id.click(function(e) {
-    e.preventDefault();
-    clients.toggle(500);
-});
-
-
 /*Client->edit*/
 let open_modal_edit_client = $(".open_modal_edit_client");
 let close_modal_edit_client = $(".close_modal_edit_client");
@@ -48,6 +37,11 @@ let modal_edit_client = $(".modal_edit_client");
 
 
 /*Side bar toggle*/
+let side_bar = $("#side_bar");
+let hamburger_mobile = $('#hamburger_mobile');
+let hamburger = $('#hamburger');
+let content = $('#content');
+
 hamburger.click(function(e) {
     e.preventDefault();
     if ($(side_bar).is(':visible')) {
@@ -70,7 +64,7 @@ hamburger.click(function(e) {
     }
 });
 
-/*Show/hide messages*/
+/*Show/hide success messages*/
 $(document).ready(function(){
     $(".successMessage").slideDown().delay(2000).slideUp();
 });

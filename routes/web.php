@@ -40,7 +40,11 @@ Route::middleware('auth')->group(function (){
         Route::get('/delete/{timber}', 'TimberIncomingController@destroy')->name('delete-timber');
         Route::post('/delete', 'TimberIncomingController@destroyChecked')->name('delete-checked-timber');
         Route::get('/show/{timber}', 'TimberIncomingController@show')->name('show-timber');
-    }); 
+    });
+
+    /*Serach*/
+     Route::get('/clients/search_clients', 'SearchController@search_clients');
+     Route::get('/timberincoming/clients/search_clients', 'SearchController@search_timber_incoming_clients');
 });
 
 require __DIR__.'/auth.php';

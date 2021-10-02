@@ -5,6 +5,7 @@ $(document).ready(function () {
         let id = $(this).children("input").val();
         $("#client_id").val(id);
          $(".set_client").text(client);
+         $(".clients").toggle(500);
     });
 
 });

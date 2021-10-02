@@ -1,5 +1,4 @@
 
-
 @foreach($clients as $client)
     <tr
         class="cursor-pointer bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
