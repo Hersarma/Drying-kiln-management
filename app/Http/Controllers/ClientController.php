@@ -14,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::orderBy('name', 'asc')->paginate(10);
+        $clients = Client::orderBy('name', 'asc')->simplePaginate(10);
 
         return view('clients.index', compact('clients'));
     }
