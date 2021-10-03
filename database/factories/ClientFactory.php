@@ -22,7 +22,7 @@ class ClientFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->name,
+            'name' => $this->faker->unique()->company(),
             'city' => $this->faker->city(),
             'address_1' => $this->faker->address(),
             'pib' => $this->faker->randomDigitNotNull() * 10000,

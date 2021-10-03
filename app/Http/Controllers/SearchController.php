@@ -13,7 +13,7 @@ class SearchController extends Controller
         $query = str_replace(" ", "%", $query);
         $clients = Client::
         where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->paginate(10);
-        return view('clients.clients_search', compact('clients'))->render();
+        return view('clients.search', compact('clients'))->render();
 
     }
 

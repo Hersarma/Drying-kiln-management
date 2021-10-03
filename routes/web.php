@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function (){
         Route::post('/', 'TimberIncomingController@store')->name('store-timber-incoming');
         Route::get('/delete/{timberIncoming}', 'TimberIncomingController@destroy')->name('delete-timber');
         Route::post('/delete', 'TimberIncomingController@destroyChecked')->name('delete-checked-timber');
-        Route::get('/show/{timber}', 'TimberIncomingController@show')->name('show-timber');
+        Route::get('/incoming/show/{timber}', 'TimberIncomingController@show')->name('show-timber-incoming');
     });
 
     /*Dry kiln*/
