@@ -14,7 +14,8 @@ class DrykilnController extends Controller
      */
     public function index()
     {
-        return view('drykiln.index');
+        $drykilns = Drykiln::all();
+        return view('drykiln.index', compact('drykilns'));
     }
 
     /**
