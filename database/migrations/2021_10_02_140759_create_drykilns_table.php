@@ -15,7 +15,7 @@ class CreateDrykilnsTable extends Migration
     {
         Schema::create('drykilns', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

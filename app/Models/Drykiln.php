@@ -13,6 +13,6 @@ class Drykiln extends Model
 
     public function drykiln_startup_settings(){
 
-        return $this->hasOne(DrykilnStartupSettings::class);
+        return $this->hasMany(DrykilnConfig::class);
     }
 }
