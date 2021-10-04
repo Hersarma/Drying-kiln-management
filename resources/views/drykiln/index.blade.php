@@ -40,16 +40,16 @@
 				<div class="flex justify-between items-center px-8">
 					<p class="py-4 text-gray-200">
 	            	<i class="fas fa-clock fa-lg px-4"></i>
-	            	Pocetak procesa
+	            	klijenti
 	        		</p>
-	        		<p class="text-gray-200">21.10.2021</p>
+	        		<p class="text-gray-200">{{ $drykiln->drykiln_startup_settings->clients }}</p>
 				</div>
 				<div class="flex justify-between items-center px-8">
 					<p class="py-4 text-gray-200">
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	Pocetak procesa
 	        		</p>
-	        		<p class="text-gray-200">21.10.2021</p>
+	        		<p class="text-gray-200">{{ $drykiln->drykiln_startup_settings->type_of_wood }}</p>
 				</div>
 	        </div>
 		</div>

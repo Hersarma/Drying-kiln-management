@@ -10,4 +10,9 @@ class Drykiln extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function drykiln_startup_settings(){
+
+        return $this->hasOne(DrykilnStartupSettings::class);
+    }
 }
