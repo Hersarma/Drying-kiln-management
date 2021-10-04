@@ -20,16 +20,7 @@ class TimberIncomingController extends Controller
         return view('timberincoming.index', compact('timberIncoming', 'clients'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -57,17 +48,6 @@ class TimberIncomingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(TimberIncoming $timberIncoming)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\TimberIncoming  $timberIncoming
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TimberIncoming $timberIncoming)
     {
         //
     }

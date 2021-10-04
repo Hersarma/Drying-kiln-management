@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-full lg:w-1/4 md:w-1/2 mb-10 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-        <p class="px-8 text-gray-200">Prikaz susara</p>
+<div class="flex justify-between items-center px-10 mb-10 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+        <p class="text-gray-200">Prikaz sušara</p>
+        <button
+	         class="open_modal_create_drykiln transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
+	         Dodaj novu sušaru
+         </button>
     </div>
 <div class="flex flex-wrap justify-between items-center">
 	@foreach($drykilns as $drykiln)
@@ -13,13 +17,13 @@
 			<img class="animate-spin-slow h-20 w-20" src="img/vent.png">
 			@endif
 		</div>
-		<div class="border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+		<div onclick="window.location = '{{ route('drykiln-show',$drykiln )}}'" class="cursor-pointer transition ease-out duration-200 transform hover:scale-105 border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 			<div>
 				<div class="flex justify-between items-center py-4 px-4">
-					<p class="py-1 px-1 text-white text-xl font-bold">Susara: 1</p>
+					<p class="py-1 px-1 text-white text-xl font-bold">Susara: {{ $drykiln->name }}</p>
 					<p class="py-1 px-1 text-white text-xl font-bold">Status: 
 						@if(!$drykiln->status)
-						<span class="text-gray-500">Aktivna</span>
+						<span class="text-gray-500">Neaktivna</span>
 						@else
 						<span class="text-green-500">Aktivna</span>
 						@endif
@@ -31,7 +35,7 @@
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	Pocetak procesa
 	        		</p>
-	        		<p class="text-gray-200">21.10.2021</p>
+	        		<p class="text-gray-200">{{ $drykiln->created_at->format('Y-m-d H:m:s') }}</p>
 				</div>
 				<div class="flex justify-between items-center px-8">
 					<p class="py-4 text-gray-200">
@@ -52,5 +56,6 @@
 	</div>
 	@endforeach
 </div>
+@include('drykiln.modals.create')
 @endsection
 

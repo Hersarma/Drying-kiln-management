@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function (){
     /*Dry kiln*/
     Route::group(['prefix' => 'drykiln'], function(){
         Route::get('/', 'DrykilnController@index')->name('drykiln-index');
+        Route::post('/', 'DrykilnController@store')->name('drykiln-store');
+        Route::get('/show/{drykiln}', 'DrykilnController@show')->name('drykiln-show');
     });
     /*Serach*/
      Route::get('/clients/search_clients', 'SearchController@search_clients');

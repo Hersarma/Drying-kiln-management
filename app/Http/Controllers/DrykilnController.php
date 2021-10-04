@@ -19,16 +19,6 @@ class DrykilnController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,7 +26,13 @@ class DrykilnController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validate = request()->validateWithBag('create_drykiln', [
+            'name' => 'required|unique:clients',
+        ]);
+
+        Drykiln::create($validate);
+
+        return redirect(route('drykiln-index'))->with('message', 'Sušara uspesno kreirana');
     }
 
     /**
@@ -47,18 +43,7 @@ class DrykilnController extends Controller
      */
     public function show(Drykiln $drykiln)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Drykiln  $drykiln
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Drykiln $drykiln)
-    {
-        //
+        return view('drykiln.show');
     }
 
     /**

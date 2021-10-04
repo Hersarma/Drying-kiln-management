@@ -20,16 +20,6 @@ class ClientController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     *
-     * public function create()
-     * {
-     * return view('clients.create');
-     * }
-     */
-    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -67,17 +57,6 @@ class ClientController extends Controller
         return view('clients.show', compact('client'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Client $client
-     * @return \Illuminate\Http\Response
-     *
-     * public function edit(Client $client)
-     * {
-     * return view('clients.edit', compact('client'));
-     * }
-     */
     /**
      * Update the specified resource in storage.
      *
