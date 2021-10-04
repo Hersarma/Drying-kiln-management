@@ -28,7 +28,7 @@ class DrykilnController extends Controller
     public function store(Request $request)
     {
          $validate = request()->validateWithBag('create_drykiln', [
-            'name' => 'required|unique:clients',
+            'name' => 'required',
         ]);
 
         Drykiln::create($validate);
