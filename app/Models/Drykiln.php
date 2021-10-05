@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Drykiln extends Model
+class DryKiln extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    public function dry_kiln_config(){
 
-    public function drykiln_startup_settings(){
-
-        return $this->hasMany(DrykilnConfig::class);
+        return $this->hasOne(DryKilnConfig::class)->withDefault([
+            'client' => '/',
+            'type_of_wood' => '/'
+        ]);
     }
 }

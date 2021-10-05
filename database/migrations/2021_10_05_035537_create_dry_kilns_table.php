@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrykilnsTable extends Migration
+class CreateDryKilnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateDrykilnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('drykilns', function (Blueprint $table) {
+        Schema::create('dry_kilns', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->boolean('status')->default(0);
+            $table->boolean('staus')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDrykilnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drykilns');
+        Schema::dropIfExists('dry_kilns');
     }
 }

@@ -42,14 +42,14 @@
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	klijenti
 	        		</p>
-	        		<p class="text-gray-200">BK</p>
+	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->client}}</p>
 				</div>
 				<div class="flex justify-between items-center px-8">
 					<p class="py-4 text-gray-200">
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	Drvo
 	        		</p>
-	        		<p class="text-gray-200">Orah</p>
+	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->type_of_wood}}</p>
 				</div>
 	        </div>
 		</div>

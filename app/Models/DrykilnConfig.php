@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DrykilnConfig extends Model
+class DryKilnConfig extends Model
 {
     use HasFactory;
 
-    public function drykiln(){
+    public function dry_kiln(){
 
-        return $this->belongsTo(Drykiln::class, 'drykiln_id');
+        return $this->belongsTo(DryKiln::class);
     }
 }
