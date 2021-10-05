@@ -9,11 +9,10 @@ class DryKiln extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function dry_kiln_config(){
 
-        return $this->hasOne(DryKilnConfig::class)->withDefault([
-            'client' => '/',
-            'type_of_wood' => '/'
-        ]);
+        return $this->hasOne(DryKilnConfig::class)->withDefault();
     }
 }

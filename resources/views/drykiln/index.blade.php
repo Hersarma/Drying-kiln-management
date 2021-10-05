@@ -11,7 +11,7 @@
 	@foreach($drykilns as $drykiln)
 	<div class="w-full md:w-1/2 px-4">
 		<div class="flex justify-center">
-			@if(!$drykiln->status)
+			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="img/vent.png">
 			@else
 			<img class="animate-spin-slow h-20 w-20" src="img/vent.png">
@@ -22,7 +22,7 @@
 				<div class="flex justify-between items-center py-4 px-4">
 					<p class="py-1 px-1 text-white text-xl font-bold">Susara: {{ $drykiln->name }}</p>
 					<p class="py-1 px-1 text-white text-xl font-bold">Status: 
-						@if(!$drykiln->status)
+						@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 						<span class="text-gray-500">Neaktivna</span>
 						@else
 						<span class="text-green-500">Aktivna</span>
@@ -35,21 +35,25 @@
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	Pocetak procesa
 	        		</p>
-	        		<p class="text-gray-200">{{ $drykiln->created_at->format('Y-m-d H:m:s') }}</p>
+	        		@if(!empty($drykiln->dry_kiln_config->created_at))
+	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->created_at->format('d-m-Y') }}</p>
+	        		@else
+	        		<p class="text-gray-200">/</p>
+	        		@endif
 				</div>
 				<div class="flex justify-between items-center px-8">
 					<p class="py-4 text-gray-200">
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	klijenti
 	        		</p>
-	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->client}}</p>
+	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->client ?: '/'}}</p>
 				</div>
 				<div class="flex justify-between items-center px-8">
 					<p class="py-4 text-gray-200">
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	Drvo
 	        		</p>
-	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->type_of_wood}}</p>
+	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->type_of_wood ?: '/'}}</p>
 				</div>
 	        </div>
 		</div>

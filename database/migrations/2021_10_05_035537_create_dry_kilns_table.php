@@ -16,7 +16,6 @@ class CreateDryKilnsTable extends Migration
         Schema::create('dry_kilns', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->boolean('staus')->default(0);
             $table->timestamps();
         });
     }

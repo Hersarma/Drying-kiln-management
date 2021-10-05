@@ -16,6 +16,7 @@ class CreateDryKilnConfigsTable extends Migration
         Schema::create('dry_kiln_configs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('dry_kiln_id');
+            $table->boolean('dry_kiln_status')->default(0);
             $table->text('client');
             $table->string('type_of_wood');
             $table->boolean('probe_1_status')->default(0);
