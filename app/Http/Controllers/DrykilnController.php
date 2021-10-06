@@ -24,4 +24,9 @@ class DryKilnController extends Controller
 
         return redirect(route('drykiln-index'))->with('message', 'Susara uspesno snimljena');
     }
+
+    public function show(DryKiln $dryKiln){
+        
+        return view('drykiln.show');
+    }
 }
