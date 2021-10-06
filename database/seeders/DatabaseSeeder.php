@@ -1,7 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\User;
+use App\Models\Client;
+use App\Models\TimberIncoming;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         User::factory(1)->create();
+         Client::factory(100)->create();
+         TimberIncoming::factory(10)->create();
     }
 }
