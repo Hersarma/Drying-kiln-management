@@ -16,7 +16,7 @@ class TimberIncomingController extends Controller
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50);
         $timberIncoming = TimberIncoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
-        //dd($timberIncoming->clients->name);
+        
         return view('timberincoming.index', compact('timberIncoming', 'clients'));
     }
 
@@ -38,6 +38,7 @@ class TimberIncomingController extends Controller
         ]);
 
         TimberIncoming::create($validate);
+        
         return redirect(route('timber-incoming'))->with('message', 'Uspesan unos');
     }
 

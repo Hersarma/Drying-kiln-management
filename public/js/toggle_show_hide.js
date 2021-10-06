@@ -46,6 +46,11 @@ let hamburger_mobile = $('#hamburger_mobile');
 let hamburger = $('#hamburger');
 let content = $('#content');
 
+/*Warning message modal*/
+let open_modal_warning = $(".open_modal_warning");
+let close_modal_warning = $(".close_modal_warning");
+let modal_warning = $(".modal_warning")
+
 hamburger.click(function(e) {
     e.preventDefault();
     if ($(side_bar).is(':visible')) {
@@ -68,12 +73,22 @@ hamburger.click(function(e) {
     }
 });
 
-/*Show/hide success messages*/
+/*Show/hide messages*/
 $(document).ready(function(){
     $(".successMessage").slideDown().delay(2000).slideUp();
 });
 $(document).ready(function(){
     $(".welcomeMessage").slideDown().delay(2000).slideUp();
+});
+
+open_modal_warning.click(function(e) {
+    e.preventDefault();
+    modal_warning.toggle(500);
+});
+
+close_modal_warning.click(function(e) {
+    e.preventDefault();
+    modal_warning.toggle(500);
 });
 
 

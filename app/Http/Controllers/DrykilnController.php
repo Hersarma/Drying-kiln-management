@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\DryKiln;
+use App\Models\DryKilnConfig;
 use Illuminate\Http\Request;
 
 class DryKilnController extends Controller
@@ -25,8 +26,10 @@ class DryKilnController extends Controller
         return redirect(route('drykiln-index'))->with('message', 'Susara uspesno snimljena');
     }
 
-    public function show(DryKiln $dryKiln){
+    public function show(DryKiln $drykiln){
+
+        //$drykilnConfig = $drykiln->dry_kiln_config()->get();
         
-        return view('drykiln.show');
+        return view('drykiln.show', compact('drykiln'));
     }
 }
