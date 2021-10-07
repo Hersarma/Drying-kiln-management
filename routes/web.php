@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function (){
         Route::post('/', 'DryKilnController@store')->name('drykiln-store');
         Route::get('/show/{drykiln}', 'DryKilnController@show')->name('drykiln-show');
     });
-    /*Serach*/
+    /*Search*/
      Route::get('/clients/search_clients', 'SearchController@search_clients');
      Route::get('/timberincoming/clients/search_clients', 'SearchController@search_timber_incoming_clients');
 });

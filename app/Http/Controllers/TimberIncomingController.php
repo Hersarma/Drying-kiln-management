@@ -14,7 +14,7 @@ class TimberIncomingController extends Controller
      */
     public function index()
     {
-        $clients = Client::orderBy('name', 'asc')->paginate(50);
+        $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
         $timberIncoming = TimberIncoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('timberincoming.index', compact('timberIncoming', 'clients'));

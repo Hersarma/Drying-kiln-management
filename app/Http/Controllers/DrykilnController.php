@@ -28,8 +28,7 @@ class DryKilnController extends Controller
 
     public function show(DryKiln $drykiln){
 
-        //$drykilnConfig = $drykiln->dry_kiln_config()->get();
-        
+       
         return view('drykiln.show', compact('drykiln'));
     }
 }
