@@ -1,4 +1,4 @@
-<div class="modal_warning fixed hidden z-20 inset-0 overflow-y-auto">
+<div class="modal_warning hidden fixed z-20 inset-0 overflow-y-auto">
     <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -19,12 +19,11 @@
 
                 <div class="flex justify-around py-2">
                         <button type="button" class="close_modal_warning py-1 w-1/4 transition ease-out duration-500 transform hover:scale-110 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
-                        <button type="button" class="w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
                         <a href="#"
-                        class="text-red-600 hover:text-red-700">
+                        class="route_id w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
                             Potvrdi
                         </a>
-                        </button>
+                        
 
                 </div>
             </div>

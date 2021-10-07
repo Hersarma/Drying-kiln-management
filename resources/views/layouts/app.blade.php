@@ -14,7 +14,7 @@
         <script src="{{ asset('js/app.js?v=').time() }}" defer></script>
         <script src="{{ asset('js/search.js?v=').time() }}" defer></script>
         <script src="{{ asset('js/toggle_show_hide.js?v=').time() }}" defer></script>
-        <script src="{{ asset('js/get_client_id.js?v=').time() }}" defer></script>
+        <script src="{{ asset('js/get_id.js?v=').time() }}" defer></script>
        
         <script src="{{ asset('js/select_file.js?v=').time() }}" defer></script>
         <script src="{{ asset('js/check_box.js?v=').time() }}" defer></script>
@@ -23,7 +23,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <!-- Styles -->
-        <link rel="icon" href="img/europalete-logo-black_teal.png">
+        <link rel="icon" href="/img/europalete-logo-black_teal.png">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -48,6 +48,6 @@
         </div>
 
     </div>
-
+@include('messages.message_warning')
     </body>
 </html>

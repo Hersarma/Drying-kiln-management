@@ -30,6 +30,10 @@ client.click(function(e) {
     clients.toggle(500);
 });
 
+/*Warning message modal*/
+let close_modal_warning = $(".close_modal_warning");
+let modal_warning = $(".modal_warning")
+
 /*Client-edit*/
 let open_modal_edit_client = $(".open_modal_edit_client");
 let close_modal_edit_client = $(".close_modal_edit_client");
@@ -45,11 +49,6 @@ let side_bar = $("#side_bar");
 let hamburger_mobile = $('#hamburger_mobile');
 let hamburger = $('#hamburger');
 let content = $('#content');
-
-/*Warning message modal*/
-let open_modal_warning = $(".open_modal_warning");
-let close_modal_warning = $(".close_modal_warning");
-let modal_warning = $(".modal_warning")
 
 hamburger.click(function(e) {
     e.preventDefault();
@@ -81,16 +80,10 @@ $(document).ready(function(){
     $(".welcomeMessage").slideDown().delay(2000).slideUp();
 });
 
-open_modal_warning.click(function(e) {
-    e.preventDefault();
-    modal_warning.toggle(500);
-});
-
-close_modal_warning.click(function(e) {
-    e.preventDefault();
-    modal_warning.toggle(500);
-});
-
+ close_modal_warning.click(function(e) {
+        e.preventDefault();
+        modal_warning.toggle(500);
+    });
 
 /*client modals*/
 open_modal_edit_client.click(function(e) {

@@ -8,4 +8,10 @@ $(document).ready(function () {
          $(".clients").toggle(500);
     });
 
+    $(document).on('click', '.get_route_id', function () {
+        let href = $(this).children('span').text();
+        $('.route_id').attr('href', href);
+        $('.modal_warning').toggle(500);
+    });
+
 });

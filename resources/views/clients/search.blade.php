@@ -10,10 +10,8 @@
         <td onclick="window.location = '{{ route('clients-show',$client )}}'" class="px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600">{{ ucfirst($client->notes) }}</td>
         <td  class="px-4 py-3 text-right"><a href="{{ route('clients-show',$client )}}"
                                  class="text-teal-400 hover:text-teal-700"><i class="transition ease-out duration-500 transform hover:scale-110 far fa-eye fa-lg"></i></a></td>
-        <td class="px-4 py-3 text-center"><a href="{{ route('clients-delete',$client )}}"
-                                             onclick="return window.confirm('Da li ste sigurni da zelite da obrisete klijenta')"
-                                             class="focus:outline-none text-red-600 hover:text-red-700"><i
-                        class="transition ease-out duration-200 transform hover:scale-110 fas fa-trash fa-lg"></i></a></td>
+        <td class="px-4 py-3 text-center"><p 
+                                 class="get_route_id text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i><span class="hidden">{{route('clients-delete', $client)}}</span></p></td>
     </tr>
 
 @endforeach
