@@ -48,6 +48,6 @@
         </div>
 
     </div>
-@include('messages.message_warning')
+@include('messages.message_warning_delete')
     </body>
 </html>
