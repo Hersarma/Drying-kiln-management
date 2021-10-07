@@ -17,12 +17,20 @@
             </div>
             <div class="w-3/4 md:w-full mx-auto">
 
-                <div class="flex justify-around py-2">
-                        <button type="button" class="close_modal_warning py-1 w-1/4 transition ease-out duration-500 transform hover:scale-110 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
-                        <a href="#"
-                        class="route_id w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
-                            Potvrdi
-                        </a>
+                <div class="py-2">
+                        <form method="POST" action="" class="route_id">
+                            @csrf
+                            @method('DELETE')
+                            <div class="flex justify-around">
+                                <button type="button" class="close_modal_warning py-1 w-1/4 transition ease-out duration-500 transform hover:scale-110 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
+                            <button type="submit" 
+                            class="w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
+                                Potvrdi
+                            </button>
+                            </div>
+                            
+                        </form>
+                        
                         
 
                 </div>

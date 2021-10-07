@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="w-full mx-auto overflow-auto">
-            <form method="post" action="{{ route('delete-checked-timber') }}">
+            <form method="post" action="{{ route('delete_checked_timber') }}">
                 @csrf
             <table class="table-auto w-full text-left whitespace-normal">
                 <thead>

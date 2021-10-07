@@ -21,7 +21,7 @@ $(document).ready(function () {
     //Clients//
     function fetch_clients(query) {
         $.ajax({
-            url: "/clients/search_clients?query=" + query,
+            url: "/search_clients?query=" + query,
             success: function (data) {
                 $('#searchClient').html(data);
             }
@@ -35,7 +35,7 @@ $(document).ready(function () {
     });
     function fetch_timber_incoming_clients(query) {
         $.ajax({
-            url: "/timberincoming/clients/search_clients?query=" + query,
+            url: "/search_timberincoming_clients?query=" + query,
             success: function (data) {
                 $('#searchTimberIncomingClient').html(data);
             }

@@ -43,7 +43,7 @@ class ClientController extends Controller
 
         Client::create($validate);
 
-        return redirect(route('clients-index'))->with('message', 'Novi klijent uspesno kreiran');
+        return redirect(route('clients.index'))->with('message', 'Novi klijent uspesno kreiran');
     }
 
     /**
@@ -98,7 +98,7 @@ class ClientController extends Controller
 
         $client->update($validate);
 
-        return back()->with('message', 'Klijent uspesno izmenjen');
+        return redirect(route('clients.show', $client))->with('message', 'Klijent uspesno izmenjen');
     }
 
     /**
@@ -111,7 +111,7 @@ class ClientController extends Controller
     {
         $client->delete();
 
-        return redirect(route('clients-index'))->with('message', 'Klijent uspesno izbrisan');
+        return redirect(route('clients.index'))->with('message', 'Klijent uspesno izbrisan');
     }
 
     public function destroyChecked(Request $request)

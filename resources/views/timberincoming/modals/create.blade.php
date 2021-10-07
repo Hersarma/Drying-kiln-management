@@ -15,7 +15,7 @@
                 </h3>
             </div>
             <div class="w-full max-w-2xl mx-auto">
-                <form method="post" action="{{ route('store-timber-incoming') }}" class="py-8 px-8 md:px-0">
+                <form method="post" action="{{ route('timberIncoming.store') }}" class="py-8 px-8 md:px-0">
                     @csrf
                     <input id="client_id" class="hidden" name="client_id" value="">
 

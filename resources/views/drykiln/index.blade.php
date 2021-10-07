@@ -17,7 +17,7 @@
 			<img class="animate-spin-slow h-20 w-20" src="img/vent.png">
 			@endif
 		</div>
-		<div onclick="window.location = '{{ route('drykiln-show',$drykiln )}}'" class="cursor-pointer transition ease-out duration-200 transform hover:scale-105 border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+		<div onclick="window.location = '{{ route('drykiln.show',$drykiln )}}'" class="cursor-pointer transition ease-out duration-200 transform hover:scale-105 border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 			<div>
 				<div class="flex justify-between items-center py-4 px-4">
 					<p class="py-1 px-1 text-white text-xl font-bold">Susara: {{ $drykiln->name }}</p>

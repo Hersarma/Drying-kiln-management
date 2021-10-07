@@ -28,7 +28,7 @@
 
         </div>
         <div class="w-full mx-auto overflow-auto">
-            <form method="post" action="{{ route('delete-checked-clients') }}">
+            <form method="post" action="{{ route('delete_checked_clients') }}">
                 @csrf
 
                 <table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">

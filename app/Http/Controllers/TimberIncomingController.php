@@ -39,7 +39,7 @@ class TimberIncomingController extends Controller
 
         TimberIncoming::create($validate);
         
-        return redirect(route('timber-incoming'))->with('message', 'Uspesan unos');
+        return redirect(route('timberIncoming.index'))->with('message', 'Uspesan unos');
     }
 
     /**
@@ -62,7 +62,17 @@ class TimberIncomingController extends Controller
      */
     public function update(Request $request, TimberIncoming $timberIncoming)
     {
-        //
+         $validate = request()->validateWithBag('edit_timber_incoming', [
+            'client_id' => 'required',
+            'type_of_wood' => 'nullable',
+            'number_of_pallets' => 'numeric|nullable',
+            'm3' => 'numeric|nullable',
+            'notes' => 'nullable'
+        ]);
+
+        $timberIncoming->update($validate);
+        
+        return redirect(route('timberIncoming.show', $timberIncoming))->with('message', 'Uspesan unos');
     }
 
     /**
@@ -75,7 +85,7 @@ class TimberIncomingController extends Controller
     {
         $timberIncoming->delete();
 
-        return redirect(route('timber-incoming'))->with('message', 'Ulaz uspesno obrisan');
+        return redirect(route('timberIncoming.index'))->with('message', 'Ulaz uspesno obrisan');
     }
 
     public function destroyChecked(Request $request){

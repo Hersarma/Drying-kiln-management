@@ -15,7 +15,7 @@
                 </h3>
             </div>
             <div class="w-3/4 md:w-full mx-auto">
-                <form method="post" action="{{ route('clients-store') }}" class="py-8">
+                <form method="post" action="{{ route('clients.store') }}" class="py-8">
                     @csrf
 
                     <div class="md:flex justify-between">
