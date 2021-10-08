@@ -28,4 +28,5 @@ class SearchController extends Controller
 
     }
 
+
 }

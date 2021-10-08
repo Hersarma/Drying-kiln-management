@@ -1,23 +1,6 @@
 
 $(document).ready(function () {
 
-//Product//
-    function fetch_product(query, category) {
-        $.ajax({
-            url: "/products/search_products?query=" + query + "&category=" +category,
-            success: function (data) {
-                $('#searchProduct').html(data);
-            }
-        })
-    }
-
-    $(document).on('keyup', '#search_products', function () {
-        let query = $('#search_products').val();
-        let category = $('#category_id').val();
-
-        fetch_product(query, category);
-    });
-
     //Clients//
     function fetch_clients(query) {
         $.ajax({

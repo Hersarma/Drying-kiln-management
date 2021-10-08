@@ -21,25 +21,16 @@
 
                     <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
                         <div class="md:w-1/3">
-                            <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                            <label class="block  font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                                 Klijent
                             </label>
                         </div>
-                        <div class="relative md:w-2/3">
-                            <div>
-                                <button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
-                            </div>
-                            <div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
-                                <div class="flex items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
-                                            <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-                                            <input id="search_timber_incoming_clients" type="search" name="search_timber_incoming_clients" placeholder="Pretraga"
-                                            class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
-                                        </div>
-                                <ul id="searchTimberIncomingClient">
-                                    @include('drykiln.modals.search_client')
-                                </ul>
-                            </div>
-                            
+                        <div class="md:w-2/3">
+                            <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+                                   id="client_name" name="client_name">
+                            <p class="text-red-500 text-sm italic mt-4">
+                                {{ $errors->create_timber_incoming->first('client_name') }}
+                            </p>
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
