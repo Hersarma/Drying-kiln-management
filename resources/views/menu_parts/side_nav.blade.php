@@ -45,7 +45,7 @@
                 </li>
             </ul>
         </li>
-        <li class="group py-6 px-4 text-center cursor-pointer text-gray-300 {{ Request::is('drykiln') ? 'rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl' : '' }}">
+        <li class="group py-6 px-4 text-center cursor-pointer text-gray-300 {{ Request::segment(1) === 'drykiln' ? 'rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl' : '' }}">
             <a href="{{ route('drykiln.index')}}" class="no-underline flex items-center">
                 <i class="fas fa-warehouse group-hover:text-turquoise-light"></i>
 

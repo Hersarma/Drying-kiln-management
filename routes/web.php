@@ -21,38 +21,18 @@ Route::middleware('auth')->group(function (){
 
     /*Clients*/
     Route::resource('clients', 'ClientController');
-    Route::post('/delete_checked', 'ClientController@destroyChecked')->name('delete_checked_clients');
-     /*/Route::group(['prefix' => 'clients'], function(){
-        Route::get('/', 'ClientController@index')->name('clients-index');
-        Route::post('/', 'ClientController@store')->name('clients-store');
-        Route::post('/update/{client}', 'ClientController@update')->name('clients-update');
-        Route::get('/delete/{client}', 'ClientController@destroy')->name('clients-delete');
-        
-        Route::get('/show/{client}', 'ClientController@show')->name('clients-show');
-    });*
+    Route::post('/delete_checked_clients', 'ClientController@destroyChecked')->name('delete_checked_clients');
 
     /*Timber*/
     Route::resource('timberIncoming', 'TimberIncomingController');
     Route::resource('timberOutgoing', 'TimberOutgoingController');
-    Route::post('/delete_checked', 'TimberIncomingController@destroyChecked')->name('delete_checked_timber');
-    /*Route::group(['prefix' => 'timber'], function(){
-        Route::get('/incoming', 'TimberIncomingController@index')->name('timber-incoming');
-        Route::get('/outgoing', 'TimberOutgoingController@index')->name('timber-outgoing');
-        Route::post('/', 'TimberIncomingController@store')->name('store-timber-incoming');
-        Route::get('/delete/{timberIncoming}', 'TimberIncomingController@destroy')->name('delete-timber');
-        Route::post('/delete_checked', 'TimberIncomingController@destroyChecked')->name('delete_checked_timber');
-        Route::get('/incoming/show/{timber}', 'TimberIncomingController@show')->name('show-timber-incoming');
-    });*/
-
+    Route::post('/delete_checked_incoming_timber', 'TimberIncomingController@destroyChecked')->name('delete_checked_incoming_timber');
+   
     /*Dry kiln*/
     Route::resource('drykiln', 'DryKilnController');
-    /*Route::group(['prefix' => 'drykiln'], function(){
-        Route::get('/', 'DryKilnController@index')->name('drykiln-index');
-        Route::post('/', 'DryKilnController@store')->name('drykiln-store');
-        Route::get('/show/{drykiln}', 'DryKilnController@show')->name('drykiln-show');
-    });*/
+
     /*Search*/
-     Route::get('/search_clients', 'SearchController@search_clients');
+     Route::get('search_clients', 'SearchController@search_clients');
      Route::get('/search_timberincoming_clients', 'SearchController@search_timber_incoming_clients');
 });
 

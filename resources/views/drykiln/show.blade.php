@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-full md:w-2/3 mx-auto px-4">
+<div class="flex flex-wrap justify-between items-center">
+	<div class="w-full md:w-2/3 mx-auto px-4">
 		<div class="flex justify-center">
 			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="/img/vent.png">
@@ -21,7 +22,7 @@
 					</p>
 				</div>
 				
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center px-1 md:px-8">
 					<p class="py-4 text-gray-200">
 	            	<i class="fas fa-clock fa-lg px-4"></i>
 	            	Pocetak procesa
@@ -32,21 +33,21 @@
 	        		<p class="text-gray-200">/</p>
 	        		@endif
 				</div>
-				<div class="flex justify-between items-center px-8">
-					<p class="py-4 text-gray-200">
+				<div class="md:flex md:justify-between md:items-center px-1 md:px-8">
+					<p class="py-4 text-gray-200 text-center">
 	            	<i class="fas fa-user fa-lg px-4"></i>
 	            	Klijenti
 	        		</p>
-	        		<p class="text-gray-200">{{ $drykiln->dry_kiln_config->client ?: '/'}}</p>
+	        		<p class="py-4 text-gray-200">{{ $drykiln->dry_kiln_config->client ?: '/'}}</p>
 				</div>
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center px-1 md:px-8">
 					<p class="py-4 text-gray-200">
 			            	<i class="fas fa-align-left fa-lg px-4"></i>
 			            	Drvo
 	        			</p>
 	        			<p class="text-gray-200">{{ $drykiln->dry_kiln_config->type_of_wood ?: '/'}}</p>
 				</div>
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center px-1 md:px-8">
 					<p class="py-4 text-gray-200">
 			            	<i class="fas fa-thermometer fa-lg px-4"></i>
 			            	Aktivne sonde
@@ -76,4 +77,28 @@
 	        </div>
 		</div>
 	</div>
+	
+	<div class="w-full md:w-1/3 mx-auto px-4 mt-20">
+		<div class="border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+			<div class="flex justify-around items-center py-4">
+				<div class="flex items-center">
+					<i class="fas fa-temperature-high fa-5x text-red-500"></i>
+				</div>
+				<div>
+					<div class="flex items-center">
+					<p class="text-gray-200 text-xl font-bold px-2">36.25</p>
+					<i class="fas fa-genderless text-gray-200 -mt-2"></i>
+					<p class="text-gray-200">C</p>
+				</div>
+				</div>
+			</div>
+			<div class="flex justify-around items-center py-4">
+				<i class="fas fa-tint fa-5x text-blue-300"></i>
+				<p class="text-gray-200 text-xl font-bold">61.23<i class="fas fa-percentage px-2"></i></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+@include('drykiln.modals.create_drykiln_config')
 @endsection

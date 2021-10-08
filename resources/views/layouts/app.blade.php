@@ -41,13 +41,12 @@
                     @include('messages.message_success')
                     @include('messages.message_welcome')
                     @include('errors.modal_errors')
+                    @include('messages.message_warning_delete')
                     @yield('content')
                 </div>
 
             </div>
         </div>
-
     </div>
-@include('messages.message_warning_delete')
     </body>
 </html>

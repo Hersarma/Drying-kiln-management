@@ -23,7 +23,7 @@ class SearchController extends Controller
         $query = $request->get('query');
         $query = str_replace(" ", "%", $query);
         $clients = Client::
-        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->paginate(10);
+        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->paginate(10, ['id', 'name']);
         return view('timberincoming.modals.search_client', compact('clients'))->render();
 
     }

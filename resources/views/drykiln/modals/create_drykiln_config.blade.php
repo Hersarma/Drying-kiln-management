@@ -1,4 +1,4 @@
-<div class="modal_create_timber_incoming hidden fixed z-20 inset-0 overflow-y-auto">
+<div class="modal_create_drykiln_config fixed z-20 inset-0 overflow-y-auto">
     <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -11,13 +11,13 @@
 
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-base text-gray-200 leading-6 font-bold">
-                    Ulaz gradje
+                    Podesavanje susare
                 </h3>
             </div>
             <div class="w-full max-w-2xl mx-auto">
-                <form method="post" action="{{ route('timberIncoming.store') }}" class="py-8 px-8 md:px-0">
+                <form method="post" action="{{-- route('timberIncoming.store') --}}" class="py-8 px-8 md:px-0">
                     @csrf
-                    <input id="client_id" class="hidden" name="client_id" value="">
+                    <input id="dry_kiln_id" class="hidden" name="dry_kiln_id" value="{{ $drykiln->id }}">
 
                     <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
                         <div class="md:w-1/3">
@@ -36,10 +36,7 @@
                                             class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
                                         </div>
                                 <ul id="searchTimberIncomingClient">
-                                    
-                                        
-                                    
-                                    @include('timberincoming.modals.search_client')
+                                    @include('drykiln.modals.search_client')
                                 </ul>
                             </div>
                             
