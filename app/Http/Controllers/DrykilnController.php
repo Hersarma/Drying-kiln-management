@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 use App\Models\DryKiln;
 use App\Models\DryKilnConfig;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class DryKilnController extends Controller
 {
     public function index(){
-
+        $clients = Client::orderBy('name', 'asc')->simplePaginate(50,['name']);
         $drykilns = DryKiln::with('dry_kiln_config')->get();
         
-        return view('drykiln.index', compact('drykilns'));
+        return view('drykiln.index', compact('drykilns', 'clients'));
         
     }
 

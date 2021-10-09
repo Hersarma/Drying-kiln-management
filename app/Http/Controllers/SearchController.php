@@ -13,7 +13,7 @@ class SearchController extends Controller
         $url = $request->get('url_name');
         $query = str_replace(" ", "%", $query);
         $clients = Client::
-        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->paginate(10);
+        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->simplePaginate(10,['id', 'name', 'email', 'notes']);
         
         return view($url.'.search_client', compact('clients'))->render();
        

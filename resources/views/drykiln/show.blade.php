@@ -99,5 +99,4 @@
 		</div>
 	</div>
 </div>
-@include('drykiln.modals.create_drykiln_config')
 @endsection

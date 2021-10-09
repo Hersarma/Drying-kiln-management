@@ -29,7 +29,7 @@
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
 									<input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
 									class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
-									<p id="url_name" class="">{{ Request::path() }}</p>
+									<p id="url_name" class="hidden">{{ Request::path() }}</p>
 								</div>
 								<ul id="searchClient">
 									@include('timberincoming.search_client')
