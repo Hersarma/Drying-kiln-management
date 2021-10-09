@@ -55,7 +55,7 @@
         </thead>
         <tbody id="search_timber_incoming">
           @include('timberincoming.search')
-          @if($timberIncoming->isEmpty())
+          @if($timberincoming->isEmpty())
           <tr>
             <td colspan="8" class="text-center text-gray-200 text-xl p-24">
               Baza je trenutno prazna
@@ -77,7 +77,7 @@
     </form>
     <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
   </div>
-  {{ $timberIncoming->links() }}
+  {{ $timberincoming->links() }}
 </section>
 @include('timberincoming.modals.create')
 

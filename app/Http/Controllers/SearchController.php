@@ -10,23 +10,15 @@ class SearchController extends Controller
     {
 
         $query = $request->get('query');
+        $url = $request->get('url_name');
         $query = str_replace(" ", "%", $query);
         $clients = Client::
         where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->paginate(10);
-        return view('clients.search', compact('clients'))->render();
+        
+        return view($url.'.search_client', compact('clients'))->render();
+       
+        
 
     }
-
-    public function search_timber_incoming_clients(Request $request)
-    {
-
-        $query = $request->get('query');
-        $query = str_replace(" ", "%", $query);
-        $clients = Client::
-        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->paginate(10, ['id', 'name']);
-        return view('timberincoming.modals.search_client', compact('clients'))->render();
-
-    }
-
 
 }

@@ -15,9 +15,9 @@ class TimberIncomingController extends Controller
     public function index()
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $timberIncoming = TimberIncoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
+        $timberincoming = TimberIncoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('timberincoming.index', compact('timberIncoming', 'clients'));
+        return view('timberincoming.index', compact('timberincoming', 'clients'));
     }
 
    
@@ -39,7 +39,7 @@ class TimberIncomingController extends Controller
 
         TimberIncoming::create($validate);
         
-        return redirect(route('timberIncoming.index'))->with('message', 'Uspesan unos');
+        return redirect(route('timberincoming.index'))->with('message', 'Uspesan unos');
     }
 
     /**
@@ -48,7 +48,7 @@ class TimberIncomingController extends Controller
      * @param  \App\Models\TimberIncoming  $timberIncoming
      * @return \Illuminate\Http\Response
      */
-    public function show(TimberIncoming $timberIncoming)
+    public function show(TimberIncoming $timberincoming)
     {
         //
     }
@@ -60,7 +60,7 @@ class TimberIncomingController extends Controller
      * @param  \App\Models\TimberIncoming  $timberIncoming
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TimberIncoming $timberIncoming)
+    public function update(Request $request, TimberIncoming $timberincoming)
     {
          $validate = request()->validateWithBag('edit_timber_incoming', [
             'client_id' => 'required',
@@ -70,9 +70,9 @@ class TimberIncomingController extends Controller
             'notes' => 'nullable'
         ]);
 
-        $timberIncoming->update($validate);
+        $timberincoming->update($validate);
         
-        return redirect(route('timberIncoming.show', $timberIncoming))->with('message', 'Uspesan unos');
+        return redirect(route('timberincoming.show', $timberIncoming))->with('message', 'Uspesan unos');
     }
 
     /**
@@ -81,11 +81,11 @@ class TimberIncomingController extends Controller
      * @param  \App\Models\TimberIncoming  $timberIncoming
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TimberIncoming $timberIncoming)
+    public function destroy(TimberIncoming $timberincoming)
     {
-        $timberIncoming->delete();
+        $timberincoming->delete();
 
-        return redirect(route('timberIncoming.index'))->with('message', 'Ulaz uspesno obrisan');
+        return redirect(route('timberincoming.index'))->with('message', 'Ulaz uspesno obrisan');
     }
 
     public function destroyChecked(Request $request){

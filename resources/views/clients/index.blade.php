@@ -13,6 +13,7 @@
         <i class="fa fa-search fa-lg px-4 text-gray-200" aria-hidden="true"></i>
         <input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
         class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+        <p id="url_name" class="hidden">{{ Request::path() }}</p>
       </div>
       <div class="flex px-4 md:px-12 py-4 md:py-8">
         <button type="button"
@@ -50,7 +51,7 @@
         </tr>
       </thead>
       <tbody id="searchClient">
-        @include('clients.search')
+        @include('clients.search_client')
         @if($clients->isEmpty())
         <tr>
           <td colspan="6" class="text-center text-gray-200 text-xl p-24">

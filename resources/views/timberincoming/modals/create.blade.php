@@ -11,7 +11,7 @@
 				</h3>
 			</div>
 			<div class="w-full max-w-2xl mx-auto">
-				<form method="post" action="{{ route('timberIncoming.store') }}" class="py-8 px-8 md:px-0">
+				<form method="post" action="{{ route('timberincoming.store') }}" class="py-8 px-8 md:px-0">
 					@csrf
 					<input id="client_id" class="hidden" name="client_id" value="">
 					<div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
@@ -27,11 +27,12 @@
 							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
 								<div class="flex items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-									<input id="search_timber_incoming_clients" type="search" name="search_timber_incoming_clients" placeholder="Pretraga"
+									<input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
 									class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+									<p id="url_name" class="">{{ Request::path() }}</p>
 								</div>
-								<ul id="searchTimberIncomingClient">
-									@include('timberincoming.modals.search_client')
+								<ul id="searchClient">
+									@include('timberincoming.search_client')
 								</ul>
 							</div>
 						</div>

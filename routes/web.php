@@ -18,14 +18,14 @@ Route::get('dashboard','HomeController@index')->name('home');
 Route::resource('clients', 'ClientController');
 Route::post('/delete_checked_clients', 'ClientController@destroyChecked')->name('delete_checked_clients');
 /*Timber*/
-Route::resource('timberIncoming', 'TimberIncomingController');
-Route::resource('timberOutgoing', 'TimberOutgoingController');
+Route::resource('timberincoming', 'TimberIncomingController');
+Route::resource('timberoutgoing', 'TimberOutgoingController');
 Route::post('/delete_checked_incoming_timber', 'TimberIncomingController@destroyChecked')->name('delete_checked_incoming_timber');
 
 /*Dry kiln*/
 Route::resource('drykiln', 'DryKilnController');
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
-Route::get('/search_timberincoming_clients', 'SearchController@search_timber_incoming_clients');
+
 });
 require __DIR__.'/auth.php';

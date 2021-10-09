@@ -25,14 +25,14 @@
       </div>
       <ul class="timber_links hidden py-3 text-center">
         <li class="flex-1 py-3 {{ Request::is('timber/incoming') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
-          <a href="{{ route('timberIncoming.index') }}"
+          <a href="{{ route('timberincoming.index') }}"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
             <i class="fas fa-sign-in-alt group-hover:text-turquoise-light px-4"></i>
             Ulaz
           </a>
         </li>
         <li class="flex-1 py-3 {{ Request::is('timber/outgoing') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
-          <a href="{{ route('timberOutgoing.index') }}"
+          <a href="{{ route('timberoutgoing.index') }}"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
             <i class="fas fa-sign-out-alt group-hover:text-turquoise-light px-4"></i>
             Izlaz
