@@ -8,6 +8,12 @@ $(document).ready(function () {
          $(".clients").toggle(500);
     });
 
+    $(document).on('click', '.get_client_name', function () {
+        $(".set_client").show();
+        let client =$(this).text();
+         $(".set_client").append(client);
+    });
+
     $(document).on('click', '.get_route_id', function () {
         let href = $(this).children('span').text();
         $('.route_id').attr('action', href);

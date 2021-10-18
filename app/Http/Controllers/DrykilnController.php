@@ -1,34 +1,37 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Models\DryKiln;
 use App\Models\DryKilnConfig;
 use App\Models\Client;
+use App\Models\DrykilnReadings;
 use Illuminate\Http\Request;
-
 class DryKilnController extends Controller
 {
-    public function index(){
-        $clients = Client::orderBy('name', 'asc')->simplePaginate(50,['name']);
-        $drykilns = DryKiln::with('dry_kiln_config')->get();
-        
-        return view('drykiln.index', compact('drykilns', 'clients'));
-        
-    }
+public function index(){
 
-    public function store(){
+    $clients = Client::orderBy('name', 'asc')->simplePaginate(50,['name']);
+    $drykilns = DryKiln::with('dry_kiln_config')->get();
 
-        $validator = request()->validateWithBag('create_drykiln', [
-            'name' => 'required|unique:dry_kilns'
-        ]);
+    return view('drykiln.index', compact('drykilns', 'clients'));
 
-        DryKiln::create($validator);
+}
+public function store(){
 
-        return redirect(route('drykiln.index'))->with('message', 'Susara uspesno snimljena');
-    }
+    $validator = request()->validateWithBag('create_drykiln', [
+    'name' => 'required|unique:dry_kilns'
 
-    public function show(DryKiln $drykiln){
+    ]);
+    DryKiln::create($validator);
 
-        return view('drykiln.show', compact('drykiln'));
-    }
+    return redirect(route('drykiln.index'))->with('message', 'Susara uspesno snimljena');
+}
+
+public function show(DryKiln $drykiln){
+    return view('drykiln.show', compact('drykiln'));
+}
+
+public function destroy(DryKiln $drykiln){
+    $drykiln->delete();
+    return redirect(route('drykiln.index'));
+}
 }
