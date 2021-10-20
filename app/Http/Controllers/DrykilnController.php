@@ -15,9 +15,9 @@ public function index(){
     return view('drykiln.index', compact('drykilns', 'clients'));
 
 }
-public function store(){
+public function store(Request $request){
 
-    $validator = request()->validateWithBag('create_drykiln', [
+    $validator = $request->validateWithBag('create_drykiln', [
     'name' => 'required|unique:dry_kilns'
 
     ]);

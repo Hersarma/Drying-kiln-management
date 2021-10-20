@@ -1,5 +1,10 @@
+$(document).ready(function()
+{
+    $('#animate').click(function(){
+        $('#animation').show();
+    });
 
-$('input[type="file"]').change(function() {
+    $('input[type="file"]').change(function() {
     var files = $('input[type="file"]').prop("files");
     var names = $.map(files, function(val) { return val.name; });
 
@@ -8,12 +13,6 @@ $('input[type="file"]').change(function() {
     });
 
 });
-
-$(document).ready(function()
-{
-    $('#animate').click(function(){
-        $('#animation').show();
-    });
 
 });
 

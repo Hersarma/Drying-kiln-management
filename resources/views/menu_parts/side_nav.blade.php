@@ -11,7 +11,7 @@
       </a>
     </li>
     
-    <li class="group py-6 px-4 cursor-pointer text-gray-300 {{ Request::segment(1) === 'timber' ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
+    <li class="group py-6 px-4 cursor-pointer text-gray-300 {{ Request::is('timberincoming','timberincoming/*', 'timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
       <div class="open_timber flex justify-between items-center">
         <div class="flex items-center">
           <i class="fas fa-truck group-hover:text-turquoise-light"></i>
@@ -24,14 +24,14 @@
         </div>
       </div>
       <ul class="timber_links hidden py-3 text-center">
-        <li class="flex-1 py-3 {{ Request::is('timber/incoming') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
+        <li class="flex-1 py-3 {{ Request::is('timberincoming','timberincoming/*') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
           <a href="{{ route('timberincoming.index') }}"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
             <i class="fas fa-sign-in-alt group-hover:text-turquoise-light px-4"></i>
             Ulaz
           </a>
         </li>
-        <li class="flex-1 py-3 {{ Request::is('timber/outgoing') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
+        <li class="flex-1 py-3 {{ Request::is('timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
           <a href="{{ route('timberoutgoing.index') }}"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
             <i class="fas fa-sign-out-alt group-hover:text-turquoise-light px-4"></i>

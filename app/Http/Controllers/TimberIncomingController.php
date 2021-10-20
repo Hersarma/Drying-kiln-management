@@ -50,7 +50,7 @@ class TimberIncomingController extends Controller
      */
     public function show(TimberIncoming $timberincoming)
     {
-        //
+        return view('timberincoming.show', compact('timberincoming'));
     }
 
     /**
