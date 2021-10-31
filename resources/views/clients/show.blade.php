@@ -32,10 +32,13 @@
         <i class="fas fa-envelope fa-lg px-4"></i>
         {{ $client->email ?: '/'}}
       </p>
-      <p class="py-4 px-4 text-gray-200">
-        <i class="fab fa-firefox fa-lg px-4"></i>
-        {{ $client->website ?: '/'}}
-      </p>
+        <a class="text-teal-500 underline" href="https://{{ $client->website }}"
+          target="_blank">
+            <p class="py-4 px-4 text-gray-200">
+              <i class="fab fa-firefox fa-lg px-4"></i>
+              {{ $client->website ?: '/' }}
+            </p>
+          </a>
       <p class="py-4 px-4 text-gray-200">
         <i class="fas fa-sticky-note fa-lg px-4"></i>
         {{ Ucfirst($client->notes ?: '/')}}

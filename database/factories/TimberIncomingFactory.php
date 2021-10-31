@@ -22,9 +22,6 @@ class TimberIncomingFactory extends Factory
     public function definition()
     {
         return [
-            'type_of_wood' => $this->faker->word(),
-            'number_of_pallets' => $this->faker->randomDigitNotNull() * 10,
-            'm3' => $this->faker->randomDigitNotNull() * 10.25,
             'client_id' => $this->faker->randomDigitNotNull(),
             'notes' => $this->faker->word()
         ];

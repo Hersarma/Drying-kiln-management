@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\TimberIncoming;
+use App\Models\TimberIncomingItems;
 use Illuminate\Http\Request;
 
 class TimberIncomingController extends Controller
@@ -31,13 +32,24 @@ class TimberIncomingController extends Controller
     {
         $validate = request()->validateWithBag('create_timber_incoming', [
             'client_id' => 'required',
-            'type_of_wood' => 'nullable',
-            'number_of_pallets' => 'numeric|nullable',
-            'm3' => 'numeric|nullable',
-            'notes' => 'nullable'
+            'notes' => 'nullable',
+            'items.*.type_of_wood' => 'required',
+            'items.*.number_of_pallets' => 'numeric|required',
+            'items.*.m3' => 'numeric|required'
         ]);
 
-        TimberIncoming::create($validate);
+      /*$validateitems = request()->validateWithBag('items',[
+            'items.*.type_of_wood' => 'required',
+            'items.*.number_of_pallets' => 'numeric|required',
+            'items.*.m3' => 'numeric|required',
+
+        ]);*/
+       
+        $timberincoming = TimberIncoming::create($validate);
+  
+        foreach($request->items as $item) {
+            $timberincoming->timberincomingitems()->create($item);
+        }
         
         return redirect(route('timberincoming.index'))->with('message', 'Uspesan unos');
     }
@@ -50,7 +62,9 @@ class TimberIncomingController extends Controller
      */
     public function show(TimberIncoming $timberincoming)
     {
-        return view('timberincoming.show', compact('timberincoming'));
+        $items = $timberincoming->timberincomingitems()->get();
+        $client = $timberincoming->clients()->first();
+        return view('timberincoming.show', compact('client', 'items', 'timberincoming'));
     }
 
     /**
@@ -64,9 +78,6 @@ class TimberIncomingController extends Controller
     {
          $validate = request()->validateWithBag('edit_timber_incoming', [
             'client_id' => 'required',
-            'type_of_wood' => 'nullable',
-            'number_of_pallets' => 'numeric|nullable',
-            'm3' => 'numeric|nullable',
             'notes' => 'nullable'
         ]);
 
@@ -92,6 +103,6 @@ class TimberIncomingController extends Controller
 
         TimberIncoming::whereIn('id', $request->input('deleteChecked'))->delete();
 
-        return redirect(route('timber-incoming'))->with('message', 'Ulaz uspesno obrisan');
+        return redirect(route('timberincoming.index'))->with('message', 'Ulaz uspesno obrisan');
     }
 }

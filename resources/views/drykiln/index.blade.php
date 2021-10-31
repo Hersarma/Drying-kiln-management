@@ -86,5 +86,7 @@
 	@endforeach
 </div>
 @include('drykiln.modals.create')
+@if($drykilns->count())
 @include('drykiln.modals.create_drykiln_config')
+@endif
 @endsection

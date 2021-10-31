@@ -10,10 +10,15 @@ class TimberIncoming extends Model
     use HasFactory;
 
     
-    protected $fillable = ['client_id', 'type_of_wood', 'number_of_pallets', 'm3', 'notes'];
+    protected $fillable = ['client_id', 'notes'];
 
     public function clients()
     {
         return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function timberincomingitems(){
+
+        return $this->hasMany(TimberIncomingItems::class);
     }
 }
