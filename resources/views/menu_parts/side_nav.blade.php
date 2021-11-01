@@ -11,8 +11,8 @@
       </a>
     </li>
     
-    <li class="group py-6 px-4 cursor-pointer text-gray-300 {{ Request::is('timberincoming','timberincoming/*', 'timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
-      <div class="open_timber flex justify-between items-center">
+    <li class="group px-4 cursor-pointer text-gray-300 {{ Request::is('timberincoming','timberincoming/*', 'timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
+      <div class="open_timber flex justify-between items-center py-6">
         <div class="flex items-center">
           <i class="fas fa-truck group-hover:text-turquoise-light"></i>
           <p class="ml-6 group-hover:text-turquoise-light whitespace-nowrap">

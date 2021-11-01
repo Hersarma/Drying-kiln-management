@@ -21,7 +21,7 @@ class CreateTimberIncomingItemsTable extends Migration
             $table->float('m3', 8, 2)->nullable();
             $table->timestamps();
 
-            $table->foreign('timberincoming_id')
+            $table->foreign('timber_incoming_id')
             ->references('id')
             ->on('timber_incomings')
             ->onDelete('cascade');

@@ -37,13 +37,6 @@ class TimberIncomingController extends Controller
             'items.*.number_of_pallets' => 'numeric|required',
             'items.*.m3' => 'numeric|required'
         ]);
-
-      /*$validateitems = request()->validateWithBag('items',[
-            'items.*.type_of_wood' => 'required',
-            'items.*.number_of_pallets' => 'numeric|required',
-            'items.*.m3' => 'numeric|required',
-
-        ]);*/
        
         $timberincoming = TimberIncoming::create($validate);
   
@@ -51,7 +44,7 @@ class TimberIncomingController extends Controller
             $timberincoming->timberincomingitems()->create($item);
         }
         
-        return redirect(route('timberincoming.index'))->with('message', 'Uspesan unos');
+        return redirect(route('timberincoming.index'))->with('message', 'Uspesan unos.');
     }
 
     /**
@@ -83,7 +76,7 @@ class TimberIncomingController extends Controller
 
         $timberincoming->update($validate);
         
-        return redirect(route('timberincoming.show', $timberIncoming))->with('message', 'Uspesan unos');
+        return redirect(route('timberincoming.show', $timberIncoming))->with('message', 'Uspesan unos.');
     }
 
     /**
@@ -96,13 +89,13 @@ class TimberIncomingController extends Controller
     {
         $timberincoming->delete();
 
-        return redirect(route('timberincoming.index'))->with('message', 'Ulaz uspesno obrisan');
+        return redirect(route('timberincoming.index'))->with('message', 'Ulaz uspesno obrisan.');
     }
 
     public function destroyChecked(Request $request){
 
         TimberIncoming::whereIn('id', $request->input('deleteChecked'))->delete();
 
-        return redirect(route('timberincoming.index'))->with('message', 'Ulaz uspesno obrisan');
+        return redirect(route('timberincoming.index'))->with('message', 'Svi Ulazi su uspesno obrisani.');
     }
 }
