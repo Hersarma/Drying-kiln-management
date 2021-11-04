@@ -75,6 +75,13 @@
 					
 				</div>
 			</div>
+			<div class="flex justify-center py-4">
+				<button
+				class="open_modal_create_drykiln_config font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
+				Startuj susaru
+			</button>
+			</div>
+			
 		</div>
 	</div>
 	
@@ -99,4 +106,5 @@
 		</div>
 	</div>
 </div>
+@include('drykiln.modals.create_drykiln_config')
 @endsection

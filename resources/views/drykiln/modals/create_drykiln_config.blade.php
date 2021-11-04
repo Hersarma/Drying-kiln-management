@@ -32,7 +32,7 @@
                   <p id="url_name" class="hidden">{{ Request::path() }}</p>
                 </div>
                 <ul id="searchClient">
-                  @include('drykiln.search_client')
+                 
                 </ul>
               </div>
             </div>
