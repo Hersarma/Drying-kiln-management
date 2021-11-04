@@ -1,12 +1,86 @@
 @extends('layouts.app')
 @section('content')
-<p class="text-blue-500">{{ $client->name }}</p>
-@foreach($items as $timber)
-<p class="text-red-500">{{ $timber->type_of_wood }}</p>
-<p class="text-red-500">{{ $timber->number_of_pallets }}</p>
-<p class="text-red-500">{{ $timber->m3 }}</p>
-@endforeach
-<button  class="px-4 py-3 text-center"><p
-    class="cursor-pointer get_route_id text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i><span class="hidden">{{route('timberincoming.destroy', $timberincoming)}}</span></p></button>
+
+<section class="px-12">
+  <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+    <p class="px-8 text-gray-200">Detaljni prikaz</p>
+  </div>
+  <div class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+    <div class="flex flex-wrap justify-between items-center px-8">
+        <div>
+            <p class="py-4 px-2 text-gray-200">
+            <i class="fas fa-user fa-lg px-2"></i><span>Klijent: </span>
+            {{ Ucfirst($client->name)}}
+            </p>
+              <p class="py-4 px-2 text-gray-200">
+                <i class="fas fa-sticky-note fa-lg px-2"></i><span>Beleske: </span>
+                {{ Ucfirst($timberincoming->notes)}}
+              </p>
+        </div>
+        <div>
+            <p class="py-4 px-2 text-gray-200">
+            <i class="fas fa-truck fa-lg px-2"></i><span>Prevoznik: </span>
+            {{ Ucfirst($timberincoming->transport_company)}}
+            </p>
+              <p class="py-4 px-2 text-gray-200">
+                <i class="fas fa-sticky-note fa-lg px-2"></i><span>Broj fakture/otpremnice: </span>
+                {{ Ucfirst($timberincoming->invoice_number)}}
+              </p>
+              <p class="py-4 px-2 text-gray-200">
+                <i class="fa fa-calendar fa-lg px-2"></i><span>Datum: </span>
+                {{ Ucfirst($timberincoming->created_at->format('d-m-Y H:m'))}}
+              </p>
+        </div>
+        
+    </div>
+      
+      <table class="table-auto w-full text-left whitespace-normal">
+                        <thead>
+                          <tr class="border-b border-turquoise-light">
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                              
+                            </th>
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                              Vrsta gradje
+                            </th>
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                              Broj paleta
+                            </th>
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                              Kubikaza
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($items as $timber)
+                         <tr
+                          class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
+                          <td class="px-4 py-3 text-left md:text-center text-gray-200">
+                            {{ $loop->iteration }}
+                          </td>
+                          <td class="px-4 py-3 text-left md:text-center text-gray-200">
+                            {{ $timber->type_of_wood }}
+                          </td>
+                          <td class="px-4 py-3 text-left md:text-center text-gray-200">
+                              {{ $timber->number_of_pallets }}
+                          </td>
+                          <td class="px-4 py-3 text-left md:text-center text-gray-200">
+                              {{ $timber->m3 }}
+                          </td>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+    
+    
+  </div>
+  <div class="flex mx-auto">
+    <button type="button" class="open_modal_edit_timber_incoming transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-xl"><i
+    class="px-2 fas fa-edit"></i>Izmeni</button>
+    <p class="get_route_id cursor-pointer transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded text-base shadow-xl"><span class="hidden">{{ route('timberincoming.destroy',$timberincoming )}}</span><i
+  class="px-2 fas fa-trash"></i>Obrisi</p>
+</div>
+</section>
+
 @include('timberincoming.modals.edit')
 @endsection

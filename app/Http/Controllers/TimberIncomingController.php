@@ -33,6 +33,8 @@ class TimberIncomingController extends Controller
         $validate = request()->validateWithBag('create_timber_incoming', [
             'client_id' => 'required',
             'notes' => 'nullable',
+            'transport_company' => 'nullable',
+            'invoice_number' => 'nullable',
             'items.*.type_of_wood' => 'required',
             'items.*.number_of_pallets' => 'numeric|required',
             'items.*.m3' => 'numeric|required'
@@ -73,6 +75,8 @@ class TimberIncomingController extends Controller
          $validate = request()->validateWithBag('edit_timber_incoming', [
             'client_id' => 'required',
             'notes' => 'nullable',
+            'transport_company' => 'nullable',
+            'invoice_number' => 'nullable',
             'items.*.type_of_wood' => 'required',
             'items.*.number_of_pallets' => 'numeric|required',
             'items.*.m3' => 'numeric|required'
@@ -84,7 +88,7 @@ class TimberIncomingController extends Controller
             $timberincoming->timberincomingitems()->update($item);
         }
         
-        return redirect(route('timberincoming.show', $timberincoming))->with('message', 'Uspesan unos.');
+        return redirect(route('timberincoming.show', $timberincoming))->with('message', 'Uspesna izmena.');
     }
 
     /**

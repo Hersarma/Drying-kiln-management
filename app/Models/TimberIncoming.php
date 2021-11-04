@@ -10,7 +10,7 @@ class TimberIncoming extends Model
     use HasFactory;
 
     
-    protected $fillable = ['client_id', 'notes'];
+    protected $fillable = ['client_id', 'notes', 'transport_company', 'invoice_number'];
 
     public function clients()
     {
