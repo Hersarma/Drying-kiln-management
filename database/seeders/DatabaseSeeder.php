@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
          User::factory(1)->create();
          Client::factory(10)->create();
-         TimberIncoming::factory(10)->create();
+         //TimberIncoming::factory(10)->create();
          //DrykilnReadings::factory(10)->create();
     }
 }

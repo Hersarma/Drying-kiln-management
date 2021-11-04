@@ -55,9 +55,10 @@ class TimberIncomingController extends Controller
      */
     public function show(TimberIncoming $timberincoming)
     {
+        $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
         $items = $timberincoming->timberincomingitems()->get();
         $client = $timberincoming->clients()->first();
-        return view('timberincoming.show', compact('client', 'items', 'timberincoming'));
+        return view('timberincoming.show', compact('client','clients', 'items', 'timberincoming'));
     }
 
     /**
@@ -71,12 +72,19 @@ class TimberIncomingController extends Controller
     {
          $validate = request()->validateWithBag('edit_timber_incoming', [
             'client_id' => 'required',
-            'notes' => 'nullable'
+            'notes' => 'nullable',
+            'items.*.type_of_wood' => 'required',
+            'items.*.number_of_pallets' => 'numeric|required',
+            'items.*.m3' => 'numeric|required'
         ]);
 
         $timberincoming->update($validate);
+
+         foreach($request->items as $item) {
+            $timberincoming->timberincomingitems()->update($item);
+        }
         
-        return redirect(route('timberincoming.show', $timberIncoming))->with('message', 'Uspesan unos.');
+        return redirect(route('timberincoming.show', $timberincoming))->with('message', 'Uspesan unos.');
     }
 
     /**

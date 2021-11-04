@@ -28,15 +28,22 @@
 								{{ $errors->create_timber_incoming->first('client_id') }}
 							</p>
 							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
-								<div class="flex items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
+								@if($clients->count())
+								<div class="flex justify-center items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
 									<input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
-									class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+									class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none w-1/2">
 									<p id="url_name" class="hidden">{{ Request::path() }}</p>
 								</div>
 								<ul id="searchClient">
 									@include('timberincoming.search_client')
 								</ul>
+								@else
+								<div class="mt-10">
+									<p class="mb-10 text-lg py-4">Baza klijenata je prazna</p>
+									<a class="" href="{{ route('clients.index') }}"><button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">Dodaj novog klijenta</button></a>
+								</div>
+								@endif
 							</div>
 						</div>
 					</div>
