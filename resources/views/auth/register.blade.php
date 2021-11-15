@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue_gray-300 via-blue_gray-200 to-blue_gray-300">
         <div class="max-w-md w-full py-12 px-6">
             <img class="mx-auto h-24 w-auto" src="/img/europalete-text-logo-teal.png" alt="">
             <p class="mt-6 text-sm text-center text-gray-900">Registracija</p>
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-gray-100 text-gray-500">Europalete</span>
+                        <span class="px-2 bg-gray-200 text-gray-500">Europalete</span>
                     </div>
                 </div>
                 <div class="mt-6">
