@@ -18,7 +18,8 @@ class CreateDryKilnConfigsTable extends Migration
             $table->foreignId('dry_kiln_id');
             $table->boolean('dry_kiln_status')->default(0);
             $table->text('client');
-            $table->string('type_of_wood');
+            $table->text('type_of_wood');
+            $table->text('notes')->nullable();
             $table->boolean('probe_1_status')->default(0);
             $table->boolean('probe_2_status')->default(0);
             $table->boolean('probe_3_status')->default(0);

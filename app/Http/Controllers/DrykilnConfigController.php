@@ -1,10 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\DryKilnConfig;
 use Illuminate\Http\Request;
 
 class DryKilnConfigController extends Controller
 {
-    //
+    public function store(Request $request){
+         $validator = $request->validateWithBag('create_drykiln_config',[
+            'dry_kiln_id' => 'required',
+            'dry_kiln_status' => 'required',
+            'client' => 'required',
+            'type_of_wood' => 'required',
+            'notes' => 'nullable',
+            'probe_1_status' => 'nullable',
+            'probe_2_status' => 'nullable',
+            'probe_3_status' => 'nullable',
+            'probe_4_status' => 'nullable',
+            'probe_5_status' => 'nullable',
+            'probe_6_status' => 'nullable'
+         ]);
+
+         DryKilnConfig::create($validator);
+
+         return redirect(route('drykiln.index'))->with('message', 'Susara uspesno startovana');
+
+    }
 }

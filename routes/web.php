@@ -24,6 +24,7 @@ Route::post('/delete_checked_incoming_timber', 'TimberIncomingController@destroy
 
 /*Dry kiln*/
 Route::resource('drykiln', 'DryKilnController');
+Route::post('/create_drykiln_config', 'DryKilnConfigController@store')->name('create_drykiln_config');
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
 
