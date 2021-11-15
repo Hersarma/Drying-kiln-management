@@ -1,4 +1,4 @@
-## About Laravel
+## About
 
 Web app for drying kilns management.
 
