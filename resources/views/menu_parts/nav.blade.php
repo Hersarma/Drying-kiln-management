@@ -35,20 +35,20 @@
           </div>
           <div id="user_profile"
             class="hidden origin-top-right absolute right-0 mt-6 w-48 rounded-md shadow-lg">
-            <div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical"
+            <div class="py-1 rounded-md bg-gray-800 shadow-xl" role="menu" aria-orientation="vertical"
               aria-labelledby="user-menu">
-              <a href="#"
+              <!--<a href="#"
                 class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
               role="menuitem">Profil</a>
               
               <a href="#"
                 class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-              role="menuitem">Podesavanje korisnika</a>
+              role="menuitem">Podesavanje korisnika</a>-->
               
               <a href="{{ route('logout') }}"
-                class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                class="block px-4 py-2 text-sm leading-5 text-gray-300 hover:text-gray-100 focus:outline-none transition duration-150 ease-in-out"
                 role="menuitem" onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+              document.getElementById('logout-form').submit();">{{ __('Izlogujte se') }}</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                 {{ csrf_field() }}
               </form>

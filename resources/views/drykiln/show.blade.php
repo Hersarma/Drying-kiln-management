@@ -76,10 +76,17 @@
 				</div>
 			</div>
 			<div class="flex justify-center py-4">
+				@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 				<button
 				class="open_modal_create_drykiln_config font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
 				Startuj susaru
-			</button>
+				</button>
+				@else
+				<button
+				class="open_modal_edit_drykiln_config font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
+				Podesavanja
+				</button>
+				@endif
 			</div>
 			
 		</div>
@@ -93,7 +100,7 @@
 				</div>
 				<div>
 					<div class="flex items-center">
-						<p class="text-gray-200 text-xl font-bold px-2">36.25</p>
+						<p class="text-gray-200 text-xl font-bold px-2"></p>
 						<i class="fas fa-genderless text-gray-200 -mt-2"></i>
 						<p class="text-gray-200">C</p>
 					</div>
@@ -101,7 +108,7 @@
 			</div>
 			<div class="flex justify-around items-center py-4">
 				<i class="fas fa-tint fa-5x text-blue-300"></i>
-				<p class="text-gray-200 text-xl font-bold">61.23<i class="fas fa-percentage px-2"></i></p>
+				<p class="text-gray-200 text-xl font-bold"><i class="fas fa-percentage px-2"></i></p>
 			</div>
 		</div>
 	</div>

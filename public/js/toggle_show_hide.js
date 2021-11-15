@@ -48,6 +48,11 @@ let open_modal_create_drykiln = $(".open_modal_create_drykiln");
 let close_modal_create_drykiln = $(".close_modal_create_drykiln");
 let modal_create_drykiln = $(".modal_create_drykiln");
 
+/*Drykiln-config*/
+let open_modal_create_drykiln_config = $(".open_modal_create_drykiln_config");
+let close_modal_create_drykiln_config = $(".close_modal_create_drykiln_config");
+let modal_create_drykiln_config = $(".modal_create_drykiln_config");
+
 /*Side bar toggle*/
 let side_bar = $("#side_bar");
 let hamburger_mobile = $('#hamburger_mobile');
@@ -146,6 +151,16 @@ open_modal_create_drykiln.click(function(e) {
 close_modal_create_drykiln.click(function(e) {
     e.preventDefault();
     modal_create_drykiln.toggle(500);
+});
+
+open_modal_create_drykiln_config.click(function(e) {
+    e.preventDefault();
+    modal_create_drykiln_config.toggle(500);
+});
+
+close_modal_create_drykiln_config.click(function(e) {
+    e.preventDefault();
+    modal_create_drykiln_config.toggle(500);
 });
 
 
