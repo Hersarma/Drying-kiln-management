@@ -15,23 +15,23 @@ class CreateDrykilnReadingsTable extends Migration
     {
         Schema::create('drykiln_readings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dry_kiln_id');
+            $table->foreignId('drying_proces_id');
             $table->float('temp_needed', 8, 2);
             $table->float('temp_current', 8, 2);
             $table->float('moisture_needed', 8, 2);
             $table->float('moisture_current', 8, 2);
-            $table->float('moisture_probe_1', 8, 2);
-            $table->float('moisture_probe_2', 8, 2);
-            $table->float('moisture_probe_3', 8, 2);
-            $table->float('moisture_probe_4', 8, 2);
-            $table->float('moisture_probe_5', 8, 2);
-            $table->float('moisture_probe_6', 8, 2);
-            $table->float('moisture_probes_average', 8, 2);
+            $table->float('moisture_probe_1', 8, 2)->nullable();
+            $table->float('moisture_probe_2', 8, 2)->nullable();
+            $table->float('moisture_probe_3', 8, 2)->nullable();
+            $table->float('moisture_probe_4', 8, 2)->nullable();
+            $table->float('moisture_probe_5', 8, 2)->nullable();
+            $table->float('moisture_probe_6', 8, 2)->nullable();
+            $table->float('moisture_probes_average', 8, 2)->nullable();
             $table->timestamps();
 
-            $table->foreign('dry_kiln_id')
+            $table->foreign('drying_proces_id')
             ->references('id')
-            ->on('dry_kilns')
+            ->on('drying_proces')
             ->onDelete('cascade');
         });
     }

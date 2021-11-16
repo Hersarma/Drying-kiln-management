@@ -11,6 +11,16 @@ class DryKiln extends Model
 
     protected $fillable = ['name'];
 
+    public function dryKilnProces(){
+
+        return $this->hasMany(DryingProces::class);
+    }
+
+     public function drykilnreadings(){
+
+        return $this->hasManyThrough(DrykilnReadings::class, DryingProces::class);
+    }
+
     public function dry_kiln_config(){
 
         return $this->hasOne(DryKilnConfig::class)->withDefault();

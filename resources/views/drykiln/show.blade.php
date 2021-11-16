@@ -113,5 +113,53 @@
 		</div>
 	</div>
 </div>
+
+<div class="px-4 py-6">
+	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+    <p class="px-8 text-gray-200">Proces susenja</p>
+    <div class="flex space-x-4">
+    	<button
+				class="open_modal_crete_drykiln_reading font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
+				Novi unos
+		</button>
+		<button
+				class="font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
+				Istorija susenja
+		</button>
+    </div>
+  </div>
+	<table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">
+		<thead>
+			<tr class="border-b border-turquoise-light">
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Temperatura</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Vlaga</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 1</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 2</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 3</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 4</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 5</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 6</th>
+			</tr>
+			
+		</thead>
+		<tbody>
+			@foreach($readings as $reading)
+			<tr class="group cursor-pointer bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->temp_needed }}<span class="px-1 text-green-400"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+				</span>{{ $reading->temp_current }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_needed }}<span class="px-1 text-green-400"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+				</span>{{ $reading->moisture_current }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_1 ?: '/' }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_2 ?: '/' }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_3 ?: '/' }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_4 ?: '/' }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_5 ?: '/' }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_6 ?: '/' }}</td>
+			</tr>
+			@endforeach
+		</tbody>
+	</table>
+	{{ $readings->links() }}
+</div>
 @include('drykiln.modals.create_drykiln_config')
 @endsection

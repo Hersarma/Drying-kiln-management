@@ -27,7 +27,12 @@ public function store(Request $request){
 }
 
 public function show(DryKiln $drykiln){
-    return view('drykiln.show', compact('drykiln'));
+
+    //dd($drykiln->dryKilnProces);
+
+    $readings = $drykiln->drykilnreadings()->simplePaginate(10);
+    //dd($readings);
+    return view('drykiln.show', compact('drykiln', 'readings'));
 }
 
 public function destroy(DryKiln $drykiln){

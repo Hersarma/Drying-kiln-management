@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\DryKilnConfig;
+use App\Models\DryingProces;
 use Illuminate\Http\Request;
 
 class DryKilnConfigController extends Controller
 {
     public function store(Request $request){
+
          $validator = $request->validateWithBag('create_drykiln_config',[
             'dry_kiln_id' => 'required',
             'dry_kiln_status' => 'required',
@@ -22,6 +24,12 @@ class DryKilnConfigController extends Controller
          ]);
 
          DryKilnConfig::create($validator);
+         
+         $drying_proces = new DryingProces;
+
+         $drying_proces->dry_kiln_id = $request->dry_kiln_id;
+
+         $drying_proces->save();
 
          return redirect(route('drykiln.index'))->with('message', 'Susara uspesno startovana');
 
