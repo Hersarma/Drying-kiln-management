@@ -130,6 +130,7 @@
 		</button>
     </div>
   </div>
+  @if($drykiln->drykilnreadings->count())
 	<table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">
 		<thead>
 			<tr class="border-b border-turquoise-light">
@@ -162,6 +163,8 @@
 		</tbody>
 	</table>
 	{{ $readings->links() }}
+	
+	@endif
 </div>
 @include('drykiln.modals.create_drykiln_config')
 @include('drykiln.modals.create_drykiln_readings')
