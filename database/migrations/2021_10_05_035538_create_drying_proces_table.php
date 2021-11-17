@@ -16,6 +16,7 @@ class CreateDryingProcesTable extends Migration
         Schema::create('drying_proces', function (Blueprint $table) {
             $table->id();
             $table->foreignId('dry_kiln_id');
+            $table->boolean('active')->default(0);
             $table->timestamps();
             
             $table->foreign('dry_kiln_id')

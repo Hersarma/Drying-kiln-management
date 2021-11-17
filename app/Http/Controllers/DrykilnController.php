@@ -29,10 +29,11 @@ public function store(Request $request){
 public function show(DryKiln $drykiln){
 
     //dd($drykiln->dryKilnProces);
-
-    $readings = $drykiln->drykilnreadings()->simplePaginate(10);
+    $proces = $drykiln->dryKilnProces()->where('active', true)->first();
+    //dd($proces->id);
+    $readings = $proces->drykilnreadings()->simplePaginate(10);
     //dd($readings);
-    return view('drykiln.show', compact('drykiln', 'readings'));
+    return view('drykiln.show', compact('drykiln', 'readings', 'proces'));
 }
 
 public function destroy(DryKiln $drykiln){

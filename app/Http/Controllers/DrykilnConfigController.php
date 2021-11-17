@@ -28,6 +28,7 @@ class DryKilnConfigController extends Controller
          $drying_proces = new DryingProces;
 
          $drying_proces->dry_kiln_id = $request->dry_kiln_id;
+         $drying_proces->active = true;
 
          $drying_proces->save();
 

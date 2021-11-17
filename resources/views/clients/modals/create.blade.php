@@ -13,7 +13,7 @@
       <div class="w-3/4 md:w-full mx-auto">
         <form method="post" action="{{ route('clients.store') }}" class="py-8">
           @csrf
-          <div class="md:flex justify-between">
+          <div class="md:flex justify-between items-center">
             <div class="md:px-4 md:w-1/2">
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
                 <div class="md:w-1/3">
@@ -163,7 +163,7 @@
               </div>
             </div>
           </div>
-          <div class="flex justify-between py-4">
+          <div class="flex justify-between mt-12 px-8">
             <button type="button" class="close_modal_create_client py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
             <button type="submit" class="py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">Sačuvaj</button>
           </div>

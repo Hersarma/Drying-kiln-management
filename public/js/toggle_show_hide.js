@@ -48,10 +48,15 @@ let open_modal_create_drykiln = $(".open_modal_create_drykiln");
 let close_modal_create_drykiln = $(".close_modal_create_drykiln");
 let modal_create_drykiln = $(".modal_create_drykiln");
 
-/*Drykiln-config*/
+/*Drykiln-config-create*/
 let open_modal_create_drykiln_config = $(".open_modal_create_drykiln_config");
 let close_modal_create_drykiln_config = $(".close_modal_create_drykiln_config");
 let modal_create_drykiln_config = $(".modal_create_drykiln_config");
+
+/*Drykiln-readings-create*/
+let open_modal_create_drykiln_readings = $(".open_modal_create_drykiln_readings");
+let close_modal_create_drykiln_readings = $(".close_modal_create_drykiln_readings");
+let modal_create_drykiln_readings = $(".modal_create_drykiln_readings");
 
 /*Side bar toggle*/
 let side_bar = $("#side_bar");
@@ -161,6 +166,16 @@ open_modal_create_drykiln_config.click(function(e) {
 close_modal_create_drykiln_config.click(function(e) {
     e.preventDefault();
     modal_create_drykiln_config.toggle(500);
+});
+
+open_modal_create_drykiln_readings.click(function(e) {
+    e.preventDefault();
+    modal_create_drykiln_readings.toggle(500);
+});
+
+close_modal_create_drykiln_readings.click(function(e) {
+    e.preventDefault();
+    modal_create_drykiln_readings.toggle(500);
 });
 
 
