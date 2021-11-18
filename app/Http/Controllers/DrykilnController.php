@@ -30,7 +30,7 @@ public function show(DryKiln $drykiln){
 
         if($proces){
 
-           $readings = $proces->drykilnreadings()->simplePaginate(10);
+           $readings = $proces->drykilnreadings()->orderBy('created_at', 'desc')->simplePaginate(10);
            return view('drykiln.show', compact('drykiln', 'readings', 'proces'));
         }
      

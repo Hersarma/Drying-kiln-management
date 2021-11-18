@@ -23,7 +23,7 @@ class DryKilnConfigController extends Controller
             'probe_6_status' => 'nullable'
          ]);
 
-         DryKilnConfig::create($validator);
+         $dryKiln = DryKilnConfig::create($validator);
          
          $drying_proces = new DryingProces;
 

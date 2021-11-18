@@ -34,4 +34,28 @@ $(document).ready(function () {
 $('.modal_edit_drykiln').show();
 });
 </script>
+@elseif(count($errors->create_drykiln_config) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_create_drykiln_config').show();
+});
+</script>
+@elseif(count($errors->edit_drykiln_config) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_edit_drykiln_config').show();
+});
+</script>
+@elseif(count($errors->create_drykiln_readings) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_create_drykiln_readings').show();
+});
+</script>
+@elseif(count($errors->edit_drykiln_readings) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_edit_drykiln_readings').show();
+});
+</script>
 @endif

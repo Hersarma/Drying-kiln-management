@@ -28,7 +28,7 @@
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
               id="client" name="client">
               <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->create_timber_incoming->first('clients') }}
+                {{ $errors->create_drykiln_config->first('client') }}
               </p>
             </div>
           </div>
@@ -42,7 +42,7 @@
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
               id="type_of_wood" name="type_of_wood">
               <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->create_timber_incoming->first('type_of_wood') }}
+                {{ $errors->create_drykiln_config->first('type_of_wood') }}
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@
             <div class="md:w-2/3">
               <textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="notes" name="notes" rows="4"></textarea>
               <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->create_timber_incoming->first('notes') }}
+                {{ $errors->create_drykiln_config->first('notes') }}
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@
           </div>
           
           
-          <div class="flex justify-between">
+          <div class="flex justify-between mt-12 px-8">
             <button type="button"
             class="close_modal_create_drykiln_config py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">
             Otkaži

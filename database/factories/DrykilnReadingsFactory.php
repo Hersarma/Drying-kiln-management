@@ -22,7 +22,7 @@ class DrykilnReadingsFactory extends Factory
     public function definition()
     {
         return [
-            
+            'drying_proces_id' => 1,
             'temp_needed' => $this->faker->randomDigitNotNull() * 100,
             'temp_current' => $this->faker->randomDigitNotNull() * 100,
             'moisture_needed' => $this->faker->randomDigitNotNull() * 100,

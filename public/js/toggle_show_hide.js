@@ -7,6 +7,14 @@ user.click(function(e) {
     user_profile.toggle(500);
 });
 
+let legend = $("#legend_open");
+let legend_show = $("#legend_show");
+
+legend.click(function(e) {
+    e.preventDefault();
+    legend_show.toggle(500);
+});
+
 /*Timber*/
 let open_timber = $('.open_timber');
 let timber_links = $('.timber_links');

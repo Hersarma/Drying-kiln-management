@@ -11,16 +11,22 @@
         </h3>
       </div>
       <div class="w-3/4 md:w-full mx-auto">
-        <form method="post" action="#" class="py-8 px-8 md:px-0">
+        <form method="post" action="{{ route('create_drykiln_reading') }}" class="py-8 px-8 md:px-0">
           @csrf
           <input class="hidden" type="hidden" name="drying_proces_id" value="{{ $proces->id ?? ''}}">
           <div class="md:flex justify-between items-center">
             <div class="md:px-4 md:w-1/2">
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
+              @if($drykiln->dry_kiln_config->probe_1_status)
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Sonda 1
               </label>
+              @else
+              <label class="block font-bold text-gray-500 text-opacity-50 md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Sonda 1
+              </label>
+              @endif
               </div>
               <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
@@ -32,9 +38,15 @@
               </div>
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
+             @if($drykiln->dry_kiln_config->probe_2_status)
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Sonda 2
               </label>
+              @else
+              <label class="block font-bold text-gray-500 text-opacity-50 md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Sonda 2
+              </label>
+              @endif
               </div>
               <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
@@ -46,9 +58,15 @@
               </div>
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
+              @if($drykiln->dry_kiln_config->probe_3_status)
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Sonda 3
               </label>
+              @else
+              <label class="block font-bold text-gray-500 text-opacity-50 md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Sonda 3
+              </label>
+              @endif
               </div>
               <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
@@ -60,9 +78,15 @@
               </div>
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
+              @if($drykiln->dry_kiln_config->probe_4_status)
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Sonda 4
               </label>
+              @else
+              <label class="block font-bold text-gray-500 text-opacity-50 md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Sonda 4
+              </label>
+              @endif
               </div>
               <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
@@ -74,9 +98,15 @@
               </div>
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
+              @if($drykiln->dry_kiln_config->probe_5_status)
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Sonda 5
               </label>
+              @else
+              <label class="block font-bold text-gray-500 text-opacity-50 md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Sonda 5
+              </label>
+              @endif
               </div>
               <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
@@ -88,9 +118,15 @@
               </div>
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
+              @if($drykiln->dry_kiln_config->probe_6_status)
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Sonda 6
               </label>
+              @else
+              <label class="block font-bold text-gray-500 text-opacity-50 md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Sonda 6
+              </label>
+              @endif
               </div>
               <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"

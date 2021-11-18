@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="flex flex-wrap justify-between items-center">
-	<div class="w-full md:w-2/3 mx-auto px-4">
+	<div class="w-full md:w-2/3 px-4">
 		<div class="flex justify-center">
 			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="/img/vent.png">
@@ -92,23 +92,95 @@
 		</div>
 	</div>
 	
-	<div class="w-full md:w-1/3 mx-auto px-4 mt-20">
+	<div class="w-full md:w-1/3 px-4 mt-20">
+		<div class="relative mb-2 border-l-4 border-r-4 border-turquoise-light rounded-xl">
+		  <div class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+		  <button id="legend_open" class="
+		  px-4 md:px-8 py-2 text-base font-medium leading-5 text-gray-200 hover:text-white  focus:outline-none">
+		  <span class="inline-block px-4">Legenda</span><i class="fas fa-angle-down"></i></button>
+		  </div>
+		  <div id="legend_show"
+		  class="hidden absolute mt-6 shadow-lg">
+		  <div class="bg-gray-900 opacity-80 py-2 px-4">
+		  	<p class="text-gray-200 px-4 py-2">
+		  		<i class="fas fa-temperature-high fa-lg text-red-500 px-2"></i>
+		  	Temperatura u susari
+		  	</p>
+		  	<p class="text-gray-200 px-4 py-2">
+		  		<i class="fas fa-tint fa-lg text-blue-300 px-2"></i>
+		  	Vlaga u susari
+		  	</p>
+		  	<p class="text-gray-200 px-4 py-2">
+		  		<i class="fas fa-circle text-orange-600 px-2"></i>
+		  	Potrebna
+		  	</p>
+		  	<p class="text-gray-200 px-4 py-2">
+		  		<i class="fas fa-circle text-yellow-400 px-2"></i>
+		  	Trazena
+		  	</p>
+		  	<p class="text-gray-200 px-4 py-2">
+		  		<i class="fas fa-thermometer fa-lg text-gray-200 px-2"></i>
+		  	Prosecna vlaga sondi
+		  	</p>
+		  </div>
+		  </div>
+		</div>
 		<div class="border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 			<div class="flex justify-around items-center py-4">
 				<div class="flex items-center">
-					<i class="fas fa-temperature-high fa-5x text-red-500"></i>
+					<i class="fas fa-temperature-high fa-4x text-red-500"></i>
 				</div>
 				<div>
 					<div class="flex items-center">
-						<p class="text-gray-200 text-xl font-bold px-2"></p>
-						<i class="fas fa-genderless text-gray-200 -mt-2"></i>
-						<p class="text-gray-200">C</p>
+						@if($drykiln->drykilnreadings->count())
+						<p class="text-gray-200 text-xl font-bold">
+							<i class="fas fa-circle text-xs text-orange-600"></i>
+							{{ $drykiln->drykilnreadings()->latest()->first()->temp_needed }}
+						</p>
+						<i class="fas fa-genderless text-gray-200 -mt-4"></i>
+						<p class="text-gray-200">
+						C
+						</p>
+						<i class="fas fa-slash transform rotate-90 text-gray-200"></i>
+						<p class="text-gray-200 text-xl font-bold">
+							<i class="fas fa-circle text-yellow-400 text-xs"></i>
+							{{ $drykiln->drykilnreadings()->latest()->first()->temp_current }}
+						</p>
+						<i class="fas fa-genderless text-gray-200 -mt-4"></i>
+						<p class="text-gray-200">
+						C
+						</p>
+						@endif
 					</div>
 				</div>
 			</div>
 			<div class="flex justify-around items-center py-4">
-				<i class="fas fa-tint fa-5x text-blue-300"></i>
-				<p class="text-gray-200 text-xl font-bold"><i class="fas fa-percentage px-2"></i></p>
+				<i class="fas fa-tint fa-4x text-blue-300"></i>
+				<div class="flex items-center">
+					@if($drykiln->drykilnreadings->count())
+					<p class="text-gray-200 text-xl font-bold">
+					<i class="fas fa-circle text-xs text-orange-600"></i>
+					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_needed }}
+					<i class="fas fa-percentage"></i></p>
+					<i class="fas fa-slash transform rotate-90 text-gray-200"></i>
+					<p class="text-gray-200 text-xl font-bold">
+					<i class="fas fa-circle text-yellow-400 text-xs"></i>
+					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_current }}
+					<i class="fas fa-percentage"></i></p>
+					@endif
+				</div>
+				
+			</div>
+			<div class="flex justify-around items-center py-4">
+				<i class="fas fa-thermometer fa-3x text-gray-200 -ml-8"></i>
+				<div class="flex items-center">
+					@if($drykiln->drykilnreadings->count())
+					<p class="text-gray-200 text-xl font-bold">
+					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_probes_average }}
+					<i class="fas fa-percentage"></i></p>
+					@endif
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -134,30 +206,26 @@
 	<table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">
 		<thead>
 			<tr class="border-b border-turquoise-light">
-				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Temperatura</th>
-				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Vlaga</th>
 				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 1</th>
 				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 2</th>
 				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 3</th>
 				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 4</th>
 				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 5</th>
 				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 6</th>
+				<th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Vreme</th>
 			</tr>
 			
 		</thead>
 		<tbody>
 			@foreach($readings as $reading)
 			<tr class="group cursor-pointer bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
-				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->temp_needed }}<span class="px-1 text-green-400"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-				</span>{{ $reading->temp_current }}</td>
-				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_needed }}<span class="px-1 text-green-400"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-				</span>{{ $reading->moisture_current }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_1 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_2 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_3 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_4 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_5 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_6 ?: '/' }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->created_at->format('d-m-Y H:m') }}</td>
 			</tr>
 			@endforeach
 		</tbody>
