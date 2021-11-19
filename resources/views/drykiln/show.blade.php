@@ -33,7 +33,7 @@
 					<p class="text-gray-200">/</p>
 					@endif
 				</div>
-				<div class="md:flex md:justify-between md:items-center px-1 md:px-8">
+				<div class="flex justify-between items-center px-1 md:px-8">
 					<p class="py-4 text-gray-200 text-center">
 						<i class="fas fa-user fa-lg px-4"></i>
 						Klijenti
@@ -134,7 +134,7 @@
 					<div class="flex items-center">
 						@if($drykiln->drykilnreadings->count())
 						<p class="text-gray-200 text-xl font-bold">
-							<i class="fas fa-circle text-xs text-orange-600"></i>
+							<span class="text-orange-600">.</span>
 							{{ $drykiln->drykilnreadings()->latest()->first()->temp_needed }}
 						</p>
 						<i class="fas fa-genderless text-gray-200 -mt-4"></i>
@@ -143,7 +143,7 @@
 						</p>
 						<i class="fas fa-slash transform rotate-90 text-gray-200"></i>
 						<p class="text-gray-200 text-xl font-bold">
-							<i class="fas fa-circle text-yellow-400 text-xs"></i>
+							<span class="text-yellow-400">.</span>
 							{{ $drykiln->drykilnreadings()->latest()->first()->temp_current }}
 						</p>
 						<i class="fas fa-genderless text-gray-200 -mt-4"></i>
@@ -159,12 +159,12 @@
 				<div class="flex items-center">
 					@if($drykiln->drykilnreadings->count())
 					<p class="text-gray-200 text-xl font-bold">
-					<i class="fas fa-circle text-xs text-orange-600"></i>
+					<span class="text-orange-600">.</span>
 					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_needed }}
 					<i class="fas fa-percentage"></i></p>
 					<i class="fas fa-slash transform rotate-90 text-gray-200"></i>
 					<p class="text-gray-200 text-xl font-bold">
-					<i class="fas fa-circle text-yellow-400 text-xs"></i>
+					<span class="text-yellow-400">.</span>
 					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_current }}
 					<i class="fas fa-percentage"></i></p>
 					@endif
@@ -202,6 +202,8 @@
 		</button>
     </div>
   </div>
+</div>
+<div class="overflow-auto">
   @if($drykiln->drykilnreadings->count())
 	<table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">
 		<thead>

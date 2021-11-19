@@ -6,7 +6,12 @@ $(document).ready(function () {
         $.ajax({
             url:"/search_clients?query=" + query +"&url_name=" + url_name,
             success: function (data) {
-                $('#searchClient').html(data);
+                if (!data){   
+                    $('#searchClient').html('Nema rezultata');
+                }
+                else{   
+                    $('#searchClient').html(data);
+                }
             }
         })
     }
