@@ -61,6 +61,11 @@ let open_modal_create_drykiln_config = $(".open_modal_create_drykiln_config");
 let close_modal_create_drykiln_config = $(".close_modal_create_drykiln_config");
 let modal_create_drykiln_config = $(".modal_create_drykiln_config");
 
+/*Drykiln-config-edit*/
+let open_modal_edit_drykiln_config = $(".open_modal_edit_drykiln_config");
+let close_modal_edit_drykiln_config = $(".close_modal_edit_drykiln_config");
+let modal_edit_drykiln_config = $(".modal_edit_drykiln_config");
+
 /*Drykiln-readings-create*/
 let open_modal_create_drykiln_readings = $(".open_modal_create_drykiln_readings");
 let close_modal_create_drykiln_readings = $(".close_modal_create_drykiln_readings");
@@ -174,6 +179,16 @@ open_modal_create_drykiln_config.click(function(e) {
 close_modal_create_drykiln_config.click(function(e) {
     e.preventDefault();
     modal_create_drykiln_config.toggle(500);
+});
+
+open_modal_edit_drykiln_config.click(function(e) {
+    e.preventDefault();
+    modal_edit_drykiln_config.toggle(500);
+});
+
+close_modal_edit_drykiln_config.click(function(e) {
+    e.preventDefault();
+    modal_edit_drykiln_config.toggle(500);
 });
 
 open_modal_create_drykiln_readings.click(function(e) {

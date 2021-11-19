@@ -237,5 +237,6 @@
 	@endif
 </div>
 @include('drykiln.modals.create_drykiln_config')
+@include('drykiln.modals.edit_drykiln_config')
 @include('drykiln.modals.create_drykiln_readings')
 @endsection
