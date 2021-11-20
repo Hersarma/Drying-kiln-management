@@ -42,4 +42,10 @@ $(document).ready(function () {
         $('.modal_warning').toggle(500);
     });
 
+    $(document).on('click', '.get_route_id_drykiln', function () {
+        let href = $(this).children('span').text();
+        $('.route_id_drykiln').attr('action', href);
+        $('.modal_warning_powerof_drykiln').toggle(500);
+    });
+
 });

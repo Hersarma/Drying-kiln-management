@@ -1,14 +1,23 @@
-<div class="modal_edit_drykiln_config fixed hidden z-20 inset-0 overflow-y-auto">
+<div class="modal_edit_drykiln_config hidden fixed z-20 inset-0 overflow-y-auto">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 transition-opacity" aria-hidden="true">
       <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
     </div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
     <div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full md:w-2/3 shadow-2xl">
-      <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-base text-gray-200 leading-6 font-bold">
+      <div class="md:flex justify-between items-center md:px-20 md:py-8">
+        <div>
+          <h3 class="text-base text-gray-200 leading-6 font-bold py-4">
         Podesavanje susare
         </h3>
+        </div>
+        
+        <div class="mt-6 mb-6">
+          <p class="get_route_id_drykiln cursor-pointer transition ease-out duration-500 transform hover:scale-110"><span class="hidden">{{ route('delete_drykiln_config',$drykiln->dry_kiln_config->id )}}</span>
+            <i class="fa fa-power-off fa-3x text-red-500" aria-hidden="true"></i>
+          </p>
+          <p class="py-2 text-gray-200">Ugasi</p>
+        </div>
       </div>
       <div class="w-full px-4 mx-auto">
         <form method="post" action="{{ route('update_drykiln_config', $drykiln->dry_kiln_config->id) }}" class="py-8 px-8 md:px-0">

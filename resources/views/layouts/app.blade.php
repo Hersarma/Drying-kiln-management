@@ -36,6 +36,7 @@
             @include('messages.message_welcome')
             @include('errors.modal_errors')
             @include('messages.message_warning_delete')
+            @include('messages.message_warning_powerof_drykiln')
             @yield('content')
           </div>
         </div>

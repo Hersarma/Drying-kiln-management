@@ -56,4 +56,9 @@ class DryKilnConfigController extends Controller
     return back()->with('message', 'Konfiguracija uspesno snimljena');
 
    }
+
+   public function destroy(){
+
+    
+   }
 }
