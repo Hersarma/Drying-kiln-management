@@ -7,7 +7,7 @@ $(document).ready(function () {
             url:"/search_clients?query=" + query +"&url_name=" + url_name,
             success: function (data) {
                 if (!data){   
-                    $('#searchClient').html('Nema rezultata');
+                    $('#searchClient').html('<p class="text-white py-4">Nema rezultata</p>');
                 }
                 else{   
                     $('#searchClient').html(data);

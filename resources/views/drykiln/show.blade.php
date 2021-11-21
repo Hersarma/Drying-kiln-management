@@ -132,7 +132,7 @@
 				</div>
 				<div>
 					<div class="flex items-center">
-						@if($drykiln->drykilnreadings->count())
+						@if($drykiln->dry_kiln_config->dry_kiln_status)
 						<p class="text-gray-200 text-xl font-bold">
 							<span class="text-orange-600">.</span>
 							{{ $drykiln->drykilnreadings()->latest()->first()->temp_needed }}
@@ -157,7 +157,7 @@
 			<div class="flex justify-around items-center py-4">
 				<i class="fas fa-tint fa-4x text-blue-300"></i>
 				<div class="flex items-center">
-					@if($drykiln->drykilnreadings->count())
+					@if($drykiln->dry_kiln_config->dry_kiln_status)
 					<p class="text-gray-200 text-xl font-bold">
 					<span class="text-orange-600">.</span>
 					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_needed }}
@@ -174,7 +174,7 @@
 			<div class="flex justify-around items-center py-4">
 				<i class="fas fa-thermometer fa-3x text-gray-200 -ml-8"></i>
 				<div class="flex items-center">
-					@if($drykiln->drykilnreadings->count())
+					@if($drykiln->dry_kiln_config->dry_kiln_status)
 					<p class="text-gray-200 text-xl font-bold">
 					{{ $drykiln->drykilnreadings()->latest()->first()->moisture_probes_average }}
 					<i class="fas fa-percentage"></i></p>
@@ -197,14 +197,14 @@
 		</button>
 		@endif
 		<button
-				class="font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
+				class="font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl"><a href="{{ route('drying_proces', $drykiln) }}">dadda</a>
 				Istorija susenja
 		</button>
     </div>
   </div>
 </div>
 <div class="overflow-auto">
-  @if($drykiln->drykilnreadings->count())
+  @if($drykiln->dry_kiln_config->dry_kiln_status)
 	<table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">
 		<thead>
 			<tr class="border-b border-turquoise-light">
@@ -237,6 +237,8 @@
 	@endif
 </div>
 @include('drykiln.modals.create_drykiln_config')
+@if($drykiln->dry_kiln_config()->exists())
 @include('drykiln.modals.edit_drykiln_config')
+@endif
 @include('drykiln.modals.create_drykiln_readings')
 @endsection

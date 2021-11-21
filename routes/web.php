@@ -24,6 +24,8 @@ Route::post('/delete_checked_incoming_timber', 'TimberIncomingController@destroy
 
 /*Dry kiln*/
 Route::resource('drykiln', 'DryKilnController');
+Route::get('/drykiln/proces/{drykiln}', 'DryingProcesController@index')->name('drying_proces');
+Route::get('/drykiln/proces/show/{dryingProces}', 'DryingProcesController@show')->name('show_drying_proces');
 Route::post('/create_drykiln_config', 'DryKilnConfigController@store')->name('create_drykiln_config');
 Route::post('/update_drykiln_config/{drykilnconfig}', 'DryKilnConfigController@update')->name('update_drykiln_config');
 Route::post('/delete_drykiln_config/{drykilnconfig}', 'DryKilnConfigController@destroy')->name('delete_drykiln_config');

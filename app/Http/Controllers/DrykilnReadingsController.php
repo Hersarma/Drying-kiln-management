@@ -17,10 +17,10 @@ class DrykilnReadingsController extends Controller
             'moisture_probe_5' => 'nullable',
             'moisture_probe_6' => 'nullable',
             'moisture_probes_average' => 'nullable',
-            'temp_current' => 'required',
-            'temp_needed' => 'required',
-            'moisture_current' => 'required',
-            'moisture_needed' => 'required'
+            'temp_current' => 'nullable',
+            'temp_needed' => 'nullable',
+            'moisture_current' => 'nullable',
+            'moisture_needed' => 'nullable'
         ]);
 
         DrykilnReadings::create($validator);

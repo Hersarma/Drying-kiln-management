@@ -23,7 +23,7 @@ class DryKilnConfigController extends Controller
             'probe_6_status' => 'nullable'
          ]);
 
-         $dryKiln = DryKilnConfig::create($validator);
+         DryKilnConfig::create($validator);
          
          $drying_proces = new DryingProces;
 
@@ -31,6 +31,8 @@ class DryKilnConfigController extends Controller
          $drying_proces->active = true;
 
          $drying_proces->save();
+
+         $drying_proces->drykilnreadings()->create();
 
          return redirect(route('drykiln.index'))->with('message', 'Susara uspesno startovana');
 
@@ -57,8 +59,16 @@ class DryKilnConfigController extends Controller
 
    }
 
-   public function destroy(){
+   public function destroy(DryKilnConfig $drykilnconfig){
 
+    $drykiln = $drykilnconfig->dry_kiln()->first();
+    $proces = $drykiln->dryKilnProces()->where('active', true)->first();
+    $proces->active = false;
+    $proces->save();
+    //dd($proces);
+    $drykilnconfig->delete();
+
+    return redirect(route('drykiln.show', $drykiln))->with('message', 'Proces susenja zavrsen');
     
    }
 }
