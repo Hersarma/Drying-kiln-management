@@ -26,7 +26,7 @@ public function store(Request $request){
 
 public function show(DryKiln $drykiln){
 
-        //dd($drykiln->dry_kiln_config);
+        
         $proces = $drykiln->dryKilnProces()->where('active', true)->first();
 
         if($proces){
