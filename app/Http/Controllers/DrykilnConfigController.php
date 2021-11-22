@@ -34,7 +34,7 @@ class DryKilnConfigController extends Controller
 
          $drying_proces->drykilnreadings()->create();
 
-         return redirect(route('drykiln.index'))->with('message', 'Susara uspesno startovana');
+         return redirect(route('drykiln.show', $request->dry_kiln_id))->with('message', 'Susara uspesno startovana');
 
     }
 

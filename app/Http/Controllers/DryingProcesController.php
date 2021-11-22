@@ -49,7 +49,9 @@ class DryingProcesController extends Controller
      */
     public function show(DryingProces $dryingProces)
     {
-        dd($dryingProces);
+        $dryKilnReadings = $dryingProces->drykilnreadings()->orderBy('created_at', 'desc')->simplePaginate(10);
+
+        return view('drykiln.drying_proces_show', compact('dryingProces', 'dryKilnReadings'));
     }
 
     /**
