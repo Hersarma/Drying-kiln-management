@@ -12,7 +12,7 @@
 		<div class="border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 			<div>
 				<div class="flex justify-between items-center py-4 px-4">
-					<p class="py-1 px-1 text-white text-xl font-bold">Susara: {{ $drykiln->name }}</p>
+					<p class="py-1 px-1 text-white text-xl font-bold">Sušara: {{ $drykiln->name }}</p>
 					<p class="py-1 px-1 text-white text-xl font-bold">Status:
 						@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 						<span class="text-gray-500">Neaktivna</span>
@@ -25,7 +25,7 @@
 				<div class="flex justify-between items-center px-1 md:px-8">
 					<p class="py-4 text-gray-200">
 						<i class="fas fa-clock fa-lg px-4"></i>
-						Pocetak procesa
+						Početak procesa
 					</p>
 					@if(!empty($drykiln->dry_kiln_config->created_at))
 					<p class="text-gray-200">{{ $drykiln->dry_kiln_config->created_at->format('d-m-Y H:m') }}</p>
@@ -79,7 +79,7 @@
 				@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 				<button
 				class="open_modal_create_drykiln_config font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
-				Startuj susaru
+				Startuj sušaru
 				</button>
 				@else
 				<button
@@ -104,11 +104,11 @@
 		  <div class="bg-gray-900 opacity-80 py-2 px-4">
 		  	<p class="text-gray-200 px-4 py-2">
 		  		<i class="fas fa-temperature-high fa-lg text-red-500 px-2"></i>
-		  	Temperatura u susari
+		  	Temperatura u sušari
 		  	</p>
 		  	<p class="text-gray-200 px-4 py-2">
 		  		<i class="fas fa-tint fa-lg text-blue-300 px-2"></i>
-		  	Vlaga u susari
+		  	Vlaga u sušari
 		  	</p>
 		  	<p class="text-gray-200 px-4 py-2">
 		  		<i class="fas fa-circle text-orange-600 px-2"></i>
@@ -188,7 +188,7 @@
 
 <div class="px-4 py-6">
 	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-    <p class="px-8 text-gray-200">Proces susenja</p>
+    <p class="px-8 text-gray-200">Proces sušenja</p>
     <div class="flex space-x-4">
     	@if($drykiln->dry_kiln_config->dry_kiln_status)
     	<button
@@ -199,7 +199,7 @@
 		<a href="{{ route('drying_proces', $drykiln) }}">
 		<button
 				class="font-bold transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
-				Istorija susenja
+				Istorija sušenja
 		</button></a>
     </div>
   </div>

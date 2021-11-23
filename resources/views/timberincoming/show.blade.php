@@ -13,7 +13,7 @@
             {{ Ucfirst($client->name)}}
             </p>
               <p class="py-4 px-2 text-gray-200">
-                <i class="fas fa-sticky-note fa-lg px-2"></i><span>Beleske: </span>
+                <i class="fas fa-sticky-note fa-lg px-2"></i><span>Beleške: </span>
                 {{ Ucfirst($timberincoming->notes)}}
               </p>
         </div>
@@ -41,13 +41,13 @@
                               
                             </th>
                             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-                              Vrsta gradje
+                              Vrsta građe
                             </th>
                             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
                               Broj paleta
                             </th>
                             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-                              Kubikaza
+                              Kubikaža
                             </th>
                           </tr>
                         </thead>

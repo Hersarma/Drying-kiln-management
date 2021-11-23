@@ -7,7 +7,7 @@
     <div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full md:w-2/3 shadow-2xl">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-base text-gray-200 leading-6 font-bold">
-        Podesavanje susare
+        Podešavanje sušare
         </h3>
       </div>
       <div class="w-full px-4 mx-auto">
@@ -50,7 +50,7 @@
           <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
             <div class="md:w-1/3">
               <label class="block  font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
-                Beleske
+                Beleške
               </label>
             </div>
             <div class="md:w-2/3">

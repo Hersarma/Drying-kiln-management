@@ -8,7 +8,7 @@
       <div class="md:flex justify-between items-center md:px-20 md:py-8">
         <div>
           <h3 class="text-base text-gray-200 leading-6 font-bold py-4">
-        Podesavanje susare
+        Podešavanje sušare
         </h3>
         </div>
         
@@ -57,7 +57,7 @@
           <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
             <div class="md:w-1/3">
               <label class="block  font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
-                Beleske
+                Beleške
               </label>
             </div>
             <div class="md:w-2/3">

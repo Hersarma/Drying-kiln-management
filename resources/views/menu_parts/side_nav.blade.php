@@ -50,9 +50,9 @@
     </li>
     <li class="group py-6 px-4 cursor-pointer text-gray-300">
       <a href="#" class="no-underline flex items-center">
-        <i class="fas fa-euro-sign group-hover:text-turquoise-light"></i>
+        <i class="fas fa-envelope group-hover:text-turquoise-light"></i>
         <p class="focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
-          Troskovi
+          Pošta
         </p>
       </a>
     </li>
@@ -72,13 +72,13 @@
         <li class="flex-1 py-3 {{ Request::is('invoices') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
           <a href="#"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
-            Racun
+            Račun
           </a>
         </li>
         <li class="flex-1 py-3 {{ Request::is('invoices/estimates') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
           <a href="#"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
-            Predracun
+            Predračun
           </a>
         </li>
       </ul>
@@ -87,7 +87,7 @@
       <a href="#" class="no-underline flex items-center">
         <i class="fas fa-cogs group-hover:text-turquoise-light"></i>
         <p class="focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
-          Podesavanja
+          Podešavanja
         </p>
       </a>
     </li>

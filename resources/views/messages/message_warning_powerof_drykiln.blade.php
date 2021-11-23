@@ -8,10 +8,10 @@
       <div class="px-4 py-5 sm:px-6">
         <p class="text-red-500"><i class="fas fa-exclamation-triangle fa-2x"></i></p>
         <p class="py-4 text-base text-gray-200 leading-6 font-bold">
-          Ova akcija ne moze da se ponisti!
+          Ova akcija ne moze da se poništi!
         </p>
         <p class="py-4 text-base text-gray-200 leading-6 font-bold">
-          Zavrsiti proces susenja.
+          Zavrsiti proces sušenja.
         </p>
       </div>
       <div class="w-full mx-auto">
