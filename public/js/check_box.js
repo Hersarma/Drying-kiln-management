@@ -23,5 +23,10 @@ $(".check_all").click(function () {
         $('.trash').hide();
     }
 });
+
+$(document).on('keyup', '.comma', function () {
+        this.value = this.value.replace(/,/g, '.');
+    });
+
 });
 

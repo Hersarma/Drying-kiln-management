@@ -113,7 +113,7 @@
 						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[0][type_of_wood]">
 						  </td>
 						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[0][number_of_pallets]"></td>
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[0][m3]"></td>
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl" type="text" name="items[0][m3]"></td>
 						   <td id="add" class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button"
 					        class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
 					        <i class="fa fa-plus" aria-hidden="true"></i>
