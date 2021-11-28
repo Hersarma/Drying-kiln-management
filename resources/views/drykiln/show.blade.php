@@ -112,11 +112,11 @@
 		  	</p>
 		  	<p class="text-gray-200 px-4 py-2">
 		  		<i class="fas fa-circle text-orange-600 px-2"></i>
-		  	Potrebna
+		  	Tražena
 		  	</p>
 		  	<p class="text-gray-200 px-4 py-2">
 		  		<i class="fas fa-circle text-yellow-400 px-2"></i>
-		  	Trazena
+		  	Trenutna
 		  	</p>
 		  	<p class="text-gray-200 px-4 py-2">
 		  		<i class="fas fa-thermometer fa-lg text-gray-200 px-2"></i>
