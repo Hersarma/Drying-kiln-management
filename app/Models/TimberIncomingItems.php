@@ -9,7 +9,7 @@ class TimberIncomingItems extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['type_of_wood', 'number_of_pallets', 'm3'];
+    protected $fillable= ['item_name', 'quantity', 'cubic_metre'];
     public function timberincoming(){
         
         return $this->belongsTo(TimberIncoming::class);

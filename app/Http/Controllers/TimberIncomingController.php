@@ -35,9 +35,9 @@ class TimberIncomingController extends Controller
             'notes' => 'nullable',
             'transport_company' => 'nullable',
             'invoice_number' => 'nullable',
-            'items.*.type_of_wood' => 'required',
-            'items.*.number_of_pallets' => 'numeric|required',
-            'items.*.m3' => 'numeric|required'
+            'items.*.item_name' => 'required',
+            'items.*.quantity' => 'numeric|required',
+            'items.*.cubic_metre' => 'numeric|required'
         ]);
        
         $timberincoming = TimberIncoming::create($validate);
@@ -77,9 +77,9 @@ class TimberIncomingController extends Controller
             'notes' => 'nullable',
             'transport_company' => 'nullable',
             'invoice_number' => 'nullable',
-            'items.*.type_of_wood' => 'required',
-            'items.*.number_of_pallets' => 'numeric|required',
-            'items.*.m3' => 'numeric|required'
+            'items.*.item_name' => 'required',
+            'items.*.quantity' => 'numeric|required',
+            'items.*.cubic_metre' => 'numeric|required'
         ]);
 
         $timberincoming->update($validate);

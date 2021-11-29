@@ -33,7 +33,9 @@
         </div>
         
     </div>
-      
+      <div class="">
+        <p class="px-8 py-4 text-center font-bold text-lg text-gray-200">Artikli</p>
+      </div>
       <table class="table-auto w-full text-left whitespace-normal">
                         <thead>
                           <tr class="border-b border-turquoise-light">
@@ -59,13 +61,13 @@
                             {{ $loop->iteration }}
                           </td>
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
-                            {{ $timber->type_of_wood }}
+                            {{ $timber->item_name }}
                           </td>
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
-                              {{ $timber->number_of_pallets }}
+                              {{ $timber->quantity }}
                           </td>
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
-                              {{ $timber->m3 }}
+                              {{ $timber->cubic_metre }}
                           </td>
                           </tr>
                           @endforeach
