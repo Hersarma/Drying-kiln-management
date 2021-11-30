@@ -16,10 +16,9 @@ class CreateTimberOutgoingsTable extends Migration
         Schema::create('timber_outgoings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id');
-            $table->string('type_of_wood')->nullable();
-            $table->integer('number_of_pallets')->nullable();
-            $table->float('m3', 8, 2)->nullable();
             $table->longText('notes')->nullable();
+            $table->string('transport_company')->nullable();
+            $table->string('invoice_number')->nullable();
             $table->timestamps();
 
             $table->foreign('client_id')

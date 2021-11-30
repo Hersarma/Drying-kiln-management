@@ -10,17 +10,17 @@ class DrykilnReadingsController extends Controller
 
         $validator = $request->validateWithBag('create_drykiln_readings',[
             'drying_proces_id' => 'required',
-            'moisture_probe_1' => 'nullable',
-            'moisture_probe_2' => 'nullable',
-            'moisture_probe_3' => 'nullable',
-            'moisture_probe_4' => 'nullable',
-            'moisture_probe_5' => 'nullable',
-            'moisture_probe_6' => 'nullable',
-            'moisture_probes_average' => 'nullable',
-            'temp_current' => 'nullable',
-            'temp_needed' => 'nullable',
-            'moisture_current' => 'nullable',
-            'moisture_needed' => 'nullable'
+            'moisture_probe_1' => 'nullable|numeric',
+            'moisture_probe_2' => 'nullable|numeric',
+            'moisture_probe_3' => 'nullable|numeric',
+            'moisture_probe_4' => 'nullable|numeric',
+            'moisture_probe_5' => 'nullable|numeric',
+            'moisture_probe_6' => 'nullable|numeric',
+            'moisture_probes_average' => 'nullable|numeric',
+            'temp_current' => 'nullable|numeric',
+            'temp_needed' => 'nullable|numeric',
+            'moisture_current' => 'nullable|numeric',
+            'moisture_needed' => 'nullable|numeric'
         ]);
 
         DrykilnReadings::create($validator);

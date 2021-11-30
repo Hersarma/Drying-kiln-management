@@ -21,6 +21,7 @@ Route::post('/delete_checked_clients', 'ClientController@destroyChecked')->name(
 Route::resource('timberincoming', 'TimberIncomingController');
 Route::resource('timberoutgoing', 'TimberOutgoingController');
 Route::post('/delete_checked_incoming_timber', 'TimberIncomingController@destroyChecked')->name('delete_checked_incoming_timber');
+Route::post('/delete_checked_outgoing_timber', 'TimberOutgoingController@destroyChecked')->name('delete_checked_outgoing_timber');
 
 /*Dry kiln*/
 Route::resource('drykiln', 'DryKilnController');

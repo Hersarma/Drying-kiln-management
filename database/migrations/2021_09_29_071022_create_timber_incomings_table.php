@@ -17,8 +17,8 @@ class CreateTimberIncomingsTable extends Migration
             $table->id();
             $table->foreignId('client_id');
             $table->longText('notes')->nullable();
-            $table->string('transport_company');
-            $table->string('invoice_number');
+            $table->string('transport_company')->nullable();
+            $table->string('invoice_number')->nullable();
             $table->timestamps();
 
             $table->foreign('client_id')

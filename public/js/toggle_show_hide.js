@@ -27,6 +27,16 @@ let open_modal_edit_timber_incoming = $(".open_modal_edit_timber_incoming");
 let close_modal_edit_timber_incoming = $(".close_modal_edit_timber_incoming");
 let modal_edit_timber_incoming = $(".modal_edit_timber_incoming");
 
+
+let open_modal_create_timber_outgoing = $(".open_modal_create_timber_outgoing");
+let close_modal_create_timber_outgoing = $(".close_modal_create_timber_outgoing");
+let modal_create_timber_outgoing = $(".modal_create_timber_outgoing");
+
+let open_modal_edit_timber_outgoing = $(".open_modal_edit_timber_outgoing");
+let close_modal_edit_timber_outgoing = $(".close_modal_edit_timber_outgoing");
+let modal_edit_timber_outgoing = $(".modal_edit_timber_outgoing");
+
+
 /*Client-create*/
 let open_modal_create_client = $(".open_modal_create_client");
 let close_modal_create_client = $(".close_modal_create_client");
@@ -141,7 +151,7 @@ close_modal_create_client.click(function(e) {
     modal_create_client.toggle(500);
 });
 
-/*Timber modals*/
+/*Timber incoming modals*/
 open_modal_create_timber_incoming.click(function(e) {
     e.preventDefault();
     modal_create_timber_incoming.toggle(500);
@@ -160,6 +170,28 @@ open_modal_edit_timber_incoming.click(function(e) {
 close_modal_edit_timber_incoming.click(function(e) {
     e.preventDefault();
     modal_edit_timber_incoming.toggle(500);
+});
+
+/*Timber outgoing modals*/
+
+open_modal_create_timber_outgoing.click(function(e) {
+    e.preventDefault();
+    modal_create_timber_outgoing.toggle(500);
+});
+
+close_modal_create_timber_outgoing.click(function(e) {
+    e.preventDefault();
+    modal_create_timber_outgoing.toggle(500);
+});
+
+open_modal_edit_timber_outgoing.click(function(e) {
+    e.preventDefault();
+    modal_edit_timber_outgoing.toggle(500);
+});
+
+close_modal_edit_timber_outgoing.click(function(e) {
+    e.preventDefault();
+    modal_edit_timber_outgoing.toggle(500);
 });
 
 /*Timber links*/
