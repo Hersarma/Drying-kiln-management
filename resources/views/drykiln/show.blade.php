@@ -38,7 +38,7 @@
 						<i class="fas fa-user fa-lg px-4"></i>
 						Klijenti
 					</p>
-					<p class="py-4 text-gray-200">{{ $drykiln->dry_kiln_config->client ?: '/'}}</p>
+					<p class="py-4 text-gray-200">{{ Str::of($drykiln->dry_kiln_config->client)->replaceLast(',', '.')  ?: '/'}}</p>
 				</div>
 				<div class="flex justify-between items-center px-1 md:px-8">
 					<p class="py-4 text-gray-200">

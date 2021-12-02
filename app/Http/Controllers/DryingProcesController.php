@@ -16,8 +16,12 @@ class DryingProcesController extends Controller
     public function index(DryKiln $drykiln)
     {
         $dryingProces = $drykiln->dryKilnProces()->where('active', false)->simplePaginate(10);
-        //dd($dryingProces);
-        return view('drykiln.drying_proces', compact('dryingProces'));
+        
+        if($dryingProces->isNotEmpty()){
+            return view('drykiln.drying_proces', compact('dryingProces'));
+        }
+       
+        return back()->with('message_warning', 'Ne postoji istorija susenja');
     }
 
     /**

@@ -33,6 +33,7 @@
           
           <div class="mt-24 mx-auto">
             @include('messages.message_success')
+            @include('messages.message_warning')
             @include('messages.message_welcome')
             @include('errors.modal_errors')
             @include('messages.message_warning_delete')

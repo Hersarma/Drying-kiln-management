@@ -26,16 +26,16 @@ public function store(Request $request){
 
 public function show(DryKiln $drykiln){
 
-        
+        $clients = Client::orderBy('name', 'asc')->simplePaginate(50,['name']);
         $proces = $drykiln->dryKilnProces()->where('active', true)->first();
 
         if($proces){
 
            $readings = $proces->drykilnreadings()->orderBy('created_at', 'asc')->simplePaginate(10);
-           return view('drykiln.show', compact('drykiln', 'readings', 'proces'));
+           return view('drykiln.show', compact('drykiln', 'readings', 'proces', 'clients'));
         }
      
-    return view('drykiln.show', compact('drykiln'));
+    return view('drykiln.show', compact('drykiln', 'clients'));
 }
 
 public function destroy(DryKiln $drykiln){

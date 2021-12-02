@@ -33,7 +33,8 @@ $(document).ready(function () {
     $(document).on('click', '.get_client_name', function () {
         $(".set_client").show();
         let client =$(this).text();
-         $(".set_client").append(client);
+         $(".set_client").append(client + ',');
+         $('.client_name_value').val($('.client_name_value').val() + client + ',');
     });
 
     $(document).on('click', '.get_route_id', function () {
