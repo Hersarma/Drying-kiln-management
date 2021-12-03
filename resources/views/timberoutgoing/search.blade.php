@@ -7,7 +7,7 @@
   <td onclick="window.location = '{{ route('clients.show',$timber->clients->id )}}'" class="cursor-pointer px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600">{{ $timber->clients->name ?: '/' }}</td>
    <td class="px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600">{{ $timber->notes ?: '/' }}</td>
   <td class="px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600">{{ $timber->created_at->format('d-m-Y H:m') ?: '/' }}</td>
-  <td  class="px-4 py-3 text-center"><a href="{{ route('timberincoming.show',$timber )}}"
+  <td  class="px-4 py-3 text-center"><a href="{{ route('timberoutgoing.show',$timber )}}"
   class="text-teal-400 hover:text-teal-700"><i class="transition ease-out duration-500 transform hover:scale-110 far fa-eye fa-lg"></i></a></td>
   <td  class="px-4 py-3 text-center"><p
     class="cursor-pointer get_route_id text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i><span class="hidden">{{route('timberoutgoing.destroy', $timber)}}</span></p></td>

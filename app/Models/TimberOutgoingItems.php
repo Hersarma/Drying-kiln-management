@@ -9,7 +9,7 @@ class TimberOutgoingItems extends Model
 {
     use HasFactory;
 
-    rotected $fillable= ['item_name', 'quantity', 'cubic_metre'];
+    protected $fillable= ['item_name', 'quantity', 'cubic_metre'];
     public function timberoutgoing(){
         
         return $this->belongsTo(TimberOutgoing::class);
