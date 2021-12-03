@@ -11,7 +11,7 @@
       </a>
     </li>
     
-    <li class="group px-4 cursor-pointer text-gray-300 {{ Request::is('timberincoming','timberincoming/*', 'timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
+    <li class="group px-4 cursor-pointer text-gray-300 {{ Request::is('incoming','incoming/*', 'timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
       <div class="open_timber flex justify-between items-center py-6">
         <div class="flex items-center">
           <i class="fas fa-truck group-hover:text-turquoise-light"></i>
@@ -24,8 +24,8 @@
         </div>
       </div>
       <ul class="timber_links hidden py-3 text-center">
-        <li class="flex-1 py-3 {{ Request::is('timberincoming','timberincoming/*') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
-          <a href="{{ route('timberincoming.index') }}"
+        <li class="flex-1 py-3 {{ Request::is('incoming','incoming/*') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
+          <a href="{{ route('incoming.index') }}"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
             <i class="fas fa-sign-in-alt group-hover:text-turquoise-light px-4"></i>
             Ulaz

@@ -19,13 +19,13 @@ legend.click(function(e) {
 let open_timber = $('.open_timber');
 let timber_links = $('.timber_links');
 
-let open_modal_create_timber_incoming = $(".open_modal_create_timber_incoming");
-let close_modal_create_timber_incoming = $(".close_modal_create_timber_incoming");
-let modal_create_timber_incoming = $(".modal_create_timber_incoming");
+let open_modal_create_incoming = $(".open_modal_create_incoming");
+let close_modal_create_incoming = $(".close_modal_create_incoming");
+let modal_create_incoming = $(".modal_create_incoming");
 
-let open_modal_edit_timber_incoming = $(".open_modal_edit_timber_incoming");
-let close_modal_edit_timber_incoming = $(".close_modal_edit_timber_incoming");
-let modal_edit_timber_incoming = $(".modal_edit_timber_incoming");
+let open_modal_edit_incoming = $(".open_modal_edit_incoming");
+let close_modal_edit_incoming = $(".close_modal_edit_incoming");
+let modal_edit_incoming = $(".modal_edit_incoming");
 
 
 let open_modal_create_timber_outgoing = $(".open_modal_create_timber_outgoing");
@@ -152,24 +152,24 @@ close_modal_create_client.click(function(e) {
 });
 
 /*Timber incoming modals*/
-open_modal_create_timber_incoming.click(function(e) {
+open_modal_create_incoming.click(function(e) {
     e.preventDefault();
-    modal_create_timber_incoming.toggle(500);
+    modal_create_incoming.toggle(500);
 });
 
-close_modal_create_timber_incoming.click(function(e) {
+close_modal_create_incoming.click(function(e) {
     e.preventDefault();
-    modal_create_timber_incoming.toggle(500);
+    modal_create_incoming.toggle(500);
 });
 
-open_modal_edit_timber_incoming.click(function(e) {
+open_modal_edit_incoming.click(function(e) {
     e.preventDefault();
-    modal_edit_timber_incoming.toggle(500);
+    modal_edit_incoming.toggle(500);
 });
 
-close_modal_edit_timber_incoming.click(function(e) {
+close_modal_edit_incoming.click(function(e) {
     e.preventDefault();
-    modal_edit_timber_incoming.toggle(500);
+    modal_edit_incoming.toggle(500);
 });
 
 /*Timber outgoing modals*/

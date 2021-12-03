@@ -16,9 +16,9 @@ class IncomingController extends Controller
     public function index()
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $timberincoming = Incoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
+        $incoming = Incoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('timberincoming.index', compact('timberincoming', 'clients'));
+        return view('incoming.index', compact('incoming', 'clients'));
     }
 
    
@@ -30,7 +30,7 @@ class IncomingController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = request()->validateWithBag('create_timber_incoming', [
+        $validate = request()->validateWithBag('create_incoming', [
             'client_id' => 'required',
             'notes' => 'nullable',
             'transport_company' => 'nullable',
@@ -40,39 +40,40 @@ class IncomingController extends Controller
             'items.*.cubic_metre' => 'numeric|required'
         ]);
        
-        $timberincoming = Incoming::create($validate);
+        $incoming = Incoming::create($validate);
   
         foreach($request->items as $item) {
-            $timberincoming->incomingitems()->create($item);
+            $incoming->incomingitems()->create($item);
         }
         
-        return redirect(route('timberincoming.index'))->with('message', 'Uspesan unos.');
+        return redirect(route('incoming.index'))->with('message', 'Uspesan unos.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Incoming  $timberIncoming
+     * @param  \App\Models\Incoming  $Incoming
      * @return \Illuminate\Http\Response
      */
-    public function show(Incoming $timberincoming)
+    public function show(Incoming $incoming)
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $items = $timberincoming->incomingitems()->get();
-        $client = $timberincoming->clients()->first();
-        return view('timberincoming.show', compact('client','clients', 'items', 'timberincoming'));
+        $items = $incoming->incomingitems()->get();
+        $client = $incoming->clients()->first();
+        return view('incoming.show', compact('client','clients', 'items', 'incoming'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Incoming  $timberIncoming
+     * @param  \App\Models\Incoming  $Incoming
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Incoming $timberincoming)
+    public function update(Request $request, Incoming $incoming)
     {
-         $validate = request()->validateWithBag('edit_timber_incoming', [
+        //dd($request->items);
+         $validate = request()->validateWithBag('edit_incoming', [
             'client_id' => 'required',
             'notes' => 'nullable',
             'transport_company' => 'nullable',
@@ -82,32 +83,36 @@ class IncomingController extends Controller
             'items.*.cubic_metre' => 'numeric|required'
         ]);
 
-        $timberincoming->update($validate);
+        $incoming->update($validate);
 
          foreach($request->items as $item) {
-            $timberincoming->incomingitems()->update($item);
+            IncomingItems::where('id', '=', $item['id'])->update([
+                'item_name' => $item['item_name'],
+                'quantity' => $item['quantity'],
+                'cubic_metre' => $item['cubic_metre']
+            ]);
         }
         
-        return redirect(route('timberincoming.show', $timberincoming))->with('message', 'Uspesna izmena.');
+        return redirect(route('incoming.show', $incoming))->with('message', 'Uspesna izmena.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Incoming  $timberIncoming
+     * @param  \App\Models\Incoming  $Incoming
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Incoming $timberincoming)
+    public function destroy(Incoming $incoming)
     {
-        $timberincoming->delete();
+        $incoming->delete();
 
-        return redirect(route('timberincoming.index'))->with('message', 'Ulaz uspesno obrisan.');
+        return redirect(route('incoming.index'))->with('message', 'Ulaz uspesno obrisan.');
     }
 
     public function destroyChecked(Request $request){
 
         Incoming::whereIn('id', $request->input('deleteChecked'))->delete();
 
-        return redirect(route('timberincoming.index'))->with('message', 'Svi Ulazi su uspesno obrisani.');
+        return redirect(route('incoming.index'))->with('message', 'Svi Ulazi su uspesno obrisani.');
     }
 }

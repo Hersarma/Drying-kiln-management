@@ -1,4 +1,4 @@
-<div class="modal_create_timber_incoming hidden fixed z-20 inset-0 overflow-y-auto">
+<div class="modal_create_incoming hidden fixed z-20 inset-0 overflow-y-auto">
 	<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 		<div class="fixed inset-0 transition-opacity" aria-hidden="true">
 			<div class="absolute inset-0 bg-gray-900 opacity-75"></div>
@@ -11,7 +11,7 @@
 				</h3>
 			</div>
 			<div class="w-full max-w-5xl mx-auto">
-				<form method="post" action="{{ route('timberincoming.store') }}" class="py-8 px-8 md:px-0">
+				<form method="post" action="{{ route('incoming.store') }}" class="py-8 px-8 md:px-0">
 					@csrf
 					<input id="client_id" class="hidden" name="client_id" value="">
 					<div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
@@ -25,7 +25,7 @@
 								<button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
 							</div>
 							<p class="text-red-500 text-sm italic mt-4">
-								{{ $errors->create_timber_incoming->first('client_id') }}
+								{{ $errors->create_incoming->first('client_id') }}
 							</p>
 							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
 								@if($clients->count())
@@ -36,7 +36,7 @@
 									<p id="url_name" class="hidden">{{ Request::path() }}</p>
 								</div>
 								<ul id="searchClient">
-									@include('timberincoming.search_client')
+									@include('incoming.search_client')
 								</ul>
 								@else
 								<div class="mt-10">
@@ -57,7 +57,7 @@
 		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
 		                  id="transport_company" name="transport_company">
 		                  <p class="text-red-500 text-sm italic mt-4">
-		                    {{ $errors->create_timber_incoming->first('transport_company') }}
+		                    {{ $errors->create_incoming->first('transport_company') }}
 		                  </p>
 		                </div>
 		            </div>
@@ -71,7 +71,7 @@
 		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
 		                  id="invoice_number" name="invoice_number">
 		                  <p class="text-red-500 text-sm italic mt-4">
-		                    {{ $errors->create_timber_incoming->first('invoice_number') }}
+		                    {{ $errors->create_incoming->first('invoice_number') }}
 		                  </p>
 		                </div>
 		            </div>
@@ -84,7 +84,7 @@
 						<div class="md:w-2/3">
 							<textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="notes" name="notes" rows="4"></textarea>
 							<p class="text-red-500 text-sm italic mt-4">
-								{{ $errors->create_timber_incoming->first('notes') }}
+								{{ $errors->create_incoming->first('notes') }}
 							</p>
 						</div>
 					</div>
@@ -125,7 +125,7 @@
 					</div>
 					<div class="flex justify-between py-4">
 						<button type="button"
-						class="close_modal_create_timber_incoming py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">
+						class="close_modal_create_incoming py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">
 						Otkaži
 						</button>
 						<button type="submit"
@@ -134,7 +134,7 @@
 						</button>
 					</div>
 					<div>
-						@if($errors->create_timber_incoming->any())
+						@if($errors->create_incoming->any())
 						<p class="text-red-500">Polja ne mogu biti prazna</p>
 						@endif
 					</div>

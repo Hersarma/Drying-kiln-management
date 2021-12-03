@@ -1,13 +1,13 @@
-@if(count($errors->create_timber_incoming) > 0)
+@if(count($errors->create_incoming) > 0)
 <script>
 $(document).ready(function () {
-$('.modal_create_timber_incoming').show();
+$('.modal_create_incoming').show();
 });
 </script>
-@elseif(count($errors->edit_timber_incoming) > 0)
+@elseif(count($errors->edit_incoming) > 0)
 <script>
 $(document).ready(function () {
-$('.modal_edit_timber_incoming').show();
+$('.modal_edit_incoming').show();
 });
 </script>
 @elseif(count($errors->create_client) > 0)

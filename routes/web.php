@@ -18,9 +18,9 @@ Route::get('dashboard','HomeController@index')->name('home');
 Route::resource('clients', 'ClientController');
 Route::post('/delete_checked_clients', 'ClientController@destroyChecked')->name('delete_checked_clients');
 /*Timber*/
-Route::resource('timberincoming', 'IncomingController');
+Route::resource('incoming', 'IncomingController');
 Route::resource('timberoutgoing', 'TimberOutgoingController');
-Route::post('/delete_checked_incoming_timber', 'IncomingController@destroyChecked')->name('delete_checked_incoming_timber');
+Route::post('/delete_checked_incoming', 'IncomingController@destroyChecked')->name('delete_checked_incoming');
 Route::post('/delete_checked_outgoing_timber', 'TimberOutgoingController@destroyChecked')->name('delete_checked_outgoing_timber');
 
 /*Dry kiln*/
