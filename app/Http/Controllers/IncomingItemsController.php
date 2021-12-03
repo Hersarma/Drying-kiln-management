@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TimberIncomingItems;
+use App\Models\IncomingItems;
 use Illuminate\Http\Request;
 
-class TimberIncomingItemsController extends Controller
+class IncomingItemsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TimberIncomingItemsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TimberIncomingItems  $timberIncomingItems
+     * @param  \App\Models\IncomingItems  $timberIncomingItems
      * @return \Illuminate\Http\Response
      */
-    public function show(TimberIncomingItems $timberIncomingItems)
+    public function show(IncomingItems $timberIncomingItems)
     {
         //
     }
@@ -52,10 +52,10 @@ class TimberIncomingItemsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TimberIncomingItems  $timberIncomingItems
+     * @param  \App\Models\IncomingItems  $timberIncomingItems
      * @return \Illuminate\Http\Response
      */
-    public function edit(TimberIncomingItems $timberIncomingItems)
+    public function edit(IncomingItems $timberIncomingItems)
     {
         //
     }
@@ -64,10 +64,10 @@ class TimberIncomingItemsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TimberIncomingItems  $timberIncomingItems
+     * @param  \App\Models\IncomingItems  $timberIncomingItems
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TimberIncomingItems $timberIncomingItems)
+    public function update(Request $request, IncomingItems $timberIncomingItems)
     {
         //
     }
@@ -75,10 +75,10 @@ class TimberIncomingItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TimberIncomingItems  $timberIncomingItems
+     * @param  \App\Models\IncomingItems  $timberIncomingItems
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TimberIncomingItems $timberIncomingItems)
+    public function destroy(IncomingItems $timberIncomingItems)
     {
         //
     }

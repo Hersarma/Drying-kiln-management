@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Client;
-use App\Models\TimberIncoming;
-use App\Models\TimberIncomingItems;
+use App\Models\Incoming;
+use App\Models\IncomingItems;
 use Illuminate\Http\Request;
 
-class TimberIncomingController extends Controller
+class IncomingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class TimberIncomingController extends Controller
     public function index()
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $timberincoming = TimberIncoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
+        $timberincoming = Incoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('timberincoming.index', compact('timberincoming', 'clients'));
     }
@@ -40,10 +40,10 @@ class TimberIncomingController extends Controller
             'items.*.cubic_metre' => 'numeric|required'
         ]);
        
-        $timberincoming = TimberIncoming::create($validate);
+        $timberincoming = Incoming::create($validate);
   
         foreach($request->items as $item) {
-            $timberincoming->timberincomingitems()->create($item);
+            $timberincoming->incomingitems()->create($item);
         }
         
         return redirect(route('timberincoming.index'))->with('message', 'Uspesan unos.');
@@ -52,13 +52,13 @@ class TimberIncomingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TimberIncoming  $timberIncoming
+     * @param  \App\Models\Incoming  $timberIncoming
      * @return \Illuminate\Http\Response
      */
-    public function show(TimberIncoming $timberincoming)
+    public function show(Incoming $timberincoming)
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $items = $timberincoming->timberincomingitems()->get();
+        $items = $timberincoming->incomingitems()->get();
         $client = $timberincoming->clients()->first();
         return view('timberincoming.show', compact('client','clients', 'items', 'timberincoming'));
     }
@@ -67,10 +67,10 @@ class TimberIncomingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TimberIncoming  $timberIncoming
+     * @param  \App\Models\Incoming  $timberIncoming
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TimberIncoming $timberincoming)
+    public function update(Request $request, Incoming $timberincoming)
     {
          $validate = request()->validateWithBag('edit_timber_incoming', [
             'client_id' => 'required',
@@ -85,7 +85,7 @@ class TimberIncomingController extends Controller
         $timberincoming->update($validate);
 
          foreach($request->items as $item) {
-            $timberincoming->timberincomingitems()->update($item);
+            $timberincoming->incomingitems()->update($item);
         }
         
         return redirect(route('timberincoming.show', $timberincoming))->with('message', 'Uspesna izmena.');
@@ -94,10 +94,10 @@ class TimberIncomingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TimberIncoming  $timberIncoming
+     * @param  \App\Models\Incoming  $timberIncoming
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TimberIncoming $timberincoming)
+    public function destroy(Incoming $timberincoming)
     {
         $timberincoming->delete();
 
@@ -106,7 +106,7 @@ class TimberIncomingController extends Controller
 
     public function destroyChecked(Request $request){
 
-        TimberIncoming::whereIn('id', $request->input('deleteChecked'))->delete();
+        Incoming::whereIn('id', $request->input('deleteChecked'))->delete();
 
         return redirect(route('timberincoming.index'))->with('message', 'Svi Ulazi su uspesno obrisani.');
     }
