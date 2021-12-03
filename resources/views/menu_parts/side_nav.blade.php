@@ -16,7 +16,7 @@
         <div class="flex items-center">
           <i class="fas fa-truck group-hover:text-turquoise-light"></i>
           <p class="ml-6 group-hover:text-turquoise-light whitespace-nowrap">
-            Građa
+            Lager
           </p>
         </div>
         <div>
