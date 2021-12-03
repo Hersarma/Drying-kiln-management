@@ -105,7 +105,11 @@ class TimberOutgoingController extends Controller
         $timberoutgoing = update($validate);
   
         foreach($request->items as $item) {
-            $timberoutgoing->timberoutgoingitems()->update($item);
+            TimberOutgoingItems::where('id', '=', $item['id'])->update([
+                'item_name' => $item['item_name'],
+                'quantity' => $item['quantity'],
+                'cubic_metre' => $item['cubic_metre']
+            ]);
         }
         
         return redirect(route('timberoutgoing.show'))->with('message', 'Uspesan unos.');
