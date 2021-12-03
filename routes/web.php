@@ -17,11 +17,11 @@ Route::get('dashboard','HomeController@index')->name('home');
 /*Clients*/
 Route::resource('clients', 'ClientController');
 Route::post('/delete_checked_clients', 'ClientController@destroyChecked')->name('delete_checked_clients');
-/*Timber*/
+/*Incoming-Outgoing*/
 Route::resource('incoming', 'IncomingController');
-Route::resource('timberoutgoing', 'TimberOutgoingController');
+Route::resource('outgoing', 'OutgoingController');
 Route::post('/delete_checked_incoming', 'IncomingController@destroyChecked')->name('delete_checked_incoming');
-Route::post('/delete_checked_outgoing_timber', 'TimberOutgoingController@destroyChecked')->name('delete_checked_outgoing_timber');
+Route::post('/delete_checked_outgoing', 'OutgoingController@destroyChecked')->name('delete_checked_outgoing');
 
 /*Dry kiln*/
 Route::resource('drykiln', 'DryKilnController');

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TimberOutgoing extends Model
+class Outgoing extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,8 @@ class TimberOutgoing extends Model
         return $this->belongsTo(Client::class, 'client_id');
     }
 
-    public function timberoutgoingitems(){
+    public function outgoingitems(){
 
-        return $this->hasMany(TimberOutgoingItems::class);
+        return $this->hasMany(OutgoingItems::class);
     }
 }

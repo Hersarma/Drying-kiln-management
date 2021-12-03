@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTimberOutgoingsTable extends Migration
+class CreateOutgoingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTimberOutgoingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('timber_outgoings', function (Blueprint $table) {
+        Schema::create('outgoings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id');
             $table->longText('notes')->nullable();
@@ -35,6 +35,6 @@ class CreateTimberOutgoingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timber_outgoings');
+        Schema::dropIfExists('outgoings');
     }
 }

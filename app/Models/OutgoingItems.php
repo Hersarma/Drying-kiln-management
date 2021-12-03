@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TimberOutgoingItems extends Model
+class OutgoingItems extends Model
 {
     use HasFactory;
 
     protected $fillable= ['item_name', 'quantity', 'cubic_metre'];
-    public function timberoutgoing(){
+    public function outgoing(){
         
-        return $this->belongsTo(TimberOutgoing::class);
+        return $this->belongsTo(Outgoing::class);
     }
 }

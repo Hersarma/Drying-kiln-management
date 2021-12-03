@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Client;
-use App\Models\TimberOutgoing;
-use App\Models\TimberOutgoingItems;
+use App\Models\Outgoing;
+use App\Models\OutgoingItems;
 use Illuminate\Http\Request;
 
-class TimberOutgoingController extends Controller
+class OutgoingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class TimberOutgoingController extends Controller
     public function index()
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $timberoutgoing = TimberOutgoing::with('clients')->orderBy('created_at', 'desc')->paginate(10);
+        $outgoing = Outgoing::with('clients')->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('timberoutgoing.index', compact('timberoutgoing', 'clients'));
+        return view('outgoing.index', compact('outgoing', 'clients'));
     }
 
     /**
@@ -39,7 +39,7 @@ class TimberOutgoingController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = request()->validateWithBag('create_timber_outgoing', [
+        $validate = request()->validateWithBag('create_outgoing', [
             'client_id' => 'required',
             'notes' => 'nullable',
             'transport_company' => 'nullable',
@@ -49,36 +49,36 @@ class TimberOutgoingController extends Controller
             'items.*.cubic_metre' => 'numeric|required'
         ]);
        
-        $timberoutgoing = TimberOutgoing::create($validate);
+        $outgoing = Outgoing::create($validate);
   
         foreach($request->items as $item) {
-            $timberoutgoing->timberoutgoingitems()->create($item);
+            $outgoing->outgoingitems()->create($item);
         }
         
-        return redirect(route('timberoutgoing.index'))->with('message', 'Uspesan unos.');
+        return redirect(route('outgoing.index'))->with('message', 'Uspesan unos.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TimberOutgoing  $timberOutgoing
+     * @param  \App\Models\Outgoing  $Outgoing
      * @return \Illuminate\Http\Response
      */
-    public function show(TimberOutgoing $timberoutgoing)
+    public function show(Outgoing $outgoing)
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $items = $timberoutgoing->timberoutgoingitems()->get();
-        $client = $timberoutgoing->clients()->first();
-        return view('timberoutgoing.show', compact('client','clients', 'items', 'timberoutgoing'));
+        $items = $outgoing->outgoingitems()->get();
+        $client = $outgoing->clients()->first();
+        return view('outgoing.show', compact('client','clients', 'items', 'outgoing'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TimberOutgoing  $timberOutgoing
+     * @param  \App\Models\Outgoing  $Outgoing
      * @return \Illuminate\Http\Response
      */
-    public function edit(TimberOutgoing $timberoutgoing)
+    public function edit(Outgoing $outgoing)
     {
         //
     }
@@ -87,12 +87,12 @@ class TimberOutgoingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TimberOutgoing  $timberOutgoing
+     * @param  \App\Models\Outgoing  $Outgoing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TimberOutgoing $timberoutgoing)
+    public function update(Request $request, Outgoing $outgoing)
     {
-        $validate = request()->validateWithBag('edit_timber_outgoing', [
+        $validate = request()->validateWithBag('edit_outgoing', [
             'client_id' => 'required',
             'notes' => 'nullable',
             'transport_company' => 'nullable',
@@ -102,36 +102,36 @@ class TimberOutgoingController extends Controller
             'items.*.cubic_metre' => 'numeric|required'
         ]);
        
-        $timberoutgoing = update($validate);
+        $outgoing->update($validate);
   
         foreach($request->items as $item) {
-            TimberOutgoingItems::where('id', '=', $item['id'])->update([
+            OutgoingItems::where('id', '=', $item['id'])->update([
                 'item_name' => $item['item_name'],
                 'quantity' => $item['quantity'],
                 'cubic_metre' => $item['cubic_metre']
             ]);
         }
         
-        return redirect(route('timberoutgoing.show'))->with('message', 'Uspesan unos.');
+        return redirect(route('outgoing.show', $outgoing))->with('message', 'Uspesan unos.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TimberOutgoing  $timberOutgoing
+     * @param  \App\Models\Outgoing  $Outgoing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TimberOutgoing $timberoutgoing)
+    public function destroy(Outgoing $outgoing)
     {
-        $timberoutgoing->delete();
+        $outgoing->delete();
 
-        return redirect(route('timberoutgoing.index'))->with('message', 'Izlaz uspesno obrisan.');
+        return redirect(route('outgoing.index'))->with('message', 'Izlaz uspesno obrisan.');
     }
 
      public function destroyChecked(Request $request){
 
-        TimberOutgoing::whereIn('id', $request->input('deleteChecked'))->delete();
+        Outgoing::whereIn('id', $request->input('deleteChecked'))->delete();
 
-        return redirect(route('timberoutgoing.index'))->with('message', 'Svi izlazi su uspesno obrisani.');
+        return redirect(route('outgoing.index'))->with('message', 'Svi izlazi su uspesno obrisani.');
     }
 }

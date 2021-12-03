@@ -11,7 +11,7 @@
       </a>
     </li>
     
-    <li class="group px-4 cursor-pointer text-gray-300 {{ Request::is('incoming','incoming/*', 'timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
+    <li class="group px-4 cursor-pointer text-gray-300 {{ Request::is('incoming','incoming/*', 'outgoing', 'outgoing/*') ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
       <div class="open_timber flex justify-between items-center py-6">
         <div class="flex items-center">
           <i class="fas fa-truck group-hover:text-turquoise-light"></i>
@@ -31,8 +31,8 @@
             Ulaz
           </a>
         </li>
-        <li class="flex-1 py-3 {{ Request::is('timberoutgoing', 'timberoutgoing/*') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
-          <a href="{{ route('timberoutgoing.index') }}"
+        <li class="flex-1 py-3 {{ Request::is('outgoing', 'outgoing/*') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
+          <a href="{{ route('outgoing.index') }}"
             class="focus:outline-none block align-middle no-underline border-l border-transparent hover:border-turquoise-light hover:text-white">
             <i class="fas fa-sign-out-alt group-hover:text-turquoise-light px-4"></i>
             Izlaz

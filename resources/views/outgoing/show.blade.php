@@ -14,21 +14,21 @@
             </p>
               <p class="py-4 px-2 text-gray-200">
                 <i class="fas fa-sticky-note fa-lg px-2"></i><span>Beleške: </span>
-                {{ Ucfirst($timberoutgoing->notes)}}
+                {{ Ucfirst($outgoing->notes)}}
               </p>
         </div>
         <div>
             <p class="py-4 px-2 text-gray-200">
             <i class="fas fa-truck fa-lg px-2"></i><span>Prevoznik: </span>
-            {{ Ucfirst($timberoutgoing->transport_company)}}
+            {{ Ucfirst($outgoing->transport_company)}}
             </p>
               <p class="py-4 px-2 text-gray-200">
                 <i class="fas fa-sticky-note fa-lg px-2"></i><span>Broj fakture/otpremnice: </span>
-                {{ Ucfirst($timberoutgoing->invoice_number)}}
+                {{ Ucfirst($outgoing->invoice_number)}}
               </p>
               <p class="py-4 px-2 text-gray-200">
                 <i class="fa fa-calendar fa-lg px-2"></i><span>Datum: </span>
-                {{ Ucfirst($timberoutgoing->created_at->format('d-m-Y H:m'))}}
+                {{ Ucfirst($outgoing->created_at->format('d-m-Y H:m'))}}
               </p>
         </div>
         
@@ -54,20 +54,20 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach($items as $timber)
+                            @foreach($items as $item)
                          <tr
                           class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
                             {{ $loop->iteration }}
                           </td>
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
-                            {{ $timber->item_name }}
+                            {{ $item->item_name }}
                           </td>
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
-                              {{ $timber->quantity }}
+                              {{ $item->quantity }}
                           </td>
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
-                              {{ $timber->cubic_metre }}
+                              {{ $item->cubic_metre }}
                           </td>
                           </tr>
                           @endforeach
@@ -77,12 +77,12 @@
     
   </div>
   <div class="flex mx-auto">
-    <button type="button" class="open_modal_edit_timber_incoming transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-xl"><i
+    <button type="button" class="open_modal_edit_outgoing transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-xl"><i
     class="px-2 fas fa-edit"></i>Izmeni</button>
-    <p class="get_route_id cursor-pointer transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded text-base shadow-xl"><span class="hidden">{{ route('timberoutgoing.destroy',$timberoutgoing )}}</span><i
+    <p class="get_route_id cursor-pointer transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded text-base shadow-xl"><span class="hidden">{{ route('outgoing.destroy',$outgoing )}}</span><i
   class="px-2 fas fa-trash"></i>Obrisi</p>
 </div>
 </section>
 
-@include('timberoutgoing.modals.edit')
+@include('outgoing.modals.edit')
 @endsection

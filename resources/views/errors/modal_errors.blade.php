@@ -10,6 +10,18 @@ $(document).ready(function () {
 $('.modal_edit_incoming').show();
 });
 </script>
+@elseif(count($errors->create_outgoing) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_create_outgoing').show();
+});
+</script>
+@elseif(count($errors->edit_outgoing) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_edit_outgoing').show();
+});
+</script>
 @elseif(count($errors->create_client) > 0)
 <script>
 $(document).ready(function () {

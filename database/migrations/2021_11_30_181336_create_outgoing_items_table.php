@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTimberOutgoingItemsTable extends Migration
+class CreateOutgoingItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateTimberOutgoingItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('timber_outgoing_items', function (Blueprint $table) {
+        Schema::create('outgoing_items', function (Blueprint $table) {
            $table->id();
-            $table->foreignId('timber_outgoing_id');
+            $table->foreignId('outgoing_id');
             $table->string('item_name')->nullable();
             $table->integer('quantity')->nullable();
             $table->float('cubic_metre', 8, 2)->nullable();
             $table->timestamps();
 
-            $table->foreign('timber_outgoing_id')
+            $table->foreign('outgoing_id')
             ->references('id')
-            ->on('timber_outgoings')
+            ->on('outgoings')
             ->onDelete('cascade');
         });
     }
@@ -35,6 +35,6 @@ class CreateTimberOutgoingItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timber_outgoing_items');
+        Schema::dropIfExists('outgoing_items');
     }
 }
