@@ -7,7 +7,7 @@
 		<div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full md:w-2/3 shadow-2xl">
 			<div class="px-4 py-5 sm:px-6">
 				<h3 class="text-base text-gray-200 leading-6 font-bold">
-				Izmena
+				Izmeni ulaz
 				</h3>
 			</div>
 			<div class="w-full max-w-5xl mx-auto">

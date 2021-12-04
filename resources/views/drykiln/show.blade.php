@@ -229,7 +229,7 @@
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_4 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_5 ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probe_6 ?: '/' }}</td>
-				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probes_average }}</td>
+				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->moisture_probes_average ?: '/' }}</td>
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->created_at->format('d-m-Y H:i') }}</td>
 			</tr>
 			@endforeach

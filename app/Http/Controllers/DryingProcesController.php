@@ -21,7 +21,7 @@ class DryingProcesController extends Controller
             return view('drykiln.drying_proces', compact('dryingProces'));
         }
        
-        return back()->with('message_warning', 'Ne postoji istorija susenja');
+        return back()->with('message_warning', 'Ne postoji istorija sušenja');
     }
 
     /**
