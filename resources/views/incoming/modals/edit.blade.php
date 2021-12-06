@@ -92,9 +92,13 @@
 				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
 				              Količina
 				            </th>
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
 				              Kubikaža
 				            </th>
+				            <th id="add" class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900"><button type="button"
+					        class="transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-teal-400 text-sm leading-5 font-medium rounded-md text-white bg-transparent hover:bg-teal-500 focus:outline-none shadow-xl">
+					        <i class="fa fa-plus" aria-hidden="true"></i>
+					        </button></th>		
 				          </tr>
 				        </thead>
 				        <tbody>
@@ -102,7 +106,7 @@
 							<tr
 							  class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
 							  <input class="hidden" type="hidden" name="items[{{ $loop->index }}][id]" value="{{ $item->id }}">
-							  
+							  <input class="hidden" type="hidden" name="items[{{ $loop->index }}][incoming_id]" value="{{ $item->incoming_id }}">
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
 							  </td>
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}"></td>
@@ -138,10 +142,10 @@
 </div>
 <script type="text/javascript">
 
-    var i = 0;
+    var i = {{ $items->count() }};
     $("#add").click(function(){
         ++i;
-        $("#items").append('<tr class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700"><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][item_name]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][quantity]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][cubic_metre]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button" class="remove-tr transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none shadow-xl"><i class="fa fa-minus" aria-hidden="true"></i></button></td></tr>');
+        $("#items").append('<tr class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700"><input type="hidden" class="hidden" name="items['+i+'][incoming_id]" value="{{ $item->incoming_id }}"><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][item_name]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][quantity]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][cubic_metre]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button" class="remove-tr transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none shadow-xl"><i class="fa fa-minus" aria-hidden="true"></i></button></td></tr>');
 
     });
 

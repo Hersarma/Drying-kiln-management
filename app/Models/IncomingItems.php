@@ -9,7 +9,7 @@ class IncomingItems extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['item_name', 'quantity', 'cubic_metre'];
+    protected $fillable= ['incoming_id', 'item_name', 'quantity', 'cubic_metre'];
     public function incoming(){
         
         return $this->belongsTo(Incoming::class);
