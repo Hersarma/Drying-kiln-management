@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<p class="m-2 md:m-5 text-gray-300 text-lg">
+    <i onclick="window.location = '{{ route('drykiln.index' )}}'" class="fa fa-arrow-circle-left fa-lg md:px-4 md:py-2 cursor-pointer hover:text-white" aria-hidden="true"></i>
+    <span class="hidden md:inline-block">Nazad</span>
+  </p>
 <div class="flex flex-wrap justify-between items-center">
 	<div class="w-full md:w-2/3 px-4">
 		<div class="flex justify-center">
@@ -204,9 +208,10 @@
     </div>
   </div>
 </div>
-<div class="overflow-auto">
+<div class="relative">
   @if($drykiln->dry_kiln_config->dry_kiln_status)
-	<table class="border-collapse table-auto md:table-fixed w-full text-left whitespace-normal">
+  <div class="absolute w-full overflow-auto">
+  	<table class="table-auto w-full text-left whitespace-normal">
 		<thead>
 			<tr class="border-b border-turquoise-light">
 				<th class="px-2 md:px-4 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_1_status) ? 'text-gray-200' : 'text-gray-700' !!} text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 1</th>
@@ -235,8 +240,9 @@
 			@endforeach
 		</tbody>
 	</table>
-	{{ $readings->links() }}
-	
+{{ $readings->links() }}
+  </div>
+  
 	@endif
 </div>
 @include('drykiln.modals.create_drykiln_config')

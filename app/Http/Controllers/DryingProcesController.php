@@ -18,7 +18,7 @@ class DryingProcesController extends Controller
         $dryingProces = $drykiln->dryKilnProces()->where('active', false)->simplePaginate(10);
         
         if($dryingProces->isNotEmpty()){
-            return view('drykiln.drying_proces', compact('dryingProces'));
+            return view('drykiln.drying_proces', compact('dryingProces', 'drykiln'));
         }
        
         return back()->with('message_warning', 'Ne postoji istorija sušenja');

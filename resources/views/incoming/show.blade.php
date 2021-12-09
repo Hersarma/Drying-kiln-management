@@ -1,37 +1,49 @@
 @extends('layouts.app')
 @section('content')
-
-<section class="px-12">
+  <p class="m-2 md:m-5 text-gray-300 text-lg">
+    <i onclick="window.location = '{{ route('incoming.index' )}}'" class="fa fa-arrow-circle-left fa-lg md:px-4 md:py-2 cursor-pointer hover:text-white" aria-hidden="true"></i>
+    <span class="hidden md:inline-block">Nazad</span>
+  </p>
+<section class="md:px-12">
   <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <p class="px-8 text-gray-200">Detaljni prikaz</p>
   </div>
   <div class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="flex flex-wrap justify-between items-center px-8">
-        <div>
-            <p class="py-4 px-2 text-gray-200">
-            <i class="fas fa-user fa-lg px-2"></i><span>Klijent: </span>
+        <div class="w-full md:w-auto">
+          <div class="flex justify-between items-center text-gray-200">
+            <p><i class="fas fa-user fa-lg px-2"></i><span>Klijent: </span></p>
+            <p class="py-4 px-2">
             {{ Ucfirst($client->name)}}
             </p>
-              <p class="py-4 px-2 text-gray-200">
-                <i class="fas fa-sticky-note fa-lg px-2"></i><span>Beleške: </span>
-                {{ Ucfirst($incoming->notes)}}
-              </p>
+          </div>
+          <div class="flex justify-between items-center text-gray-200">
+            <p><i class="fas fa-sticky-note fa-lg px-2"></i><span>Beleške: </span></p>
+            <p class="py-4 px-2">
+              {{ Ucfirst($incoming->notes)}}
+            </p>
+          </div>
         </div>
-        <div>
+        <div class="w-full md:w-auto">
+          <div class="flex justify-between items-center text-gray-200">
+            <p><i class="fas fa-truck fa-lg px-2"></i><span>Prevoznik: </span></p>
             <p class="py-4 px-2 text-gray-200">
-            <i class="fas fa-truck fa-lg px-2"></i><span>Prevoznik: </span>
             {{ Ucfirst($incoming->transport_company)}}
             </p>
-              <p class="py-4 px-2 text-gray-200">
-                <i class="fas fa-sticky-note fa-lg px-2"></i><span>Broj fakture/otpremnice: </span>
+          </div>
+          <div class="flex justify-between items-center text-gray-200">
+            <p><i class="fas fa-sticky-note fa-lg px-2"></i><span>Broj fakture/otpremnice: </span></p>
+            <p class="py-4 px-2 text-gray-200">
                 {{ Ucfirst($incoming->invoice_number)}}
               </p>
-              <p class="py-4 px-2 text-gray-200">
-                <i class="fa fa-calendar fa-lg px-2"></i><span>Datum: </span>
+          </div>
+          <div class="flex justify-between items-center text-gray-200">
+            <p> <i class="fa fa-calendar fa-lg px-2"></i><span>Datum: </span></p>
+             <p class="py-4 px-2 text-gray-200">
                 {{ Ucfirst($incoming->created_at->format('d-m-Y H:m'))}}
               </p>
+          </div>
         </div>
-        
     </div>
       <div class="">
         <p class="px-8 py-4 text-center font-bold text-lg text-gray-200">Artikli</p>
