@@ -38,7 +38,7 @@
                 <div class="flex justify-center items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
                   <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
                   <input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
-                  class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none w-1/2">
+                  class="bg-transparent text-gray-100 border-b border-gray-200 rounded-b focus:outline-none w-1/2">
                   <p id="url_name" class="hidden">{{ Request::path() }}</p>
                 </div>
                 <ul id="searchClient">
