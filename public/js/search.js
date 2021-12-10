@@ -16,6 +16,26 @@ $(document).ready(function () {
         })
     }
 
+    function fetch_incomings(query) {
+        $.ajax({
+            url:"/search_incomings?query=" + query,
+            success: function (data) {
+                if (!data){   
+                    $('#searchIncoming').html('<p class="text-white py-4">Nema rezultata</p>');
+                }
+                else{   
+                    $('#searchIncoming').html(data);
+                }
+            }
+        })
+    }
+
+    $(document).on('keyup', '#search_incoming', function () {
+        let query = $('#search_incoming').val();
+        
+        fetch_incomings(query);
+    });
+
     $(document).on('keyup', '#search_clients', function () {
         let query = $('#search_clients').val();
         let url_name = $('#url_name').text().split('/')[0];

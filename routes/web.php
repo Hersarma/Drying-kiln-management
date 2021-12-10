@@ -34,6 +34,7 @@ Route::post('/create_drykiln_reading', 'DrykilnReadingsController@store')->name(
 
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
+Route::get('search_incomings', 'SearchController@search_incomings');
 
 });
 require __DIR__.'/auth.php';
