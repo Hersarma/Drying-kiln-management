@@ -15,7 +15,7 @@ class DryingProcesController extends Controller
      */
     public function index(DryKiln $drykiln)
     {
-        $dryingProces = $drykiln->dryKilnProces()->where('active', false)->simplePaginate(10);
+        $dryingProces = $drykiln->dryKilnProces()->where('active', false)->orderBy('created_at' ,'desc')->simplePaginate(10);
         
         if($dryingProces->isNotEmpty()){
             return view('drykiln.drying_proces', compact('dryingProces', 'drykiln'));
@@ -89,6 +89,10 @@ class DryingProcesController extends Controller
      */
     public function destroy(DryingProces $dryingProces)
     {
-        //
+       // $drykiln = $dryingProces->dry_kiln_id;
+        
+        $dryingProces->delete();
+
+        return redirect(route('drykiln.index'))->with('message', 'Proces uspešno izbrisan.');
     }
 }

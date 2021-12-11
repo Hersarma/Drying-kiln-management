@@ -25,12 +25,16 @@ Route::post('/delete_checked_outgoing', 'OutgoingController@destroyChecked')->na
 
 /*Dry kiln*/
 Route::resource('drykiln', 'DryKilnController');
-Route::get('/drykiln/proces/{drykiln}', 'DryingProcesController@index')->name('drying_proces');
-Route::get('/drykiln/proces/show/{dryingProces}', 'DryingProcesController@show')->name('show_drying_proces');
+Route::get('/drying_proces/{drykiln}', 'DryingProcesController@index')->name('drying_proces');
+Route::get('/drying_proces/show/{dryingProces}', 'DryingProcesController@show')->name('show_drying_proces');
+Route::delete('/delete_drying_proces/{dryingProces}', 'DryingProcesController@destroy')->name('delete_drying_proces');
 Route::post('/create_drykiln_config', 'DryKilnConfigController@store')->name('create_drykiln_config');
 Route::post('/update_drykiln_config/{drykilnconfig}', 'DryKilnConfigController@update')->name('update_drykiln_config');
 Route::post('/delete_drykiln_config/{drykilnconfig}', 'DryKilnConfigController@destroy')->name('delete_drykiln_config');
 Route::post('/create_drykiln_reading', 'DrykilnReadingsController@store')->name('create_drykiln_reading');
+
+Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChecked')->name('delete_checked_drying_proces');
+
 
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
