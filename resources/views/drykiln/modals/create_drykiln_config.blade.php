@@ -27,7 +27,7 @@
             <div class="relative md:w-2/3">
               <div>
                 <input type="hidden" name="client" class="client_name_value hidden text-black">
-                <button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta: </span><i class="fas fa-angle-down fa-lg"></i>
+                <button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta: </span><i class="fas fa-angle-down fa-lg px-2"></i>
                 </button>
               </div>
               <p class="text-red-500 text-sm italic mt-4">
