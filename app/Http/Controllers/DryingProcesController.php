@@ -21,7 +21,7 @@ class DryingProcesController extends Controller
             return view('drykiln.drying_proces', compact('dryingProces', 'drykiln'));
         }
        
-        return back()->with('message_warning', 'Ne postoji istorija sušenja');
+        return redirect(route('drykiln.show', $drykiln))->with('message_warning', 'Ne postoji istorija sušenja');
     }
 
     /**
@@ -89,10 +89,11 @@ class DryingProcesController extends Controller
      */
     public function destroy(DryingProces $dryingProces)
     {
-       // $drykiln = $dryingProces->dry_kiln_id;
+        $drykiln = $dryingProces->dry_kiln_id;
         
         $dryingProces->delete();
 
-        return redirect(route('drykiln.index'))->with('message', 'Proces uspešno izbrisan.');
+       
+        return redirect(route('drying_proces', $drykiln))->with('message', 'Proces uspešno izbrisan.');
     }
 }
