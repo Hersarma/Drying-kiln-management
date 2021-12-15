@@ -42,13 +42,14 @@
                 @if($clients->count())
                 <div class="flex justify-center items-center text-gray-600 px-4 md:px-12    py-4 md:py-4">
                   <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-                  <input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
-                  class="bg-transparent text-gray-100 border-b border-gray-200 rounded-b focus:outline-none w-1/2">
+                  <input type="search" name="search_clients" placeholder="Pretraga"
+                  class="search_clients bg-transparent text-gray-100 border-b border-gray-200 rounded-b focus:outline-none w-1/2">
                   <p id="url_name" class="hidden">{{ Request::path() }}</p>
                 </div>
-                <ul id="searchClient">
+                <ul class="searchClient">
                   @include('drykiln.search_client')
                 </ul>
+                <p class="show_client_link hidden"><a href="{{ route('clients.index') }}"><button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">Dodaj novog klijenta</button></a></p>
                 @else
                 <div class="mt-10">
                   <p class="mb-10 text-lg py-4">Baza klijenata je prazna</p>

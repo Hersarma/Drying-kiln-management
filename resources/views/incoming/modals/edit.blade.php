@@ -32,12 +32,13 @@
 								<div class="flex justify-center items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
 									<input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
-									class="w-1/2 bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+									class="search_clients w-1/2 bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
 									<p id="url_name" class="hidden">{{ Request::path() }}</p>
 								</div>
-								<ul id="searchClient">
+								<ul class="searchClient">
 									@include('incoming.search_client')
 								</ul>
+								<p class="show_client_link hidden"><a href="{{ route('clients.index') }}"><button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">Dodaj novog klijenta</button></a></p>
 							</div>
 						</div>
 					</div>

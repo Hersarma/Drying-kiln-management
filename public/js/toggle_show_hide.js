@@ -46,10 +46,17 @@ let modal_create_client = $(".modal_create_client");
 let client = $(".client");
 let clients = $(".clients");
 let get_client_id = $(".get_client_id");
+let client_edit = $(".client_edit");
+let clients_edit = $(".clients_edit");
 
 client.click(function(e) {
     e.preventDefault();
     clients.toggle(500);
+});
+
+client_edit.click(function(e) {
+    e.preventDefault();
+    clients_edit.toggle(500);
 });
 
 /*Warning message modal*/

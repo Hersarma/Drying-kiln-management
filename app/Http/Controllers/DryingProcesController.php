@@ -89,11 +89,16 @@ class DryingProcesController extends Controller
      */
     public function destroy(DryingProces $dryingProces)
     {
-        $drykiln = $dryingProces->dry_kiln_id;
         
         $dryingProces->delete();
 
        
-        return redirect(route('drying_proces', $drykiln))->with('message', 'Proces uspešno izbrisan.');
+        return redirect(route('drying_proces', $dryingProces->dry_kiln_id))->with('message', 'Proces uspešno izbrisan.');
+    }
+
+    public function destroyChecked(Request $request)
+    {
+        DryingProces::whereIn('id', $request->input('deleteChecked'))->delete();
+        return back()->with('message', 'Svi procesi uspešno izbrisani.');
     }
 }

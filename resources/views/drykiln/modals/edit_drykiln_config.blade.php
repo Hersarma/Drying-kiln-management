@@ -1,4 +1,4 @@
-<div class="modal_edit_drykiln_config hidden fixed z-20 inset-0 overflow-y-auto">
+<div class="modal_edit_drykiln_config fixed hidden z-20 inset-0 overflow-y-auto">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 transition-opacity" aria-hidden="true">
       <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
@@ -31,12 +31,31 @@
                 Klijent
               </label>
             </div>
-            <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="client" name="client" value="{{ $drykiln->dry_kiln_config->client }}">
+            <div class="relative md:w-2/3">
+              <div class="flex items-center">
+                <input type="hidden" name="client" value="{{ $drykiln->dry_kiln_config->client }}" class="client_name_value_edit hidden text-black">
+                <button type="button" class="client_edit bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><p>Izaberi klijenta: <span class="set_client_edit">{{ $drykiln->dry_kiln_config->client }}</span></p><i class="fas fa-angle-down fa-lg px-2"></i>
+                </button>
+                <p class="remove_client_edit cursor-pointer px-2 py-2"><i class="fas fa-times fa-lg text-red-500" aria-hidden="true"></i></p>
+              </div>
               <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->edit_drykiln_config->first('client') }}
+                 {{ $errors->edit_drykiln_config->first('client') }}
               </p>
+              <div class="clients_edit h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
+                <div class="flex justify-end">
+                   <p class="client_edit cursor-pointer"><i class="fas fa-times fa-lg text-red-500" aria-hidden="true"></i></p>
+                </div>
+               
+                <div class="flex justify-center items-center text-gray-600 px-4 md:px-12    py-4 md:py-4">
+                  <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
+                  <input type="search" name="search_clients" placeholder="Pretraga"
+                  class="search_clients_edit bg-transparent text-gray-100 border-b border-gray-200 rounded-b focus:outline-none w-1/2">
+                </div>
+                <ul class="searchClient">
+                  @include('drykiln.search_client')
+                </ul>
+                <p class="show_client_link hidden"><a href="{{ route('clients.index') }}"><button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">Dodaj novog klijenta</button></a></p>
+              </div>
             </div>
           </div>
           <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
