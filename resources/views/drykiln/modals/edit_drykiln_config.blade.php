@@ -33,6 +33,7 @@
             </div>
             <div class="relative md:w-2/3">
               <div class="flex items-center">
+              <input class="hidden" name="proces_id" value="{{ $proces->id }}">
                 <input type="hidden" name="client" value="{{ $drykiln->dry_kiln_config->client }}" class="client_name_value_edit hidden text-black">
                 <button type="button" class="client_edit bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><p>Izaberi klijenta: <span class="set_client_edit">{{ $drykiln->dry_kiln_config->client }}</span></p><i class="fas fa-angle-down fa-lg px-2"></i>
                 </button>

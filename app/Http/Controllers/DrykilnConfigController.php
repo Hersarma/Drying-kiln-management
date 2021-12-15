@@ -29,6 +29,7 @@ class DryKilnConfigController extends Controller
 
          $drying_proces->dry_kiln_id = $request->dry_kiln_id;
          $drying_proces->active = true;
+         $drying_proces->client = $request->client;
 
          $drying_proces->save();
 
@@ -54,6 +55,10 @@ class DryKilnConfigController extends Controller
          ]);
 
     $drykilnconfig->update($validator);
+
+    $drying_proces = DryingProces::find($request->proces_id);
+    $drying_proces->client = $request->client;
+    $drying_proces->save();
 
     return back()->with('message', 'Konfiguracija uspesno snimljena');
 

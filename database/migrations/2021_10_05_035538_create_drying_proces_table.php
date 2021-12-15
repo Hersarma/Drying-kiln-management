@@ -17,6 +17,7 @@ class CreateDryingProcesTable extends Migration
             $table->id();
             $table->foreignId('dry_kiln_id');
             $table->boolean('active')->default(0);
+            $table->text('client');
             $table->timestamps();
             
             $table->foreign('dry_kiln_id')

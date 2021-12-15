@@ -7,7 +7,11 @@
 <section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
-      <h1 class="text-xl font-bold text-gray-200">Očitavanja sondi</h1>
+      <p class="text-xl font-bold text-gray-200">Očitavanja sondi</p>
+      
+    </div>
+     <div class="px-8 py-8">
+      <p class="text-gray-200">Klijenti: {{ Str::of($dryingProces->client)->replaceLast(',', '.')  ?: '/' }}</p>
     </div>
     
   </div>
