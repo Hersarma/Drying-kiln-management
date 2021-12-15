@@ -22,12 +22,12 @@
 						</div>
 						<div class="relative md:w-2/3">
 							<div>
-								<button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
+								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
 							</div>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->create_outgoing->first('client_id') }}
 							</p>
-							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
+							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light py-3 px-8 text-gray-200 leading-tight">
 								@if($clients->count())
 								<div class="flex justify-center items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>

@@ -52,9 +52,16 @@ $(document).ready(function () {
 
     $(document).on('click', '.get_client_name', function () {
         $(".set_client").show();
+        $(".remove_client").show();
         let client =$(this).text();
          $(".set_client").append(client + ',');
          $('.client_name_value').val($('.client_name_value').val() + client + ',');
+    });
+
+    $(document).on('click', '.remove_client', function () {
+        $(".set_client").empty();
+        $(".client_name_value").val('');
+        $(".remove_client").hide();
     });
 
     $(document).on('click', '.get_route_id', function () {

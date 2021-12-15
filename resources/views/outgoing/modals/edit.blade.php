@@ -23,16 +23,16 @@
 						</div>
 						<div class="relative md:w-2/3">
 							<div>
-								<button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">{{ $client->name }}</span><i class="fas fa-angle-down fa-lg"></i></button>
+								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">{{ $client->name }}</span><i class="fas fa-angle-down fa-lg"></i></button>
 							</div>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->edit_outgoing->first('client_id') }}
 							</p>
-							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
-								<div class="flex items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
+							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light py-3 px-8 text-gray-200 leading-tight">
+								<div class="flex justify-center items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
 									<input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
-									class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+									class="w-1/2 bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
 									<p id="url_name" class="hidden">{{ Request::path() }}</p>
 								</div>
 								<ul id="searchClient">
@@ -135,19 +135,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-
-    var i = 0;
-    $("#add").click(function(){
-        ++i;
-        $("#items").append('<tr class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700"><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][item_name]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][quantity]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][cubic_metre]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button" class="remove-tr transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none shadow-xl"><i class="fa fa-minus" aria-hidden="true"></i></button></td></tr>');
-
-    });
-
-    $(document).on('click', '.remove-tr', function(){  
-
-         $(this).parents('tr').remove();
-
-    });  
-
-</script>

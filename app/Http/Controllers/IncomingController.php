@@ -85,12 +85,11 @@ class IncomingController extends Controller
 
         $incoming->update($validate);
 
-         foreach($request->items as $item) {
-            IncomingItems::updateOrCreate(['id' => isset($item['id']) ? $item['id'] : 0],[
-            'incoming_id' => $item['incoming_id'],
-            'item_name' => $item['item_name'],
-            'quantity' => $item['quantity'],
-            'cubic_metre' => $item['cubic_metre'] 
+            foreach($request->items as $item) {
+            IncomingItems::where('id', '=', $item['id'])->update([
+                'item_name' => $item['item_name'],
+                'quantity' => $item['quantity'],
+                'cubic_metre' => $item['cubic_metre']
             ]);
         }
         

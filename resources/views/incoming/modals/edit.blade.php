@@ -23,16 +23,16 @@
 						</div>
 						<div class="relative md:w-2/3">
 							<div>
-								<button id="client" type="button" class="bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">{{ $client->name }}</span><i class="fas fa-angle-down fa-lg"></i></button>
+								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">{{ $client->name }}</span><i class="fas fa-angle-down fa-lg"></i></button>
 							</div>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->edit_incoming->first('client_id') }}
 							</p>
-							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
-								<div class="flex items-center text-gray-600 px-4 md:px-12    py-4 md:py-8">
+							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light py-3 px-8 text-gray-200 leading-tight">
+								<div class="flex justify-center items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
 									<input id="search_clients" type="search" name="search_clients" placeholder="Pretraga"
-									class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+									class="w-1/2 bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
 									<p id="url_name" class="hidden">{{ Request::path() }}</p>
 								</div>
 								<ul id="searchClient">
@@ -95,18 +95,13 @@
 				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
 				              Kubikaža
 				            </th>
-				            <th id="add" class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900"><button type="button"
-					        class="transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-teal-400 text-sm leading-5 font-medium rounded-md text-white bg-transparent hover:bg-teal-500 focus:outline-none shadow-xl">
-					        <i class="fa fa-plus" aria-hidden="true"></i>
-					        </button></th>		
 				          </tr>
 				        </thead>
 				        <tbody>
 				        	@foreach($items as $item)
-							<tr
+				        	<tr
 							  class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
-							  <input class="hidden" type="hidden" name="items[{{ $loop->index }}][id]" value="{{ $item->id }}">
-							  <input class="hidden" type="hidden" name="items[{{ $loop->index }}][incoming_id]" value="{{ $item->incoming_id }}">
+							   <input class="hidden" type="hidden" name="items[{{ $loop->index }}][id]" value="{{ $item->id }}">
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
 							  </td>
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}"></td>
@@ -140,19 +135,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-
-    var i = {{ $items->count() }};
-    $("#add").click(function(){
-        ++i;
-        $("#items").append('<tr class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700"><input type="hidden" class="hidden" name="items['+i+'][incoming_id]" value="{{ $item->incoming_id }}"><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][item_name]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][quantity]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][cubic_metre]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button" class="remove-tr transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none shadow-xl"><i class="fa fa-minus" aria-hidden="true"></i></button></td></tr>');
-
-    });
-
-    $(document).on('click', '.remove-tr', function(){  
-
-         $(this).parents('tr').remove();
-
-    });  
-
-</script>

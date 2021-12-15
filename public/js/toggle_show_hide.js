@@ -43,7 +43,7 @@ let close_modal_create_client = $(".close_modal_create_client");
 let modal_create_client = $(".modal_create_client");
 
 /*Select client*/
-let client = $("#client");
+let client = $(".client");
 let clients = $(".clients");
 let get_client_id = $(".get_client_id");
 
