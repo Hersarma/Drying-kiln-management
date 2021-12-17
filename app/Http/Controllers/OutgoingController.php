@@ -22,16 +22,6 @@ class OutgoingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -70,17 +60,6 @@ class OutgoingController extends Controller
         $items = $outgoing->outgoingitems()->get();
         $client = $outgoing->clients()->first();
         return view('outgoing.show', compact('client','clients', 'items', 'outgoing'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Outgoing  $Outgoing
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Outgoing $outgoing)
-    {
-        //
     }
 
     /**

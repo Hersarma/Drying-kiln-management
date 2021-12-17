@@ -1,10 +1,10 @@
-@if(count($errors->create_incoming) > 0)
+@if(count($errors->create_incoming) || count($errors->create_incoming_items) > 0)
 <script>
 $(document).ready(function () {
 $('.modal_create_incoming').show();
 });
 </script>
-@elseif(count($errors->edit_incoming) > 0)
+@elseif(count($errors->edit_incoming) || count($errors->edit_incoming_items) > 0)
 <script>
 $(document).ready(function () {
 $('.modal_edit_incoming').show();

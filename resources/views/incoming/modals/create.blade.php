@@ -136,8 +136,8 @@
 						</button>
 					</div>
 					<div>
-						@if($errors->create_incoming->any())
-						<p class="text-red-500">Polja ne mogu biti prazna</p>
+						@if($errors->create_incoming_items->any())
+						<p class="text-red-500">Polja za artikle ne mogu biti prazna</p>
 						@endif
 					</div>
 				</form>

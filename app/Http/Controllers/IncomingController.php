@@ -34,14 +34,17 @@ class IncomingController extends Controller
             'client_id' => 'required',
             'notes' => 'nullable',
             'transport_company' => 'nullable',
-            'invoice_number' => 'nullable',
+            'invoice_number' => 'nullable'
+        ]);
+        
+        $validate_items = request()->validateWithBag('create_incoming_items', [
             'items.*.item_name' => 'required',
             'items.*.quantity' => 'numeric|required',
             'items.*.cubic_metre' => 'numeric|required'
         ]);
-       
+
         $incoming = Incoming::create($validate);
-  
+
         foreach($request->items as $item) {
             $incoming->incomingitems()->create($item);
         }
@@ -77,7 +80,10 @@ class IncomingController extends Controller
             'client_id' => 'required',
             'notes' => 'nullable',
             'transport_company' => 'nullable',
-            'invoice_number' => 'nullable',
+            'invoice_number' => 'nullable'
+        ]);
+
+         $validate_items = request()->validateWithBag('edit_incoming_items', [
             'items.*.item_name' => 'required',
             'items.*.quantity' => 'numeric|required',
             'items.*.cubic_metre' => 'numeric|required'
