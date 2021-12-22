@@ -106,7 +106,7 @@
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
 							  </td>
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}"></td>
-							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}"></td>
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}"></td>
 						  	</tr>
 				        	@endforeach
 				         
