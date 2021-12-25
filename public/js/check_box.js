@@ -24,13 +24,13 @@ $(".check_all").click(function () {
     }
 });
 
-//$(document).on('keyup', '.comma', function () {
-       // this.value = this.value.replace(/,/g, '.');
-    //});
+$(document).on('change', '.comma', function () {
+        this.value = this.value.replace(/,/g, '.');
+    });
 
 
-$(".comma").change(function(){
-  this.value = this.value.replace(/,/g, '.');
-});
+//$(".comma").change(function(){
+  //this.value = this.value.replace(/,/g, '.');
+//});
 
 });
