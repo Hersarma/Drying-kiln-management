@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Client;
+use App\Models\Incoming;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -22,8 +23,11 @@ class SearchController extends Controller
     {
         $query = $request->get('query');
         $query = str_replace(" ", "%", $query);
-        
-        //return view('incoming.search', compact('incoming'))->render();
+        $incoming = Incoming::with('clients')->whereHas('clients',function($q) use($query){
+        $q->where('name', 'like', "%{$query}%");
+        })->orderBy('created_at', 'desc')->simplePaginate(10);
+        //dd($incoming);
+        return view('incoming.search', compact('incoming'))->render();
     }
 
 }
