@@ -39,6 +39,7 @@ Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChec
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
 Route::get('search_incomings', 'SearchController@search_incomings');
+Route::get('search_outgoings', 'SearchController@search_outgoings');
 
 });
 require __DIR__.'/auth.php';

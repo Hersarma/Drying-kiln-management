@@ -37,6 +37,27 @@ $(document).ready(function () {
         
         fetch_incomings(query);
     });
+    //
+     function fetch_outgoings(query) {
+        $.ajax({
+            url:"/search_outgoings?query=" + query,
+            success: function (data) {
+                if (!data){   
+                    $('#searchOutgoing').html('<p class="text-white py-4">Nema rezultata</p>');
+                }
+                else{   
+                    $('#searchOutgoing').html(data);
+                }
+            }
+        })
+    }
+
+    $(document).on('keyup', '#search_outgoing', function () {
+        let query = $('#search_outgoing').val();
+        
+        fetch_outgoings(query);
+    });
+    //
 
     $(document).on('keyup', '.search_clients', function () {
         let query = $('.search_clients').val();

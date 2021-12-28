@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Incoming;
+use App\Models\Outgoing;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -26,8 +27,19 @@ class SearchController extends Controller
         $incoming = Incoming::with('clients')->whereHas('clients',function($q) use($query){
         $q->where('name', 'like', "%{$query}%");
         })->orderBy('created_at', 'desc')->simplePaginate(10);
-        //dd($incoming);
+        
         return view('incoming.search', compact('incoming'))->render();
+    }
+
+    public function search_outgoings(Request $request)
+    {
+        $query = $request->get('query');
+        $query = str_replace(" ", "%", $query);
+        $outgoing = Outgoing::with('clients')->whereHas('clients',function($q) use($query){
+        $q->where('name', 'like', "%{$query}%");
+        })->orderBy('created_at', 'desc')->simplePaginate(10);
+       
+        return view('outgoing.search', compact('outgoing'))->render();
     }
 
 }

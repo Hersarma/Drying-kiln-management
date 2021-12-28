@@ -47,7 +47,7 @@
             </th>
           </tr>
         </thead>
-        <tbody id="search_timber_incoming">
+        <tbody id="searchOutgoing">
           @include('outgoing.search')
           @if($outgoing->isEmpty())
           <tr>
