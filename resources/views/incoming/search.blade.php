@@ -13,3 +13,9 @@
     class="cursor-pointer get_route_id text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i><span class="hidden">{{route('incoming.destroy', $item)}}</span></p></td>
   </tr>
   @endforeach
+<tr>
+  <td colspan="6">
+    {{ $incoming->links() }}
+  </td>
+</tr>
+  

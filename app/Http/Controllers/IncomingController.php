@@ -16,7 +16,7 @@ class IncomingController extends Controller
     public function index()
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $incoming = Incoming::with('clients')->orderBy('created_at', 'desc')->paginate(10);
+        $incoming = Incoming::with('clients')->orderBy('created_at', 'desc')->simplePaginate(10);
         
         return view('incoming.index', compact('incoming', 'clients'));
     }

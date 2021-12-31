@@ -18,9 +18,9 @@ $(document).ready(function () {
         })
     }
 
-    function fetch_incomings(query) {
+    function fetch_incomings(page, query) {
         $.ajax({
-            url:"/search_incomings?query=" + query,
+            url:"/search_incomings?page=" + page + "&query=" + query,
             success: function (data) {
                 if (!data){   
                     $('#searchIncoming').html('<p class="text-white py-4">Nema rezultata</p>');
@@ -34,9 +34,19 @@ $(document).ready(function () {
 
     $(document).on('keyup', '#search_incoming', function () {
         let query = $('#search_incoming').val();
+        let page = $('#hidden_page').val();
         
-        fetch_incomings(query);
+        fetch_incomings(page, query);
     });
+
+    $(document).on('click', '.pagination', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_incoming').val();
+      fetch_incomings(page, query);
+ });
     //
      function fetch_outgoings(query) {
         $.ajax({
