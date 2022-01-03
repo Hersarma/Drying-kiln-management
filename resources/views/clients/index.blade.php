@@ -74,9 +74,6 @@
 </form>
 <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
 </div>
-<div class="p-2">
-  {{ $clients->links() }}
-</div>
 </section>
 @include('clients.modals.create')
 

@@ -2,9 +2,9 @@
 $(document).ready(function () {
 
     //Clients//
-    function fetch_clients(query, url_name) {
+    function fetch_clients(query, url_name, page) {
         $.ajax({
-            url:"/search_clients?query=" + query +"&url_name=" + url_name,
+            url:"/search_clients?query=" + query +"&url_name=" + url_name + "&page=" + page,
             success: function (data) {
                 if (!data){   
                     $('.searchClient').html('<p class="text-white py-4">Nema rezultata</p>');
@@ -34,12 +34,12 @@ $(document).ready(function () {
 
     $(document).on('keyup', '#search_incoming', function () {
         let query = $('#search_incoming').val();
-        let page = $('#hidden_page').val();
+        let page = $('#hidden_page').val(1);
         
         fetch_incomings(page, query);
     });
 
-    $(document).on('click', '.pagination', function(event){
+    $(document).on('click', '.paginationsearch_incomings ', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
       $('#hidden_page').val(page);
@@ -71,8 +71,18 @@ $(document).ready(function () {
 
     $(document).on('keyup', '.search_clients', function () {
         let query = $('.search_clients').val();
+        let page = $('#hidden_page').val(1);
         let url_name = $('#url_name').text().split('/')[0];
-        fetch_clients(query, url_name);
+        fetch_clients(query, url_name, page);
+    });
+    $(document).on('click', '.paginationsearch_clients ', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('.search_clients').val();
+      let url_name = $('#url_name').text().split('/')[0];
+      fetch_clients(query, url_name, page);
     });
 
     $(document).on('keyup', '.search_clients_edit', function () {
