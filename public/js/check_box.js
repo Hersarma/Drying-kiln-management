@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-$('[type=checkbox]').click(function(){
+$(document).on('click', '[type=checkbox]', function(){
+
     let checkedChbx = $('[type=checkbox]:checked');
     if (checkedChbx.length > 0)
     {
@@ -11,7 +12,9 @@ $('[type=checkbox]').click(function(){
         $('.trash').hide();
     }
 });
-$(".check_all").click(function () {
+
+$(document).on('click', '.check_all', function(){
+
     $('input:checkbox').not(this).prop('checked', this.checked);
     let checkedChbx = $('[type=checkbox]:checked');
     if (checkedChbx.length > 0)
@@ -24,13 +27,9 @@ $(".check_all").click(function () {
     }
 });
 
+
 $(document).on('change', '.comma', function () {
         this.value = this.value.replace(/,/g, '.');
     });
-
-
-//$(".comma").change(function(){
-  //this.value = this.value.replace(/,/g, '.');
-//});
 
 });

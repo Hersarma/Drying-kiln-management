@@ -6,7 +6,7 @@ user.click(function(e) {
     e.preventDefault();
     user_profile.toggle(500);
 });
-
+/*Legend toogle*/
 let legend = $("#legend_open");
 let legend_show = $("#legend_show");
 

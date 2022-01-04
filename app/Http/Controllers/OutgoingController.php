@@ -16,7 +16,7 @@ class OutgoingController extends Controller
     public function index()
     {
         $clients = Client::orderBy('name', 'asc')->paginate(50,['id','name']);
-        $outgoing = Outgoing::with('clients')->orderBy('created_at', 'desc')->paginate(10);
+        $outgoing = Outgoing::with('clients')->orderBy('created_at', 'desc')->simplePaginate(10);
         
         return view('outgoing.index', compact('outgoing', 'clients'));
     }

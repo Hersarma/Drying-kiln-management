@@ -32,25 +32,9 @@ $(document).ready(function () {
         })
     }
 
-    $(document).on('keyup', '#search_incoming', function () {
-        let query = $('#search_incoming').val();
-        let page = $('#hidden_page').val(1);
-        
-        fetch_incomings(page, query);
-    });
-
-    $(document).on('click', '.paginationsearch_incomings ', function(event){
-      event.preventDefault();
-      let page = $(this).attr('href').split('page=')[1];
-      $('#hidden_page').val(page);
-
-      let query = $('#search_incoming').val();
-      fetch_incomings(page, query);
- });
-    //
-     function fetch_outgoings(query) {
+     function fetch_outgoings(page, query) {
         $.ajax({
-            url:"/search_outgoings?query=" + query,
+            url:"/search_outgoings?page=" + page + "&query=" + query,
             success: function (data) {
                 if (!data){   
                     $('#searchOutgoing').html('<p class="text-white py-4">Nema rezultata</p>');
@@ -61,27 +45,53 @@ $(document).ready(function () {
             }
         })
     }
+    $(document).on('keyup', '#search_incoming', function () {
+        let query = $('#search_incoming').val();
+        let page = $('#hidden_page').val(1);
+        
+        fetch_incomings(page, query);
+    });
+
+    $(document).on('click', '.paginationsearch_incomings, .paginationincoming', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_incoming').val();
+      $('.trash').hide();
+      fetch_incomings(page, query);
+    });
 
     $(document).on('keyup', '#search_outgoing', function () {
         let query = $('#search_outgoing').val();
-        
-        fetch_outgoings(query);
+        let page = $('#hidden_page').val(1);
+        fetch_outgoings(page, query);
     });
-    //
 
+    $(document).on('click', '.paginationsearch_outgoings, .paginationoutgoing', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_outgoing').val();
+      $('.trash').hide();
+      fetch_outgoings(page, query);
+    });
+    
     $(document).on('keyup', '.search_clients', function () {
         let query = $('.search_clients').val();
         let page = $('#hidden_page').val(1);
         let url_name = $('#url_name').text().split('/')[0];
         fetch_clients(query, url_name, page);
     });
-    $(document).on('click', '.paginationsearch_clients ', function(event){
+    $(document).on('click', '.paginationsearch_clients, .paginationclients', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
       $('#hidden_page').val(page);
 
       let query = $('.search_clients').val();
       let url_name = $('#url_name').text().split('/')[0];
+      $('.trash').hide();
       fetch_clients(query, url_name, page);
     });
 

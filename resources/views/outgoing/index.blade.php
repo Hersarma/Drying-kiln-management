@@ -71,7 +71,7 @@
     </form>
     <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
   </div>
-  {{ $outgoing->links() }}
+  
 </section>
 @include('outgoing.modals.create')
 
