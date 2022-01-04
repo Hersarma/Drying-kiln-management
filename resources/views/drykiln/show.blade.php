@@ -208,9 +208,9 @@
     </div>
   </div>
 </div>
-<div class="relative">
+<div class="relative py-2">
   @if($drykiln->dry_kiln_config->dry_kiln_status)
-  <div class="absolute w-full overflow-auto">
+  <div class="absolute w-full overflow-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
   	<table class="table-auto w-full text-left whitespace-normal">
 		<thead>
 			<tr class="border-b border-turquoise-light">
