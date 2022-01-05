@@ -16,9 +16,9 @@ class CreateOutgoingItemsTable extends Migration
         Schema::create('outgoing_items', function (Blueprint $table) {
            $table->id();
             $table->foreignId('outgoing_id');
-            $table->string('item_name')->nullable();
+            $table->string('item_name');
             $table->integer('quantity')->nullable();
-            $table->float('cubic_metre', 8, 2)->nullable();
+            $table->integer('cubic_metre')->nullable();
             $table->timestamps();
 
             $table->foreign('outgoing_id')

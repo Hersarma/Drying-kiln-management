@@ -16,9 +16,9 @@ class CreateIncomingItemsTable extends Migration
         Schema::create('incoming_items', function (Blueprint $table) {
            $table->id();
             $table->foreignId('incoming_id');
-            $table->string('item_name')->nullable();
+            $table->string('item_name');
             $table->integer('quantity')->nullable();
-            $table->float('cubic_metre', 8, 2)->nullable();
+            $table->integer('cubic_metre')->nullable();
             $table->timestamps();
 
             $table->foreign('incoming_id')
