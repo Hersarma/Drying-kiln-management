@@ -14,7 +14,7 @@
   </tr>
   @endforeach
 <tr>
-  <td colspan="6">
+  <td colspan="6" class="py-2">
     {{ $incoming->links() }}
   </td>
 </tr>

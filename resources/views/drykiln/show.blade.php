@@ -5,7 +5,7 @@
     <span class="hidden md:inline-block">Nazad</span>
   </p>
 <div class="flex flex-wrap justify-between items-center">
-	<div class="w-full md:w-2/3 px-4">
+	<div class="w-full md:w-2/3 md:px-4">
 		<div class="flex justify-center">
 			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="/img/vent.png">
@@ -96,7 +96,7 @@
 		</div>
 	</div>
 	
-	<div class="w-full md:w-1/3 px-4 mt-20">
+	<div class="w-full md:w-1/3 md:px-4 mt-20">
 		<div class="relative mb-2 border-l-4 border-r-4 border-turquoise-light rounded-xl">
 		  <div class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
 		  <button id="legend_open" class="
@@ -190,7 +190,7 @@
 	</div>
 </div>
 
-<div class="px-4 py-6">
+<div class="md:px-4 py-4">
 	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <p class="px-8 text-gray-200">Proces sušenja</p>
     <div class="flex space-x-4">
@@ -208,10 +208,10 @@
     </div>
   </div>
 </div>
-<div class="relative py-2">
+	<p class="text-center py-2 text-white text-lg">Očitavanje sondi</p>
   @if($drykiln->dry_kiln_config->dry_kiln_status)
-  <div class="absolute w-full overflow-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
-  	<table class="table-auto w-full text-left whitespace-normal">
+  <div class="w-11/12 mx-auto md:w-full overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
+  	<table class="table-auto w-full text-left whitespace-nowrap">
 		<thead>
 			<tr class="border-b border-turquoise-light">
 				<th class="px-2 md:px-4 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_1_status) ? 'text-gray-200' : 'text-gray-700' !!} text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900"><span class="hidden md:inline-block">Sonda</span> 1</th>
@@ -238,13 +238,16 @@
 				<td class="px-4 py-3 text-left md:text-center text-sm text-gray-200">{{ $reading->created_at->format('d-m-Y H:i') }}</td>
 			</tr>
 			@endforeach
+			<tr>
+				<td colspan="8" class="py-2">
+					{{ $readings->links() }}
+				</td>
+			</tr>
 		</tbody>
 	</table>
-{{ $readings->links() }}
+
   </div>
-  
 	@endif
-</div>
 @include('drykiln.modals.create_drykiln_config')
 @if($drykiln->dry_kiln_config()->exists())
 @include('drykiln.modals.edit_drykiln_config')
