@@ -38,7 +38,15 @@ class GetMail extends Command
      */
     public function handle()
     {
-        $oClient = Client::account('default');
+        $oClient = Client::make([
+            'host'          => 'mail.hersarma.in.rs',
+            'port'          => 993,
+            'encryption'    => 'ssl',
+            'validate_cert' => true,
+            'username'      => 'local@hersarma.in.rs',
+            'password'      => 'SARMADINO2110',
+            'protocol'      => 'imap'
+        ]);
         $oClient->connect();
 
         $aFolder = $oClient->getFolder('INBOX');
