@@ -40,7 +40,7 @@ class GetMail extends Command
     public function handle()
     {
         $mailconfig = MailConfig::first();
-        $oClient = Client::make([
+        $client = Client::make([
             'host'          => $mailconfig->host,
             'port'          => $mailconfig->port,
             'encryption'    => $mailconfig->encryption,
@@ -49,11 +49,11 @@ class GetMail extends Command
             'password'      => $mailconfig->password,
             'protocol'      => $mailconfig->protocol
         ]);
-        $oClient->connect();
+        $client->connect();
 
-        $aFolder = $oClient->getFolder('INBOX');
+        $folder = $client->getFolder('INBOX');
 
-        $messages = $aFolder->query()->unseen()->get();
+        $messages = $folder->query()->unseen()->get();
 
         foreach ($messages as $message) {
             $attachments = $message->getAttachments();
@@ -80,12 +80,6 @@ class GetMail extends Command
 
             $mail->save();
 
-           /* $users = User::whereHas('roles', function ($query) {
-                $query->whereIn('name', ['admin']);
-            })
-                ->get();
-            Notification::send($users, new EmailNotification($message->getFrom()[0]->mail));
-            */
         }
     }
 }
