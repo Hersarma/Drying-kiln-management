@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\ReadMail;
+use App\Models\MailConfig;
 use Webklex\IMAP\Facades\Client;
 class GetMail extends Command
 {
@@ -38,14 +39,15 @@ class GetMail extends Command
      */
     public function handle()
     {
+        $mailconfig = MailConfig::first();
         $oClient = Client::make([
-            'host'          => 'mail.hersarma.in.rs',
-            'port'          => 993,
-            'encryption'    => 'ssl',
-            'validate_cert' => true,
-            'username'      => 'local@hersarma.in.rs',
-            'password'      => 'SARMADINO2110',
-            'protocol'      => 'imap'
+            'host'          => $mailconfig->host,
+            'port'          => $mailconfig->port,
+            'encryption'    => $mailconfig->encryption,
+            'validate_cert' => $mailconfig->validate_cert,
+            'username'      => $mailconfig->username,
+            'password'      => $mailconfig->password,
+            'protocol'      => $mailconfig->protocol
         ]);
         $oClient->connect();
 
