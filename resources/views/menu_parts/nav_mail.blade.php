@@ -1,23 +1,39 @@
-<nav class="py-2 bg-gray_white-dark hidden">
-  <div class="flex justify-center">
-    <a href="{{ route('mail-index') }}"
-      class="ml-4 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail') ? 'border-b-2 border-teal-400 text-gray-900' : 'text-gray-600 hover:text-gray-900 border-b-2 border-gray-100 hover:border-teal-400 focus:outline-none transition duration-150 ease-in-out' }} "><i
-      class="fas fa-inbox pr-0 md:pr-3"></i><span class="hidden md:inline-block">Inbox</span></a>
-      <a href="{{ route('mail-deleted') }}"
-        class="ml-4 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/deleted') ? 'border-b-2 border-teal-400 text-gray-900' : 'text-gray-600 hover:text-gray-900 border-b-2 border-gray-100 hover:border-teal-400 focus:outline-none transition duration-150 ease-in-out' }} "><i
-        class="fas fa-trash pr-0 md:pr-3"></i><span class="hidden md:inline-block">Otpad</span>
+  
+<div class="flex">
+  <div class="z-10 overflow-hidden w-20 md:w-48 min-h-screen">
+  <ul class="inline-block w-full list-reset flex flex-col">
+    <li class="group py-6 px-4 text-center cursor-pointer text-gray-300 rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl">
+      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
+        <i class="fas fa-inbox group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
+          Primljene
+        </span></i>
       </a>
-      <a href="#"
-        class="ml-4 px-3 py-2 text-sm font-medium leading-5 text-gray-600 hover:text-gray-900 border-b-2 border-gray-100 hover:border-teal-400 focus:outline-none transition duration-150 ease-in-out"><i
-        class="fa fa-ban pr-0 md:pr-3" aria-hidden="true"></i><span class="hidden md:inline-block">Nepozeljne</span>
+    </li>
+    <li class="group py-6 px-4 text-center cursor-pointer text-gray-300">
+      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
+        <i class="fas fa-trash group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
+          Otpad
+        </span></i>
       </a>
-      <a href="{{ route('mail-sent') }}"
-        class="ml-4 mr-6 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/sent') ? 'border-b-2 border-teal-400 text-gray-900' : 'text-gray-600 hover:text-gray-900 border-b-2 border-gray-100 hover:border-teal-400 focus:outline-none transition duration-150 ease-in-out' }}"><i
-        class="fa fa-paper-plane pr-0 md:pr-3" aria-hidden="true"></i><span class="hidden md:inline-block">Poslate</span>
+    </li>
+    <li class="group py-6 px-4 cursor-pointer text-gray-300">
+      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
+        <i class="fa fa-ban group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
+          Nepozeljne
+        </span></i>
       </a>
-      <a href="{{ route('mail-new') }}"
-        class="ml-4 mr-6 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/new') ? 'border-b-2 border-teal-400 text-gray-900' : 'text-gray-600 hover:text-gray-900 border-b-2 border-gray-100 hover:border-teal-400 focus:outline-none transition duration-150 ease-in-out' }}"><i
-        class="fa fa-plus pr-0 md:pr-3" aria-hidden="true"></i><span class="hidden md:inline-block">Nova poruka</span>
+    </li>
+    <li class="group py-6 px-4 cursor-pointer text-gray-300">
+      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
+        <i class="fa fa-paper-plane group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
+          Poslate
+        </span></i>
       </a>
-    </div>
-  </nav>
+    </li>
+  </ul>
+</div>
+<div>
+  .....
+</div>
+</div>
+  

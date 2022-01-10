@@ -35,6 +35,8 @@ Route::post('/create_drykiln_reading', 'DrykilnReadingsController@store')->name(
 
 Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChecked')->name('delete_checked_drying_proces');
 
+/*Mail*/
+Route::resource('mail', 'ReadMailController');
 
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');

@@ -14,7 +14,7 @@ class ReadMailController extends Controller
      */
     public function index()
     {
-        //
+        return view('mail.index');
     }
 
     /**
