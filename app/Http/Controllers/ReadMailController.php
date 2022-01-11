@@ -14,7 +14,8 @@ class ReadMailController extends Controller
      */
     public function index()
     {
-        return view('mail.index');
+        $mail_inbox = ReadMail::orderBy('created_at', 'desc')->simplePaginate(10,['from', 'subject']);
+        return view('mail.index', compact('mail_inbox'));
     }
 
     /**
