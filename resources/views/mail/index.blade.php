@@ -1,4 +1,10 @@
 @extends('layouts.app')
 @section('content')
-@include('menu_parts.nav_mail')
+	<div class="flex">
+		@include('menu_parts.nav_mail')
+		<div>
+			
+		</div>
+	</div>
+
 @endsection
