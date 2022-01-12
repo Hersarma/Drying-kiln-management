@@ -18,7 +18,7 @@ class CreateIncomingItemsTable extends Migration
             $table->foreignId('incoming_id');
             $table->string('item_name');
             $table->integer('quantity')->nullable();
-            $table->integer('cubic_metre')->nullable();
+            $table->decimal('cubic_metre')->nullable();
             $table->timestamps();
 
             $table->foreign('incoming_id')

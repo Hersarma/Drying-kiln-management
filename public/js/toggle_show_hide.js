@@ -1,122 +1,62 @@
-/*User profile toogle*/
-let user = $("#user_open");
-let user_profile = $("#user_profile");
 
-user.click(function(e) {
+$(document).on('click', '.client', function(e){
     e.preventDefault();
-    user_profile.toggle(500);
-});
-/*Legend toogle*/
-let legend = $("#legend_open");
-let legend_show = $("#legend_show");
-
-legend.click(function(e) {
-    e.preventDefault();
-    legend_show.toggle(500);
+    $('.clients').toggle(500);
 });
 
-/*Timber*/
-let open_timber = $('.open_timber');
-let timber_links = $('.timber_links');
-
-let open_modal_create_incoming = $(".open_modal_create_incoming");
-let close_modal_create_incoming = $(".close_modal_create_incoming");
-let modal_create_incoming = $(".modal_create_incoming");
-
-let open_modal_edit_incoming = $(".open_modal_edit_incoming");
-let close_modal_edit_incoming = $(".close_modal_edit_incoming");
-let modal_edit_incoming = $(".modal_edit_incoming");
-
-
-let open_modal_create_outgoing = $(".open_modal_create_outgoing");
-let close_modal_create_outgoing = $(".close_modal_create_outgoing");
-let modal_create_outgoing = $(".modal_create_outgoing");
-
-let open_modal_edit_outgoing = $(".open_modal_edit_outgoing");
-let close_modal_edit_outgoing = $(".close_modal_edit_outgoing");
-let modal_edit_outgoing = $(".modal_edit_outgoing");
-
-
-/*Client-create*/
-let open_modal_create_client = $(".open_modal_create_client");
-let close_modal_create_client = $(".close_modal_create_client");
-let modal_create_client = $(".modal_create_client");
-
-/*Select client*/
-let client = $(".client");
-let clients = $(".clients");
-let get_client_id = $(".get_client_id");
-let client_edit = $(".client_edit");
-let clients_edit = $(".clients_edit");
-
-client.click(function(e) {
+$(document).on('click', '.client_edit', function(e){
     e.preventDefault();
-    clients.toggle(500);
+    $('.clients_edit').toggle(500);
 });
-
-client_edit.click(function(e) {
-    e.preventDefault();
-    clients_edit.toggle(500);
-});
-
-/*Warning message modal*/
-let close_modal_warning = $(".close_modal_warning");
-let modal_warning = $(".modal_warning");
-
-let close_modal_warning_drykiln_power_of = $(".close_modal_warning_drykiln_power_of");
-let modal_warning_powerof_drykiln = $(".modal_warning_powerof_drykiln");
-
-/*Client-edit*/
-let open_modal_edit_client = $(".open_modal_edit_client");
-let close_modal_edit_client = $(".close_modal_edit_client");
-let modal_edit_client = $(".modal_edit_client");
-
-/*Drykiln-create*/
-let open_modal_create_drykiln = $(".open_modal_create_drykiln");
-let close_modal_create_drykiln = $(".close_modal_create_drykiln");
-let modal_create_drykiln = $(".modal_create_drykiln");
-
-/*Drykiln-config-create*/
-let open_modal_create_drykiln_config = $(".open_modal_create_drykiln_config");
-let close_modal_create_drykiln_config = $(".close_modal_create_drykiln_config");
-let modal_create_drykiln_config = $(".modal_create_drykiln_config");
-
-/*Drykiln-config-edit*/
-let open_modal_edit_drykiln_config = $(".open_modal_edit_drykiln_config");
-let close_modal_edit_drykiln_config = $(".close_modal_edit_drykiln_config");
-let modal_edit_drykiln_config = $(".modal_edit_drykiln_config");
-
-/*Drykiln-readings-create*/
-let open_modal_create_drykiln_readings = $(".open_modal_create_drykiln_readings");
-let close_modal_create_drykiln_readings = $(".close_modal_create_drykiln_readings");
-let modal_create_drykiln_readings = $(".modal_create_drykiln_readings");
 
 /*Side bar toggle*/
-let side_bar = $("#side_bar");
-let hamburger_mobile = $('#hamburger_mobile');
-let hamburger = $('#hamburger');
-let content = $('#content');
 
-hamburger.click(function(e) {
+$(document).on('click', '#hamburger', function(e){
     e.preventDefault();
-    if ($(side_bar).is(':visible')) {
-      $(side_bar).animate({
+    if ($('#side_bar').is(':visible')) {
+      $('#side_bar').animate({
         'width': '0px'
       }, 'slow', function() {
-        $(side_bar).hide();
+        $('#side_bar').hide();
       });
-      $(content).animate({
+      $('#content').animate({
         'margin-left':'0px'
       }, 'slow');
     } else {
-      $(side_bar).show();
-      $(side_bar).animate({
+      $('#side_bar').show();
+      $('#side_bar').animate({
         'width': '14rem'
       }, 'slow');
-      $(content).animate({
+      $('#content').animate({
         'margin-left':'14rem'
       }, 'slow');
     }
+});
+
+
+/*User profile toogle*/
+
+$(document).on('click', '#user_open', function(e){
+    e.preventDefault();
+    $('#user_profile').toggle(500);
+});
+/*Legend toogle*/
+
+$(document).on('click', '#legend_open', function(e){
+    e.preventDefault();
+    $('#legend_show').toggle(500);
+});
+
+/*Warning message modal*/
+
+$(document).on('click', '.close_modal_warning', function(e){
+    e.preventDefault();
+    $('.modal_warning').toggle(500);
+});
+
+$(document).on('click', '.close_modal_warning_drykiln_power_of', function(e){
+    e.preventDefault();
+    $('.modal_warning_powerof_drykiln').toggle(500);
 });
 
 /*Show/hide messages*/
@@ -127,125 +67,122 @@ $(document).ready(function(){
     $(".welcomeMessage").slideDown().delay(2000).slideUp();
 });
 
- close_modal_warning.click(function(e) {
-        e.preventDefault();
-        modal_warning.toggle(500);
-    });
-
- close_modal_warning_drykiln_power_of.click(function(e) {
-        e.preventDefault();
-        modal_warning_powerof_drykiln.toggle(500);
-    });
 
 /*client modals*/
-open_modal_edit_client.click(function(e) {
+$(document).on('click', '.open_modal_create_client', function(e){
     e.preventDefault();
-    modal_edit_client.toggle(500);
+    $('.modal_create_client').toggle(500);
 });
 
-close_modal_edit_client.click(function(e) {
+$(document).on('click', '.close_modal_create_client', function(e){
     e.preventDefault();
-    modal_edit_client.toggle(500);
+    $('.modal_create_client').toggle(500);
 });
 
-open_modal_create_client.click(function(e) {
+$(document).on('click', '.open_modal_edit_client', function(e){
     e.preventDefault();
-    modal_create_client.toggle(500);
+    $('.modal_edit_client').toggle(500);
 });
 
-close_modal_create_client.click(function(e) {
+$(document).on('click', '.close_modal_edit_client', function(e){
     e.preventDefault();
-    modal_create_client.toggle(500);
+    $('.modal_edit_client').toggle(500);
 });
+
 
 /*Timber incoming modals*/
-open_modal_create_incoming.click(function(e) {
+$(document).on('click', '.open_modal_create_incoming', function(e){
     e.preventDefault();
-    modal_create_incoming.toggle(500);
+    $('.modal_create_incoming').toggle(500);
 });
 
-close_modal_create_incoming.click(function(e) {
+$(document).on('click', '.close_modal_create_incoming', function(e){
     e.preventDefault();
-    modal_create_incoming.toggle(500);
+    $('.modal_create_incoming').toggle(500);
+});
+/*Timber edit modal*/
+$(document).on('click', '.open_modal_edit_incoming', function(e){
+    e.preventDefault();
+    $('.modal_edit_incoming').toggle(500);
 });
 
-open_modal_edit_incoming.click(function(e) {
+$(document).on('click', '.close_modal_edit_incoming', function(e){
     e.preventDefault();
-    modal_edit_incoming.toggle(500);
+    $('.modal_edit_incoming').toggle(500);
 });
 
-close_modal_edit_incoming.click(function(e) {
-    e.preventDefault();
-    modal_edit_incoming.toggle(500);
-});
 
 /*Timber outgoing modals*/
 
-open_modal_create_outgoing.click(function(e) {
+$(document).on('click', '.open_modal_create_outgoing', function(e){
     e.preventDefault();
-    modal_create_outgoing.toggle(500);
+    $('.modal_create_outgoing').toggle(500);
 });
 
-close_modal_create_outgoing.click(function(e) {
+$(document).on('click', '.close_modal_create_outgoing', function(e){
     e.preventDefault();
-    modal_create_outgoing.toggle(500);
+    $('.modal_create_outgoing').toggle(500);
+});
+/*Timber edit modal*/
+$(document).on('click', '.open_modal_edit_outgoing', function(e){
+    e.preventDefault();
+    $('.modal_edit_outgoing').toggle(500);
 });
 
-open_modal_edit_outgoing.click(function(e) {
+$(document).on('click', '.close_modal_edit_outgoing', function(e){
     e.preventDefault();
-    modal_edit_outgoing.toggle(500);
-});
-
-close_modal_edit_outgoing.click(function(e) {
-    e.preventDefault();
-    modal_edit_outgoing.toggle(500);
+    $('.modal_edit_outgoing').toggle(500);
 });
 
 /*Timber links*/
-open_timber.click(function(e) {
-    e.preventDefault();
-    timber_links.toggle(300);
+
+$(document).on('click', '.open_timber', function(){
+    $('.timber_links').toggle(300);
 });
 
 /*Drykiln modals*/
-open_modal_create_drykiln.click(function(e) {
+$(document).on('click', '.open_modal_create_drykiln', function(e){
     e.preventDefault();
-    modal_create_drykiln.toggle(500);
+    $('.modal_create_drykiln').toggle(500);
 });
 
-close_modal_create_drykiln.click(function(e) {
+$(document).on('click', '.close_modal_create_drykiln', function(e){
     e.preventDefault();
-    modal_create_drykiln.toggle(500);
+    $('.modal_create_drykiln').toggle(500);
 });
 
-open_modal_create_drykiln_config.click(function(e) {
+/*Drykiln config create*/
+$(document).on('click', '.open_modal_create_drykiln_config', function(e){
     e.preventDefault();
-    modal_create_drykiln_config.toggle(500);
+    $('.modal_create_drykiln_config').toggle(500);
 });
 
-close_modal_create_drykiln_config.click(function(e) {
+$(document).on('click', '.close_modal_create_drykiln_config', function(e){
     e.preventDefault();
-    modal_create_drykiln_config.toggle(500);
+    $('.modal_create_drykiln_config').toggle(500);
 });
 
-open_modal_edit_drykiln_config.click(function(e) {
+/*Drykiln config edit*/
+
+$(document).on('click', '.open_modal_edit_drykiln_config', function(e){
     e.preventDefault();
-    modal_edit_drykiln_config.toggle(500);
+    $('.modal_edit_drykiln_config').toggle(500);
 });
 
-close_modal_edit_drykiln_config.click(function(e) {
+$(document).on('click', '.close_modal_edit_drykiln_config', function(e){
     e.preventDefault();
-    modal_edit_drykiln_config.toggle(500);
+    $('.modal_edit_drykiln_config').toggle(500);
+});
+/*Drykiln readings*/
+$(document).on('click', '.open_modal_create_drykiln_readings', function(e){
+    e.preventDefault();
+    $('.modal_create_drykiln_readings').toggle(500);
 });
 
-open_modal_create_drykiln_readings.click(function(e) {
+$(document).on('click', '.close_modal_create_drykiln_readings', function(e){
     e.preventDefault();
-    modal_create_drykiln_readings.toggle(500);
+    $('.modal_create_drykiln_readings').toggle(500);
 });
 
-close_modal_create_drykiln_readings.click(function(e) {
-    e.preventDefault();
-    modal_create_drykiln_readings.toggle(500);
-});
 
 
