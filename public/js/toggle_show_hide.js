@@ -43,7 +43,11 @@ $(document).on('click', '#user_open', function(e){
 
 $(document).on('click', '#legend_open', function(e){
     e.preventDefault();
-    $('#legend_show').toggle(500);
+    if ($('#legend_show').is(':hidden')) {
+       $('#legend_show').slideDown(500);
+    } else {
+        $('#legend_show').slideUp(500);
+    }
 });
 
 /*Warning message modal*/
