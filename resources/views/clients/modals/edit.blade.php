@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="flex justify-between py-4">
-            <button type="button" class="close_modal_edit_client py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
+            <button type="button" class="toggle_modal_edit_client py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
             <button type="submit" class="py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">Sačuvaj</button>
           </div>
         </form>

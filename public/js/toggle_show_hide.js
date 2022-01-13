@@ -33,7 +33,6 @@ $(document).on('click', '#hamburger', function(e){
     }
 });
 
-
 /*User profile toogle*/
 
 $(document).on('click', '#user_open', function(e){
@@ -67,69 +66,38 @@ $(document).ready(function(){
     $(".welcomeMessage").slideDown().delay(2000).slideUp();
 });
 
-
 /*client modals*/
-$(document).on('click', '.open_modal_create_client', function(e){
+$(document).on('click', '.toggle_modal_create_client', function(e){
     e.preventDefault();
     $('.modal_create_client').toggle(500);
 });
 
-$(document).on('click', '.close_modal_create_client', function(e){
-    e.preventDefault();
-    $('.modal_create_client').toggle(500);
-});
-
-$(document).on('click', '.open_modal_edit_client', function(e){
+$(document).on('click', '.toggle_modal_edit_client', function(e){
     e.preventDefault();
     $('.modal_edit_client').toggle(500);
 });
-
-$(document).on('click', '.close_modal_edit_client', function(e){
-    e.preventDefault();
-    $('.modal_edit_client').toggle(500);
-});
-
 
 /*Timber incoming modals*/
-$(document).on('click', '.open_modal_create_incoming', function(e){
+$(document).on('click', '.toggle_modal_create_incoming', function(e){
     e.preventDefault();
     $('.modal_create_incoming').toggle(500);
 });
 
-$(document).on('click', '.close_modal_create_incoming', function(e){
-    e.preventDefault();
-    $('.modal_create_incoming').toggle(500);
-});
 /*Timber edit modal*/
-$(document).on('click', '.open_modal_edit_incoming', function(e){
+$(document).on('click', '.toggle_modal_edit_incoming', function(e){
     e.preventDefault();
     $('.modal_edit_incoming').toggle(500);
 });
-
-$(document).on('click', '.close_modal_edit_incoming', function(e){
-    e.preventDefault();
-    $('.modal_edit_incoming').toggle(500);
-});
-
 
 /*Timber outgoing modals*/
 
-$(document).on('click', '.open_modal_create_outgoing', function(e){
+$(document).on('click', '.toggle_modal_create_outgoing', function(e){
     e.preventDefault();
     $('.modal_create_outgoing').toggle(500);
 });
 
-$(document).on('click', '.close_modal_create_outgoing', function(e){
-    e.preventDefault();
-    $('.modal_create_outgoing').toggle(500);
-});
 /*Timber edit modal*/
-$(document).on('click', '.open_modal_edit_outgoing', function(e){
-    e.preventDefault();
-    $('.modal_edit_outgoing').toggle(500);
-});
-
-$(document).on('click', '.close_modal_edit_outgoing', function(e){
+$(document).on('click', '.toggle_modal_edit_outgoing', function(e){
     e.preventDefault();
     $('.modal_edit_outgoing').toggle(500);
 });
@@ -141,48 +109,30 @@ $(document).on('click', '.open_timber', function(){
 });
 
 /*Drykiln modals*/
-$(document).on('click', '.open_modal_create_drykiln', function(e){
-    e.preventDefault();
-    $('.modal_create_drykiln').toggle(500);
-});
-
-$(document).on('click', '.close_modal_create_drykiln', function(e){
+$(document).on('click', '.toggle_modal_create_drykiln', function(e){
     e.preventDefault();
     $('.modal_create_drykiln').toggle(500);
 });
 
 /*Drykiln config create*/
-$(document).on('click', '.open_modal_create_drykiln_config', function(e){
-    e.preventDefault();
-    $('.modal_create_drykiln_config').toggle(500);
-});
-
-$(document).on('click', '.close_modal_create_drykiln_config', function(e){
+$(document).on('click', '.toggle_modal_create_drykiln_config', function(e){
     e.preventDefault();
     $('.modal_create_drykiln_config').toggle(500);
 });
 
 /*Drykiln config edit*/
 
-$(document).on('click', '.open_modal_edit_drykiln_config', function(e){
+$(document).on('click', '.toggle_modal_edit_drykiln_config', function(e){
     e.preventDefault();
     $('.modal_edit_drykiln_config').toggle(500);
 });
 
-$(document).on('click', '.close_modal_edit_drykiln_config', function(e){
-    e.preventDefault();
-    $('.modal_edit_drykiln_config').toggle(500);
-});
 /*Drykiln readings*/
-$(document).on('click', '.open_modal_create_drykiln_readings', function(e){
+$(document).on('click', '.toggle_modal_create_drykiln_readings', function(e){
     e.preventDefault();
     $('.modal_create_drykiln_readings').toggle(500);
 });
 
-$(document).on('click', '.close_modal_create_drykiln_readings', function(e){
-    e.preventDefault();
-    $('.modal_create_drykiln_readings').toggle(500);
-});
 
 
 
