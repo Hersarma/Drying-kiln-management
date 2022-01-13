@@ -43,11 +43,8 @@ $(document).on('click', '#user_open', function(e){
 
 $(document).on('click', '#legend_open', function(e){
     e.preventDefault();
-    if ($('#legend_show').is(':hidden')) {
-       $('#legend_show').slideDown(500);
-    } else {
-        $('#legend_show').slideUp(500);
-    }
+    $('#legend_show').slideToggle(500);
+    
 });
 
 /*Warning message modal*/
@@ -60,14 +57,6 @@ $(document).on('click', '.close_modal_warning', function(e){
 $(document).on('click', '.close_modal_warning_drykiln_power_of', function(e){
     e.preventDefault();
     $('.modal_warning_powerof_drykiln').toggle(500);
-});
-
-/*Show/hide messages*/
-$(document).ready(function(){
-    $(".successMessage").slideDown().delay(2000).slideUp();
-});
-$(document).ready(function(){
-    $(".welcomeMessage").slideDown().delay(2000).slideUp();
 });
 
 /*client modals*/

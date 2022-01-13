@@ -6,4 +6,9 @@
     </p>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+    $(".successMessage").slideDown().delay(2000).slideUp();
+});
+</script>
 @endif
