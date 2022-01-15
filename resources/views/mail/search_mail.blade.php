@@ -1,12 +1,11 @@
 @if($mail_inbox->isNotEmpty())
-<div class="w-full h-screen_nav ml-24 md:ml-52 border-l-4 border-turquoise-light rounded-xl">
+<div class="flex flex-col justify-between w-full h-screen_nav ml-24 md:ml-52 border-l-4 border-turquoise-light rounded-xl">
 	<div>
 		@foreach($mail_inbox as $mail)
 		<p class="text-white text-lg px-4 py-3">{{ $mail->from }}</p>
 		@endforeach
-		
 	</div>
-	<div class="">
+	<div class="py-4 px-4">
 		{{ $mail_inbox->links() }}
 	</div>
 
