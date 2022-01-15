@@ -1,7 +1,7 @@
-<div class="overflow-hidden w-20 md:w-48">
+<div class="fixed overflow-hidden w-20 md:w-48">
   <ul class="inline-block w-full list-reset flex flex-col">
     <li class="group py-6 px-4 text-center cursor-pointer text-gray-300 rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl">
-      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
+      <a href="{{ route('mail.index') }}" class="no-underline flex items-center justify-center md:justify-start">
         <i class="fas fa-inbox group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
           Primljene
         </span></i>

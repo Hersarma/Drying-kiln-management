@@ -28,7 +28,7 @@ module.exports = {
         },
         extend: {
             height: {
-                'screen_nav' : '70vh'
+                'screen_nav' : '80vh'
             },
             width: {
                 '1/7': '14.2857143%',
