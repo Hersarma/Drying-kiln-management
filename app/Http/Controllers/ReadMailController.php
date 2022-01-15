@@ -14,7 +14,7 @@ class ReadMailController extends Controller
      */
     public function index()
     {
-        $mail_inbox = ReadMail::orderBy('created_at', 'desc')->simplePaginate(10,['from', 'subject']);
+        $mail_inbox = ReadMail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'from', 'subject']);
         return view('mail.index', compact('mail_inbox'));
     }
 
@@ -81,6 +81,9 @@ class ReadMailController extends Controller
      */
     public function destroy(ReadMail $readMail)
     {
-        //
+        //dd($readMail);
+        $readMail->delete();
+
+        return redirect(route('mail.index'))->with('message', 'Mejl uspesno izbrisan.');
     }
 }
