@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ReadMail;
+use App\Models\Mail;
 use Illuminate\Http\Request;
 
-class ReadMailController extends Controller
+class MailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ReadMailController extends Controller
      */
     public function index()
     {
-        $mail_inbox = ReadMail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'from', 'subject']);
+        $mail_inbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'from', 'subject', 'created_at']);
         return view('mail.index', compact('mail_inbox'));
     }
 
@@ -42,10 +42,10 @@ class ReadMailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ReadMail  $readMail
+     * @param  \App\Models\Mail  $mail
      * @return \Illuminate\Http\Response
      */
-    public function show(ReadMail $readMail)
+    public function show(Mail $mail)
     {
         //
     }
@@ -53,10 +53,10 @@ class ReadMailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ReadMail  $readMail
+     * @param  \App\Models\Mail  $mail
      * @return \Illuminate\Http\Response
      */
-    public function edit(ReadMail $readMail)
+    public function edit(Mail $mail)
     {
         //
     }
@@ -65,10 +65,10 @@ class ReadMailController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ReadMail  $readMail
+     * @param  \App\Models\Mail  $mail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ReadMail $readMail)
+    public function update(Request $request, Mail $mail)
     {
         //
     }
@@ -76,14 +76,12 @@ class ReadMailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ReadMail  $readMail
+     * @param  \App\Models\Mail  $mail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReadMail $readMail)
+    public function destroy(Mail $mail)
     {
-        //dd($readMail);
-        $readMail->delete();
-
-        return redirect(route('mail.index'))->with('message', 'Mejl uspesno izbrisan.');
+        $mail->delete();
+        return redirect(route('mail_index'))->with('message', 'Mejl uspesno izbrisan.');
     }
 }

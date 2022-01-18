@@ -1,10 +1,7 @@
 @extends('layouts.app')
 @section('content')
-	<div class="flex">
-		@include('menu_parts.nav_mail')
-		
 		@if($mail_inbox->isNotEmpty())
-		<section class="ml-24 md:ml-52 w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+		<section class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Prikaz majlova</h1>
@@ -35,10 +32,10 @@
               <button type="submit" onclick="return window.confirm('Da li ste sigurni da zelite da obrisete sve ulaze')" class="trash hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
             </th>
             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Klijent
+              Mail
             </th>
             <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Beleške
+              Naslov
             </th>
             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
               Datum
@@ -62,7 +59,7 @@
 </section>
 
 		@else
-		<div class="flex items-center justify-center w-full h-screen_nav ml-24 md:ml-52 border-l-4 border-turquoise-light rounded-xl">
+		<div class="flex items-center justify-center w-full h-screen_nav border-l-4 border-turquoise-light rounded-xl">
 			<div>
 			<p class="text-white text-xl font-bold text-center py-4">Nema poruka</p>
 			<div id="show_message" class="opacity-50">
@@ -71,5 +68,4 @@
 		</div>
 		</div>
 		@endif
-		</div>
 @endsection

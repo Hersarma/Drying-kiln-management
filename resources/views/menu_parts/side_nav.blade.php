@@ -49,7 +49,7 @@
       </a>
     </li>
     <li class="group py-6 px-4 cursor-pointer text-gray-300 {{ Request::segment(1) === 'mail' ? 'rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl' : '' }}">
-      <a href="{{ route('mail.index') }}" class="no-underline flex items-center">
+      <a href="{{ route('mail_index') }}" class="no-underline flex items-center">
         <i class="fas fa-envelope group-hover:text-turquoise-light"></i>
         <p class="focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
           Pošta

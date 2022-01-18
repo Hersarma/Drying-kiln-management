@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Models\ReadMail;
+use App\Models\Mail;
 use App\Models\MailConfig;
 use Webklex\IMAP\Facades\Client;
 class GetMail extends Command
@@ -57,7 +57,7 @@ class GetMail extends Command
 
         foreach ($messages as $message) {
             $attachments = $message->getAttachments();
-            $mail = new ReadMail;
+            $mail = new Mail;
             $mail->text = $message->getHTMLBody();
             $mail->subject = $message->getSubject();
             $mail->from = $message->getFrom()[0]->mail;
