@@ -1,33 +1,32 @@
-<div class="fixed overflow-hidden w-20 md:w-48">
-  <ul class="inline-block w-full list-reset flex flex-col">
-    <li class="group py-6 px-4 text-center cursor-pointer text-gray-300 rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl">
-      <a href="{{ route('mail.index') }}" class="no-underline flex items-center justify-center md:justify-start">
-        <i class="fas fa-inbox group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
-          Primljene
-        </span></i>
-      </a>
-    </li>
-    <li class="group py-6 px-4 text-center cursor-pointer text-gray-300">
-      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
-        <i class="fas fa-trash group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
-          Otpad
-        </span></i>
-      </a>
-    </li>
-    <li class="group py-6 px-4 cursor-pointer text-gray-300">
-      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
-        <i class="fa fa-ban group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
-          Nepozeljne
-        </span></i>
-      </a>
-    </li>
-    <li class="group py-6 px-4 cursor-pointer text-gray-300">
-      <a href="#" class="no-underline flex items-center justify-center md:justify-start">
-        <i class="fa fa-paper-plane group-hover:text-turquoise-light"><span class="hidden md:inline-block focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
-          Poslate
-        </span></i>
-      </a>
-    </li>
-  </ul>
-</div>
-  
+<nav class="py-2">
+  <div class="flex justify-center">
+    <a href="{{ route('mail_index') }}"
+    class="ml-4 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail') ? 'border-b-2 border-turquoise-light text-gray-200' : 'text-gray-500 hover:text-gray-200 border-b-2 border-gray-500 hover:border-turquoise-light focus:outline-none transition duration-150 ease-in-out' }} ">
+    <i class="fas fa-inbox pr-0 md:pr-3">
+    </i>
+    <span class="hidden md:inline-block">Inbox</span>
+    </a>
+    <a href="#"
+    class="ml-4 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/deleted') ? 'border-b-2 border-turquoise-light text-gray-200' : 'text-gray-500 hover:text-gray-200 border-b-2 border-gray-500 hover:border-turquoise-light focus:outline-none transition duration-150 ease-in-out' }}">
+    <i class="fas fa-trash pr-0 md:pr-3">
+    </i>
+    <span class="hidden md:inline-block">Otpad</span>
+    </a>
+    <a href="#"
+    class="ml-4 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/deleted') ? 'border-b-2 border-turquoise-light text-gray-200' : 'text-gray-500 hover:text-gray-200 border-b-2 border-gray-500 hover:border-turquoise-light focus:outline-none transition duration-150 ease-in-out' }}">
+    <i class="fa fa-ban pr-0 md:pr-3" aria-hidden="true">
+    </i>
+    <span class="hidden md:inline-block">Nepozeljne</span>
+    </a>
+    <a href="#"
+    class="ml-4 mr-6 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/sent') ? 'border-b-2 border-turquoise-light text-gray-200' : 'text-gray-500 hover:text-gray-200 border-b-2 border-gray-500 hover:border-turquoise-light focus:outline-none transition duration-150 ease-in-out' }}">
+    <i class="fa fa-paper-plane pr-0 md:pr-3" aria-hidden="true">
+    </i><span class="hidden md:inline-block">Poslate</span>
+    </a>
+    <a href="#"
+    class="ml-4 mr-6 px-3 py-2 text-sm font-medium leading-5 {{ Request::is('mail/new') ? 'border-b-2 border-turquoise-light text-gray-200' : 'text-gray-500 hover:text-gray-200 border-b-2 border-gray-500 hover:border-turquoise-light focus:outline-none transition duration-150 ease-in-out' }}">
+    <i class="fa fa-plus pr-0 md:pr-3" aria-hidden="true"></i>
+    <span class="hidden md:inline-block">Nova poruka</span>
+    </a>
+  </div>
+</nav>

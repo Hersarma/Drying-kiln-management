@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('menu_parts.nav_mail')
 		@if($mail_inbox->isNotEmpty())
 		<section class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
