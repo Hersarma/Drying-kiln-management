@@ -40,7 +40,9 @@ class GetMail extends Command
     public function handle()
     {
         $mailconfig = MailConfig::first();
-        $client = Client::make([
+        if ($mailconfig) {
+
+            $client = Client::make([
             'host'          => $mailconfig->host,
             'port'          => $mailconfig->port,
             'encryption'    => $mailconfig->encryption,
@@ -57,10 +59,11 @@ class GetMail extends Command
 
         foreach ($messages as $message) {
             $attachments = $message->getAttachments();
-            $mail = new Mail;
-            $mail->text = $message->getHTMLBody();
-            $mail->subject = $message->getSubject();
-            $mail->from = $message->getFrom()[0]->mail;
+            $new_mail = new Mail;
+            $new_mail->text = $message->getHTMLBody();
+            $new_mail->subject = $message->getSubject();
+            $new_mail->name = $message->getFrom()[0]->personal;
+            $new_mail->from = $message->getFrom()[0]->mail;
             $data = [];
 
             if(!empty($attachments))
@@ -75,11 +78,13 @@ class GetMail extends Command
                 }
 
                 $data_attachments = implode(',', $data);
-                $mail->attachment = $data_attachments;
+                $new_mail->attachment = $data_attachments;
             }
 
-            $mail->save();
+            $new_mail->save();
 
         }
+        }
+        
     }
 }

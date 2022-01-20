@@ -11,5 +11,5 @@ class Mail extends Model
     use HasFactory, SoftDeletes;
 
 
-    protected $guarded = ['text', 'subject', 'from', 'attachment'];
+    protected $guarded = ['text', 'subject', 'from', 'name', 'attachment'];
 }

@@ -14,7 +14,7 @@ class MailController extends Controller
      */
     public function index()
     {
-        $mail_inbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'from', 'subject', 'created_at']);
+        $mail_inbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'name', 'from', 'subject', 'created_at']);
         return view('mail.index', compact('mail_inbox'));
     }
 

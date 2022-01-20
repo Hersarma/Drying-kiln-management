@@ -4,6 +4,7 @@
   <td class="px-4 py-3">
     <input type="checkbox" name="deleteChecked[]" value="{{ $mail->id }}" class="form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none">
   </td>
+  <td onclick="window.location = '{{ route('mail_inbox_show',$mail )}}'" class="cursor-pointer px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600">{{ $mail->name ?: '/' }}</td>
   <td onclick="window.location = '{{ route('mail_inbox_show',$mail )}}'" class="cursor-pointer px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600">{{ $mail->from ?: '/' }}</td>
    <td onclick="window.location = '{{ route('mail_inbox_show',$mail )}}'" class="hidden md:table-cell px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600 cursor-pointer">{{ $mail->subject ?: '/' }}</td>
   <td onclick="window.location = '{{ route('mail_inbox_show',$mail )}}'" class="px-4 py-3 text-left md:text-center text-sm text-gray-200 group-hover:text-teal-600 cursor-pointer">{{ $mail->created_at->format('d-m-Y H:m') }}</td>
@@ -14,7 +15,7 @@
   </tr>
   @endforeach
 <tr>
-  <td colspan="6" class="py-2">
+  <td colspan="7" class="py-2">
     {{ $mail_inbox->links() }}
   </td>
 </tr>
