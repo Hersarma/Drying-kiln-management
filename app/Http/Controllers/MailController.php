@@ -47,7 +47,7 @@ class MailController extends Controller
      */
     public function show(Mail $mail)
     {
-        //
+        return view('mail.show_inbox', compact('mail'));
     }
 
     /**

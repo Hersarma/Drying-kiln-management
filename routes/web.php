@@ -37,9 +37,10 @@ Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChec
 
 /*Mail*/
 //Route::resource('mail', 'ReadMailController');
-Route::get('/mail', 'MailController@index')->name('mail_index');
-Route::get('/mail/show/{mail}', 'MailController@show')->name('mail_inbox_show');
+Route::get('/mail/inbox', 'MailController@index')->name('mail_index');
+Route::get('/mail/inbox/show/{mail}', 'MailController@show')->name('mail_inbox_show');
 Route::delete('/delete/{mail}', 'MailController@destroy')->name('mail_soft_delete');
+
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
 Route::get('search_incomings', 'SearchController@search_incomings');

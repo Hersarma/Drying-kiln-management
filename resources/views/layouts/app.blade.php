@@ -35,6 +35,9 @@
             @include('errors.modal_errors')
             @include('messages.message_warning_delete')
             @include('messages.message_warning_powerof_drykiln')
+            @if(Request::segment(1) === 'mail')
+            @include('menu_parts.nav_mail')
+            @endif
             @yield('content')
           </div>
         </div>
