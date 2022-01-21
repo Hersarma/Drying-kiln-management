@@ -52,7 +52,7 @@
           </tr>
         </thead>
         <tbody id="searchMailInbox">
-          @include('mail.search_mail')
+          @include('mail.inbox.search_mail')
           
         </tbody>
       </table>
