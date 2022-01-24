@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\DrykilnReadings;
 use Illuminate\Http\Request;
 
-class DrykilnReadingsController extends Controller
+class DryKilnReadingsController extends Controller
 {
     public function store(Request $request){
 
