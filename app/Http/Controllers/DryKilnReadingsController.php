@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\DrykilnReadings;
+use App\Models\DryKilnReadings;
 use Illuminate\Http\Request;
 
 class DryKilnReadingsController extends Controller
@@ -23,7 +23,7 @@ class DryKilnReadingsController extends Controller
             'moisture_needed' => 'nullable|numeric'
         ]);
 
-        DrykilnReadings::create($validator);
+        DryKilnReadings::create($validator);
 
         return back()->with('message', 'Uspesan unos');
 
