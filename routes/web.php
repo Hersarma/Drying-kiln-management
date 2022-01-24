@@ -31,7 +31,7 @@ Route::delete('/delete_drying_proces/{dryingProces}', 'DryingProcesController@de
 Route::post('/create_drykiln_config', 'DryKilnConfigController@store')->name('create_drykiln_config');
 Route::post('/update_drykiln_config/{drykilnconfig}', 'DryKilnConfigController@update')->name('update_drykiln_config');
 Route::post('/delete_drykiln_config/{drykilnconfig}', 'DryKilnConfigController@destroy')->name('delete_drykiln_config');
-Route::post('/create_drykiln_reading', 'DrykilnReadingsController@store')->name('create_drykiln_reading');
+Route::post('/create_drykiln_reading', 'DryKilnReadingsController@store')->name('create_drykiln_reading');
 
 Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChecked')->name('delete_checked_drying_proces');
 

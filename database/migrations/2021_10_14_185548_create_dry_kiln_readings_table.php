@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrykilnReadingsTable extends Migration
+class CreateDryKilnReadingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDrykilnReadingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('drykiln_readings', function (Blueprint $table) {
+        Schema::create('dry_kiln_readings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('drying_proces_id');
             $table->float('temp_needed', 8, 2)->nullable();
