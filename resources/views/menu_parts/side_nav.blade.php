@@ -84,7 +84,7 @@
       </ul>
     </li>
     <li class="group py-6 px-4 cursor-pointer text-gray-300">
-      <a href="#" class="no-underline flex items-center">
+      <a href="{{ route('settings_index') }}" class="no-underline flex items-center">
         <i class="fas fa-cogs group-hover:text-turquoise-light"></i>
         <p class="focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">
           Podešavanja

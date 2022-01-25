@@ -126,6 +126,11 @@ $(document).on('click', '.toggle_modal_create_drykiln_readings', function(e){
     $('.modal_create_drykiln_readings').toggle(500);
 });
 
+/*Mail incoming config*/
+$(document).on('click', '.toggle_modal_create_mail_incoming', function(e){
+    e.preventDefault();
+    $('.modal_create_mail_incoming').toggle(500);
+});
 
 
 

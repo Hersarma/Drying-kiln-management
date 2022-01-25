@@ -36,7 +36,6 @@ Route::post('/create_drykiln_reading', 'DryKilnReadingsController@store')->name(
 Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChecked')->name('delete_checked_drying_proces');
 
 /*Mail*/
-//Route::resource('mail', 'ReadMailController');
 Route::get('/mail/inbox', 'MailController@index')->name('mail_index');
 Route::get('/mail/inbox/show/{mail}', 'MailController@show')->name('mail_inbox_show');
 Route::delete('/delete/{mail}', 'MailController@destroy')->name('mail_soft_delete');
@@ -45,6 +44,11 @@ Route::delete('/delete/{mail}', 'MailController@destroy')->name('mail_soft_delet
 Route::get('search_clients', 'SearchController@search_clients');
 Route::get('search_incomings', 'SearchController@search_incomings');
 Route::get('search_outgoings', 'SearchController@search_outgoings');
-
 });
+
+/*Settings*/
+Route::get('/settings/index', 'SettingsController@index')->name('settings_index');
+Route::get('/settings/mail_config_show', 'SettingsController@mail_config_show')->name('mail_config_show');
+Route::post('/settings/create_mail_incoming_config', 'SettingsController@store_mail_incoming_config')->name('create_mail_incoming_config');
+
 require __DIR__.'/auth.php';

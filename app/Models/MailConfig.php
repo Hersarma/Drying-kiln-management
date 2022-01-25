@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class MailConfig extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['host', 'port', 'encryption', 'username', 'password', 'protocol'];
 }
