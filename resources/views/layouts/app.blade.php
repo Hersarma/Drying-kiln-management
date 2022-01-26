@@ -22,6 +22,7 @@
     <link href="{{ asset('css/app.css?v=').time() }}" rel="stylesheet">
   </head>
   <body class="h-screen antialiased leading-none font-open_sans bg-blue_gray-900">
+    @include('animation')
     <div id="app" class="flex flex-col h-screen justify-between">
       @include('menu_parts.nav')
       <div class="flex">
@@ -37,6 +38,7 @@
             @include('messages.message_warning_powerof_drykiln')
             @if(Request::segment(1) === 'mail')
             @include('menu_parts.nav_mail')
+
             @endif
             @yield('content')
           </div>

@@ -22,7 +22,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="host" name="host" placeholder="mail.vasdomen.rs/com">
+              id="host" name="host" value="{{ old('host') }}" placeholder="mail.vašdomen.rs/com">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_mail_incoming_config->first('host') }}
               </p>
@@ -37,7 +37,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="port" name="port" placeholder="imap_port:993  pop3_port:995...">
+              id="port" name="port" value="{{ old('port') }}" placeholder="imap port: 993">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_mail_incoming_config->first('port') }}
               </p>
@@ -52,7 +52,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="encryption" name="encryption" placeholder="ssl/tls">
+              id="encryption" name="encryption" value="{{ old('encryption') }}" placeholder="ssl">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_mail_incoming_config->first('encryption') }}
               </p>
@@ -67,7 +67,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="protocol" name="protocol" placeholder="imap">
+              id="protocol" name="protocol" value="{{ old('protocol') }}" placeholder="imap">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_mail_incoming_config->first('protocol') }}
               </p>
@@ -82,7 +82,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="username" name="username" placeholder="email@vasdomen.rs/com">
+              id="username" name="username" value="{{ old('username') }}" placeholder="email@vašdomen.rs/com">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_mail_incoming_config->first('username') }}
               </p>
@@ -97,13 +97,13 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="password" name="password" placeholder="podešena lozinka">
+              id="password" name="password" value="{{ old('password') }}" placeholder="lozinka za pristup email nalogu na vašem hostingu">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_mail_incoming_config->first('password') }}
               </p>
             </div>
           </div>
-
+          @include('messages.message_mail_error')
 
           <div class="flex justify-between mt-12">
             <button type="button"
@@ -111,11 +111,12 @@
             Otkaži
             </button>
             <button type="submit"
-            class="py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
+            class="animate py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
             Sačuvaj
             </button>
           </div>
         </form>
+
       </div>
       <div>
       </div>

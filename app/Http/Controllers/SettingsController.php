@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Webklex\IMAP\Facades\Client;
 use App\Models\MailConfig;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,6 @@ class SettingsController extends Controller
 {
     public function index()
     {
-
         return view('settings.index');
     }
 
@@ -18,7 +18,7 @@ class SettingsController extends Controller
         return view('settings.mail.mail_config_show');
     }
 
-    public function store_mail_incoming_config()
+    public function store_mail_incoming_config(Request $request)
     {
         $validate = request()->validateWithBag('create_mail_incoming_config', [
             'host' => 'required',
@@ -29,8 +29,21 @@ class SettingsController extends Controller
             'protocol' => 'required'
         ]);
 
-        MailConfig::create($validate);
+        $client = Client::make($validate);
 
-        return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspesno snimljena');
+        try{
+        $client->connect();
+        }catch (\Webklex\PHPIMAP\Exceptions\ConnectionFailedException $e){
+
+        return redirect(route('mail_config_show'))
+        ->with('message_mail_error', 'Konekcija nije uspela, proverite parametre.');
+        }
+
+        if ($client->isConnected()) {
+
+            MailConfig::create($validate);
+            return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspesno snimljena');
+         }
+
     }
 }
