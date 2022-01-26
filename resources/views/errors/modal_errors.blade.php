@@ -82,4 +82,19 @@ $(document).ready(function () {
 $('.modal_edit_mail_incoming').show();
 });
 </script>
+
+
+
+@elseif(count($errors->create_mail_outgoing_config) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_create_mail_outgoing').show();
+});
+</script>
+@elseif(count($errors->edit_mail_outgoing_config) > 0)
+<script>
+$(document).ready(function () {
+$('.modal_edit_mail_outgoing').show();
+});
+</script>
 @endif

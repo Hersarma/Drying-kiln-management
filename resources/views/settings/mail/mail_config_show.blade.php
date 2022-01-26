@@ -9,8 +9,13 @@
 	 <i class="fas fa-sign-out-alt"></i>
  </h2>
 <p class="font-medium text-gray-400">Odlazni imejl</p>
- <button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Podešavanja
+@if(empty($mailConfigOutgoing))
+<button type="button" class="toggle_modal_create_mail_outgoing w-2/3 px-4 py-2 mt-10 tracking-wide text-white transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Nova konfiguracija
 </button>
+@else
+ <button type="button" class="toggle_modal_edit_mail_outgoing w-2/3 px-4 py-2 mt-10 tracking-wide text-white transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Izmeni konfiguraciju
+</button>
+@endif
 </div>
 <div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg">
  <h2 class="text-5xl font-bold text-gray-200 uppercase">
@@ -31,5 +36,11 @@
 @include('settings.mail.modals.mail_incoming_config_create')
 @else
 @include('settings.mail.modals.mail_incoming_config_edit')
+@endif
+
+@if(empty($mailConfigOutgoing))
+@include('settings.mail.modals.mail_outgoing_config_create')
+@else
+@include('settings.mail.modals.mail_outgoing_config_edit')
 @endif
 @endsection

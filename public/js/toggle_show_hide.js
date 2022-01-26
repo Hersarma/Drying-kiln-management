@@ -137,4 +137,15 @@ $(document).on('click', '.toggle_modal_edit_mail_incoming', function(e){
     $('.modal_edit_mail_incoming').toggle(500);
 });
 
+/*Mail outgoing config*/
+$(document).on('click', '.toggle_modal_create_mail_outgoing', function(e){
+    e.preventDefault();
+    $('.modal_create_mail_outgoing').toggle(500);
+});
+
+$(document).on('click', '.toggle_modal_edit_mail_outgoing', function(e){
+    e.preventDefault();
+    $('.modal_edit_mail_outgoing').toggle(500);
+});
+
 

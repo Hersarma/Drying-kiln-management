@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Webklex\IMAP\Facades\Client;
 use App\Models\MailConfigIncoming;
+use App\Models\MailConfigOutgoing;
 use Illuminate\Http\Request;
 
 class SettingsController extends Controller
@@ -15,9 +16,10 @@ class SettingsController extends Controller
 
     public function mail_config_show()
     {
+        $mailConfigOutgoing = MailConfigOutgoing::first();
         $mailConfigIncoming = MailConfigIncoming::first();
 
-        return view('settings.mail.mail_config_show', compact('mailConfigIncoming'));
+        return view('settings.mail.mail_config_show', compact('mailConfigIncoming', 'mailConfigOutgoing'));
     }
 
     public function store_mail_incoming_config(Request $request)
@@ -44,7 +46,7 @@ class SettingsController extends Controller
         if ($client->isConnected()) {
 
             MailConfigIncoming::create($validate);
-            return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspesno snimljena');
+            return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena');
          }
 
     }
@@ -74,7 +76,25 @@ class SettingsController extends Controller
             
             $mailConfigIncoming->update($validate);
 
-            return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspesno snimljena');
+            return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena');
         }
+    }
+
+    public function store_mail_outgoing_config(Request $request)
+    {
+        $validate = request()->validateWithBag('create_mail_outgoing_config', [
+            'protocol' => 'required',
+            'host' => 'required',
+            'port' => 'required',
+            'encryption' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'sender_name' =>'required',
+            'sender_email' => 'required'
+        ]);
+
+        MailConfigOutgoing::create($validate);
+
+        return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena.');
     }
 }
