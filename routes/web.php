@@ -50,6 +50,6 @@ Route::get('search_outgoings', 'SearchController@search_outgoings');
 Route::get('/settings/index', 'SettingsController@index')->name('settings_index');
 Route::get('/settings/mail_config_show', 'SettingsController@mail_config_show')->name('mail_config_show');
 Route::post('/settings/create_mail_incoming_config', 'SettingsController@store_mail_incoming_config')->name('create_mail_incoming_config');
-Route::post('/settings/update_mail_incoming_config/{mailconfig}', 'SettingsController@update_mail_incoming_config')->name('update_mail_incoming_config');
+Route::post('/settings/update_mail_incoming_config/{mailConfigIncoming}', 'SettingsController@update_mail_incoming_config')->name('update_mail_incoming_config');
 
 require __DIR__.'/auth.php';

@@ -56,11 +56,11 @@
         </p>
       </a>
     </li>
-    <li class="group py-6 px-4 cursor-pointer text-gray-300 {{ Request::segment(1) === 'invoices' ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
+    <li class="group py-6 px-4 cursor-pointer text-gray-700 {{ Request::segment(1) === 'invoices' ? 'rounded-xl shadow-2xl bg-gray-900 border-l-4 border-turquoise-light' : '' }}">
       <div class="open_invoices flex justify-between items-center">
         <div class="flex items-center">
-          <i class="fas fa-file-invoice-dollar group-hover:text-turquoise-light"></i>
-          <p class="ml-6 group-hover:text-turquoise-light whitespace-nowrap">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <p class="ml-6 whitespace-nowrap">
             Fakture
           </p>
         </div>
@@ -68,6 +68,13 @@
           <i class="fas fa-angle-down"></i>
         </div>
       </div>
+      <div class="relative opacity-0 group-hover:opacity-100 duration-500">
+      <div class="w-full absolute mt-2 py-2 rounded-xl shadow-xl border-l border-r border-turquoise-light">
+        <p class="text-gray-200 text-center px-4">
+        U izradi
+        </p>
+      </div>
+    </div>
       <ul class="invoices_links hidden py-3 text-center">
         <li class="flex-1 py-3 {{ Request::is('invoices') ? 'rounded-xl shadow-2xl border-r-4 border-turquoise-light bg-gray-700 text-white' : '' }}">
           <a href="#"
@@ -83,7 +90,7 @@
         </li>
       </ul>
     </li>
-    <li class="group py-6 px-4 cursor-pointer text-gray-300">
+    <li class="group py-6 px-4 cursor-pointer text-gray-300 {{ Request::segment(1) === 'settings' ? 'rounded-xl bg-gray-900 border-l-4 border-turquoise-light shadow-2xl' : '' }}">
       <a href="{{ route('settings_index') }}" class="no-underline flex items-center">
         <i class="fas fa-cogs group-hover:text-turquoise-light"></i>
         <p class="focus:outline-none py-1 align-middle ml-6 group-hover:text-turquoise-light">

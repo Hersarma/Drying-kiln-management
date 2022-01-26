@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Webklex\IMAP\Facades\Client;
-use App\Models\MailConfig;
+use App\Models\MailConfigIncoming;
 use Illuminate\Http\Request;
 
 class SettingsController extends Controller
@@ -15,9 +15,9 @@ class SettingsController extends Controller
 
     public function mail_config_show()
     {
-        $mailconfig = MailConfig::first();
+        $mailConfigIncoming = MailConfigIncoming::first();
 
-        return view('settings.mail.mail_config_show', compact('mailconfig'));
+        return view('settings.mail.mail_config_show', compact('mailConfigIncoming'));
     }
 
     public function store_mail_incoming_config(Request $request)
@@ -43,13 +43,13 @@ class SettingsController extends Controller
 
         if ($client->isConnected()) {
 
-            MailConfig::create($validate);
+            MailConfigIncoming::create($validate);
             return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspesno snimljena');
          }
 
     }
 
-    public function update_mail_incoming_config(Request $request, MailConfig $mailconfig)
+    public function update_mail_incoming_config(Request $request, MailConfigIncoming $mailConfigIncoming)
     {
         $validate = request()->validateWithBag('edit_mail_incoming_config', [
             'host' => 'required',
@@ -72,7 +72,7 @@ class SettingsController extends Controller
 
         if ($client->isConnected()) {
             
-            $mailconfig->update($validate);
+            $mailConfigIncoming->update($validate);
 
             return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspesno snimljena');
         }

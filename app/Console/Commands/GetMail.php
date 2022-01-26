@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Mail;
-use App\Models\MailConfig;
+use App\Models\MailConfigIncoming;
 use Webklex\IMAP\Facades\Client;
 class GetMail extends Command
 {
@@ -39,17 +39,17 @@ class GetMail extends Command
      */
     public function handle()
     {
-        $mailconfig = MailConfig::first();
-        if ($mailconfig) {
+        $mailConfigIncoming = MailConfigIncoming::first();
+        if ($mailConfigIncoming) {
 
             $client = Client::make([
-            'host'          => $mailconfig->host,
-            'port'          => $mailconfig->port,
-            'encryption'    => $mailconfig->encryption,
-            'validate_cert' => $mailconfig->validate_cert,
-            'username'      => $mailconfig->username,
-            'password'      => $mailconfig->password,
-            'protocol'      => $mailconfig->protocol
+            'host'          => $mailConfigIncoming->host,
+            'port'          => $mailConfigIncoming->port,
+            'encryption'    => $mailConfigIncoming->encryption,
+            'validate_cert' => $mailConfigIncoming->validate_cert,
+            'username'      => $mailConfigIncoming->username,
+            'password'      => $mailConfigIncoming->password,
+            'protocol'      => $mailConfigIncoming->protocol
         ]);
         $client->connect();
 

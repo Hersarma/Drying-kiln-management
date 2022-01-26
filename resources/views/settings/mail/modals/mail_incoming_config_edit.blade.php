@@ -11,7 +11,7 @@
         </h3>
       </div>
       <div class="w-full max-w-2xl mx-auto">
-        <form method="post" action="{{ route('update_mail_incoming_config', $mailconfig) }}" class="py-8 px-8 md:px-0">
+        <form method="post" action="{{ route('update_mail_incoming_config', $mailConfigIncoming) }}" class="py-8 px-8 md:px-0">
           @csrf
 
           <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
@@ -22,7 +22,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="host" name="host" value="{{ $mailconfig->host }}" placeholder="mail.vašdomen.rs/com">
+              id="host" name="host" value="{{ $mailConfigIncoming->host }}" placeholder="mail.vašdomen.rs/com">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_incoming_config->first('host') }}
               </p>
@@ -37,7 +37,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="port" name="port" value="{{ $mailconfig->port }}" placeholder="imap port: 993">
+              id="port" name="port" value="{{ $mailConfigIncoming->port }}" placeholder="imap port: 993">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_incoming_config->first('port') }}
               </p>
@@ -52,7 +52,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="encryption" name="encryption" value="{{ $mailconfig->encryption }}" placeholder="ssl">
+              id="encryption" name="encryption" value="{{ $mailConfigIncoming->encryption }}" placeholder="ssl">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_incoming_config->first('encryption') }}
               </p>
@@ -67,7 +67,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="protocol" name="protocol" value="{{ $mailconfig->protocol }}" placeholder="imap">
+              id="protocol" name="protocol" value="{{ $mailConfigIncoming->protocol }}" placeholder="imap">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_incoming_config->first('protocol') }}
               </p>
@@ -82,7 +82,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="username" name="username" value="{{ $mailconfig->username }}" placeholder="email@vašdomen.rs/com">
+              id="username" name="username" value="{{ $mailConfigIncoming->username }}" placeholder="email@vašdomen.rs/com">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_incoming_config->first('username') }}
               </p>
@@ -97,7 +97,7 @@
             </div>
             <div class="md:w-2/3">
               <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
-              id="password" name="password" value="{{ $mailconfig->password }}" placeholder="lozinka za pristup email nalogu na vašem hostingu">
+              id="password" name="password" value="{{ $mailConfigIncoming->password }}" placeholder="lozinka za pristup email nalogu na vašem hostingu">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_incoming_config->first('password') }}
               </p>

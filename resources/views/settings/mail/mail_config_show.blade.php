@@ -17,7 +17,7 @@
 	 <i class="fas fa-sign-in-alt"></i>
  </h2>
 <p class="font-medium text-gray-400">Dolazni imejl</p>
-@if(empty($mailconfig))
+@if(empty($mailConfigIncoming))
  <button type="button" class="toggle_modal_create_mail_incoming w-2/3 px-4 py-2 mt-10 tracking-wide text-white transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Nova konfiguracija
 </button>
 @else
@@ -27,7 +27,7 @@
 </div>
 </div>
 </div>
-@if(empty($mailconfig))
+@if(empty($mailConfigIncoming))
 @include('settings.mail.modals.mail_incoming_config_create')
 @else
 @include('settings.mail.modals.mail_incoming_config_edit')
