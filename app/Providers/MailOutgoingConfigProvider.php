@@ -24,20 +24,26 @@ class MailOutgoingConfigProvider extends ServiceProvider
      */
     public function boot()
     {
+        try{
+            
         $mailConfigOutgoing = MailConfigOutgoing::first();
 
-        if (!empty($mailConfigOutgoing)) {
+                if (!empty($mailConfigOutgoing)) {
 
-            $config = array(
-                'driver'     =>     $mailConfigOutgoing->protocol,
-                'host'       =>     $mailConfigOutgoing->host,
-                'port'       =>     $mailConfigOutgoing->port,
-                'username'   =>     $mailConfigOutgoing->username,
-                'password'   =>     $mailConfigOutgoing->password,
-                'encryption' =>     $mailConfigOutgoing->encryption,
-                'from'       =>     array('address' => $mailConfigOutgoing->sender_email, 'name' => $mailConfigOutgoing->sender_name),
-            );
-            Config::set('mail', $config);
+                    $config = array(
+                        'driver'     =>     $mailConfigOutgoing->protocol,
+                        'host'       =>     $mailConfigOutgoing->host,
+                        'port'       =>     $mailConfigOutgoing->port,
+                        'username'   =>     $mailConfigOutgoing->username,
+                        'password'   =>     $mailConfigOutgoing->password,
+                        'encryption' =>     $mailConfigOutgoing->encryption,
+                        'from'       =>     array('address' => $mailConfigOutgoing->sender_email, 'name' => $mailConfigOutgoing->sender_name),
+                    );
+                    Config::set('mail', $config);
+                }
+        }catch(\Exception $e){
+
         }
+        
     }
 }
