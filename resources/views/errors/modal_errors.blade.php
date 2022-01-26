@@ -70,10 +70,16 @@ $(document).ready(function () {
 $('.modal_edit_drykiln_readings').show();
 });
 </script>
-@elseif(count($errors->create_mail_incoming_config) > 0 || session('message_mail_error'))
+@elseif(count($errors->create_mail_incoming_config) > 0 || session('test_mail_connection_create'))
 <script>
 $(document).ready(function () {
 $('.modal_create_mail_incoming').show();
+});
+</script>
+@elseif(count($errors->edit_mail_incoming_config) > 0 || session('test_mail_connection_update'))
+<script>
+$(document).ready(function () {
+$('.modal_edit_mail_incoming').show();
 });
 </script>
 @endif

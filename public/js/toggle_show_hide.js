@@ -132,5 +132,9 @@ $(document).on('click', '.toggle_modal_create_mail_incoming', function(e){
     $('.modal_create_mail_incoming').toggle(500);
 });
 
+$(document).on('click', '.toggle_modal_edit_mail_incoming', function(e){
+    e.preventDefault();
+    $('.modal_edit_mail_incoming').toggle(500);
+});
 
 

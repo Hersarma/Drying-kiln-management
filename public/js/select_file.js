@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
-    $('#animate').click(function(){
-        $('#animation').show();
+    $('.animate').click(function(){
+        $('.animation').show();
     });
 
     $('input[type="file"]').change(function() {
