@@ -63,7 +63,7 @@
 			</div>
 			<div class="px-4 py-2 text-right sm:px-6">
 				<button type="submit"
-				class="animate inline-flex justify-center items-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-200 transition ease-out duration-500 transform hover:scale-110 bg-turquoise-medium focus:outline-none shadow-xl">
+				class="animate_mail_send inline-flex justify-center items-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-200 transition ease-out duration-500 transform hover:scale-110 bg-turquoise-medium focus:outline-none shadow-xl">
 				<i class="fa fa-paper-plane fa-lg px-2" aria-hidden="true"></i>
 				Posalji
 				</button>
@@ -71,4 +71,5 @@
 		</div>
 	</form>
 </div>
+@include('mail.src.animation_mail_send')
 @endsection

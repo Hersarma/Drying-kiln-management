@@ -15,11 +15,11 @@ class CreateMailsTable extends Migration
     {
         Schema::create('mails', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('from');
-            $table->string('subject');
-            $table->longText('text');
-            $table->text('attachment');
+            $table->string('name')->nullable();
+            $table->string('from')->nullable();
+            $table->string('subject')->nullable();
+            $table->longText('text')->nullable();
+            $table->text('attachment')->nullable();
             $table->boolean('read_at')->default(0);
             $table->softDeletes();
             $table->timestamps();

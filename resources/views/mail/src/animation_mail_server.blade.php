@@ -1,4 +1,4 @@
-<div class="animation hidden fixed z-50 inset-0 overflow-y-auto">
+<div class="animation_mail_server hidden fixed z-50 inset-0 overflow-y-auto">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 
             <div class="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -11,7 +11,7 @@
                 <i class="fas fa-sync-alt fa-spin fa-5x text-orange-500" data-fa-transform="shrink-8"></i>
                 <p class="py-4 text-gray-200 text-xl font-bold">Sačekajte...</p>
 
-                <p class="py-4 text-gray-200 text-xl font-bold">Proverava se konekcija sa serverom...</p>
+                <p class="py-4 text-gray-200 text-xl font-bold">Proverava se konekcija sa imejl serverom...</p>
 
             </div>
 

@@ -16,7 +16,7 @@ class MailController extends Controller
     {
         $mailConfigIncoming = MailConfigIncoming::first();
         if (empty($mailConfigIncoming)) {
-            return redirect(route('mail_config_show'))->with('message_warning', 'Imejl nije konfigurisan.');
+            return redirect(route('mail_config_show'))->with('message_warning', 'Konfiguracija dolaznih imejlova nije podešena.');
         }
         $mail_inbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'name', 'from', 'subject', 'created_at']);
         return view('mail.inbox.index', compact('mail_inbox'));

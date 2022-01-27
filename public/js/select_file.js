@@ -1,7 +1,11 @@
 $(document).ready(function()
 {
-    $('.animate').click(function(){
-        $('.animation').show();
+    $('.animate_mail_send').click(function(){
+        $('.animation_mail_send').show();
+    });
+
+    $('.animate_mail_server').click(function(){
+        $('.animation_mail_server').show();
     });
 
     $('input[type="file"]').change(function() {

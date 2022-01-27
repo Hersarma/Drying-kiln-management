@@ -8,7 +8,7 @@
 </div>
 <script>
   $(document).ready(function(){
-    $(".successMessage").slideDown().delay(2000).slideUp();
+    $(".successMessage").slideDown().delay(3000).slideUp();
 });
 </script>
 @endif

@@ -7,7 +7,7 @@
 </div>
 <script>
   $(document).ready(function(){
-    $(".welcomeMessage").slideDown().delay(2000).slideUp();
+    $(".welcomeMessage").slideDown().delay(3000).slideUp();
 });
 </script>
 @endif

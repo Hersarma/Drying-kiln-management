@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Mail\SendNewMail;
+use App\Models\MailConfigOutgoing;
 use App\Models\SendMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\File;
@@ -11,6 +12,10 @@ class SendMailController extends Controller
 {
     public function index()
     {
+        $mailConfigOutgoing = MailConfigIncoming::first();
+        if (empty($mailConfigOutgoing)) {
+            return redirect(route('mail_config_show'))->with('message_warning', 'Konfiguracija odlaznih imejlova nije podešena.');
+        }
         return view('mail.new_mail.send_mail');
     }
 

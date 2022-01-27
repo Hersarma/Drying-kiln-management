@@ -184,3 +184,4 @@
     </div>
   </div>
 </div>
+@include('messages.message_warning_powerof_drykiln')
