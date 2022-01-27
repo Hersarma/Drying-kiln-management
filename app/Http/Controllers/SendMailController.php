@@ -29,8 +29,13 @@ class SendMailController extends Controller
             'files' => $request->file('file')
 
         );
+        try{
+            Mail::to($request['recipient'])->send(new SendNewMail($data));
+        }catch(\Exception $e){
 
-        Mail::to($request['recipient'])->send(new SendNewMail($data));
+            return redirect(route('new_mail'))->with('message_send_mail_warning', $e->getMessage());
+        }
+        
 
         if(count(Mail::failures()) == 0) {
 
@@ -58,7 +63,7 @@ class SendMailController extends Controller
 
             return redirect(route('new_mail'))->with('message', 'Poruka uspesno poslata.');
         }
-        return redirect(route('new_mail'))->with('message', 'Poruka nije poslata.');
+        
         
 
     }

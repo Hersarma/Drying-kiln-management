@@ -40,7 +40,7 @@ class SettingsController extends Controller
         }catch (\Webklex\PHPIMAP\Exceptions\ConnectionFailedException $e){
 
         return redirect(route('mail_config_show'))
-        ->with('test_mail_connection_create', 'Konekcija nije uspela, proverite parametre.');
+        ->with('test_mail_connection_incoming_create', 'Konekcija nije uspela, proverite parametre.');
         }
 
         if ($client->isConnected()) {
@@ -69,7 +69,7 @@ class SettingsController extends Controller
         }catch (\Webklex\PHPIMAP\Exceptions\ConnectionFailedException $e){
 
         return redirect(route('mail_config_show'))
-        ->with('test_mail_connection_update', 'Konekcija nije uspela, proverite parametre.');
+        ->with('test_mail_connection_incoming_update', 'Konekcija nije uspela, proverite parametre.');
         }
 
         if ($client->isConnected()) {
@@ -94,6 +94,24 @@ class SettingsController extends Controller
         ]);
 
         MailConfigOutgoing::create($validate);
+
+        return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena.');
+    }
+
+    public function update_mail_outgoing_config(Request $request, MailConfigOutgoing $mailConfigOutgoing)
+    {
+        $validate = request()->validateWithBag('edit_mail_outgoing_config', [
+            'protocol' => 'required',
+            'host' => 'required',
+            'port' => 'required',
+            'encryption' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'sender_name' =>'required',
+            'sender_email' => 'required'
+        ]);
+
+        $mailConfigOutgoing->update($validate);
 
         return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena.');
     }

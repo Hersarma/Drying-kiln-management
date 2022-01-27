@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="w-4/5 mx-auto mt-5">
+	@include('messages.message_send_mail')
 	<form method="POST" action="{{ route('send_mail') }}" enctype="multipart/form-data">
 		@csrf
 		<div class="shadow-xl rounded-xl bg-gray-800 border-l-4 border-turquoise-light sm:overflow-hidden">
