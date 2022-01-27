@@ -15,6 +15,10 @@ class CreateSendMailsTable extends Migration
     {
         Schema::create('send_mails', function (Blueprint $table) {
             $table->id();
+            $table->string('recipient')->nullable();
+            $table->string('subject')->nullable();
+            $table->longText('message')->nullable();
+            $table->text('attachment')->nullable();
             $table->timestamps();
         });
     }
