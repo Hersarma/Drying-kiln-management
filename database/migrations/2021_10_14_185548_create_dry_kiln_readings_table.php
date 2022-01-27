@@ -43,6 +43,6 @@ class CreateDryKilnReadingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drykiln_readings');
+        Schema::dropIfExists('dry_kiln_readings');
     }
 }

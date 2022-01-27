@@ -18,7 +18,7 @@ class DryKiln extends Model
 
      public function drykilnreadings(){
 
-        return $this->hasManyThrough(DrykilnReadings::class, DryingProces::class);
+        return $this->hasManyThrough(DryKilnReadings::class, DryingProces::class);
     }
 
     public function dry_kiln_config(){

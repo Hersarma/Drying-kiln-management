@@ -11,7 +11,7 @@ class DryingProces extends Model
 
     public function drykilnreadings(){
 
-        return $this->hasMany(DrykilnReadings::class);
+        return $this->hasMany(DryKilnReadings::class);
     }
 
     public function drykiln(){
