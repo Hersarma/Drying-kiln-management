@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Mail\SendMail;
+use App\Mail\SendNewMail;
+use App\Models\SendMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -29,13 +30,13 @@ class SendMailController extends Controller
 
         );
 
-        Mail::to($request['recipient'])->send(new SendMail($data));
+        Mail::to($request['recipient'])->send(new SendNewMail($data));
 
         if(count(Mail::failures()) == 0) {
 
             $data = [];
             $files = $request->file('file');
-            $sentMail = new SentMail;
+            $sentMail = new SendMail;
             $sentMail->recipient = $request->recipient;
             $sentMail->subject = $request->subject;
             $sentMail->message = $request->message;
@@ -55,10 +56,10 @@ class SendMailController extends Controller
 
             $sentMail->save();
 
-            return redirect(route('mail.new_mail.send_mail'))->with('message', 'Poruka uspesno poslata.');
-        }else{
-            return redirect(route('mail.new_mail.send_mail'))->with('message', 'Poruka nije poslata.');
+            return redirect(route('new_mail'))->with('message', 'Poruka uspesno poslata.');
         }
+        return redirect(route('new_mail'))->with('message', 'Poruka nije poslata.');
+        
 
     }
 }
