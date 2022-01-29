@@ -64,7 +64,7 @@
     @endif
     <div class="">
       <h2 class="text-5xl font-bold text-gray-200 uppercase">
-    <i class="fas fa-sign-out-alt"></i>
+    <i class="fas fa-sign-in-alt"></i>
     </h2>
     </div>
   </div>

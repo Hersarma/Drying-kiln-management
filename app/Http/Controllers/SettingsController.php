@@ -24,6 +24,7 @@ class SettingsController extends Controller
         return view('settings.mail.mail_config_show', compact('mailConfigIncoming', 'mailConfigOutgoing'));
     }
 
+    /*Incoming mail*/
     public function store_mail_incoming_config(Request $request)
     {
         $validate = request()->validateWithBag('create_mail_incoming_config', [
@@ -81,7 +82,7 @@ class SettingsController extends Controller
             return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena');
         }
     }
-
+    /*Outgoing mail*/
     public function store_mail_outgoing_config(Request $request)
     {
         
