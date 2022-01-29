@@ -133,7 +133,7 @@
               </p>
             </div>
           </div>
-
+          @include('messages.message_test_mail_error')
           <div class="flex justify-between mt-12">
             <button type="button"
             class="toggle_modal_create_mail_outgoing py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">

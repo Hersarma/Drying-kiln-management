@@ -82,13 +82,13 @@ $(document).ready(function () {
 $('.modal_edit_mail_incoming').show();
 });
 </script>
-@elseif(count($errors->create_mail_outgoing_config) > 0)
+@elseif(count($errors->create_mail_outgoing_config) > 0 || session('test_mail_connection_outgoing_create'))
 <script>
 $(document).ready(function () {
 $('.modal_create_mail_outgoing').show();
 });
 </script>
-@elseif(count($errors->edit_mail_outgoing_config) > 0)
+@elseif(count($errors->edit_mail_outgoing_config) > 0 || session('test_mail_connection_outgoing_update'))
 <script>
 $(document).ready(function () {
 $('.modal_edit_mail_outgoing').show();

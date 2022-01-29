@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Webklex\IMAP\Facades\Client;
 use App\Models\MailConfigIncoming;
 use App\Models\MailConfigOutgoing;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 class SettingsController extends Controller
 {
@@ -82,6 +84,7 @@ class SettingsController extends Controller
 
     public function store_mail_outgoing_config(Request $request)
     {
+        
         $validate = request()->validateWithBag('create_mail_outgoing_config', [
             'protocol' => 'required',
             'host' => 'required',
@@ -93,8 +96,25 @@ class SettingsController extends Controller
             'sender_email' => 'required'
         ]);
 
-        MailConfigOutgoing::create($validate);
+        $config = array(
+                        'driver'     =>     $request->protocol,
+                        'host'       =>     $request->host,
+                        'port'       =>     $request->port,
+                        'username'   =>     $request->username,
+                        'password'   =>     $request->password,
+                        'encryption' =>     $request->encryption,
+                        'from'       =>     array('address' => $request->sender_email, 'name' => $request->sender_name),
+                    );
+        Config::set('mail', $config);
 
+        try{
+            Mail::to($request->username)->send(new TestMail());
+        }catch(\Exception $e){
+            
+            return redirect(route('mail_config_show'))->with('test_mail_connection_outgoing_create', $e->getMessage());
+        }
+
+        MailConfigOutgoing::create($validate);
         return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena.');
     }
 
@@ -111,8 +131,25 @@ class SettingsController extends Controller
             'sender_email' => 'required'
         ]);
 
-        $mailConfigOutgoing->update($validate);
+        $config = array(
+                        'driver'     =>     $request->protocol,
+                        'host'       =>     $request->host,
+                        'port'       =>     $request->port,
+                        'username'   =>     $request->username,
+                        'password'   =>     $request->password,
+                        'encryption' =>     $request->encryption,
+                        'from'       =>     array('address' => $request->sender_email, 'name' => $request->sender_name),
+                    );
+        Config::set('mail', $config);
 
+        try{
+            Mail::to($request->username)->send(new TestMail());
+        }catch(\Exception $e){
+            return redirect(route('mail_config_show'))->with('test_mail_connection_outgoing_update', $e->getMessage());
+        }
+
+        $mailConfigOutgoing->update($validate);
         return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena.');
+
     }
 }

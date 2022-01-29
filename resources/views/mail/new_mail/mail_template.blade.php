@@ -1,6 +1,6 @@
 @component('mail::message')
 
- {{ $data['message'] }}
+{{ $data['message'] }}
 
 
 
