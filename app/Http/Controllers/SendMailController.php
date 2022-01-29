@@ -13,6 +13,7 @@ class SendMailController extends Controller
     public function index()
     {
         $mailConfigOutgoing = MailConfigOutgoing::first();
+        
         if (empty($mailConfigOutgoing)) {
             return redirect(route('mail_config_show'))->with('message_warning', 'Konfiguracija odlaznih imejlova nije podešena.');
         }

@@ -97,13 +97,13 @@ class SettingsController extends Controller
         ]);
 
         $config = array(
-                        'driver'     =>     $request->protocol,
-                        'host'       =>     $request->host,
-                        'port'       =>     $request->port,
-                        'username'   =>     $request->username,
-                        'password'   =>     $request->password,
-                        'encryption' =>     $request->encryption,
-                        'from'       =>     array('address' => $request->sender_email, 'name' => $request->sender_name),
+            'driver'     =>     $request->protocol,
+            'host'       =>     $request->host,
+            'port'       =>     $request->port,
+            'username'   =>     $request->username,
+            'password'   =>     $request->password,
+            'encryption' =>     $request->encryption,
+            'from'       =>     array('address' => $request->sender_email, 'name' => $request->sender_name),
                     );
         Config::set('mail', $config);
 
@@ -132,13 +132,13 @@ class SettingsController extends Controller
         ]);
 
         $config = array(
-                        'driver'     =>     $request->protocol,
-                        'host'       =>     $request->host,
-                        'port'       =>     $request->port,
-                        'username'   =>     $request->username,
-                        'password'   =>     $request->password,
-                        'encryption' =>     $request->encryption,
-                        'from'       =>     array('address' => $request->sender_email, 'name' => $request->sender_name),
+            'driver'     =>     $request->protocol,
+            'host'       =>     $request->host,
+            'port'       =>     $request->port,
+            'username'   =>     $request->username,
+            'password'   =>     $request->password,
+            'encryption' =>     $request->encryption,
+            'from'       =>     array('address' => $request->sender_email, 'name' => $request->sender_name),
                     );
         Config::set('mail', $config);
 
