@@ -40,7 +40,7 @@ class GetMail extends Command
     public function handle()
     {
         $mailConfigIncoming = MailConfigIncoming::first();
-        if ($mailConfigIncoming) {
+        if (!empty($mailConfigIncoming)) {
 
             $client = Client::make([
             'host'          => $mailConfigIncoming->host,
