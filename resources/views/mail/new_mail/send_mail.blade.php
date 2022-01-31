@@ -5,6 +5,11 @@
 	<form method="POST" action="{{ route('send_mail') }}" enctype="multipart/form-data">
 		@csrf
 		<div class="shadow-xl rounded-xl bg-gray-800 border-l-4 border-turquoise-light sm:overflow-hidden">
+			<div class="w-full bg-turquoise-light rounded-t py-3 font-bold">
+				<p class="px-4 text text-gray-200">
+					Nova poruka
+				</p>
+			</div>
 			<div class="px-4 py-5 space-y-6 sm:p-6">
 				<div class="grid grid-cols-3 gap-6">
 					<div class="col-span-3 sm:col-span-2">
