@@ -20,7 +20,7 @@ class SendMailController extends Controller
         return view('mail.new_mail.send_mail');
     }
 
-    public function send_mail(Request $request)
+    public function sendMail(Request $request)
     {
 
         $this->validate($request, [
@@ -61,8 +61,8 @@ class SendMailController extends Controller
                     fclose($fp);
                     array_push($data, $fileName);
                 }
-                $data_attachments = implode(',', $data);
-                $sentMail->attachment = $data_attachments;
+                $dataAttachments = implode(',', $data);
+                $sentMail->attachment = $dataAttachments;
             }
 
             $sentMail->save();

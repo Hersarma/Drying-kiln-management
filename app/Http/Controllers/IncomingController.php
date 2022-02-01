@@ -37,7 +37,7 @@ class IncomingController extends Controller
             'invoice_number' => 'nullable'
         ]);
         
-        $validate_items = request()->validateWithBag('create_incoming_items', [
+        $validateItems = request()->validateWithBag('create_incoming_items', [
             'items.*.item_name' => 'required',
             'items.*.quantity' => 'numeric|required',
             'items.*.cubic_metre' => 'numeric|required'
@@ -75,7 +75,7 @@ class IncomingController extends Controller
      */
     public function update(Request $request, Incoming $incoming)
     {
-        //dd($request->items);
+        
          $validate = request()->validateWithBag('edit_incoming', [
             'client_id' => 'required',
             'notes' => 'nullable',
@@ -83,7 +83,7 @@ class IncomingController extends Controller
             'invoice_number' => 'nullable'
         ]);
 
-         $validate_items = request()->validateWithBag('edit_incoming_items', [
+         $validateItems = request()->validateWithBag('edit_incoming_items', [
             'items.*.item_name' => 'required',
             'items.*.quantity' => 'numeric|required',
             'items.*.cubic_metre' => 'numeric|required'

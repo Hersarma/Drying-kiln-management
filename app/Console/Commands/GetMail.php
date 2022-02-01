@@ -59,11 +59,11 @@ class GetMail extends Command
 
         foreach ($messages as $message) {
             $attachments = $message->getAttachments();
-            $new_mail = new Mail;
-            $new_mail->text = $message->getHTMLBody();
-            $new_mail->subject = $message->getSubject();
-            $new_mail->name = $message->getFrom()[0]->personal;
-            $new_mail->from = $message->getFrom()[0]->mail;
+            $newMail = new Mail;
+            $newMail->text = $message->getHTMLBody();
+            $newMail->subject = $message->getSubject();
+            $newMail->name = $message->getFrom()[0]->personal;
+            $newMail->from = $message->getFrom()[0]->mail;
             $data = [];
 
             if(!empty($attachments))
@@ -77,11 +77,11 @@ class GetMail extends Command
                     array_push($data, $path);
                 }
 
-                $data_attachments = implode(',', $data);
-                $new_mail->attachment = $data_attachments;
+                $dataAttachments = implode(',', $data);
+                $newMail->attachment = $dataAttachments;
             }
 
-            $new_mail->save();
+            $newMail->save();
 
         }
         }

@@ -1,4 +1,4 @@
-@foreach($mail_inbox as $mail)
+@foreach($mailInbox as $mail)
 <tr
   class="group bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
   <td class="px-4 py-3">
@@ -16,6 +16,6 @@
   @endforeach
 <tr>
   <td colspan="7" class="py-2">
-    {{ $mail_inbox->links() }}
+    {{ $mailInbox->links() }}
   </td>
 </tr>
