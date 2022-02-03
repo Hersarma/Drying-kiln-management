@@ -37,8 +37,13 @@ Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChec
 
 /*Mail*/
 Route::get('/mail/inbox', 'MailController@index')->name('mail_index');
+Route::get('/mail/deleted/inbox', 'MailController@indexDeleted')->name('mail_index_deleted');
 Route::get('/mail/inbox/show/{mail}', 'MailController@show')->name('mail_inbox_show');
+Route::get('/mail/inbox/show_deleted/{mailDeleted}', 'MailController@showDeleted')->name('mail_inbox_show_deleted');
 Route::delete('/delete/{mail}', 'MailController@destroy')->name('mail_soft_delete');
+Route::delete('/delete_permanently/{mailDeleted}', 'MailController@destroyPermanently')->name('mail_permanently_delete');
+Route::post('mail/delete_checked_mail_inbox', 'MailController@destroyChecked')->name('delete_checked_mail_inbox');
+Route::post('mail/delete_permanently_checked_mail_inbox', 'MailController@destroyCheckedPermanently')->name('delete_permanently_checked_mail_inbox');
 Route::get('/mail/new_mail', 'SendMailController@index')->name('new_mail');
 Route::post('/send_mail', 'SendMailController@sendMail')->name('send_mail');
 

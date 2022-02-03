@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\MailConfigIncoming;
 use App\Models\Mail;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class MailController extends Controller
@@ -22,25 +23,11 @@ class MailController extends Controller
         return view('mail.inbox.index', compact('mailInbox'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function indexDeleted()
     {
-        //
-    }
+        $mailInboxDeleted = Mail::onlyTrashed()->simplePaginate(10);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('mail.deleted.index', compact('mailInboxDeleted'));
     }
 
     /**
@@ -54,28 +41,12 @@ class MailController extends Controller
         return view('mail.inbox.show_inbox', compact('mail'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mail  $mail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Mail $mail)
+    public function showDeleted(Mail $mailDeleted)
     {
-        //
+
+        return view('mail.deleted.show_inbox_deleted', compact('mailDeleted'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mail  $mail
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Mail $mail)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -86,6 +57,59 @@ class MailController extends Controller
     public function destroy(Mail $mail)
     {
         $mail->delete();
-        return redirect(route('mail_index'))->with('message', 'Mejl uspesno izbrisan.');
+        return redirect(route('mail_index'))->with('message', 'Mejl uspešno izbrisan.');
+    }
+
+    public function destroyPermanently($mailDeleted)
+    {
+        
+        $deleteMailPermanently = Mail::onlyTrashed()->find($mailDeleted);
+        
+        $deleteAttachments = $deleteMailPermanently->attachment;
+
+        if(!empty($deleteAttachments))
+        {
+            $files = explode(',', $deleteAttachments);
+
+            foreach($files as $file)
+            {
+                $path = storage_path('app/public/email/recived_attachments/').$file;
+                File::delete($path);
+            }
+        }
+
+        $deleteMailPermanently->forceDelete();
+
+        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspesno obrisan.');
+    }
+
+    public function destroyCheckedPermanently(Request $request)
+    {
+        $deleteMailsPermanently = Mail::onlyTrashed()->whereIn('id', $request->input('deleteChecked'))->get();
+        
+        foreach ($deleteMailsPermanently as $mails) 
+        {
+            $deleteAttachments = $mails->attachment;
+            if(!empty($deleteAttachments))
+            {
+                $files = explode(',', $deleteAttachments);
+                foreach($files as $file)
+                {
+                    $path = storage_path('app/public/email/recived_attachments/').$file;
+                    File::delete($path);
+                }
+            }
+            $mails->forceDelete();
+        }
+        
+        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspesno obrisan.');
+
+    }
+
+    public function destroyChecked(Request $request)
+    {
+        Mail::whereIn('id', $request->input('deleteChecked'))->delete();
+
+        return redirect(route('mail_index'))->with('message', 'Imejl uspešno izbrisan.');
     }
 }

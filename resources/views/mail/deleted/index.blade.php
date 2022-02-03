@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-		@if($mailInbox->isNotEmpty())
+		@if($mailInboxDeleted->isNotEmpty())
 		<section class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
@@ -10,7 +10,7 @@
     <div class="flex justify-between">
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-        <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretraga"
+        <input id="search_mail_inbox_deleted" type="search" name="search_mail_inbox_deleted" placeholder="Pretraga"
         class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
       </div>
       <div class="flex px-4 md:px-12 py-4 md:py-8">
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="w-full mx-auto overflow-auto">
-    <form method="post" action="{{ route('delete_checked_mail_inbox') }}">
+    <form method="post" action="{{ route('delete_permanently_checked_mail_inbox') }}">
       @csrf
       <table class="table-auto w-full text-left whitespace-normal">
         <thead>
@@ -52,7 +52,7 @@
           </tr>
         </thead>
         <tbody id="searchMailInbox">
-          @include('mail.inbox.search_mail_inbox')
+          @include('mail.deleted.search_mail_inbox_deleted')
           
         </tbody>
       </table>
