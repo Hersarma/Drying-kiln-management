@@ -54,8 +54,8 @@
           
         </tbody>
       </table>
-      @include('messages.message_warning_delete_checked_permanently')
-      @include('messages.message_warning_restore_checked')
+      @include('messages.message_warning_delete_checked_mail_permanently')
+      @include('messages.message_warning_restore_checked_mail')
     </form>
     <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
   </div>
