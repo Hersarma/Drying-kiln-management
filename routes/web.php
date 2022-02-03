@@ -41,6 +41,8 @@ Route::get('/mail/deleted/inbox', 'MailController@indexDeleted')->name('mail_ind
 Route::get('/mail/inbox/show/{mail}', 'MailController@show')->name('mail_inbox_show');
 Route::get('/mail/inbox/show_deleted/{mailDeleted}', 'MailController@showDeleted')->name('mail_inbox_show_deleted');
 Route::delete('/delete/{mail}', 'MailController@destroy')->name('mail_soft_delete');
+Route::get('mail/deleted/inbox/restore/{mailDeleted}', 'MailController@restoreDeleted')->name('mail_inbox_restore_deleted');
+Route::get('mail/deleted/inbox/restore_checked', 'MailController@restoreCheckedDeleted')->name('mail_inbox_restore_checked_deleted');
 Route::delete('/delete_permanently/{mailDeleted}', 'MailController@destroyPermanently')->name('mail_permanently_delete');
 Route::post('mail/delete_checked_mail_inbox', 'MailController@destroyChecked')->name('delete_checked_mail_inbox');
 Route::post('mail/delete_permanently_checked_mail_inbox', 'MailController@destroyCheckedPermanently')->name('delete_permanently_checked_mail_inbox');

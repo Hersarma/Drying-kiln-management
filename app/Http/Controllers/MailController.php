@@ -60,6 +60,20 @@ class MailController extends Controller
         return redirect(route('mail_index'))->with('message', 'Mejl uspešno izbrisan.');
     }
 
+    public function restoreDeleted($mailDeleted)
+    {
+        Mail::onlyTrashed()->find($mailDeleted)->restore();
+
+        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspešno vraćen.');
+    }
+
+    public function restoreCheckedDeleted(Request $request)
+    {
+        Mail::onlyTrashed()->whereIn('id', $request->input('deleteChecked'))->restore();
+
+        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspešno vraćen.');
+    }
+
     public function destroyPermanently($mailDeleted)
     {
         

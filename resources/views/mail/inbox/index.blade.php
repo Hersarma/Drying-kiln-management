@@ -7,19 +7,11 @@
       <h1 class="text-xl font-bold text-gray-200">Primljene</h1>
     </div>
     
-    <div class="flex justify-between">
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
         <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretraga"
         class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
       </div>
-      <div class="flex px-4 md:px-12 py-4 md:py-8">
-        <button type="button"
-        class="toggle_modal_create_mail_inbox transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
   </div>
   <div class="w-full mx-auto overflow-auto">
     <form method="post" action="{{ route('delete_checked_mail_inbox') }}">

@@ -6,30 +6,25 @@
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Primljene</h1>
     </div>
-    
-    <div class="flex justify-between">
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
         <input id="search_mail_inbox_deleted" type="search" name="search_mail_inbox_deleted" placeholder="Pretraga"
         class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
       </div>
-      <div class="flex px-4 md:px-12 py-4 md:py-8">
-        <button type="button"
-        class="toggle_modal_create_mail_inbox transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-xl">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
   </div>
   <div class="w-full mx-auto overflow-auto">
-    <form method="post" action="{{ route('delete_permanently_checked_mail_inbox') }}">
+    <form method="" action="" class="submit_checked">
       @csrf
       <table class="table-auto w-full text-left whitespace-normal">
         <thead>
           <tr class="border-b border-turquoise-light">
             <th class="px-4 py-3 tracking-wider bg-blue_gray-900 md:w-28">
-              <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
-              <button type="submit" onclick="return window.confirm('Da li ste sigurni da zelite da obrisete sve ulaze')" class="trash hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
+              <div class="flex items-center">
+                <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
+                 <button type="button" class="trash delete_checked_permanently hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash ml-8"></i><span class="hidden">{{route('delete_permanently_checked_mail_inbox')}}</span></button>
+                  <button type="button" class="restore hidden focus:outline-none text-green-400 hover:text-green-600"><i class="transition ease-out duration-500 transform hover:scale-110 fa fa-undo ml-8"></i><span class="hidden">{{route('mail_inbox_restore_checked_deleted')}}</span></button>
+              </div>
+              
             </th>
             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
               Ime
@@ -44,6 +39,9 @@
               Datum
             </th>
             <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+              Vrati
+            </th>
+            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
               Prikaži
             </th>
             <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
@@ -56,6 +54,8 @@
           
         </tbody>
       </table>
+      @include('messages.message_warning_delete_checked_permanently')
+      @include('messages.message_warning_restore_checked')
     </form>
     <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
   </div>
