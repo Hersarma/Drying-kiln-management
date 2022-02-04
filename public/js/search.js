@@ -135,21 +135,21 @@ $(document).ready(function () {
         $('.modal_warning_powerof_drykiln').toggle(500);
     });
 
-    $(document).on('click', '.delete_checked_permanently', function () {
+    $(document).on('click', '.delete_checked_mail_permanently', function () {
         let href = $(this).children('span').text();
        
        $('.submit_checked').attr('method', 'post');
         $('.submit_checked').attr('action', href);
-        $('.modal_warning_delete_checked').toggle(500);
+        $('.modal_warning_delete_checked_permanently_mail').toggle(500);
 
     });
 
-    $(document).on('click', '.restore', function () {
+    $(document).on('click', '.restore_mail', function () {
         let href = $(this).children('span').text();
        
        $('.submit_checked').attr('method', 'get');
         $('.submit_checked').attr('action', href);
-        $('.modal_warning_restore_checked').toggle(500);
+        $('.modal_warning_restore_checked_mail').toggle(500);
 
     });
 

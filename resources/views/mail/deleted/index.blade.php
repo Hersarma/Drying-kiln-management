@@ -21,8 +21,8 @@
             <th class="px-4 py-3 tracking-wider bg-blue_gray-900 md:w-28">
               <div class="flex items-center">
                 <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
-                 <button type="button" class="trash delete_checked_permanently hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash ml-8"></i><span class="hidden">{{route('delete_permanently_checked_mail_inbox')}}</span></button>
-                  <button type="button" class="restore hidden focus:outline-none text-green-400 hover:text-green-600"><i class="transition ease-out duration-500 transform hover:scale-110 fa fa-undo ml-8"></i><span class="hidden">{{route('mail_inbox_restore_checked_deleted')}}</span></button>
+                 <button type="button" class="trash delete_checked_mail_permanently hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash ml-8"></i><span class="hidden">{{route('delete_permanently_checked_mail_inbox')}}</span></button>
+                  <button type="button" class="restore_mail hidden focus:outline-none text-green-400 hover:text-green-600"><i class="transition ease-out duration-500 transform hover:scale-110 fa fa-undo ml-8"></i><span class="hidden">{{route('mail_inbox_restore_checked_deleted')}}</span></button>
               </div>
               
             </th>

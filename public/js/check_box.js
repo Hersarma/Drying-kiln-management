@@ -6,12 +6,12 @@ $(document).on('click', '[type=checkbox], .restore_checkbox', function(){
     if (checkedChbx.length > 0)
     {
         $('.trash').show();
-        $('.restore').show();
+        $('.restore_mail').show();
     }
     else
     {
         $('.trash').hide();
-        $('.restore').hide();
+        $('.restore_mail').hide();
     }
 });
 
@@ -22,12 +22,12 @@ $(document).on('click', '.check_all', function(){
     if (checkedChbx.length > 0)
     {
         $('.trash').show();
-        $('.restore').show();
+        $('.restore_mail').show();
     }
     else
     {
         $('.trash').hide();
-        $('.restore').hide();
+        $('.restore_mail').hide();
     }
 });
 

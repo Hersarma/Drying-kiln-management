@@ -1,4 +1,4 @@
-<div class="modal_warning_delete_checked hidden fixed z-50 inset-0 overflow-y-auto">
+<div class="modal_warning_delete_checked_permanently_mail hidden fixed z-50 inset-0 overflow-y-auto">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 transition-opacity" aria-hidden="true">
       <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
@@ -10,12 +10,15 @@
         <p class="py-4 text-base text-gray-200 leading-6 font-bold">
           Ova akcija ne moze da se poništi!
         </p>
+        <p class="py-4 text-base text-gray-200 leading-6 font-bold">
+          Imejl će biti trajno obrisan!
+        </p>
       </div>
       <div class="w-full mx-auto">
         <div class="py-2">
           
             <div class="flex justify-around">
-              <button type="button" class="delete_checked_permanently py-1 w-1/4 transition ease-out duration-500 transform hover:scale-110 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
+              <button type="button" class="delete_checked_mail_permanently py-1 w-1/4 transition ease-out duration-500 transform hover:scale-110 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
               <button type="submit"
               class="w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
               Potvrdi
