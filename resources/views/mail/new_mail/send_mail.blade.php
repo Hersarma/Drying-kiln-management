@@ -16,9 +16,14 @@
 						<label for="for" class="block text-sm font-medium text-gray-200">
 							Kome
 						</label>
-						<div class="mt-1 flex rounded-md">
+						<div class="mt-1">
 							<input type="text" name="recipient" id="recipient"
 							class="w-full md:w-1/2 border-b border-teal-500 py-2 focus:outline-none bg-transparent text-gray-100 text-lg">
+							 @error('recipient')
+                <p class="text-red-500 text-xs italic mt-4">
+                  {{ $message }}
+                </p>
+               @enderror
 						</div>
 					</div>
 				</div>
@@ -27,10 +32,14 @@
 						<label for="for" class="block text-sm font-medium text-gray-200">
 							Naslov
 						</label>
-						<div class="mt-1 flex rounded-md">
+						<div class="mt-1">
 							<input type="text" name="subject" id="subject"
 							class="w-full md:w-1/2 border-b border-teal-500 py-2 focus:outline-none bg-transparent text-gray-100 text-lg">
-							
+							@error('subject')
+                <p class="text-red-500 text-xs italic mt-4">
+                  {{ $message }}
+                </p>
+               @enderror
 						</div>
 					</div>
 				</div>
@@ -41,7 +50,11 @@
 					<div class="w-4/5 py-4">
 						<textarea id="message" name="message" rows="6"
 						class="w-full border-b border-teal-500 focus:outline-none bg-transparent text-gray-100 text-lg"></textarea>
-						
+						@error('message')
+                <p class="text-red-500 text-xs italic mt-4">
+                  {{ $message }}
+                </p>
+               @enderror
 					</div>
 				</div>
 				<div>
