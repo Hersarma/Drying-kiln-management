@@ -45,7 +45,7 @@ class OutgoingController extends Controller
             $outgoing->outgoingitems()->create($item);
         }
         
-        return redirect(route('outgoing.index'))->with('message', 'Uspesan unos.');
+        return redirect(route('outgoing.index'))->with('message', 'Uspešan unos.');
     }
 
     /**
@@ -91,7 +91,7 @@ class OutgoingController extends Controller
             ]);
         }
         
-        return redirect(route('outgoing.show', $outgoing))->with('message', 'Uspesan unos.');
+        return redirect(route('outgoing.show', $outgoing))->with('message', 'Uspešan unos.');
     }
 
     /**
@@ -104,13 +104,13 @@ class OutgoingController extends Controller
     {
         $outgoing->delete();
 
-        return redirect(route('outgoing.index'))->with('message', 'Izlaz uspesno obrisan.');
+        return redirect(route('outgoing.index'))->with('message', 'Izlaz uspešno obrisan.');
     }
 
      public function destroyChecked(Request $request){
 
         Outgoing::whereIn('id', $request->input('deleteChecked'))->delete();
 
-        return redirect(route('outgoing.index'))->with('message', 'Svi izlazi su uspesno obrisani.');
+        return redirect(route('outgoing.index'))->with('message', 'Svi izlazi su uspešno obrisani.');
     }
 }

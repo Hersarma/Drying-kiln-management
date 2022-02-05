@@ -21,7 +21,7 @@ public function store(Request $request){
 
     DryKiln::create($validator);
 
-    return redirect(route('drykiln.index'))->with('message', 'Susara uspesno snimljena');
+    return redirect(route('drykiln.index'))->with('message', 'Susara uspešno snimljena');
 }
 
 public function show(DryKiln $drykiln){

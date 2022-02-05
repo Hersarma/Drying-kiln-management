@@ -31,7 +31,7 @@
         <tr class="border-b border-turquoise-light">
           <th class="px-4 py-3 tracking-wider bg-blue_gray-900 md:w-28">
             <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
-            <button type="submit" onclick="return window.confirm('Da li ste sigurni da zelite da obrisete sve klijente')" class="trash hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
+            <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
           </th>
           <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
             Ime
@@ -54,6 +54,9 @@
         @include('clients.search_client')
     </tbody>
   </table>
+  @if($clients->isNotEmpty())
+    @include('messages.message_warning_delete_checked_items')
+  @endif
 </form>
 <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
 </div>

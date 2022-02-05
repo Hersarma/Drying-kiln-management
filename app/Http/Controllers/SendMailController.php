@@ -67,7 +67,7 @@ class SendMailController extends Controller
 
             $sentMail->save();
 
-            return redirect(route('new_mail'))->with('message', 'Poruka uspesno poslata.');
+            return redirect(route('new_mail'))->with('message', 'Poruka uspešno poslata.');
         }
         
         

@@ -25,7 +25,7 @@ class DryKilnReadingsController extends Controller
 
         DryKilnReadings::create($validator);
 
-        return back()->with('message', 'Uspesan unos');
+        return back()->with('message', 'Uspešan unos');
 
     }
 }

@@ -35,7 +35,7 @@ class DryKilnConfigController extends Controller
 
          $drying_proces->drykilnreadings()->create();
 
-         return redirect(route('drykiln.show', $request->dry_kiln_id))->with('message', 'Susara uspesno startovana');
+         return redirect(route('drykiln.show', $request->dry_kiln_id))->with('message', 'Susara uspešno startovana');
 
     }
 
@@ -60,7 +60,7 @@ class DryKilnConfigController extends Controller
     $drying_proces->client = $request->client;
     $drying_proces->save();
 
-    return back()->with('message', 'Konfiguracija uspesno snimljena');
+    return back()->with('message', 'Konfiguracija uspešno snimljena');
 
    }
 
@@ -73,7 +73,7 @@ class DryKilnConfigController extends Controller
     //dd($proces);
     $drykilnconfig->delete();
 
-    return redirect(route('drykiln.show', $drykiln))->with('message', 'Proces susenja zavrsen');
+    return redirect(route('drykiln.show', $drykiln))->with('message', 'Proces susenja završen');
     
    }
 }
