@@ -4,7 +4,7 @@
 		<section class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
-      <h1 class="text-xl font-bold text-gray-200">Primljene</h1>
+      <h1 class="text-xl font-bold text-gray-200">Otpad</h1>
     </div>
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>

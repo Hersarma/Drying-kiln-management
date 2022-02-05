@@ -10,7 +10,21 @@ use Illuminate\Http\Request;
 
 class SendMailController extends Controller
 {
+
     public function index()
+    {   
+        $mailConfigOutgoing = MailConfigOutgoing::first();
+        
+        if (empty($mailConfigOutgoing)) {
+            return redirect(route('mail_config_show'))->with('message_warning', 'Konfiguracija odlaznih imejlova nije podešena.');
+        }
+
+        $sentMail = SendMail::orderBy('created_at', 'desc')->simplePaginate(10);
+        return view('mail.sent.index', compact('sentMail'));
+
+    }
+
+    public function newMail()
     {
         $mailConfigOutgoing = MailConfigOutgoing::first();
         
