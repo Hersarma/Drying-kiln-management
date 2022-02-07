@@ -87,4 +87,47 @@ class SendMailController extends Controller
         
 
     }
+
+    public function destroy(SendMail $mail)
+    {
+
+        
+        $deleteAttachments = $mail->attachment;
+
+        if(!empty($deleteAttachments))
+        {
+            $files = explode(',', $deleteAttachments);
+
+            foreach($files as $file)
+            {
+                $path = storage_path('app/public/email/sent_attachments/').$file;
+                File::delete($path);
+            }
+        }
+
+        $mail->delete();
+
+        return redirect(route('mail_sent_index'))->with('message', 'Mail uspešno obrisan.');
+    }
+
+    public function destroyChecked(Request $request){
+        $mails = SendMail::whereIn('id', $request->input('deleteChecked'))->get();
+        
+        foreach ($mails as $mail) 
+        {
+            $deleteAttachments = $mail->attachment;
+            if(!empty($deleteAttachments))
+            {
+                $files = explode(',', $deleteAttachments);
+                foreach($files as $file)
+                {
+                    $path = storage_path('app/public/email/sent_attachments/').$file;
+                    File::delete($path);
+                }
+            }
+            $mail->delete();
+        }
+        
+        return redirect(route('mail_sent_index'))->with('message', 'Mail uspešno obrisan.');
+    }
 }

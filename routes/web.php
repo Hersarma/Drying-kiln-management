@@ -49,6 +49,7 @@ Route::post('mail/delete_permanently_checked_mail_inbox', 'MailController@destro
 Route::get('/mail/sent', 'SendMailController@index')->name('mail_sent_index');
 Route::get('/mail/sent/show/{mail}', 'SendMailController@show')->name('mail_sent_show');
 Route::delete('/delete_sent/{mail}', 'SendMailController@destroy')->name('mail_delete_sent');
+Route::post('/delete_checked_sent_mail', 'SendMailController@destroyChecked')->name('delete_checked_sent_mail');
 Route::get('/mail/new_mail', 'SendMailController@newMail')->name('new_mail');
 Route::post('/send_mail', 'SendMailController@sendMail')->name('send_mail');
 

@@ -94,7 +94,7 @@ class MailController extends Controller
 
         $deleteMailPermanently->forceDelete();
 
-        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspesno obrisan.');
+        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspešno obrisan.');
     }
 
     public function destroyCheckedPermanently(Request $request)

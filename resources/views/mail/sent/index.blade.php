@@ -14,7 +14,7 @@
       </div>
   </div>
   <div class="w-full mx-auto overflow-auto">
-    <form method="post" action="#">
+    <form method="post" action="{{ route('delete_checked_sent_mail') }}">
       @csrf
       <table class="table-auto w-full text-left whitespace-normal">
         <thead>
