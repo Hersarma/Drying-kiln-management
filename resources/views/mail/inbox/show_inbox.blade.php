@@ -23,19 +23,17 @@
 		<div class="px-4">
 			<p class="text-gray-200">
 				{{ $mail->name ?: '/' }}:
-				<span class="text-gray-400 italic  pl-4">{{ $mail->from }}</span>
+				<span class="text-gray-300 italic pl-4">{{ $mail->from }}</span>
 			</p>
 		</div>
 		<div class="px-4">
 			<p class="text-gray-200">Datum: {{ $mail->created_at->format('d-m-Y') }}.</p>
 		</div>
 	</div>
-	<div class="py-4">
+	<div class="py-2">
 		<p class="text-gray-200 text-lg py-4 px-4">Poruka</p>
-		<div class="px-4">
-			<p class="text-gray-200 leading-relaxed text-left">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-			</p>
+		<div class="px-4 text-gray-200 text-lg leading-relaxed text-left">
+				{!! $mail->text !!}
 		</div>
 	</div>
 </div>
