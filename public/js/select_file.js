@@ -13,9 +13,14 @@ $(document).ready(function()
     var names = $.map(files, function(val) { return val.name; });
 
     jQuery.each( names, function(i,name) {
-        $('#file_name').append('<p class="remove_file mt-2 mb-2 h-6 px-2 py-1 rounded-xl shadow-xl bg-gray-900 border-l-4 border-r-4 border-turquoise-light cursor-pointer text-white"><i class="fas fa-times px-2 text-red-500"></i>' + name + ',</p>');
+        $('.file_name').append('<p class="remove_file mt-2 mb-2 h-6 px-2 py-1 rounded-xl shadow-xl bg-gray-900 border-l-4 border-r-4 border-turquoise-light cursor-pointer text-white"><i class="fas fa-times px-2 text-red-500"></i>' + name + ',</p>');
     });
 
+    });
+
+    $(document).on('click', '.file', function(){
+    //e.preventDefault();
+    $('.file_name').empty();
     });
 
    $(document).on('click', '.remove_file', function(e){

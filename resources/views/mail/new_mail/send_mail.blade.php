@@ -67,13 +67,13 @@
 									Izaberi fajl
 								</label>
 								<input id="file" name="file[]" type="file" multiple="multiple"
-								class="sr-only">
+								class="sr-only file">
 							</div>
 							<p class="text-xs text-gray-400 py-4">
 								PNG, JPG, GIF do 2MB
 							</p>
 						</div>
-						<div id="file_name" class="">
+						<div id="file_name" class="file_name">
 							
 						</div>
 					</div>
