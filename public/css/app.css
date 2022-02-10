@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
 /*
 ! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
 */
@@ -30,7 +30,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: roboto; /* 4 */
+  font-family: Roboto; /* 4 */
 }
 /*
 1. Remove the margin in all browsers.
@@ -651,17 +651,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-screen_nav{
   height: 80vh;
 }
-.h-10{
-  height: 2.5rem;
-}
-.h-36{
-  height: 9rem;
-}
-.h-28{
-  height: 7rem;
-}
 .h-32{
   height: 8rem;
+}
+.h-10{
+  height: 2.5rem;
 }
 .min-h-screen{
   min-height: 100vh;
@@ -725,9 +719,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-10{
   width: 2.5rem;
-}
-.w-24{
-  width: 6rem;
 }
 .max-w-md{
   max-width: 28rem;
@@ -866,9 +857,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-center{
   align-items: center;
-}
-.justify-start{
-  justify-content: flex-start;
 }
 .justify-end{
   justify-content: flex-end;
@@ -1136,10 +1124,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
-.bg-gray-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1303,10 +1287,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   vertical-align: middle;
 }
 .font-sans{
-  font-family: roboto;
-}
-.font-serif{
-  font-family: Playfair Display;
+  font-family: Roboto;
 }
 .text-sm{
   font-size: 0.875rem;
@@ -1490,17 +1471,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
-.text-orange-500{
-  --tw-text-opacity: 1;
-  color: rgb(249 115 22 / var(--tw-text-opacity));
-}
-.text-cyan-200{
-  --tw-text-opacity: 1;
-  color: rgb(165 243 252 / var(--tw-text-opacity));
-}
 .text-cyan-300{
   --tw-text-opacity: 1;
   color: rgb(103 232 249 / var(--tw-text-opacity));
+}
+.text-orange-500{
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
 }
 .text-opacity-80{
   --tw-text-opacity: 0.8;
