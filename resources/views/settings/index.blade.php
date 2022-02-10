@@ -12,7 +12,7 @@
  </h2>
 <p class="font-medium text-gray-400">Imejl</p>
 <a href="{{ route('mail_config_show') }}">
-<button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Podešavanja</button>
+<button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja</button>
 </a> 
 </div>
 <div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
@@ -20,7 +20,7 @@
 	 <i class="fas fa-user"></i>
  </h2>
 <p class="font-medium text-gray-400">Korisnici</p>
-<a href="#"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Podešavanja
+<a href="#"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja
 </button></a>
 </div>
 <div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
@@ -28,7 +28,7 @@
 	 <i class="fa fa-bell"></i>
  </h2>
 <p class="font-medium text-gray-400">Notifikacije</p>
-<a href="#"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Podešavanja
+<a href="#"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja
 </button></a>
 </div>
 </div>

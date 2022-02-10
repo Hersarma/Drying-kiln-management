@@ -192,7 +192,7 @@
 
 <div class="md:px-4 py-4">
 	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-    <p class="px-8 text-gray-200">Proces sušenja</p>
+    <p class="px-8 text-gray-200">Očitavanja sondi</p>
     <div class="flex space-x-4">
     	@if($drykiln->dry_kiln_config->dry_kiln_status)
     	<button

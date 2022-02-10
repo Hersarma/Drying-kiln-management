@@ -89,7 +89,7 @@
     
   </div>
   <div class="flex mx-auto">
-    <button type="button" class="toggle_modal_edit_outgoing transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-xl"><i
+    <button type="button" class="toggle_modal_edit_outgoing transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-lg shadow-teal-400/20"><i
     class="px-2 fas fa-edit"></i>Izmeni</button>
     <p class="get_route_id cursor-pointer transition ease-out duration-500 transform hover:scale-110 mx-auto mt-10 text-white bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded text-base shadow-xl"><span class="hidden">{{ route('outgoing.destroy',$outgoing )}}</span><i
   class="px-2 fas fa-trash"></i>Obrisi</p>

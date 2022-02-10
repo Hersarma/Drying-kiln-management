@@ -33,10 +33,10 @@
   </div>
 <p class="font-medium text-lg text-gray-400">Odlazni imejl</p>
 @if(empty($mailConfigOutgoing))
-<button type="button" class="toggle_modal_create_mail_outgoing w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Nova konfiguracija
+<button type="button" class="toggle_modal_create_mail_outgoing w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Nova konfiguracija
 </button>
 @else
- <button type="button" class="toggle_modal_edit_mail_outgoing w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Izmeni konfiguraciju
+ <button type="button" class="toggle_modal_edit_mail_outgoing w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Izmeni konfiguraciju
 </button>
 @endif
 </div>
@@ -70,10 +70,10 @@
   </div>
 <p class="font-medium text-lg text-gray-400">Dolazni imejl</p>
 @if(empty($mailConfigIncoming))
- <button type="button" class="toggle_modal_create_mail_incoming w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Nova konfiguracija
+ <button type="button" class="toggle_modal_create_mail_incoming w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Nova konfiguracija
 </button>
 @else
-<button type="button" class="toggle_modal_edit_mail_incoming w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-500 rounded-xl focus:outline-none">Izmeni konfiguraciju
+<button type="button" class="toggle_modal_edit_mail_incoming w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Izmeni konfiguraciju
 </button>
 @endif
 </div>
