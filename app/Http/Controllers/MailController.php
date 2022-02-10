@@ -38,13 +38,64 @@ class MailController extends Controller
      */
     public function show(Mail $mail)
     {
-        return view('mail.inbox.show_inbox', compact('mail'));
+        
+        $img_attachments = [];
+        $file_attachments = [];
+
+        $imgExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'svg', 'svgz', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd'];
+
+        if (!empty($mail->attachment)) {
+            $attachments = explode(',', $mail->attachment);
+            foreach($attachments as $attachment){
+                $extension = pathinfo($attachment, PATHINFO_EXTENSION);
+                if(in_array($extension, $imgExtensions))
+                    {
+                    array_push($img_attachments, $attachment);
+                }else{
+                    array_push($file_attachments, $attachment);
+                }
+            }
+        }
+       
+        return view('mail.inbox.show_inbox', compact('mail', 'img_attachments', 'file_attachments'));
     }
 
-    public function showDeleted(Mail $mailDeleted)
+    public function downloadMailAttachment($attachment)
     {
+        $file = storage_path('app/public/email/recived_attachments/').$attachment;
 
-        return view('mail.deleted.show_inbox_deleted', compact('mailDeleted'));
+        if (file_exists($file))
+        {
+            return response()->download($file);
+        }
+
+        return back()->with('message_warning', 'Fajl nepostoji.');
+    }
+
+    public function showDeleted($mailDeleted)
+    {
+        $mail = Mail::onlyTrashed()->find($mailDeleted);
+
+        $img_attachments = [];
+        $file_attachments = [];
+
+        $imgExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'svg', 'svgz', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd'];
+
+        if (!empty($mail->attachment)) {
+            $attachments = explode(',', $mail->attachment);
+            foreach($attachments as $attachment){
+                $extension = pathinfo($attachment, PATHINFO_EXTENSION);
+                if(in_array($extension, $imgExtensions))
+                    {
+                    array_push($img_attachments, $attachment);
+                }else{
+                    array_push($file_attachments, $attachment);
+                }
+            }
+        }
+       
+       
+        return view('mail.deleted.show_inbox_deleted', compact('mail', 'img_attachments', 'file_attachments'));
     }
 
 

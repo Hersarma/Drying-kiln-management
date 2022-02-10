@@ -38,8 +38,9 @@ Route::post('/delete_checked_drying_proces', 'DryingProcesController@destroyChec
 /*Mail*/
 Route::get('/mail/inbox', 'MailController@index')->name('mail_index');
 Route::get('/mail/deleted/inbox', 'MailController@indexDeleted')->name('mail_index_deleted');
+Route::get('/mail/deleted/show_deleted/{mailDeleted}', 'MailController@showDeleted')->name('mail_inbox_show_deleted');
 Route::get('/mail/inbox/show/{mail}', 'MailController@show')->name('mail_inbox_show');
-Route::get('/mail/inbox/show_deleted/{mailDeleted}', 'MailController@showDeleted')->name('mail_inbox_show_deleted');
+
 Route::delete('/delete/{mail}', 'MailController@destroy')->name('mail_soft_delete');
 Route::get('mail/deleted/inbox/restore/{mailDeleted}', 'MailController@restoreDeleted')->name('mail_inbox_restore_deleted');
 Route::get('mail/deleted/inbox/restore_checked', 'MailController@restoreCheckedDeleted')->name('mail_inbox_restore_checked_deleted');
@@ -52,6 +53,7 @@ Route::delete('/delete_sent/{mail}', 'SendMailController@destroy')->name('mail_d
 Route::post('/delete_checked_sent_mail', 'SendMailController@destroyChecked')->name('delete_checked_sent_mail');
 Route::get('/mail/new_mail', 'SendMailController@newMail')->name('new_mail');
 Route::post('/send_mail', 'SendMailController@sendMail')->name('send_mail');
+Route::get('/mail/download_attachment/{attachment}', 'MailController@downloadMailAttachment')->name('download_mail_attachment');
 
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');

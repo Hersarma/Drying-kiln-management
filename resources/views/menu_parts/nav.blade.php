@@ -18,12 +18,9 @@
       <div class="flex py-4 items-center">
         <a href="{{ route('mail_index') }}"
           class="px-4 md:px-8 py-2 text-lg font-bold leading-5 text-gray-200 hover:text-white focus:outline-none">
+          <!--<i class="fas fa-envelope fa-fade" style="--fa-animation-duration: 1s; --fa-fade-opacity: 0.2;">
+          </i>-->
           <i class="fas fa-envelope"></i>
-          <span id="count_mail" class="">
-            @if(isset($countmail))
-            @include('widgets.count_mail')
-            @endif
-          </span>
         </a>
         @widget('update_notifications')
         <!-- Profile dropdown -->

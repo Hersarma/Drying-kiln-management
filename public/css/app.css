@@ -490,6 +490,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-8{
   margin: 2rem;
 }
+.m-4{
+  margin: 1rem;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -651,6 +654,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-10{
   height: 2.5rem;
 }
+.h-36{
+  height: 9rem;
+}
+.h-28{
+  height: 7rem;
+}
+.h-32{
+  height: 8rem;
+}
 .min-h-screen{
   min-height: 100vh;
 }
@@ -713,6 +725,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-10{
   width: 2.5rem;
+}
+.w-24{
+  width: 6rem;
 }
 .max-w-md{
   max-width: 28rem;
@@ -851,6 +866,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-center{
   align-items: center;
+}
+.justify-start{
+  justify-content: flex-start;
 }
 .justify-end{
   justify-content: flex-end;
@@ -1117,6 +1135,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-green-400{
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+.bg-gray-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -1471,6 +1493,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-orange-500{
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity));
+}
+.text-cyan-200{
+  --tw-text-opacity: 1;
+  color: rgb(165 243 252 / var(--tw-text-opacity));
+}
+.text-cyan-300{
+  --tw-text-opacity: 1;
+  color: rgb(103 232 249 / var(--tw-text-opacity));
 }
 .text-opacity-80{
   --tw-text-opacity: 0.8;
