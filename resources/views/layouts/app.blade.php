@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="{{ asset('css/app.css?v=').time() }}" rel="stylesheet">
   </head>
-  <body class="h-screen antialiased leading-none font-open_sans bg-blue_gray-900">
+  <body class="h-screen antialiased leading-none font-serif bg-blue_gray-900">
     <div id="app" class="flex flex-col h-screen justify-between">
       @include('menu_parts.nav')
       <div class="flex">

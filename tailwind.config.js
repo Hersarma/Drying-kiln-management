@@ -73,6 +73,7 @@ module.exports = {
                 'spin-fast': 'spin 1s linear infinite'
             },
             fontFamily: {
+                serif: ['Playfair Display'],
                 sans: ['roboto'],
                 open_sans: ['Open Sans']
 
