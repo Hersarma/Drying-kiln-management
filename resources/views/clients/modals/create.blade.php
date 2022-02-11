@@ -22,7 +22,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
                   id="name" name="name">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('name') }}
@@ -36,7 +36,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="city" name="city">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="city" name="city">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('city') }}
                   </p>
@@ -49,7 +49,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="state" name="state">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="state" name="state">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('state') }}
                   </p>
@@ -62,7 +62,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="address_1" name="address_1">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="address_1" name="address_1">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('address_1') }}
                   </p>
@@ -75,7 +75,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="address_2" name="address_2">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="address_2" name="address_2">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('address_2') }}
                   </p>
@@ -88,7 +88,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="pib" name="pib">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="pib" name="pib">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('pib') }}
                   </p>
@@ -103,7 +103,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="mb" name="mb">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="mb" name="mb">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('mb') }}
                   </p>
@@ -116,7 +116,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="contact" name="contact">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="contact" name="contact">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('contact') }}
                   </p>
@@ -129,7 +129,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="website" name="website">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="website" name="website">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('website') }}
                   </p>
@@ -142,7 +142,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="email" name="email">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="email" name="email">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('email') }}
                   </p>
@@ -155,7 +155,7 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="notes" name="notes">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes">
                   <p class="text-red-500 text-sm italic mt-4">
                     {{ $errors->create_client->first('notes') }}
                   </p>

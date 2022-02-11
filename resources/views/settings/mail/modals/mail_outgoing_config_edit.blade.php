@@ -21,7 +21,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="host" name="host" value="{{ $mailConfigOutgoing->host }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('host') }}
@@ -36,7 +36,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="port" name="port" value="{{ $mailConfigOutgoing->port }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('port') }}
@@ -51,7 +51,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="encryption" name="encryption" value="{{ $mailConfigOutgoing->encryption }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('encryption') }}
@@ -66,7 +66,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="protocol" name="protocol" value="{{ $mailConfigOutgoing->protocol }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('protocol') }}
@@ -81,7 +81,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="username" name="username" value="{{ $mailConfigOutgoing->username }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('username') }}
@@ -96,7 +96,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="password" name="password" value="{{ $mailConfigOutgoing->password }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('password') }}
@@ -111,7 +111,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="sender_name" name="sender_name" value="{{ $mailConfigOutgoing->sender_name }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('sender_name') }}
@@ -126,7 +126,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="sender_email" name="sender_email" value="{{ $mailConfigOutgoing->sender_email }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_mail_outgoing_config->first('sender_email') }}

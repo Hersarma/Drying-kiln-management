@@ -23,7 +23,7 @@
 						</div>
 						<div class="relative md:w-2/3">
 							<div>
-								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><span class="set_client">{{ $client->name }}</span><i class="fas fa-angle-down fa-lg"></i></button>
+								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20 flex justify-between items-center"><span class="set_client">{{ $client->name }}</span><i class="fas fa-angle-down fa-lg"></i></button>
 							</div>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->edit_incoming->first('client_id') }}
@@ -49,7 +49,7 @@
                   			</label>
                 		</div>
 		                <div class="md:w-2/3">
-		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
 		                  id="transport_company" name="transport_company" value="{{ $incoming->transport_company }}">
 		                  <p class="text-red-500 text-sm italic mt-4">
 		                    {{ $errors->edit_incoming->first('transport_company') }}
@@ -63,7 +63,7 @@
                   			</label>
                 		</div>
 		                <div class="md:w-2/3">
-		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
 		                  id="invoice_number" name="invoice_number" value="{{ $incoming->invoice_number }}">
 		                  <p class="text-red-500 text-sm italic mt-4">
 		                    {{ $errors->edit_incoming->first('invoice_number') }}
@@ -77,7 +77,7 @@
 							</label>
 						</div>
 						<div class="md:w-2/3">
-							<textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="notes" name="notes" rows="4">{{ $incoming->notes }}</textarea>
+							<textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes" rows="4">{{ $incoming->notes }}</textarea>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->edit_incoming->first('notes') }}
 							</p>

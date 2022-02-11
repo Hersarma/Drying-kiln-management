@@ -35,7 +35,7 @@
               <div class="flex items-center">
               <input class="hidden" name="proces_id" value="{{ $proces->id }}">
                 <input type="hidden" name="client" value="{{ $drykiln->dry_kiln_config->client }}" class="client_name_value_edit hidden text-black hidden">
-                <button type="button" class="client_edit bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg flex justify-between items-center"><p>Izaberi klijenta: <span class="set_client_edit">{{ $drykiln->dry_kiln_config->client }}</span></p><i class="fas fa-angle-down fa-lg px-2"></i>
+                <button type="button" class="client_edit bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20 flex justify-between items-center"><p>Izaberi klijenta: <span class="set_client_edit">{{ $drykiln->dry_kiln_config->client }}</span></p><i class="fas fa-angle-down fa-lg px-2"></i>
                 </button>
                 <p class="remove_client_edit cursor-pointer px-2 py-2"><i class="fas fa-times fa-lg text-red-500" aria-hidden="true"></i></p>
               </div>
@@ -66,7 +66,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
               id="type_of_wood" name="type_of_wood" value="{{ $drykiln->dry_kiln_config->type_of_wood }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_drykiln_config->first('type_of_wood') }}
@@ -81,7 +81,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl shadow-lg" id="notes" name="notes" rows="4">{{ $drykiln->dry_kiln_config->notes }}</textarea>
+              <textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes" rows="4">{{ $drykiln->dry_kiln_config->notes }}</textarea>
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_drykiln_config->first('notes') }}
               </p>
