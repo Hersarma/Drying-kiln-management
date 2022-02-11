@@ -597,12 +597,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-ml-px{
   margin-left: -1px;
 }
-.-mt-2{
-  margin-top: -0.5rem;
-}
-.-mb-2{
-  margin-bottom: -0.5rem;
-}
 .block{
   display: block;
 }
@@ -971,9 +965,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-0{
   border-width: 0px;
 }
-.border-4{
-  border-width: 4px;
-}
 .border-t{
   border-top-width: 1px;
 }
@@ -1038,6 +1029,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
 .border-teal-400{
   --tw-border-opacity: 1;
   border-color: rgb(45 212 191 / var(--tw-border-opacity));
@@ -1049,10 +1044,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-teal-500{
   --tw-border-opacity: 1;
   border-color: rgb(20 184 166 / var(--tw-border-opacity));
-}
-.border-red-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 .border-green-400{
   --tw-border-opacity: 1;
@@ -1603,10 +1594,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ring-black{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
-}
-.ring-red-500{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
 }
 .ring-opacity-5{
   --tw-ring-opacity: 0.05;
