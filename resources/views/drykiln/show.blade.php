@@ -210,7 +210,7 @@
 </div>
 	<p class="text-center py-2 text-white text-lg">Očitavanje sondi</p>
   @if($drykiln->dry_kiln_config->dry_kiln_status)
-  <div class="w-11/12 mx-auto md:w-full overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
+  <div class="w-11/12 mx-1 md:mx-0 md:w-full overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
   	<table class="table-auto w-full text-left whitespace-nowrap">
 		<thead>
 			<tr class="border-b border-turquoise-light">
