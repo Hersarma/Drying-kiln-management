@@ -102,10 +102,22 @@
 							<tr
 							  class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
 							   <input class="hidden" type="hidden" name="items[{{ $loop->index }}][id]" value="{{ $item->id }}">
-							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
+							   @if($errors->edit_outgoing->any())
+							   <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
+							   	<p class="text-red-500 mt-2">Obavezno polje</p>
+							  </td>
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}">
+							  	<p class="text-red-500 mt-2">Obavezno polje</p>
+							  </td>
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl border border-red-500" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}">
+							  	<p class="text-red-500 mt-2">Obavezno polje</p>
+							  </td>
+							   @else
+							   <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
 							  </td>
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}"></td>
 							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}"></td>
+							   @endif
 						  	</tr>
 				        	@endforeach
 				         
@@ -122,11 +134,6 @@
 						class="py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 focus:outline-none">
 						Sačuvaj
 						</button>
-					</div>
-					<div>
-						@if($errors->edit_outgoing->any())
-						<p class="text-red-500">Polja ne mogu biti prazna</p>
-						@endif
 					</div>
 				</form>
 			</div>
