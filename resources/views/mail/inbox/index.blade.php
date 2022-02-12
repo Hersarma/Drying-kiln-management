@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 		@if($mailInbox->isNotEmpty())
-		<section class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+		<section class="hidden sm:block md:block lg:block w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Primljene</h1>
@@ -55,7 +55,36 @@
     <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
   </div>
 </section>
-
+<!--Mobile-->
+<section class="sm:hidden md:hidden lg:hidden">
+    <div class="w-full my-3 px-4">
+        <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretražite poštu"
+        class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
+    </div>
+    <div>
+      @foreach($mailInbox as $mail)
+      <div class="border-b border-turquoise-light rounded-xl px-2 py-1 my-5 text-sm shadow-lg bg-gray-800">
+        <div class="flex justify-between items-center">
+        <div class="py-2">
+          <p class="text-gray-200 py-2">
+            {{ $mail->name ?: $mail->from }}
+          </p>
+        </div>
+        <div class="py-2">
+          <p class="text-gray-200 py-2">
+            {{ Str::limit($mail->created_at->format('d. F'), 7, $end='') }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <p class="text-gray-200 py-2">{{ Str::limit($mail->subject, 20, ' ...') ?: '/' }}</p>
+      </div>
+      </div>
+      
+      @endforeach
+    </div>
+</section>
+<!--Mobile-end-->
 		@else
 		<div class="flex items-center justify-center w-full h-screen_nav border-l-4 border-turquoise-light rounded-xl">
 			<div>
