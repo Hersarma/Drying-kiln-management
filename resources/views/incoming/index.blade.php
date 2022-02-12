@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+<section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-1 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-    <div class="px-8 py-8">
+    <div class="py-8">
       <h1 class="text-xl font-bold text-gray-200">Prikaz ulaza</h1>
     </div>
     
     <div class="flex justify-between">
-      <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
-        <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
+      <div class="flex items-center text-gray-600 px-2 md:px-12 py-4 md:py-8">
+        <i class="fa fa-search fa-lg px-2 text-gray-400" aria-hidden="true"></i>
         <input id="search_incoming" type="search" name="search_incoming" placeholder="Pretraga"
         class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
       </div>

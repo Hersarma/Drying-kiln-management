@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="flex justify-between items-center px-10 mb-10 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+<div class="flex justify-between items-center px-2 md:px-10 mb-10 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 	<p class="text-gray-200">Prikaz sušara</p>
 	<button
 	class="toggle_modal_create_drykiln transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-lg shadow-teal-400/20">
@@ -9,7 +9,7 @@
 </div>
 <div class="flex flex-wrap justify-between items-center">
 	@foreach($drykilns as $drykiln)
-	<div class="w-full md:w-1/2 px-4">
+	<div class="w-full md:w-1/2 px-2">
 		<div class="flex justify-center">
 			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="img/vent.png">

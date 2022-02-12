@@ -2,15 +2,15 @@
 
 @section('content')
 
-<section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+<section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-1 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-    <div class="px-8 py-8">
+    <div class="py-8">
       <h1 class="text-xl font-bold text-gray-200">Klijenti</h1>
     </div>
     <div class="flex">
-      <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
-        <i class="fa fa-search fa-lg px-4 text-gray-200" aria-hidden="true"></i>
+      <div class="flex items-center text-gray-600 px-2 md:px-12 py-4 md:py-8">
+        <i class="fa fa-search fa-lg px-2 text-gray-200" aria-hidden="true"></i>
         <input type="search" name="search_clients" placeholder="Pretraga"
         class="search_clients bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
         <p id="url_name" class="hidden">{{ Request::path() }}</p>
@@ -36,7 +36,7 @@
           <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
             Ime
           </th>
-          <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+          <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
             email
           </th>
           <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">

@@ -190,9 +190,9 @@
 	</div>
 </div>
 
-<div class="md:px-4 py-4">
+<div class="w-full md:px-4 py-4">
 	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-    <p class="px-8 text-gray-200">Očitavanja sondi</p>
+    <p class="md:px-8 text-gray-200">Očitavanja sondi</p>
     <div class="flex space-x-4">
     	@if($drykiln->dry_kiln_config->dry_kiln_status)
     	<button
@@ -210,8 +210,9 @@
 </div>
 	<p class="text-center py-2 text-white text-lg">Očitavanje sondi</p>
   @if($drykiln->dry_kiln_config->dry_kiln_status)
-  <div class="w-11/12 mx-1 md:mx-0 md:w-full overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
-  	<table class="table-auto w-full text-left whitespace-nowrap">
+  <div class="md:px-4 py-4 overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
+  	
+  		<table class="table-auto w-full text-left whitespace-nowrap">
 		<thead>
 			<tr class="border-b border-turquoise-light">
 				<th class="px-2 md:px-4 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_1_status) ? 'text-gray-200' : 'text-gray-700' !!} text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900"><span class="hidden md:inline-block">Sonda</span> 1</th>
@@ -245,6 +246,8 @@
 			</tr>
 		</tbody>
 	</table>
+  	
+  	
 
   </div>
 	@endif

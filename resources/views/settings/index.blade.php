@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container px-6 py-8 mx-auto">
+<div class="container px-2 py-8 mx-auto">
 <h1 class="text-3xl font-semibold text-center text-gray-200 capitalize lg:text-4xl dark:text-white">Podešavanja</h1>
 <p class="max-w-2xl mx-auto mt-4 text-center text-gray-400 xl:mt-6">
  Konfiguracija imejla, korisnika, notifikacija.
