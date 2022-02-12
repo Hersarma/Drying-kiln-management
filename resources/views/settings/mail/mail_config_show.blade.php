@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container px-2 py-8 mx-auto">
+<div class="container px-2 md:px-6 py-8 mx-auto">
 <h1 class="text-3xl font-semibold text-center text-gray-200 lg:text-4xl dark:text-white">Konfiguracija imejla</h1>
 
 <div class="grid grid-cols-1 gap-8 mt-6 md:mt-24 xl:gap-12 md:grid-cols-2">

@@ -2105,6 +2105,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+  .md\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .md\:pb-0{
     padding-bottom: 0px;
   }
