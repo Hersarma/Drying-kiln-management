@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-4/5 mx-auto mt-5">
+<div class="w-full sm:w-full md:w-4/5 mx-auto mt-5">
 	@include('messages.message_send_mail')
 	<form method="POST" action="{{ route('send_mail') }}" enctype="multipart/form-data">
 		@csrf

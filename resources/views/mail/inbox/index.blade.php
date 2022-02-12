@@ -16,38 +16,35 @@
   <div class="w-full mx-auto overflow-auto">
     <form method="post" action="{{ route('delete_checked_mail_inbox') }}">
       @csrf
-      <table class="table-auto w-full text-left whitespace-normal">
-        <thead>
-          <tr class="border-b border-turquoise-light">
-            <th class="px-4 py-3 tracking-wider bg-blue_gray-900 md:w-28">
-              <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
+      <div>
+        <div class="flex justify-between items-center px-4 border-b border-turquoise-light">
+          <p class="py-3">
+             <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
-            </th>
-            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Ime
-            </th>
-            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Mail
-            </th>
-            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Naslov
-            </th>
-            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Datum
-            </th>
-            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Prikaži
-            </th>
-            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Izbriši
-            </th>
-          </tr>
-        </thead>
-        <tbody id="searchMailInbox">
+          </p>
+          <p class="w-1/3 lg:w-1/6 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Ime
+          </p>
+          <p class="w-1/3 lg:w-1/6 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Mail
+          </p>
+          <p class="hidden lg:block w-1/6 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Naslov
+          </p>
+          <p class="w-1/3 lg:w-1/6 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Datum
+          </p>
+          <p class="hidden lg:block w-1/6 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Prikaži
+          </p>
+          <p class="hidden lg:block w-1/6 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Obriši
+          </p>
+        </div>
+        <div id="searchMailInbox">
           @include('mail.inbox.search_mail_inbox')
-          
-        </tbody>
-      </table>
+        </div>
+      </div>
       @if($mailInbox->isNotEmpty())
       @include('messages.message_warning_delete_checked_items')
       @endif
@@ -62,26 +59,7 @@
         class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
     </div>
     <div>
-      @foreach($mailInbox as $mail)
-      <div class="border-b border-turquoise-light rounded-xl px-2 py-1 my-5 text-sm shadow-lg bg-gray-800">
-        <div class="flex justify-between items-center">
-        <div class="py-2">
-          <p class="text-gray-200 py-2">
-            {{ $mail->name ?: $mail->from }}
-          </p>
-        </div>
-        <div class="py-2">
-          <p class="text-gray-200 py-2">
-            {{ Str::limit($mail->created_at->format('d. F'), 7, $end='') }}
-          </p>
-        </div>
-      </div>
-      <div>
-        <p class="text-gray-200 py-2">{{ Str::limit($mail->subject, 20, ' ...') ?: '/' }}</p>
-      </div>
-      </div>
-      
-      @endforeach
+      @include('mail.inbox.search_mail_inbox')
     </div>
 </section>
 <!--Mobile-end-->
