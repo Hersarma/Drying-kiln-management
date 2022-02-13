@@ -1244,6 +1244,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
 .pr-3{
   padding-right: 0.75rem;
 }
@@ -2109,6 +2113,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  .md\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
   .md\:pb-0{
     padding-bottom: 0px;
   }
@@ -2157,6 +2165,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+  .lg\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .lg\:text-4xl{
     font-size: 2.25rem;

@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="w-full px-4 mx-auto">
-        <form method="post" action="{{ route('update_drykiln_config', $drykiln->dry_kiln_config->id) }}" class="py-8 px-8 md:px-0">
+        <form method="post" action="{{ route('update_drykiln_config', $drykiln->dry_kiln_config->id) }}" class="py-8">
           @csrf
           <div class="flex flex-wrap justify-between items-center">
 
@@ -91,7 +91,7 @@
 
             <div class="w-full md:w-1/4 px-4 rounded-xl border-l-4 border-turquoise-light">
               <p class="text-turquoise-medium font-bold px-4 py-4">Aktiviraj sonde</p>
-              <div class="flex items-center py-2">
+              <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">
                 Sonda 1
@@ -103,7 +103,7 @@
               id="probe_1_status" name="probe_1_status" @if($drykiln->dry_kiln_config->probe_1_status) checked @endif>
               </div>
               </div>
-              <div class="flex items-center py-2">
+              <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">
                 Sonda 2
@@ -115,7 +115,7 @@
               id="probe_2_status" name="probe_2_status" @if($drykiln->dry_kiln_config->probe_2_status) checked @endif>
               </div>
               </div>
-              <div class="flex items-center py-2">
+              <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">
                 Sonda 3
@@ -127,7 +127,7 @@
               id="probe_3_status" name="probe_3_status" @if($drykiln->dry_kiln_config->probe_3_status) checked @endif>
               </div>
               </div>
-              <div class="flex items-center py-2">
+              <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">
                 Sonda 4
@@ -139,7 +139,7 @@
               id="probe_4_status" name="probe_4_status" @if($drykiln->dry_kiln_config->probe_4_status) checked @endif>
               </div>
               </div>
-              <div class="flex items-center py-2">
+              <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">
                 Sonda 5
@@ -151,7 +151,7 @@
               id="probe_5_status" name="probe_5_status" @if($drykiln->dry_kiln_config->probe_5_status) checked @endif>
               </div>
               </div>
-              <div class="flex items-center py-2">
+              <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">
                 Sonda 6
@@ -167,7 +167,7 @@
           </div>
           
           
-          <div class="flex justify-between mt-12 px-8">
+          <div class="flex justify-between mt-12 px-4">
             <button type="button"
             class="toggle_modal_edit_drykiln_config py-2 w-1/3 transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">
             Otkaži

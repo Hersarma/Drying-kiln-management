@@ -208,9 +208,9 @@
     </div>
   </div>
 </div>
-	<p class="text-center py-2 text-white text-lg">Očitavanje sondi</p>
+<p class="text-center py-2 text-white text-lg">Očitavanje sondi</p>
   @if($drykiln->dry_kiln_config->dry_kiln_status)
-  <div class="md:px-4 py-4 overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
+  <!--<div class="md:px-4 py-4 overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
   	
   		<table class="table-auto w-full text-left whitespace-nowrap">
 		<thead>
@@ -246,10 +246,7 @@
 			</tr>
 		</tbody>
 	</table>
-  	
-  	
-
-  </div>
+  </div>-->
 	@endif
 @include('drykiln.modals.create_drykiln_config')
 @if($drykiln->dry_kiln_config()->exists())

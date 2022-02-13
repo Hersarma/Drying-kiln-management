@@ -11,7 +11,7 @@
         </h3>
       </div>
       <div class="w-3/4 md:w-full mx-auto">
-        <form method="post" action="{{ route('create_drykiln_reading') }}" class="py-8 px-8 md:px-0">
+        <form method="post" action="{{ route('create_drykiln_reading') }}" class="py-8">
           @csrf
           <input class="hidden" type="hidden" name="drying_proces_id" value="{{ $proces->id ?? ''}}">
           <div class="md:flex justify-between items-center">

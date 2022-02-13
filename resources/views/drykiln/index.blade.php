@@ -9,7 +9,7 @@
 </div>
 <div class="flex flex-wrap justify-between items-center">
 	@foreach($drykilns as $drykiln)
-	<div class="w-full md:w-1/2 px-2">
+	<div class="w-full md:w-1/2 px-2 md:px-5 lg:px-5">
 		<div class="flex justify-center">
 			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="img/vent.png">
