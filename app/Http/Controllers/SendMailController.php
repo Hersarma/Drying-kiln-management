@@ -18,9 +18,27 @@ class SendMailController extends Controller
 
     }
 
-    public function show()
+    public function show(SendMail $mail)
     {
-        
+        $img_attachments = [];
+        $file_attachments = [];
+
+        $imgExtensions = ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'svg', 'svgz', 'cgm', 'djv', 'djvu', 'ico', 'ief','jpe', 'pbm', 'pgm', 'pnm', 'ppm', 'ras', 'rgb', 'tif', 'tiff', 'wbmp', 'xbm', 'xpm', 'xwd'];
+
+        if (!empty($mail->attachment)) {
+            $attachments = explode(',', $mail->attachment);
+            foreach($attachments as $attachment){
+                $extension = pathinfo($attachment, PATHINFO_EXTENSION);
+                if(in_array($extension, $imgExtensions))
+                    {
+                    array_push($img_attachments, $attachment);
+                }else{
+                    array_push($file_attachments, $attachment);
+                }
+            }
+        }
+       
+        return view('mail.sent.show_sent_mail', compact('mail', 'img_attachments', 'file_attachments'));
     }
 
     public function newMail()
