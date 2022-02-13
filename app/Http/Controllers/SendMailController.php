@@ -41,6 +41,18 @@ class SendMailController extends Controller
         return view('mail.sent.show_sent_mail', compact('mail', 'img_attachments', 'file_attachments'));
     }
 
+     public function downloadSentMailAttachment($attachment)
+    {
+        $file = storage_path('app/public/email/sent_attachments/').$attachment;
+
+        if (file_exists($file))
+        {
+            return response()->download($file);
+        }
+
+        return back()->with('message_warning', 'Fajl nepostoji.');
+    }
+
     public function newMail()
     {
         

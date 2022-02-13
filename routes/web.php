@@ -61,6 +61,7 @@ Route::middleware('mailConfigOutgoing')->group(function (){
 	Route::post('/delete_checked_sent_mail', 'SendMailController@destroyChecked')->name('delete_checked_sent_mail');
 	Route::get('/mail/new_mail', 'SendMailController@newMail')->name('new_mail');
 	Route::post('/send_mail', 'SendMailController@sendMail')->name('send_mail');
+	Route::get('/mail/sent/download_attachment/{attachment}', 'SendMailController@downloadSentMailAttachment')->name('download_sent_mail_attachment');
 });
 
 /*Search*/
