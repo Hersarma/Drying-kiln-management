@@ -719,17 +719,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-4{
   width: 1rem;
 }
+.w-1\/6{
+  width: 16.666667%;
+}
 .w-36{
   width: 9rem;
 }
 .w-4\/5{
   width: 80%;
 }
+.w-1\/5{
+  width: 20%;
+}
 .w-10{
   width: 2.5rem;
-}
-.w-1\/6{
-  width: 16.666667%;
 }
 .max-w-md{
   max-width: 28rem;
@@ -1754,6 +1757,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
 }
+.hover\:text-teal-600:hover{
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
+}
 .hover\:text-gray-500:hover{
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1761,10 +1768,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-gray-400:hover{
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-.hover\:text-teal-600:hover{
-  --tw-text-opacity: 1;
-  color: rgb(13 148 136 / var(--tw-text-opacity));
 }
 .focus\:z-10:focus{
   z-index: 10;
@@ -2144,6 +2147,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .lg\:w-1\/6{
     width: 16.666667%;
+  }
+  .lg\:w-1\/5{
+    width: 20%;
   }
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));

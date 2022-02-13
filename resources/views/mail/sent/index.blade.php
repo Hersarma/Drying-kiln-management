@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 		@if($sentMail->isNotEmpty())
-		<section class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+		<section class="hidden sm:block md:block lg:block w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Poslate</h1>
@@ -13,38 +13,36 @@
         class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
       </div>
   </div>
-  <div class="w-full mx-auto overflow-auto">
+
+<div class="w-full mx-auto overflow-auto">
     <form method="post" action="{{ route('delete_checked_sent_mail') }}">
       @csrf
-      <table class="table-auto w-full text-left whitespace-normal">
-        <thead>
-          <tr class="border-b border-turquoise-light">
-            <th class="px-4 py-3 tracking-wider bg-blue_gray-900 md:w-28">
-              <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
+      <div>
+        <div class="flex justify-between items-center px-4 border-b border-turquoise-light">
+          <div class="flex items-center">
+             <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
-            </th>
-            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Mail
-            </th>
-            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Naslov
-            </th>
-            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Datum
-            </th>
-            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Prikaži
-            </th>
-            <th class="hidden md:table-cell px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
-              Izbriši
-            </th>
-          </tr>
-        </thead>
-        <tbody id="searchMailInbox">
+          </div>
+          <p class="w-1/2 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Kome
+          </p>
+          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Naslov
+          </p>
+          <p class="w-1/2 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Datum
+          </p>
+          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Prikaži
+          </p>
+          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+            Obriši
+          </p>
+        </div>
+        <div id="searchMailSent">
           @include('mail.sent.search_mail_sent')
-          
-        </tbody>
-      </table>
+        </div>
+      </div>
       @if($sentMail->isNotEmpty())
       @include('messages.message_warning_delete_checked_items')
       @endif
@@ -52,7 +50,15 @@
     <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
   </div>
 </section>
-
+<section class="sm:hidden md:hidden lg:hidden">
+    <div class="w-full my-3 px-4">
+        <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretražite poštu"
+        class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
+    </div>
+    <div>
+      @include('mail.sent.search_mail_sent')
+    </div>
+</section>
 		@else
 		<div class="flex items-center justify-center w-full h-screen_nav border-l-4 border-turquoise-light rounded-xl">
 			<div>
