@@ -1936,6 +1936,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:w-full{
     width: 100%;
   }
+  .sm\:w-1\/2{
+    width: 50%;
+  }
   .sm\:max-w-md{
     max-width: 28rem;
   }
@@ -2051,6 +2054,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:w-4\/5{
     width: 80%;
+  }
+  .md\:w-1\/5{
+    width: 20%;
   }
   .md\:table-fixed{
     table-layout: fixed;

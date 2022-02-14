@@ -79,7 +79,7 @@ $(document).ready(function () {
     });
     
     $(document).on('keyup', '.search_clients', function () {
-        let query = $('.search_clients').val();
+        let query = $(this,'.search_clients').val();
         let page = $('#hidden_page').val(1);
         let url_name = $('#url_name').text().split('/')[0];
         fetch_clients(query, url_name, page);
