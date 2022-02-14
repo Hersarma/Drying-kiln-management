@@ -9,18 +9,18 @@
     <p class="px-8 text-gray-200">Detaljni prikaz</p>
   </div>
   <div class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-    <div class="flex flex-wrap justify-between items-center md:px-8">
+    <div class="flex flex-wrap justify-between items-center md:px-24 lg:px-24">
         <div class="w-full md:w-auto">
           <div class="flex md:justify-between items-center text-gray-200">
             <p><i class="fas fa-user fa-lg px-2"></i><span class="hidden md:inline-block">Klijent: </span></p>
             <p class="py-4 px-2">
-            {{ Ucfirst($client->name)}}
+            {{ Ucfirst($client->name) ?: '/'}}
             </p>
           </div>
           <div class="flex md:justify-between items-center text-gray-200">
             <p><i class="fas fa-sticky-note fa-lg px-2"></i><span class="hidden md:inline-block">Beleške: </span></p>
             <p class="py-4 px-2">
-              {{ Ucfirst($incoming->notes)}}
+              {{ Ucfirst($incoming->notes) ?: '/'}}
             </p>
           </div>
         </div>
@@ -28,13 +28,13 @@
           <div class="flex md:justify-between items-center text-gray-200">
             <p><i class="fas fa-truck fa-lg px-2"></i><span class="hidden md:inline-block">Prevoznik: </span></p>
             <p class="py-4 px-2 text-gray-200">
-            {{ Ucfirst($incoming->transport_company)}}
+            {{ Ucfirst($incoming->transport_company) ?: '/'}}
             </p>
           </div>
           <div class="flex md:justify-between items-center text-gray-200">
             <p><i class="fas fa-sticky-note fa-lg px-2"></i><span class="hidden md:inline-block">Broj fakture/otpremnice: </span></p>
             <p class="py-4 px-2 text-gray-200">
-                {{ Ucfirst($incoming->invoice_number)}}
+                {{ Ucfirst($incoming->invoice_number) ?: '/'}}
               </p>
           </div>
           <div class="flex md:justify-between items-center text-gray-200">

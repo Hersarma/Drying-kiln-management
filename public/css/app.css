@@ -1126,10 +1126,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
-.bg-gray-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
 .bg-turquoise-light{
   --tw-bg-opacity: 1;
   background-color: rgb(69 200 220 / var(--tw-bg-opacity));
@@ -1247,6 +1243,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+.px-12{
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .pr-3{
   padding-right: 0.75rem;
@@ -1554,12 +1554,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .opacity-75{
   opacity: 0.75;
-}
-.opacity-25{
-  opacity: 0.25;
-}
-.opacity-30{
-  opacity: 0.3;
 }
 .opacity-60{
   opacity: 0.6;
@@ -2126,6 +2120,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  .md\:px-24{
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
   .md\:pb-0{
     padding-bottom: 0px;
   }
@@ -2141,9 +2139,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:text-right{
     text-align: right;
   }
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
   .md\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 @media (min-width: 1024px){
@@ -2155,6 +2161,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .lg\:block{
     display: block;
+  }
+  .lg\:flex{
+    display: flex;
   }
   .lg\:hidden{
     display: none;
@@ -2179,9 +2188,17 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  .lg\:px-24{
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
   .lg\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+  .lg\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 @media (min-width: 1280px){
