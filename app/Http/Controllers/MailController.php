@@ -15,7 +15,7 @@ class MailController extends Controller
     public function index()
     {
         
-        $mailInbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'name', 'from', 'subject', 'created_at']);
+        $mailInbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'name', 'from', 'subject', 'created_at', 'read_at']);
         return view('mail.inbox.index', compact('mailInbox'));
     }
 
@@ -34,7 +34,7 @@ class MailController extends Controller
      */
     public function show(Mail $mail)
     {
-        
+        $mail->update(['read_at' => true]);
         $img_attachments = [];
         $file_attachments = [];
 

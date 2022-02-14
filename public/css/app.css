@@ -1126,6 +1126,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
+.bg-gray-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
 .bg-turquoise-light{
   --tw-bg-opacity: 1;
   background-color: rgb(69 200 220 / var(--tw-bg-opacity));
@@ -1550,6 +1554,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .opacity-75{
   opacity: 0.75;
+}
+.opacity-25{
+  opacity: 0.25;
+}
+.opacity-30{
+  opacity: 0.3;
+}
+.opacity-60{
+  opacity: 0.6;
 }
 .shadow-sm{
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
