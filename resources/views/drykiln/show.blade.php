@@ -210,6 +210,77 @@
 </div>
 <p class="text-center py-2 text-white text-lg">Očitavanje sondi</p>
   @if($drykiln->dry_kiln_config->dry_kiln_status)
+  <div class="w-full mx-auto overflow-auto bg-gray-800">
+    
+        <div class="flex justify-between items-center border-b border-turquoise-light">
+          <p class="w-1/8 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_1_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+            <span class="hidden md:block lg:block">Sonda 1</span>
+            <span class="md:hidden lg:hidden">1<i class="fas fa-thermometer text-gray-200"></i></span>
+          </p>
+          <p class="w-1/8 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_2_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+            <span class="hidden md:block lg:block">Sonda 2</span>
+            <span class="md:hidden lg:hidden">2<i class="fas fa-thermometer text-gray-200"></i></span>
+          </p>
+          <p class="w-1/8 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_3_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+            <span class="hidden md:block lg:block">Sonda 3</span>
+            <span class="md:hidden lg:hidden">3<i class="fas fa-thermometer text-gray-200"></i></span>
+          </p>
+          <p class="w-1/8 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_4_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+            <span class="hidden md:block lg:block">Sonda 4</span>
+            <span class="md:hidden lg:hidden">4<i class="fas fa-thermometer text-gray-200"></i></span>
+          </p>
+          <p class="w-1/8 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_5_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+            <span class="hidden md:block lg:block">Sonda 5</span>
+            <span class="md:hidden lg:hidden">5<i class="fas fa-thermometer text-gray-200"></i></span>
+          </p>
+          <p class="w-1/8 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_6_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+            <span class="hidden md:block lg:block">Sonda 6</span>
+            <span class="md:hidden lg:hidden">6<i class="fas fa-thermometer text-gray-200"></i></span>
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-200 text-sm text-center">
+            Prosek
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-200 text-sm text-center">
+            <span class="hidden md:block lg:block">Vreme</span>
+            <span class="md:hidden lg:hidden"><i class="fa-solid fa-clock text-gray-200"></i></span>
+          </p>
+        </div>
+        @foreach($readings as $reading)
+        <div class="flex justify-between items-center border-b border-turquoise-light">
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probe_1 ?: '/'}}
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probe_2 ?: '/'}}
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probe_3 ?: '/'}}
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probe_4 ?: '/'}}
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probe_5 ?: '/'}}
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probe_6 ?: '/'}}
+          </p>
+          <p class="w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->moisture_probes_average ?: '/'}}
+          </p>
+          <p class="hidden md:block lg:block w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ $reading->created_at->format('d-m-Y H:i') }}
+          </p>
+          <p class="md:hidden lg:hidden w-1/8 py-3 tracking-wider text-gray-100 text-sm text-center">
+            {{ Str::limit($reading->created_at->format('d. F'), 7, $end='') }}
+          </p>
+          
+        </div>
+        @endforeach
+      
+
+  </div>
+  
   <!--<div class="md:px-4 py-4 overflow-x-auto border-l-4 border-r-4 border-turquoise-light rounded-xl">
   	
   		<table class="table-auto w-full text-left whitespace-nowrap">
