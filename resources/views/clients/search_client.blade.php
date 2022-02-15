@@ -49,19 +49,12 @@
 
 
   @if($clients->isEmpty())
-        <tr>
-          <td colspan="6" class="text-center text-gray-200 text-xl p-24">
-            Nema rezultata
-          </td>
-        </tr>
-        <tr>
-          <td colspan="6" class="overflow-hidden">
-            <div class="flex justify-center mt-5 md:mt-0">
+            <p class="text-gray-200 text-lg text-center py-4">Nema rezultata.</p>
+            <div class="flex justify-center mt-5 md:mt-0 overflow-hidden">
               <button
               class="toggle_modal_create_client transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-lg shadow-teal-400/20">
               Dodaj novog klijenta
             </button>
           </div>
-        </td>
-      </tr>
+       
       @endif
