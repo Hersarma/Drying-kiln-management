@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Incoming;
 use App\Models\Outgoing;
+use App\Models\Mail;
+use App\Models\SendMail;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -14,7 +16,7 @@ class SearchController extends Controller
         $url = $request->get('url_name');
         $query = str_replace(" ", "%", $query);
         $clients = Client::
-        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->simplePaginate(10,['id', 'name', 'email', 'notes']);
+        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->simplePaginate(2,['id', 'name', 'email', 'notes']);
         
         return view($url.'.search_client', compact('clients'))->render();
        
@@ -40,6 +42,15 @@ class SearchController extends Controller
         })->orderBy('created_at', 'desc')->simplePaginate(10);
        
         return view('outgoing.search', compact('outgoing'))->render();
+    }
+
+    public function search_mail_inbox(Request $request)
+    {
+        $query = $request->get('query');
+        $query = str_replace(" ", "%", $query);
+        $mailInbox = Mail::where('name', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(2);
+       
+        return view('mail.inbox.search_mail_inbox', compact('mailInbox'))->render();
     }
 
 }

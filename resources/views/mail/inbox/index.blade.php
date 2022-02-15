@@ -9,8 +9,8 @@
     
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-        <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretraga"
-        class="bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
+        <input id="" type="search" name="search_mail_inbox" placeholder="Pretraga"
+        class="search_mail_inbox bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
       </div>
   </div>
   <div class="w-full mx-auto overflow-auto">
@@ -41,7 +41,7 @@
             Obriši
           </p>
         </div>
-        <div id="searchMailInbox">
+        <div class="searchMailInbox">
           @include('mail.inbox.search_mail_inbox')
         </div>
       </div>
@@ -55,10 +55,10 @@
 <!--Mobile-->
 <section class="sm:hidden md:hidden lg:hidden">
     <div class="w-full my-3 px-4">
-        <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretražite poštu"
-        class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
+        <input id="" type="search" name="search_mail_inbox" placeholder="Pretražite poštu"
+        class="search_mail_inbox appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
     </div>
-    <div>
+    <div class="searchMailInbox">
       @include('mail.inbox.search_mail_inbox')
     </div>
 </section>

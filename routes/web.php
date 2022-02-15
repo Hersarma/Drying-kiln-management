@@ -68,6 +68,7 @@ Route::middleware('mailConfigOutgoing')->group(function (){
 Route::get('search_clients', 'SearchController@search_clients');
 Route::get('search_incomings', 'SearchController@search_incomings');
 Route::get('search_outgoings', 'SearchController@search_outgoings');
+Route::get('search_mail_inbox', 'SearchController@search_mail_inbox');
 
 
 /*Settings*/

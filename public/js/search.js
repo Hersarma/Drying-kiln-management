@@ -18,6 +18,20 @@ $(document).ready(function () {
         })
     }
 
+    function fetch_mail_inbox(page, query) {
+        $.ajax({
+            url:"/search_mail_inbox?page=" + page + "&query=" + query,
+            success: function (data) {
+                if (!data){   
+                    $('.searchMailInbox').html('<p class="text-white py-4">Nema rezultata</p>');
+                }
+                else{   
+                    $('.searchMailInbox').html(data);
+                }
+            }
+        })
+    }
+
     function fetch_incomings(page, query) {
         $.ajax({
             url:"/search_incomings?page=" + page + "&query=" + query,
@@ -45,6 +59,23 @@ $(document).ready(function () {
             }
         })
     }
+
+    $(document).on('keyup', '.search_mail_inbox', function () {
+        let query = $(this,'.search_mail_inbox').val();
+        let page = $('#hidden_page').val(1);
+        fetch_mail_inbox(page, query);
+    });
+
+    $(document).on('click', '.paginationsearch_mail_inbox, .paginationmail', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $(this,'.search_mail_inbox').val();
+      $('.trash').hide();
+      fetch_mail_inbox(page, query);
+    });
+
     $(document).on('keyup', '#search_incoming', function () {
         let query = $('#search_incoming').val();
         let page = $('#hidden_page').val(1);
