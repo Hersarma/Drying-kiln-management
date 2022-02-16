@@ -16,7 +16,7 @@ class SearchController extends Controller
         $url = $request->get('url_name');
         $query = str_replace(" ", "%", $query);
         $clients = Client::
-        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->simplePaginate(2,['id', 'name', 'email', 'notes']);
+        where('name', 'like', '%' . $query . '%')->orderBy('name', 'asc')->simplePaginate(10,['id', 'name', 'email', 'notes']);
         
         return view($url.'.search_client', compact('clients'))->render();
        
@@ -48,7 +48,7 @@ class SearchController extends Controller
     {
         $query = $request->get('query');
         $query = str_replace(" ", "%", $query);
-        $mailInbox = Mail::where('name', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(2);
+        $mailInbox = Mail::where('name', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(10);
        
         return view('mail.inbox.search_mail_inbox', compact('mailInbox'))->render();
     }

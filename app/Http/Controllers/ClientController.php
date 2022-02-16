@@ -14,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::orderBy('name', 'asc')->simplePaginate(2,['id', 'name', 'email', 'notes']);
+        $clients = Client::orderBy('name', 'asc')->simplePaginate(10,['id', 'name', 'email', 'notes']);
 
         return view('clients.index', compact('clients'));
     }
