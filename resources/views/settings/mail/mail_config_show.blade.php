@@ -6,6 +6,11 @@
 <div class="grid grid-cols-1 gap-8 mt-6 md:mt-24 xl:gap-12 md:grid-cols-2">
 <div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
   <div class="md:flex justify-around items-center">
+     <div class="">
+      <p class="text-5xl font-bold text-gray-200 uppercase">
+    <i class="fas fa-sign-out-alt"></i>
+    </p>
+    </div>
     @if(empty($mailConfigOutgoing))
     <div class="mb-4 md:mb-0 py-2 px-2 rounded-lg shadow-xl bg-gray-100 border-l-4 border-red-500">
       <div class="flex justify-center items-center">
@@ -25,11 +30,6 @@
       </div>
     </div>
     @endif
-    <div class="">
-      <h2 class="text-5xl font-bold text-gray-200 uppercase">
-    <i class="fas fa-sign-out-alt"></i>
-    </h2>
-    </div>
   </div>
 <p class="font-medium text-lg text-gray-400">Odlazni imejl</p>
 @if(empty($mailConfigOutgoing))
@@ -43,6 +43,11 @@
 
 <div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
  <div class="md:flex justify-around items-center">
+    <div class="">
+      <p class="text-5xl font-bold text-gray-200 uppercase">
+    <i class="fas fa-sign-in-alt"></i>
+    </p>
+    </div>
     @if(empty($mailConfigIncoming))
     <div class="mb-4 md:mb-0 py-2 px-2 rounded-lg shadow-xl bg-gray-100 border-l-4 border-red-500">
       <div class="flex justify-center items-center">
@@ -62,11 +67,6 @@
       </div>
     </div>
     @endif
-    <div class="">
-      <h2 class="text-5xl font-bold text-gray-200 uppercase">
-    <i class="fas fa-sign-in-alt"></i>
-    </h2>
-    </div>
   </div>
 <p class="font-medium text-lg text-gray-400">Dolazni imejl</p>
 @if(empty($mailConfigIncoming))
