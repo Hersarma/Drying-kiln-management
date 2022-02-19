@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="hidden sm:block md:block lg:block w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
@@ -53,20 +52,21 @@
       @include('messages.message_warning_delete_checked_items')
       @endif
     </form>
-    <input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
+    
   </div>
 </section>
 <!--Mobile-->
 <section class="sm:hidden md:hidden lg:hidden">
     <div class="w-full my-3 px-4">
         <p class="text-lg text-gray-200 text-center py-3">Klijenti</p>
-        <input type="search" name="search_clients" placeholder="Pretraga"
+        <input type="search" name="search_clients" id="search_clients" placeholder="Pretraga"
         class="search_clients appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
     </div>
     <div class="searchClient">
      @include('clients.search_client')
     </div>
 </section>
+<input type="hidden" name="hidden_page" id="hidden_page" value="1"/>
 @include('clients.modals.create')
 
 @endsection

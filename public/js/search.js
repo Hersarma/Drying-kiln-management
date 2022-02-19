@@ -37,10 +37,10 @@ $(document).ready(function () {
             url:"/search_incomings?page=" + page + "&query=" + query,
             success: function (data) {
                 if (!data){   
-                    $('#searchIncoming').html('<p class="text-white py-4">Nema rezultata</p>');
+                    $('.searchIncoming').html('<p class="text-white py-4">Nema rezultata</p>');
                 }
                 else{   
-                    $('#searchIncoming').html(data);
+                    $('.searchIncoming').html(data);
                 }
             }
         })
@@ -76,14 +76,24 @@ $(document).ready(function () {
       fetch_mail_inbox(page, query);
     });
 
-    $(document).on('keyup', '#search_incoming', function () {
-        let query = $('#search_incoming').val();
+    $(document).on('keyup', '.search_incoming', function () {
+        let query = $(this, '.search_incoming').val();
         let page = $('#hidden_page').val(1);
         
         fetch_incomings(page, query);
     });
 
     $(document).on('click', '.paginationsearch_incomings, .paginationincoming', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('.search_incoming').val();
+      $('.trash').hide();
+      fetch_incomings(page, query);
+    });
+
+    $(document).on('click', '.paginationmobilesearch_incomings, .paginationmobileincoming', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
       $('#hidden_page').val(page);
@@ -121,6 +131,17 @@ $(document).ready(function () {
       $('#hidden_page').val(page);
 
       let query = $('.search_clients').val();
+      let url_name = $('#url_name').text().split('/')[0];
+      $('.trash').hide();
+      fetch_clients(query, url_name, page);
+    });
+
+    $(document).on('click', '.paginationmobilesearch_clients, .paginationmobileclients', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_clients').val();
       let url_name = $('#url_name').text().split('/')[0];
       $('.trash').hide();
       fetch_clients(query, url_name, page);

@@ -28,7 +28,7 @@ class SearchController extends Controller
         $query = str_replace(" ", "%", $query);
         $incoming = Incoming::with('clients')->whereHas('clients',function($q) use($query){
         $q->where('name', 'like', "%{$query}%");
-        })->orderBy('created_at', 'desc')->simplePaginate(10);
+        })->orderBy('created_at', 'desc')->simplePaginate(2);
         
         return view('incoming.search', compact('incoming'))->render();
     }
