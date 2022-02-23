@@ -17,14 +17,14 @@
       </div>
       <div class="flex py-4 items-center">
         <a href="{{ route('mail_index') }}"
-          class="px-4 md:px-8 py-2 text-lg font-bold leading-5 text-gray-200 hover:text-white focus:outline-none">
+          class="px-6 md:px-8 py-2 text-lg font-bold leading-5 text-gray-200 hover:text-white focus:outline-none">
           <!--<i class="fas fa-envelope fa-fade" style="--fa-animation-duration: 1s; --fa-fade-opacity: 0.2;">
           </i>-->
           <i class="fas fa-envelope"></i>
         </a>
         @widget('update_notifications')
         <!-- Profile dropdown -->
-        <div class="relative px-2">
+        <div class="relative px-4">
           <div class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 rounded-xl">
             <button id="user_open" class="
             px-4 md:px-8 py-2 text-base font-medium leading-5 text-gray-200 hover:text-white  focus:outline-none transition duration-150 ease-in-out">

@@ -104,21 +104,21 @@ class MailController extends Controller
     public function destroy(Mail $mail)
     {
         $mail->delete();
-        return redirect(route('mail_index'))->with('message', 'Mejl uspešno izbrisan.');
+        return redirect(route('mail_index'))->with('message', 'Imejl uspešno izbrisan.');
     }
 
     public function restoreDeleted($mailDeleted)
     {
         Mail::onlyTrashed()->find($mailDeleted)->restore();
 
-        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspešno vraćen.');
+        return redirect(route('mail_index_deleted'))->with('message', 'Imejl uspešno vraćen.');
     }
 
     public function restoreCheckedDeleted(Request $request)
     {
         Mail::onlyTrashed()->whereIn('id', $request->input('deleteChecked'))->restore();
 
-        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspešno vraćen.');
+        return redirect(route('mail_index_deleted'))->with('message', 'Imejl uspešno vraćen.');
     }
 
     public function destroyPermanently($mailDeleted)
@@ -141,7 +141,7 @@ class MailController extends Controller
 
         $deleteMailPermanently->forceDelete();
 
-        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspešno obrisan.');
+        return redirect(route('mail_index_deleted'))->with('message', 'Imejl uspešno obrisan.');
     }
 
     public function destroyCheckedPermanently(Request $request)
@@ -163,7 +163,7 @@ class MailController extends Controller
             $mails->forceDelete();
         }
         
-        return redirect(route('mail_index_deleted'))->with('message', 'Mail uspesno obrisan.');
+        return redirect(route('mail_index_deleted'))->with('message', 'Imejl uspesno obrisan.');
 
     }
 
