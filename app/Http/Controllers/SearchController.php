@@ -48,7 +48,8 @@ class SearchController extends Controller
     {
         $query = $request->get('query');
         $query = str_replace(" ", "%", $query);
-        $mailInbox = Mail::where('name', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(10);
+        $mailInbox = Mail::where('name', 'like', '%' . $query . '%')
+        ->orWhere('from', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(10);
        
         return view('mail.inbox.search_mail_inbox', compact('mailInbox'))->render();
     }

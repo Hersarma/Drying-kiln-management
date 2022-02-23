@@ -124,21 +124,31 @@ $(document).ready(function () {
             url:"/search_outgoings?page=" + page + "&query=" + query,
             success: function (data) {
                 if (!data){   
-                    $('#searchOutgoing').html('<p class="text-white py-4">Nema rezultata</p>');
+                    $('.searchOutgoing').html('<p class="text-white py-4">Nema rezultata</p>');
                 }
                 else{   
-                    $('#searchOutgoing').html(data);
+                    $('.searchOutgoing').html(data);
                 }
             }
         })
     }
-    $(document).on('keyup', '#search_outgoing', function () {
-        let query = $('#search_outgoing').val();
+    $(document).on('keyup', '.search_outgoing', function () {
+        let query = $(this, '.search_outgoing').val();
         let page = $('#hidden_page').val(1);
         fetch_outgoings(page, query);
     });
 
     $(document).on('click', '.paginationsearch_outgoings, .paginationoutgoing', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('.search_outgoing').val();
+      $('.trash').hide();
+      fetch_outgoings(page, query);
+    });
+
+    $(document).on('click', '.paginationmobilesearch_outgoings, .paginationmobileoutgoing', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
       $('#hidden_page').val(page);

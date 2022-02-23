@@ -28,7 +28,7 @@
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
           </div>
           <p class="w-1/4 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-            Ime
+            Klijent
           </p>
           <p class="w-1/4 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
             Beleške
