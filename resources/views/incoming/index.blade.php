@@ -54,6 +54,11 @@
 <section class="sm:hidden md:hidden lg:hidden">
     <div class="w-full my-3 px-4">
         <p class="text-lg text-gray-200 text-center py-3">Prikaz ulaza</p>
+        <div class="toggle_modal_create_incoming flex justify-between items-center mx-auto text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-lg shadow-teal-400/20 mb-3">
+          <button type="button" class="">Novi ulaz</button>
+          <i
+          class="fa fa-plus"></i>
+        </div>
         <input type="search" name="search_incoming" id="search_incoming" placeholder="Pretraga"
         class="search_incoming appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
     </div>
