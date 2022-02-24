@@ -54,3 +54,7 @@
   {{ $sentMail->links() }}
 </div>
 </div>
+@if($sentMail->isEmpty())
+  <p class="text-gray-100 text-lg text-center py-4">Nema rezultata.</p>
+  
+@endif

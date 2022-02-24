@@ -28,7 +28,7 @@ class SearchController extends Controller
         $query = str_replace(" ", "%", $query);
         $incoming = Incoming::with('clients')->whereHas('clients',function($q) use($query){
         $q->where('name', 'like', "%{$query}%");
-        })->orderBy('created_at', 'desc')->simplePaginate(10);
+        })->orderBy('created_at', 'desc')->simplePaginate(2);
         
         return view('incoming.search', compact('incoming'))->render();
     }
@@ -49,9 +49,29 @@ class SearchController extends Controller
         $query = $request->get('query');
         $query = str_replace(" ", "%", $query);
         $mailInbox = Mail::where('name', 'like', '%' . $query . '%')
-        ->orWhere('from', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(10);
+        ->orWhere('from', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(2);
        
         return view('mail.inbox.search_mail_inbox', compact('mailInbox'))->render();
+    }
+
+    public function search_mail_deleted(Request $request)
+    {
+        $query = $request->get('query');
+        $query = str_replace(" ", "%", $query);
+        $mailInboxDeleted = Mail::onlyTrashed()->where('name', 'like', '%' . $query . '%')
+        ->orWhere('from', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(2);
+       
+        return view('mail.deleted.search_mail_inbox_deleted', compact('mailInboxDeleted'))->render();
+    }
+
+    public function search_mail_sent(Request $request)
+    {
+        $query = $request->get('query');
+        $query = str_replace(" ", "%", $query);
+        $sentMail = SendMail::where('recipient', 'like', '%' . $query . '%')
+        ->orderBy('created_at', 'desc')->simplePaginate(2);
+       
+        return view('mail.sent.search_mail_sent', compact('sentMail'))->render();
     }
 
 }

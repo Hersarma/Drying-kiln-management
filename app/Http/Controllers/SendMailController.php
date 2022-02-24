@@ -13,7 +13,7 @@ class SendMailController extends Controller
     public function index()
     {   
         
-        $sentMail = SendMail::orderBy('created_at', 'desc')->simplePaginate(10);
+        $sentMail = SendMail::orderBy('created_at', 'desc')->simplePaginate(2);
         return view('mail.sent.index', compact('sentMail'));
 
     }

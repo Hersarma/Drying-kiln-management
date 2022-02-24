@@ -55,7 +55,7 @@
 <!--Mobile-->
 <section class="sm:hidden md:hidden lg:hidden">
     <div class="w-full my-3 px-4">
-        <input id="" type="search" name="search_mail_inbox" placeholder="Pretražite poštu"
+        <input id="search_mail_inbox" type="search" name="search_mail_inbox" placeholder="Pretražite poštu"
         class="search_mail_inbox appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
     </div>
     <div class="searchMailInbox">

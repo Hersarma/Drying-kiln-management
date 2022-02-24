@@ -15,13 +15,13 @@ class MailController extends Controller
     public function index()
     {
         
-        $mailInbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10,['id', 'name', 'from', 'subject', 'created_at', 'read_at']);
+        $mailInbox = Mail::orderBy('created_at', 'desc')->simplePaginate(2);
         return view('mail.inbox.index', compact('mailInbox'));
     }
 
     public function indexDeleted()
     {
-        $mailInboxDeleted = Mail::onlyTrashed()->simplePaginate(10);
+        $mailInboxDeleted = Mail::onlyTrashed()->simplePaginate(2);
 
         return view('mail.deleted.index', compact('mailInboxDeleted'));
     }

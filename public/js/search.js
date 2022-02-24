@@ -66,16 +66,107 @@ $(document).ready(function () {
         fetch_mail_inbox(page, query);
     });
 
-    $(document).on('click', '.paginationsearch_mail_inbox, .paginationmail', function(event){
+    $(document).on('click', '.paginationsearch_mail_inbox, .paginationmail\\/inbox', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
       $('#hidden_page').val(page);
 
-      let query = $(this,'.search_mail_inbox').val();
+      let query = $('.search_mail_inbox').val();
+      $('.trash').hide();
+      fetch_mail_inbox(page, query);
+    });
+    //Mobile search//
+    $(document).on('click', '.paginationmobilesearch_mail_inbox, .paginationmobilemail\\/inbox', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_mail_inbox').val();
       $('.trash').hide();
       fetch_mail_inbox(page, query);
     });
 
+    //Mail deleted//
+    function fetch_mail_deleted(page, query) {
+        $.ajax({
+            url:"/search_mail_deleted?page=" + page + "&query=" + query,
+            success: function (data) {
+                if (!data){   
+                    $('.searchMailDeleted').html('<p class="text-white py-4">Nema rezultata</p>');
+                }
+                else{   
+                    $('.searchMailDeleted').html(data);
+                }
+            }
+        })
+    }
+
+    $(document).on('keyup', '.search_mail_deleted', function () {
+        let query = $(this,'.search_mail_deleted').val();
+        let page = $('#hidden_page').val(1);
+        fetch_mail_deleted(page, query);
+    });
+
+    $(document).on('click', '.paginationsearch_mail_deleted, .paginationmail\\/deleted\\/inbox', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('.search_mail_deleted').val();
+      $('.trash').hide();
+      fetch_mail_deleted(page, query);
+    });
+    //Mobile search//
+    $(document).on('click', '.paginationmobilesearch_mail_deleted, .paginationmobilemail\\/deleted\\/inbox', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_mail_deleted').val();
+      $('.trash').hide();
+      fetch_mail_deleted(page, query);
+    });
+
+    //Mail sent//
+    function fetch_mail_sent(page, query) {
+        $.ajax({
+            url:"/search_mail_sent?page=" + page + "&query=" + query,
+            success: function (data) {
+                if (!data){   
+                    $('.searchMailSent').html('<p class="text-white py-4">Nema rezultata</p>');
+                }
+                else{   
+                    $('.searchMailSent').html(data);
+                }
+            }
+        })
+    }
+
+    $(document).on('keyup', '.search_mail_sent', function () {
+        let query = $(this,'.search_mail_sent').val();
+        let page = $('#hidden_page').val(1);
+        fetch_mail_sent(page, query);
+    });
+
+    $(document).on('click', '.paginationsearch_mail_sent, .paginationmail\\/sent', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('.search_mail_sent').val();
+      $('.trash').hide();
+      fetch_mail_sent(page, query);
+    });
+    //Mobile search//
+    $(document).on('click', '.paginationmobilesearch_mail_sent, .paginationmobilemail\\/sent', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_mail_sent').val();
+      $('.trash').hide();
+      fetch_mail_sent(page, query);
+    });
     //Incomings//
     function fetch_incomings(page, query) {
         $.ajax({

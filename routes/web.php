@@ -69,6 +69,8 @@ Route::get('search_clients', 'SearchController@search_clients');
 Route::get('search_incomings', 'SearchController@search_incomings');
 Route::get('search_outgoings', 'SearchController@search_outgoings');
 Route::get('search_mail_inbox', 'SearchController@search_mail_inbox');
+Route::get('search_mail_deleted', 'SearchController@search_mail_deleted');
+Route::get('search_mail_sent', 'SearchController@search_mail_sent');
 
 
 /*Settings*/
