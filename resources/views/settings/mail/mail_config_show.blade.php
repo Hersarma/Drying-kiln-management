@@ -4,12 +4,14 @@
 <h1 class="text-3xl font-semibold text-center text-gray-200 lg:text-4xl dark:text-white">Konfiguracija imejla</h1>
 
 <div class="grid grid-cols-1 gap-8 mt-6 md:mt-24 xl:gap-12 md:grid-cols-2">
-<div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
+<div class="relative w-full p-8 space-y-8 text-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg rounded-lg">
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
   <div class="md:flex justify-around items-center">
-     <div class="">
+     <div class="mb-4 sm:mb-0 md:mb-0">
       <p class="text-5xl font-bold text-gray-200 uppercase">
-    <i class="fas fa-sign-out-alt"></i>
-    </p>
+      <i class="fas fa-sign-out-alt"></i>
+      </p>
     </div>
     @if(empty($mailConfigOutgoing))
     <div class="mb-4 md:mb-0 py-2 px-2 rounded-lg shadow-xl bg-gray-100 border-l-4 border-red-500">
@@ -41,9 +43,11 @@
 @endif
 </div>
 
-<div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
+<div class="relative w-full p-8 space-y-8 text-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg rounded-lg">
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
  <div class="md:flex justify-around items-center">
-    <div class="">
+    <div class="mb-4 sm:mb-0 md:mb-0">
       <p class="text-5xl font-bold text-gray-200 uppercase">
     <i class="fas fa-sign-in-alt"></i>
     </p>

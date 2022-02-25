@@ -6,7 +6,9 @@
  Konfiguracija imejla, korisnika, notifikacija.
 </p> 
 <div class="grid grid-cols-1 gap-8 mt-6 md:mt-24 xl:gap-12 md:grid-cols-2 lg:grid-cols-3">
- <div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
+ <div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
+    <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
  <h2 class="text-5xl font-bold text-gray-200 uppercase">
 	 <i class="fas fa-envelope"></i>
  </h2>
@@ -15,7 +17,9 @@
 <button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja</button>
 </a> 
 </div>
-<div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
+<div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
+    <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
  <h2 class="text-5xl font-bold text-gray-200 uppercase">
 	 <i class="fas fa-user"></i>
  </h2>
@@ -23,7 +27,9 @@
 <a href="#"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja
 </button></a>
 </div>
-<div class="w-full p-8 space-y-8 text-center border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4 md:border-t-0 md:border-b-0 border-turquoise-light rounded-lg bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
+<div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
+    <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
  <h2 class="text-5xl font-bold text-gray-200 uppercase">
 	 <i class="fa fa-bell"></i>
  </h2>

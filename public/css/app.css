@@ -1968,6 +1968,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:-mt-0{
     margin-top: -0px;
   }
+  .sm\:mb-0{
+    margin-bottom: 0px;
+  }
   .sm\:block{
     display: block;
   }
