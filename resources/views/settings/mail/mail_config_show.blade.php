@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<p class="m-2 md:m-5 text-gray-300 text-lg">
+    <i onclick="window.location = '{{ route('settings_index' )}}'" class="fa fa-arrow-circle-left fa-lg md:px-4 md:py-2 cursor-pointer hover:text-white" aria-hidden="true"></i>
+    <span class="hidden md:inline-block">Nazad</span>
+  </p>
 <div class="container px-2 md:px-6 py-8 mx-auto">
 <h1 class="text-3xl font-semibold text-center text-gray-200 lg:text-4xl dark:text-white">Konfiguracija imejla</h1>
 

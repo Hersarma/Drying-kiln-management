@@ -40,7 +40,9 @@
 	</div>
 	<div class="mt-10 flex flex-wrap justify-center items-center">
 		@foreach($img_attachments as $attachment)
-		<div class="m-4 bg-gray-700 px-2 py-2">
+		<div class="relative m-4 bg-gray-700 px-2 py-2">
+			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
 			<div class="text-center w-48 overflow-hidden">
 				<embed src="/storage/email/recived_attachments/{{ $attachment }}" class="h-24 w-48">
 				<p class="py-2 text-gray-200">{{Str::limit(Str::afterLast($attachment, '_'), 15, ' ...') }}</p>
@@ -55,7 +57,9 @@
 		</div>
 		@endforeach
 		@foreach($file_attachments as $attachment)
-		<div class="m-4 bg-gray-700 px-2 py-2">
+		<div class="relative m-4 bg-gray-700 px-2 py-2">
+			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
+			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
 			<div class="h-32 w-48  text-center">
 				<i class="fa-solid fa-file fa-5x text-gray-200"></i>
 				<p class="py-2 w-48 overflow-auto text-gray-200">

@@ -29,7 +29,7 @@
 						@endif
 					</p>
 				</div>
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center md:px-8">
 					<p class="py-4 text-gray-200">
 						<i class="fas fa-clock fa-lg px-4"></i>
 						<span class="hidden md:inline-block">Početak procesa</span>
@@ -40,21 +40,21 @@
 					<p class="text-gray-200">/</p>
 					@endif
 				</div>
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center md:px-8">
 					<p class="py-4 text-gray-200">
 						<i class="fas fa-user fa-lg px-4"></i>
 						<span class="hidden md:inline-block">Klijenti</span>
 					</p>
 					<p class="text-gray-200">{{ $drykiln->dry_kiln_config->client ?: '/'}}</p>
 				</div>
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center md:px-8">
 					<p class="py-4 text-gray-200">
 						<i class="fas fa-align-left fa-lg px-4"></i>
 						<span class="hidden md:inline-block">Drvo</span>
 					</p>
 					<p class="text-gray-200">{{ $drykiln->dry_kiln_config->type_of_wood ?: '/'}}</p>
 				</div>
-				<div class="flex justify-between items-center px-8">
+				<div class="flex justify-between items-center md:px-8">
 					<p class="py-4 text-gray-200">
 						<i class="fas fa-thermometer fa-lg px-4"></i>
 						<span class="hidden md:inline-block">Aktivne sonde</span>
