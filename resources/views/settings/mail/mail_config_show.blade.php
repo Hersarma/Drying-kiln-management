@@ -9,11 +9,11 @@
 
 <div class="grid grid-cols-1 gap-8 mt-6 md:mt-24 xl:gap-12 md:grid-cols-2">
 <div class="relative w-full p-8 space-y-8 text-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg rounded-lg">
-  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
-    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
   <div class="md:flex justify-around items-center">
      <div class="mb-4 sm:mb-0 md:mb-0">
-      <p class="text-5xl font-bold text-gray-200 uppercase">
+      <p class="text-5xl font-bold text-teal-400 uppercase">
       <i class="fas fa-sign-out-alt"></i>
       </p>
     </div>
@@ -37,7 +37,7 @@
     </div>
     @endif
   </div>
-<p class="font-medium text-lg text-gray-400">Odlazni imejl</p>
+<p class="font-medium text-lg text-gray-200">Odlazni imejl</p>
 @if(empty($mailConfigOutgoing))
 <button type="button" class="toggle_modal_create_mail_outgoing w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Nova konfiguracija
 </button>
@@ -48,11 +48,11 @@
 </div>
 
 <div class="relative w-full p-8 space-y-8 text-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg rounded-lg">
-  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-cyan-400"></p>
-    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-cyan-400"></p>
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+    <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
  <div class="md:flex justify-around items-center">
     <div class="mb-4 sm:mb-0 md:mb-0">
-      <p class="text-5xl font-bold text-gray-200 uppercase">
+      <p class="text-5xl font-bold text-teal-400 uppercase">
     <i class="fas fa-sign-in-alt"></i>
     </p>
     </div>
@@ -76,7 +76,7 @@
     </div>
     @endif
   </div>
-<p class="font-medium text-lg text-gray-400">Dolazni imejl</p>
+<p class="font-medium text-lg text-gray-200">Dolazni imejl</p>
 @if(empty($mailConfigIncoming))
  <button type="button" class="toggle_modal_create_mail_incoming w-2/3 px-4 py-1 mt-10 tracking-wide text-white text-lg transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Nova konfiguracija
 </button>
