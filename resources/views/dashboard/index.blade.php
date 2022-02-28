@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="px-4 mb-20">
+<section class="px-4 mb-10">
 	<div class="mb-10 px-2">
 		<p class="text-gray-200 text-lg font-bold">Radna površina</p>
 	</div>
@@ -50,7 +50,7 @@
 		</div>
 	</div>
 </section>
-<section class="mb-10">
+<section class="mb-5">
 	
 	<div class="md:flex justify-between items-center">
 	<div class="relative w-full h-84 md:w-1/2 mb-10 md:m-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
@@ -109,7 +109,7 @@
 	</div>
 	</div>
 </section>
-<section class="mb-20">
+<section class="mb-5">
 	<div class="mb-10 px-2">
 		<p class="text-gray-200 text-lg font-bold">Notifikacije</p>
 	</div>
