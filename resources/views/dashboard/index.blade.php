@@ -50,7 +50,7 @@
 		</div>
 	</div>
 </section>
-<section class="mb-20">
+<section class="mb-10">
 	
 	<div class="md:flex justify-between items-center">
 	<div class="relative w-full h-84 md:w-1/2 mb-10 md:m-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
@@ -103,6 +103,29 @@
 	</div>
 	@endforeach
 	</div>
+	</div>
+</section>
+<section class="mb-20">
+	<div class="mb-10 px-2">
+		<p class="text-gray-200 text-lg font-bold">Notifikacije</p>
+	</div>
+	<div class="w-full md:w-2/3">
+		@if(empty($mailConfigIncoming) or empty($mailConfigOutgoing))
+		<div class="relative mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
+			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
+			<p class="text-gray-200 px-4">Imejl konfiguracija nije podešena</p>
+			<i class="fas fa-exclamation-triangle fa-lg text-red-500 px-4"></i>
+		</div>
+		@endif
+		
+		<div class="relative mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
+			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
+			<p class="text-gray-200 px-4">Sušara 2 startovana 28-02-2022 u 17:53</p>
+			<i class="fa fa-check text-green-500 px-4" aria-hidden="true"></i>
+		</div>
+		
 	</div>
 </section>
 @endsection
