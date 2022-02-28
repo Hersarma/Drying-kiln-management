@@ -62,7 +62,7 @@
 						<div class="space-y-1 text-center">
 							<div class="text-base transition ease-out duration-500 transform hover:scale-110">
 								<label for="file"
-									class="w-full py-3 px-4 cursor-pointer border border-transparent leading-5 font-medium rounded-md text-gray-200 bg-turquoise-medium focus:outline-none shadow-xl">
+									class="w-full py-3 px-4 cursor-pointer border border-transparent leading-5 font-bold rounded-md text-gray-200 bg-teal-400 focus:outline-none shadow-xl">
 									<i class="fa fa-paperclip fa-lg px-2 text-black" aria-hidden="true"></i>
 									Izaberi fajl
 								</label>
@@ -81,7 +81,7 @@
 			</div>
 			<div class="px-4 py-2 text-right sm:px-6">
 				<button type="submit"
-				class="animate_mail_send inline-flex justify-center items-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-200 transition ease-out duration-500 transform hover:scale-110 bg-turquoise-medium focus:outline-none shadow-xl">
+				class="animate_mail_send inline-flex justify-center items-center py-2 px-4 border border-transparent text-sm leading-5 font-bold rounded-md text-gray-200 transition ease-out duration-500 transform hover:scale-110 bg-teal-400 focus:outline-none shadow-xl">
 				<i class="fa fa-paper-plane fa-lg px-2" aria-hidden="true"></i>
 				Posalji
 				</button>

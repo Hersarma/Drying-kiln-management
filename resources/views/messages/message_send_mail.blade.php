@@ -11,7 +11,7 @@
   <div class="flex justify-between items-center mt-12 px-8 h-8">
             <button type="" class="close_message_send_mail_warning transition ease-out duration-500 transform hover:scale-110 py-2 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Zatvori</button>
             <a href="{{ route('mail_config_show') }}">
-              <button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">Proverite imejl konfig</button>
+              <button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">Proverite imejl konfig</button>
             </a>
   </div>
 </div>

@@ -90,7 +90,7 @@
             </div>
 
             <div class="w-full md:w-1/4 px-4 rounded-xl border-l-4 border-teal-400">
-              <p class="text-turquoise-medium font-bold px-4 py-4">Aktiviraj sonde</p>
+              <p class="text-gray-200 font-bold px-4 py-4">Aktiviraj sonde</p>
               <div class="flex justify-between items-center py-2">
                 <div class="px-4">
                   <label class="block font-bold text-gray-200 px-4" for="inline-full-name">

@@ -20,7 +20,7 @@
             <div class="flex justify-around">
               <button type="button" class="delete_checked_items py-1 w-1/4 transition ease-out duration-500 transform hover:scale-110 px-4 ml-4 border border-transparent text-sm leading-5 font-medium rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none">Otkaži</button>
               <button type="submit"
-              class="w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-turquoise-medium hover:bg-turquoise-strong focus:outline-none">
+              class="w-1/4 transition ease-out duration-500 transform hover:scale-110 py-1 px-4 mr-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">
               Potvrdi
               </button>
             </div>
