@@ -4,7 +4,7 @@
       <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
     </div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-    <div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
+    <div class="inline-block rounded-xl border-l-4 border-teal-400 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-base text-gray-200 leading-6 font-bold">
         Nova očitavanja sondi
@@ -29,7 +29,7 @@
               @endif
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probe_1" name="moisture_probe_1">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probe_1') }}
@@ -49,7 +49,7 @@
               @endif
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probe_2" name="moisture_probe_2">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probe_2') }}
@@ -69,7 +69,7 @@
               @endif
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probe_3" name="moisture_probe_3">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probe_3') }}
@@ -89,7 +89,7 @@
               @endif
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probe_4" name="moisture_probe_4">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probe_4') }}
@@ -109,7 +109,7 @@
               @endif
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probe_5" name="moisture_probe_5">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probe_5') }}
@@ -129,7 +129,7 @@
               @endif
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probe_6" name="moisture_probe_6">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probe_6') }}
@@ -145,7 +145,7 @@
               </label>
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="temp_current" name="temp_current">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('temp_current') }}
@@ -159,7 +159,7 @@
               </label>
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="temp_needed" name="temp_needed">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('temp_needed') }}
@@ -173,7 +173,7 @@
               </label>
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_current" name="moisture_current">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_current') }}
@@ -187,7 +187,7 @@
               </label>
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_needed" name="moisture_needed">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_needed') }}
@@ -201,7 +201,7 @@
               </label>
               </div>
               <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="moisture_probes_average" name="moisture_probes_average">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_readings->first('moisture_probes_average') }}

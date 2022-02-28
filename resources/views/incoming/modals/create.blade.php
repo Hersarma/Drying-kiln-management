@@ -4,7 +4,7 @@
 			<div class="absolute inset-0 bg-gray-900 opacity-75"></div>
 		</div>
 		<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-		<div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
+		<div class="inline-block rounded-xl border-l-4 border-teal-400 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
 			<div class="px-4 py-5 sm:px-6">
 				<h3 class="text-base text-gray-200 leading-6 font-bold">
 				Ulaz
@@ -22,12 +22,12 @@
 						</div>
 						<div class="relative md:w-2/3">
 							<div>
-								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20 flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
+								<button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20 flex justify-between items-center"><span class="set_client">Izaberi klijenta</span><i class="fas fa-angle-down fa-lg"></i></button>
 							</div>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->create_incoming->first('client_id') }}
 							</p>
-							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light py-3 px-8 text-gray-200 leading-tight">
+							<div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-teal-400 py-3 px-8 text-gray-200 leading-tight">
 								@if($clients->count())
 								<div class="flex justify-center items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
 									<i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
@@ -56,7 +56,7 @@
                   			</label>
                 		</div>
 		                <div class="md:w-2/3">
-		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
 		                  id="transport_company" name="transport_company">
 		                  <p class="text-red-500 text-sm italic mt-4">
 		                    {{ $errors->create_incoming->first('transport_company') }}
@@ -70,7 +70,7 @@
                   			</label>
                 		</div>
 		                <div class="md:w-2/3">
-		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+		                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
 		                  id="invoice_number" name="invoice_number">
 		                  <p class="text-red-500 text-sm italic mt-4">
 		                    {{ $errors->create_incoming->first('invoice_number') }}
@@ -84,7 +84,7 @@
 							</label>
 						</div>
 						<div class="md:w-2/3">
-							<textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes" rows="4"></textarea>
+							<textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes" rows="4"></textarea>
 							<p class="text-red-500 text-sm italic mt-4">
 								{{ $errors->create_incoming->first('notes') }}
 							</p>
@@ -93,7 +93,7 @@
 					<div class="py-2 overflow-auto">
 						<table id="items" class="table-auto w-full text-left whitespace-normal">
 				        <thead>
-				          <tr class="border-b border-turquoise-light">
+				          <tr class="border-b border-teal-400">
 				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
 				              Artikal
 				            </th>

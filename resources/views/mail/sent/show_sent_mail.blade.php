@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="w-full md:w-2/3 mx-auto mt-10">
-	<div class="border-t border-b border-turquoise-light py-4">
+	<div class="border-t border-b border-teal-400 py-4">
 		<div class="flex justify-between items-center py-6">
 		<div class="px-4">
 			<p class="hidden md:block text-xl text-gray-200">{{ Str::limit($mail->subject, 40, ' ...') ?: '/' }}</p>

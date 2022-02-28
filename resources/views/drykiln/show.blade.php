@@ -13,7 +13,7 @@
 			<img class="animate-spin-slow h-20 w-20" src="/img/vent.png">
 			@endif
 		</div>
-		<div class="border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+		<div class="border-l-4 border-r-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 			<div>
 				<div class="md:flex md:justify-between md:items-center py-4 px-4">
 					<p class="py-1 px-1 text-white text-xl font-bold">Sušara: {{ $drykiln->name }}</p>
@@ -97,7 +97,7 @@
 	</div>
 	
 	<div class="w-full md:w-1/3 md:px-4 mt-20">
-		<div class="relative mb-2 border-l-4 border-r-4 border-turquoise-light rounded-xl">
+		<div class="relative mb-2 border-l-4 border-r-4 border-teal-400 rounded-xl">
 		  <div class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
 		  <button id="legend_open" class="
 		  px-4 md:px-8 py-2 text-base font-medium leading-5 text-gray-200 hover:text-white  focus:outline-none">
@@ -129,7 +129,7 @@
 		  </div>
 		  </div>
 		</div>
-		<div class="border-l-4 border-r-4 border-turquoise-light rounded-xl overflow-auto px-2 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+		<div class="border-l-4 border-r-4 border-teal-400 rounded-xl overflow-auto px-2 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
 			<div class="flex justify-around items-center py-4">
 				<div class="flex items-center">
 					<i class="fas fa-temperature-high fa-4x text-red-500"></i>
@@ -191,7 +191,7 @@
 </div>
 
 <div class="w-full md:px-4 py-4">
-	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <p class="md:px-8 text-gray-200">Očitavanja sondi</p>
     <div class="flex space-x-4">
     	@if($drykiln->dry_kiln_config->dry_kiln_status)
@@ -212,7 +212,7 @@
   @if($drykiln->dry_kiln_config->dry_kiln_status)
   <div class="w-full mx-auto overflow-auto bg-gray-800">
     
-        <div class="flex justify-between items-center border-b border-turquoise-light md:px-4">
+        <div class="flex justify-between items-center border-b border-teal-400 md:px-4">
           <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_1_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
             <span class="hidden md:block lg:block">Sonda 1</span>
             <span class="md:hidden lg:hidden">1<i class="fas fa-thermometer"></i></span>
@@ -243,7 +243,7 @@
           </p>
         </div>
         @foreach($readings as $reading)
-        <div class="flex justify-between items-center border-b border-turquoise-light md:px-4">
+        <div class="flex justify-between items-center border-b border-teal-400 md:px-4">
           <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center">
             {{ $reading->moisture_probe_1 ?: '/'}}
           </p>

@@ -4,7 +4,7 @@
     <i onclick="window.location = '{{ route('drykiln.show', $drykiln )}}'" class="fa fa-arrow-circle-left fa-lg md:px-4 md:py-2 cursor-pointer hover:text-white" aria-hidden="true"></i>
     <span class="hidden md:inline-block">Nazad</span>
   </p>
-<section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+<section class="border-l-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <p class="text-xl font-bold text-gray-200">Istorija sušenja za sušaru {{ $drykiln->name }} </p>
@@ -16,7 +16,7 @@
       @csrf
       <table class="table-auto w-full text-left whitespace-normal">
         <thead>
-          <tr class="border-b border-turquoise-light">
+          <tr class="border-b border-teal-400">
             <th class="px-4 py-3 tracking-wider bg-blue_gray-900 md:w-28">
               <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>

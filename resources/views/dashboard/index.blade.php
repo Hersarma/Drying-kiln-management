@@ -59,20 +59,20 @@
 	<div class="my-5 text-center">
 		<p class="text-gray-200 text-lg font-bold">Nedavni ulazi</p>
 	</div>
-	<div class="flex justify-between items-center px-4 border-b border-gray-700">
+	<div class="flex justify-between items-center px-4 border-b border-gray-700 px-4 sm:px-6 md:px-12">
      <p class="w-1/2 py-3 tracking-wider text-gray-100 text-sm">
         Klijent
     </p>
-    <p class="w-1/2 py-3 tracking-wider text-gray-100 text-sm">
+    <p class="w-1/2 py-3 tracking-wider text-gray-100 text-sm text-right">
         Datum
     </p>
     </div>
 	@foreach($recentIncomings as $incomings)
-	<div class="flex justify-between items-center px-4">
+	<div class="flex justify-between items-center px-4 sm:px-6 md:px-12">
 		<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600">
   	{{ ucfirst($incomings->clients->name ?: '/') }}
 	</p>
-	<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600">
+	<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600 text-right">
   	{{ $incomings->created_at->format('d-m-Y') }}
 	</p>
 	</div>
@@ -84,20 +84,20 @@
 	<div class="my-5 text-center">
 		<p class="text-gray-200 text-lg font-bold">Nedavni izlazi</p>
 	</div>
-	<div class="flex justify-between items-center px-4 border-b border-gray-700">
+	<div class="flex justify-between items-center px-4 border-b border-gray-700 px-4 sm:px-6 md:px-12">
      <p class="w-1/2 py-3 tracking-wider text-gray-100 text-sm">
         Klijent
     </p>
-    <p class="w-1/2 py-3 tracking-wider text-gray-100 text-sm">
+    <p class="w-1/2 py-3 tracking-wider text-gray-100 text-sm text-right">
         Datum
     </p>
     </div>
 	@foreach($recentOutgoings as $outgoings)
-	<div class="flex justify-between items-center px-4">
+	<div class="flex justify-between items-center px-4 sm:px-6 md:px-12">
 		<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600">
   	{{ ucfirst($incomings->clients->name ?: '/') }}
 	</p>
-	<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600">
+	<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600 text-right">
   	{{ $incomings->created_at->format('d-m-Y') }}
 	</p>
 	</div>

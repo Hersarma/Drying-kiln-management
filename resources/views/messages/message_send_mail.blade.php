@@ -1,5 +1,5 @@
 @if(session('message_send_mail_warning'))
-<div class="message_send_mail_warning hidden w-2/3 mx-auto mb-5 text-gray-200 px-4 py-4 bg-gray-900 border-l-4 rounded-xl border-turquoise-light">
+<div class="message_send_mail_warning hidden w-2/3 mx-auto mb-5 text-gray-200 px-4 py-4 bg-gray-900 border-l-4 rounded-xl border-teal-400">
   <div class="w-full">
     <p>
       <i class="fas fa-times text-red-500 fa-lg px-4" aria-hidden="true">

@@ -4,7 +4,7 @@
       <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
     </div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true"></span>
-    <div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full md:w-1/3 shadow-2xl">
+    <div class="inline-block rounded-xl border-l-4 border-teal-400 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full md:w-1/3 shadow-2xl">
       <div class="px-4 py-5 sm:px-6">
         <p class="text-red-500"><i class="fas fa-exclamation-triangle fa-2x"></i></p>
         <p class="py-4 text-base text-gray-200 leading-6 font-bold">

@@ -5,10 +5,10 @@
     <span class="hidden md:inline-block">Nazad</span>
   </p>
 <section class="md:px-12">
-  <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-turquoise-light rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+  <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <p class="px-8 text-gray-200">Detaljni prikaz</p>
   </div>
-  <div class="w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+  <div class="w-full border-l-4 border-teal-400 rounded-xl overflow-auto px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="flex flex-wrap justify-between items-center md:px-24 lg:px-24">
         <div class="w-full md:w-auto">
           <div class="flex md:justify-between items-center text-gray-200">
@@ -50,7 +50,7 @@
       </div>
       <table class="table-auto w-full text-left whitespace-normal">
                         <thead>
-                          <tr class="border-b border-turquoise-light">
+                          <tr class="border-b border-teal-400">
                             <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
                               
                             </th>

@@ -38,7 +38,7 @@
 <!--Mobile-->
 <div class="sm:hidden md:hidden lg:hidden">
 @foreach($mailInboxDeleted as $mailDeleted)
-      <div onclick="window.location = '{{ route('mail_inbox_show_deleted',$mailDeleted )}}'" class="cursor-pointer border-b border-turquoise-light rounded-xl px-2 py-1 my-5 text-sm shadow-lg bg-gray-800">
+      <div onclick="window.location = '{{ route('mail_inbox_show_deleted',$mailDeleted )}}'" class="cursor-pointer border-b border-teal-400 rounded-xl px-2 py-1 my-5 text-sm shadow-lg bg-gray-800">
         <div class="flex justify-between items-center">
         <div class="py-2">
           <p class="text-gray-200 py-2">

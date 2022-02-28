@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 		@if($sentMail->isNotEmpty())
-		<section class="hidden sm:block md:block lg:block w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+		<section class="hidden sm:block md:block lg:block w-full border-l-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Poslate</h1>
@@ -18,7 +18,7 @@
     <form method="post" action="{{ route('delete_checked_sent_mail') }}">
       @csrf
       <div>
-        <div class="flex justify-between items-center px-4 border-b border-turquoise-light">
+        <div class="flex justify-between items-center px-4 border-b border-teal-400">
           <div class="flex items-center">
              <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
@@ -53,14 +53,14 @@
 <section class="sm:hidden md:hidden lg:hidden">
     <div class="w-full my-3 px-4">
         <input id="search_mail_sent" type="search" name="search_mail_sent" placeholder="Pretražite poštu"
-        class="search_mail_sent appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
+        class="search_mail_sent appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20">
     </div>
     <div class="searchMailSent">
       @include('mail.sent.search_mail_sent')
     </div>
 </section>
 		@else
-		<div class="flex items-center justify-center w-full h-screen_nav border-l-4 border-turquoise-light rounded-xl">
+		<div class="flex items-center justify-center w-full h-screen_nav border-l-4 border-teal-400 rounded-xl">
 			<div>
 			<p class="text-white text-xl font-bold text-center py-4">Nema poruka</p>
 			<div id="show_message" class="opacity-50">

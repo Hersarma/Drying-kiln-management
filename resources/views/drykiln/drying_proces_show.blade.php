@@ -4,7 +4,7 @@
     <i onclick="window.location = '{{ route('drying_proces', $dryingProces->dry_kiln_id )}}'" class="fa fa-arrow-circle-left fa-lg md:px-4 md:py-2 cursor-pointer hover:text-white" aria-hidden="true"></i>
     <span class="hidden md:inline-block">Nazad</span>
   </p>
-<section class="border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+<section class="border-l-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <p class="text-xl font-bold text-gray-200">Očitavanja sondi</p>
@@ -18,7 +18,7 @@
   <div class="w-full mx-auto overflow-auto">
       <table class="table-auto w-full text-left whitespace-normal">
 		<thead>
-			<tr class="border-b border-turquoise-light">
+			<tr class="border-b border-teal-400">
 				<th class="text-gray-100 px-2 md:px-4 py-3 tracking-wider text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 1</th>
 				<th class="text-gray-100 px-2 md:px-4 py-3 tracking-wider text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 2</th>
 				<th class="text-gray-100 px-2 md:px-4 py-3 tracking-wider text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">Sonda 3</th>

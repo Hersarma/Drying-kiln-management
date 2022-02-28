@@ -32,7 +32,7 @@
 <!--Mobile-->
 <div class="sm:hidden md:hidden lg:hidden">
 @foreach($clients as $client)
-      <div onclick="window.location = '{{ route('clients.show',$client )}}'" class="cursor-pointer border-b border-turquoise-light rounded-xl px-2 py-1 my-5 text-sm shadow-lg bg-gray-800">
+      <div onclick="window.location = '{{ route('clients.show',$client )}}'" class="cursor-pointer border-b border-teal-400 rounded-xl px-2 py-1 my-5 text-sm shadow-lg bg-gray-800">
         <div class="flex justify-center items-center">
         <div class="py-2">
           <p class="text-gray-200 py-2">

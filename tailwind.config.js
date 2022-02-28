@@ -63,11 +63,11 @@ module.exports = {
                 cyan: colors.cyan,
                 fuchsia: colors.fuchsia,
                 teal: colors.teal,
-                turquoise: {
+                /*turquoise: {
                     light: '#45c8dc',
                     medium: '#3fb4c6',
                     strong: '#258ba1'
-                },
+                },*/
                 
 
             },

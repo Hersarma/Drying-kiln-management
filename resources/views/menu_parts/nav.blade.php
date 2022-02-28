@@ -3,7 +3,7 @@
     
     <div class="flex items-center w-32 sm:w-64 pl-2">
       <img class="hidden sm:inline-block h-11 w-auto filter brightness-200" src="/img/europalete-logo-black_teal.png" alt="Europalete logo">
-      <p class="hidden sm:inline-block text-turquoise-light">Europalete</p>
+      <p class="hidden sm:inline-block text-teal-400">Europalete</p>
       @include('buttons.toggle_side_bar_button')
     </div>
     

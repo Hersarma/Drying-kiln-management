@@ -4,7 +4,7 @@
       <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
     </div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-    <div class="inline-block rounded-xl border-l-4 border-turquoise-light bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
+    <div class="inline-block rounded-xl border-l-4 border-teal-400 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-base text-gray-200 leading-6 font-bold">
         Podešavanje sušare
@@ -27,14 +27,14 @@
             <div class="relative md:w-2/3">
               <div class="flex items-center">
                 <input type="hidden" name="client" class="client_name_value hidden text-black">
-                <button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20 flex justify-between items-center"><p>Izaberi klijenta: <span class="set_client"></span></p><i class="fas fa-angle-down fa-lg px-2"></i>
+                <button type="button" class="client bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-8 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20 flex justify-between items-center"><p>Izaberi klijenta: <span class="set_client"></span></p><i class="fas fa-angle-down fa-lg px-2"></i>
                 </button>
                 <p class="remove_client cursor-pointer px-2 py-2 hidden"><i class="fas fa-times fa-lg text-red-500" aria-hidden="true"></i></p>
               </div>
               <p class="text-red-500 text-sm italic mt-4">
                  {{ $errors->create_drykiln_config->first('client') }}
               </p>
-              <div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-turquoise-light w-full py-3 px-8 text-gray-200 leading-tight">
+              <div class="clients h-96 overflow-auto hidden absolute z-50 mt-4 w-full bg-blue_gray-800 rounded-xl border-l-4 border-teal-400 w-full py-3 px-8 text-gray-200 leading-tight">
                 <div class="flex justify-end">
                    <p class="client cursor-pointer"><i class="fas fa-times fa-lg text-red-500" aria-hidden="true"></i></p>
                 </div>
@@ -66,7 +66,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20"
+              <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
               id="type_of_wood" name="type_of_wood">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_config->first('type_of_wood') }}
@@ -81,7 +81,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes" rows="4"></textarea>
+              <textarea class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20" id="notes" name="notes" rows="4"></textarea>
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->create_drykiln_config->first('notes') }}
               </p>
@@ -89,7 +89,7 @@
           </div>
             </div>
 
-            <div class="w-full md:w-1/4 px-4 rounded-xl border-l-4 border-turquoise-light">
+            <div class="w-full md:w-1/4 px-4 rounded-xl border-l-4 border-teal-400">
               <p class="text-turquoise-medium font-bold px-4 py-4">Aktiviraj sonde</p>
               <div class="flex justify-between items-center py-2">
                 <div class="px-4">

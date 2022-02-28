@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="hidden sm:block md:block lg:block w-full border-l-4 border-turquoise-light rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+<section class="hidden sm:block md:block lg:block w-full border-l-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
   <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Klijenti</h1>
@@ -23,7 +23,7 @@
     <form method="post" action="{{ route('delete_checked_clients') }}">
       @csrf
       <div>
-        <div class="flex justify-between items-center px-4 border-b border-turquoise-light">
+        <div class="flex justify-between items-center px-4 border-b border-teal-400">
           <div class="flex items-center">
              <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
@@ -66,7 +66,7 @@
         </div>
         
         <input type="search" name="search_clients" id="search_clients" placeholder="Pretraga"
-        class="search_clients appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-turquoise-light focus:shadow-xl focus:shadow-teal-400/20">
+        class="search_clients appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:shadow-xl focus:shadow-teal-400/20">
     </div>
     <div class="searchClient">
      @include('clients.search_client')
