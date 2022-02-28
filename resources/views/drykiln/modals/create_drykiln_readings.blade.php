@@ -14,6 +14,7 @@
         <form method="post" action="{{ route('create_drykiln_reading') }}" class="py-8">
           @csrf
           <input class="hidden" type="hidden" name="drying_proces_id" value="{{ $proces->id ?? ''}}">
+          <input class="hidden" type="hidden" name="dry_kiln_id" value="{{ $drykiln->id }}">
           <div class="md:flex justify-between items-center">
             <div class="md:px-4 md:w-1/2">
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">

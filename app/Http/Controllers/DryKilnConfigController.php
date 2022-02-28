@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\DryKilnConfig;
 use App\Models\DryingProces;
+use App\Models\DryKiln;
+use App\Models\NotificationMessage;
 use Illuminate\Http\Request;
 
 class DryKilnConfigController extends Controller
@@ -24,7 +26,6 @@ class DryKilnConfigController extends Controller
          ]);
 
          DryKilnConfig::create($validator);
-         
          $drying_proces = new DryingProces;
 
          $drying_proces->dry_kiln_id = $request->dry_kiln_id;
@@ -34,6 +35,11 @@ class DryKilnConfigController extends Controller
          $drying_proces->save();
 
          $drying_proces->drykilnreadings()->create();
+
+         $drykiln = DryKiln::where('id', $request->dry_kiln_id)->first();
+         NotificationMessage::create([
+            'message' => 'Sušara '.$drykiln->name.' startovana.'
+         ]);
 
          return redirect(route('drykiln.show', $request->dry_kiln_id))->with('message', 'Susara uspešno startovana');
 
@@ -70,9 +76,11 @@ class DryKilnConfigController extends Controller
     $proces = $drykiln->dryKilnProces()->where('active', true)->first();
     $proces->active = false;
     $proces->save();
-    //dd($proces);
     $drykilnconfig->delete();
 
+    NotificationMessage::create([
+            'message' => 'Sušara '.$drykiln->name.' ugašena.'
+         ]);
     return redirect(route('drykiln.show', $drykiln))->with('message', 'Proces susenja završen');
     
    }

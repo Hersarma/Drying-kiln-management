@@ -14,6 +14,7 @@
         <form method="post" action="{{ route('create_drykiln_config') }}" class="py-8">
           @csrf
           <input id="dry_kiln_id" class="hidden" name="dry_kiln_id" value="{{ $drykiln->id }}">
+          <input class="hidden" name="drykiln_name" value="{{ $drykiln->name }}">
           <input id="dry_kiln_status" class="hidden" name="dry_kiln_status" value="1">
           <div class="flex flex-wrap justify-between items-center">
 

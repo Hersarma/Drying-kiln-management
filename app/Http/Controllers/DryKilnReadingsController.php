@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\DryKilnReadings;
+use App\Models\NotificationMessage;
+use App\Models\DryKiln;
 use Illuminate\Http\Request;
 
 class DryKilnReadingsController extends Controller
@@ -24,6 +26,13 @@ class DryKilnReadingsController extends Controller
         ]);
 
         DryKilnReadings::create($validator);
+
+        if ($request->moisture_probes_average < 10) {
+            $drykiln = DryKiln::where('id', $request->dry_kiln_id)->first();
+             NotificationMessage::create([
+            'message' => 'Prosek vlage u sušari '.$drykiln->name.' je ispod 10%.'
+         ]);
+        }
 
         return back()->with('message', 'Uspešan unos');
 

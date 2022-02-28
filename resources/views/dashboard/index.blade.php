@@ -67,6 +67,7 @@
         Datum
     </p>
     </div>
+   @if($recentIncomings->isNotEmpty())
 	@foreach($recentIncomings as $incomings)
 	<div class="flex justify-between items-center px-4 sm:px-6 md:px-12">
 		<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600">
@@ -77,6 +78,7 @@
 	</p>
 	</div>
 	@endforeach
+	@endif
 	</div>
 	<div class="relative w-full h-84 md:w-1/2 md:m-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
 		<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
@@ -92,16 +94,18 @@
         Datum
     </p>
     </div>
+   @if($recentOutgoings->isNotEmpty())
 	@foreach($recentOutgoings as $outgoings)
 	<div class="flex justify-between items-center px-4 sm:px-6 md:px-12">
 		<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600">
-  	{{ ucfirst($incomings->clients->name ?: '/') }}
+  	{{ ucfirst($outgoings->clients->name ?: '/') }}
 	</p>
 	<p class="w-1/2 cursor-pointer py-3 text-sm text-gray-200 hover:text-teal-600 text-right">
-  	{{ $incomings->created_at->format('d-m-Y') }}
+  	{{ $outgoings->created_at->format('d-m-Y') }}
 	</p>
 	</div>
 	@endforeach
+	@endif
 	</div>
 	</div>
 </section>
@@ -119,13 +123,17 @@
 		</div>
 		@endif
 		
+		@foreach($notifications as $notification)
 		<div class="relative mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
 			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
 			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
-			<p class="text-gray-200 px-4">Sušara 2 startovana 28-02-2022 u 17:53</p>
+			<p class="text-gray-200 px-4">{{ $notification->message }}</p>
+			<p class="text-gray-200">{{ $notification->created_at->format('d-m-Y') }}
 			<i class="fa fa-check text-green-500 px-4" aria-hidden="true"></i>
+			</p>
+			
 		</div>
-		
+		@endforeach
 	</div>
 </section>
 @endsection
