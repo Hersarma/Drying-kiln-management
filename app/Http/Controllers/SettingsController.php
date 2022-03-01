@@ -157,7 +157,7 @@ class SettingsController extends Controller
 
     public function userIndex(){
 
-        $users = User::orderBy('name', 'asc')->simplePaginate(2);
+        $users = User::orderBy('name', 'asc')->simplePaginate(10);
 
         return view('settings.users.index', compact('users'));
 

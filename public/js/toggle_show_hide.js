@@ -148,4 +148,15 @@ $(document).on('click', '.toggle_modal_edit_mail_outgoing', function(e){
     $('.modal_edit_mail_outgoing').toggle(500);
 });
 
+/*Users modals*/
+$(document).on('click', '.toggle_modal_create_user', function(e){
+    e.preventDefault();
+    $('.modal_create_user').toggle(500);
+});
+
+$(document).on('click', '.toggle_modal_edit_user', function(e){
+    e.preventDefault();
+    $('.modal_edit_user').toggle(500);
+});
+
 

@@ -83,7 +83,7 @@ class SearchController extends Controller
         ->orWhere('last_name', 'like', '%' . $query . '%')
         ->orWhere('email', 'like', '%' . $query . '%')
         ->orderBy('created_at', 'desc')
-        ->simplePaginate(2);
+        ->simplePaginate(10);
 
         return view('settings.users.search_user', compact('users'))->render();
     }
