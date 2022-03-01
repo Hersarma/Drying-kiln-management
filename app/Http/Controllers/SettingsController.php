@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Webklex\IMAP\Facades\Client;
+use App\Models\User;
 use App\Models\MailConfigIncoming;
 use App\Models\MailConfigOutgoing;
 use App\Mail\TestMail;
@@ -152,5 +153,25 @@ class SettingsController extends Controller
         $mailConfigOutgoing->update($validate);
         return redirect(route('mail_config_show'))->with('message', 'Konfiguracija uspešno snimljena.');
 
+    }
+
+    public function userIndex(){
+
+        $users = User::orderBy('name', 'asc')->simplePaginate(2);
+
+        return view('settings.users.index', compact('users'));
+
+    }
+
+    public function userShow(User $user){
+
+        return view('settings.users.show', compact('user'));
+    }
+
+    public function userDestroy(User $user){
+
+        $user->delete();
+
+        return redirect(route('users_index'))->with('message', 'Korisnik uspešno obrisan.');
     }
 }

@@ -1946,6 +1946,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:w-full{
     width: 100%;
   }
+  .sm\:w-1\/3{
+    width: 33.333333%;
+  }
   .sm\:max-w-md{
     max-width: 28rem;
   }

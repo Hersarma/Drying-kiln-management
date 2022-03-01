@@ -6,6 +6,7 @@ use App\Models\Incoming;
 use App\Models\Outgoing;
 use App\Models\Mail;
 use App\Models\SendMail;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -72,6 +73,19 @@ class SearchController extends Controller
         ->orderBy('created_at', 'desc')->simplePaginate(10);
        
         return view('mail.sent.search_mail_sent', compact('sentMail'))->render();
+    }
+
+    public function search_users(Request $request)
+    {
+        $query = $request->get('query');
+        $query = str_replace(" ", "%", $query);
+        $users = User::where('name', 'like', '%' . $query . '%')
+        ->orWhere('last_name', 'like', '%' . $query . '%')
+        ->orWhere('email', 'like', '%' . $query . '%')
+        ->orderBy('created_at', 'desc')
+        ->simplePaginate(2);
+
+        return view('settings.users.search_user', compact('users'))->render();
     }
 
 }

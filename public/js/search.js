@@ -33,7 +33,7 @@ $(document).ready(function () {
       $('.trash').hide();
       fetch_clients(query, url_name, page);
     });
-
+    //Mobile search clients//
     $(document).on('click', '.paginationmobilesearch_clients, .paginationmobileclients', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
@@ -75,7 +75,7 @@ $(document).ready(function () {
       $('.trash').hide();
       fetch_mail_inbox(page, query);
     });
-    //Mobile search//
+    //Mobile search mail inbox//
     $(document).on('click', '.paginationmobilesearch_mail_inbox, .paginationmobilemail\\/inbox', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
@@ -116,7 +116,7 @@ $(document).ready(function () {
       $('.trash').hide();
       fetch_mail_deleted(page, query);
     });
-    //Mobile search//
+    //Mobile search mail deleted//
     $(document).on('click', '.paginationmobilesearch_mail_deleted, .paginationmobilemail\\/deleted\\/inbox', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
@@ -157,7 +157,7 @@ $(document).ready(function () {
       $('.trash').hide();
       fetch_mail_sent(page, query);
     });
-    //Mobile search//
+    //Mobile search mail sent//
     $(document).on('click', '.paginationmobilesearch_mail_sent, .paginationmobilemail\\/sent', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
@@ -197,7 +197,7 @@ $(document).ready(function () {
       $('.trash').hide();
       fetch_incomings(page, query);
     });
-    //Mobile search//
+    //Mobile search incomings//
     $(document).on('click', '.paginationmobilesearch_incomings, .paginationmobileincoming', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
@@ -238,7 +238,7 @@ $(document).ready(function () {
       $('.trash').hide();
       fetch_outgoings(page, query);
     });
-
+    //Mobile search outgoings//
     $(document).on('click', '.paginationmobilesearch_outgoings, .paginationmobileoutgoing', function(event){
       event.preventDefault();
       let page = $(this).attr('href').split('page=')[1];
@@ -249,7 +249,47 @@ $(document).ready(function () {
       fetch_outgoings(page, query);
     });
     
-   
+   //Users//
+
+   function fetch_users(page, query) {
+        $.ajax({
+            url:"/search_users?page=" + page + "&query=" + query,
+            success: function (data) {
+                if (!data){   
+                    $('.searchUsers').html('<p class="text-white py-4">Nema rezultata</p>');
+                }
+                else{   
+                    $('.searchUsers').html(data);
+                }
+            }
+        })
+    }
+    $(document).on('keyup', '.search_users', function () {
+        let query = $(this, '.search_users').val();
+        let page = $('#hidden_page').val(1);
+        fetch_users(page, query);
+    });
+
+    $(document).on('click', '.paginationsearch_users, .paginationsettings\\/users', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('.search_users').val();
+      $('.trash').hide();
+      fetch_users(page, query);
+    });
+    //Mobile search users//
+    $(document).on('click', '.paginationmobilesearch_users, .paginationmobilesettings\\/users', function(event){
+      event.preventDefault();
+      let page = $(this).attr('href').split('page=')[1];
+      $('#hidden_page').val(page);
+
+      let query = $('#search_users').val();
+      $('.trash').hide();
+      fetch_users(page, query);
+    });
+
 
     $(document).on('keyup', '.search_clients_edit', function () {
         let query = $('.search_clients_edit').val();

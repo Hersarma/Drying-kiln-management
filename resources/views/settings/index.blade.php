@@ -24,7 +24,7 @@
 	 <i class="fas fa-user"></i>
  </h2>
 <p class="font-medium text-gray-200">Korisnici</p>
-<a href="#"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white font-bold capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja
+<a href="{{ route('users_index') }}"><button type="button" class="w-2/3 px-4 py-2 mt-10 tracking-wide text-white font-bold capitalize transition ease-out duration-500 transform hover:scale-110 bg-teal-400 hover:bg-teal-500 shadow-lg shadow-teal-400/20 rounded-xl focus:outline-none">Podešavanja
 </button></a>
 </div>
 <div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
