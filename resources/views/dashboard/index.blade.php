@@ -124,14 +124,14 @@
 		@endif
 		
 		@foreach($notifications as $notification)
-		<div class="relative mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
+		<div class="relative mb-5 md:flex md:justify-between md:items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
 			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
 			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
 			<p class="text-gray-200 px-4">{{ $notification->message }}</p>
-			<p class="text-gray-200">{{ $notification->created_at->format('d-m-Y') }}
-			<i class="fa fa-check text-green-500 px-4" aria-hidden="true"></i>
-			</p>
-			
+			<div class="flex items-center px-4 mt-4 md:mt-0">
+				<p class="text-gray-200 text-sm">{{ $notification->created_at->format('d-m-Y') }}</p>
+				<i class="fa fa-check text-sm text-green-500 px-4" aria-hidden="true"></i>
+			</div>
 		</div>
 		@endforeach
 	</div>

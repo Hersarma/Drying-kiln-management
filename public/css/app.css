@@ -548,11 +548,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-2{
   margin-top: 0.5rem;
 }
-.mb-20{
-  margin-bottom: 5rem;
-}
 .mb-10{
   margin-bottom: 2.5rem;
+}
+.mb-5{
+  margin-bottom: 1.25rem;
 }
 .mt-20{
   margin-top: 5rem;
@@ -595,9 +595,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-6{
   margin-left: 1.5rem;
-}
-.mb-5{
-  margin-bottom: 1.25rem;
 }
 .mt-12{
   margin-top: 3rem;
@@ -1140,10 +1137,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-green-400{
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
-}
-.bg-gray-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
