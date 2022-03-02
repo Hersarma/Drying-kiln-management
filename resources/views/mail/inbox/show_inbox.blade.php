@@ -17,6 +17,7 @@
     			<i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg">
     			</i>
     			<span class="hidden">{{route('mail_soft_delete', $mail)}}</span>
+    			 <em class="hidden">{{ $mail->from }}</em>
     		</p>
 		</div>
 	</div>

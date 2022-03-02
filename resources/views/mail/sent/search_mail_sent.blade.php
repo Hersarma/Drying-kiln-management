@@ -19,6 +19,7 @@
 <p class="w-1/5 hidden lg:block cursor-pointer get_route_id text-red-600 hover:text-red-700 text-center">
   <i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i>
   <span class="hidden">{{route('mail_delete_sent', $mail)}}</span>
+  <em class="hidden">{{ $mail->recipient }}</em>
 </p>
 </div>
 @endforeach
