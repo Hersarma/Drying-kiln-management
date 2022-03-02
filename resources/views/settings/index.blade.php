@@ -9,7 +9,7 @@
  <div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
     <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
     <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
- <h2 class="text-5xl font-bold text-teal-400 uppercase">
+ <h2 class="text-5xl font-bold text-gray-200">
 	 <i class="fas fa-envelope"></i>
  </h2>
 <p class="font-medium text-gray-200">Imejl</p>
@@ -20,7 +20,7 @@
 <div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
     <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
     <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
- <h2 class="text-5xl font-bold text-teal-400 uppercase">
+ <h2 class="text-5xl font-bold text-gray-200">
 	 <i class="fas fa-user"></i>
  </h2>
 <p class="font-medium text-gray-200">Korisnici</p>
@@ -30,7 +30,7 @@
 <div class="relative w-full p-8 space-y-8 text-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-lg">
     <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
     <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
- <h2 class="text-5xl font-bold text-teal-400 uppercase">
+ <h2 class="text-5xl font-bold text-gray-200">
 	 <i class="fa fa-bell"></i>
  </h2>
 <p class="font-medium text-gray-200">Notifikacije</p>
