@@ -7,6 +7,7 @@ use App\Models\MailConfigIncoming;
 use App\Models\MailConfigOutgoing;
 use App\Mail\TestMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 
@@ -168,10 +169,35 @@ class SettingsController extends Controller
         return view('settings.users.show', compact('user'));
     }
 
+    public function userStore(Request $request){
+        
+        $validate = request()->validateWithBag('create_user', [
+            'name' => 'required',
+            'last_name' => 'nullable',
+            'email' => 'required|unique:users',
+            'password' => 'required'
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect(route('users_index'))->with('message', 'Novi korisnik uspešno kreiran.');
+    }
+
     public function userDestroy(User $user){
 
         $user->delete();
 
+        return redirect(route('users_index'))->with('message', 'Korisnik uspešno obrisan.');
+    }
+
+    public function destroyChecked(Request $request){
+
+        User::whereIn('id', $request->input('deleteChecked'))->delete();
         return redirect(route('users_index'))->with('message', 'Korisnik uspešno obrisan.');
     }
 }

@@ -116,9 +116,9 @@
                   </label>
                 </div>
                 <div class="md:w-2/3">
-                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20" id="contact" name="contact">
+                  <input class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20" id="phone_number" name="phone_number">
                   <p class="text-red-500 text-sm italic mt-4">
-                    {{ $errors->create_client->first('contact') }}
+                    {{ $errors->create_client->first('phone_number') }}
                   </p>
                 </div>
               </div>

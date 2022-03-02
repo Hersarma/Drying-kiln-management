@@ -94,4 +94,10 @@ $(document).ready(function () {
 $('.modal_edit_mail_outgoing').show();
 });
 </script>
+@elseif(count($errors->create_user) > 0)
+<script>
+$(document).ready(function() {
+	$('.modal_create_user').show();
+});
+</script>
 @endif

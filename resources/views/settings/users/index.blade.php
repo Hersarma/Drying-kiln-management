@@ -20,7 +20,7 @@
       </div>
   </div>
   <div class="w-full mx-auto overflow-auto">
-    <form method="post" action="#">
+    <form method="post" action="{{ route('delete_checked_users') }}">
       @csrf
       <div>
         <div class="flex justify-between items-center px-4 border-b border-teal-400">

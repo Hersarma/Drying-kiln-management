@@ -30,7 +30,7 @@
     <div class="">
       <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-phone px-4"></i>
-        {{ $client->contact ?: '/'}}
+        {{ $client->phone_number ?: '/'}}
       </p>
       <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-envelope px-4"></i>

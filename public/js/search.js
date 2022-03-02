@@ -320,7 +320,9 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.get_route_id', function () {
+        let deleteThisGet = $(this).children('em').text();
         let href = $(this).children('span').text();
+        $('.deleteThis').text("'" + deleteThisGet + "'");
         $('.route_id').attr('action', href);
         $('.modal_warning').toggle(500);
     });
