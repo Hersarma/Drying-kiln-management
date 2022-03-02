@@ -188,6 +188,32 @@ class SettingsController extends Controller
         return redirect(route('users_index'))->with('message', 'Novi korisnik uspešno kreiran.');
     }
 
+    public function userUpdate(User $user,Request $request){
+        if ($request['email'] == $user->email) {
+            $validate = request()->validateWithBag('edit_user', [
+            'name' => 'required',
+            'last_name' => 'nullable',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+        }else{
+            $validate = request()->validateWithBag('edit_user', [
+            'name' => 'required',
+            'last_name' => 'nullable',
+            'email' => 'required|unique:users',
+            'password' => 'required'
+        ]);
+        }
+        
+        $user->update([
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect(route('user_show', $user))->with('message', 'Korisnik uspešno izmenjen.');
+    }
+
     public function userDestroy(User $user){
 
         $user->delete();
