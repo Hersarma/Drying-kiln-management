@@ -51,7 +51,9 @@
 		  <td class="px-4 py-3 text-center"><a href="{{ route('show_drying_proces',$proces )}}"
 		  class="text-teal-400 hover:text-teal-700"><i class="transition ease-out duration-500 transform hover:scale-110 far fa-eye fa-lg"></i></a></td>
 		  <td class="hidden md:table-cell px-4 py-3 text-center"><p
-		    class="cursor-pointer get_route_id text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i><span class="hidden">{{route('delete_drying_proces', $proces)}}</span></p></td>
+		    class="cursor-pointer get_route_id text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg"></i><span class="hidden">{{route('delete_drying_proces', $proces)}}</span>
+        <em class="hidden">{{ $drykiln->name }}</em>
+      </p></td>
 		  </tr>
          @endforeach
         </tbody>
