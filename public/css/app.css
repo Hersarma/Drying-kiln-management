@@ -512,6 +512,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .mb-4{
   margin-bottom: 1rem;
 }
@@ -613,6 +617,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .-ml-px{
   margin-left: -1px;
+}
+.-mr-2{
+  margin-right: -0.5rem;
 }
 .block{
   display: block;
@@ -2203,6 +2210,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:px-24{
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+  .lg\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .lg\:text-lg{
     font-size: 1.125rem;

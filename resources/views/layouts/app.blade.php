@@ -28,7 +28,7 @@
         @include('menu_parts.side_nav')
         <div id="content" class="flex-1 lg:ml-56 px-4 py-4">
           
-          <div class="mt-24 mx-auto">
+          <div class="mt-24 mx-auto md:px-4 lg:px-4">
             @include('messages.message_success')
             @include('messages.message_warning')
             @include('messages.message_welcome')

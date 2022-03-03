@@ -4,7 +4,7 @@
     <i onclick="window.location = '{{ route('outgoing.index' )}}'" class="fa fa-arrow-circle-left fa-lg md:px-4 md:py-2 cursor-pointer hover:text-white" aria-hidden="true"></i>
     <span class="hidden md:inline-block">Nazad</span>
   </p>
-<section class="md:px-12">
+<section class="">
   <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <p class="px-8 text-gray-200">Detaljni prikaz</p>
   </div>

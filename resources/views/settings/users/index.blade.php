@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<section class="hidden sm:block md:block lg:block w-full border-l-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
-  <div class="md:px-8 md:flex justify-between w-full text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+<section class="relative hidden sm:block md:block lg:block w-full overflow-auto py-2 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+  <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
+  <div class="md:px-8 md:flex justify-between w-full text-center">
     <div class="px-8 py-8">
       <h1 class="text-xl font-bold text-gray-200">Korisnici</h1>
     </div>
@@ -23,24 +25,24 @@
     <form method="post" action="{{ route('delete_checked_users') }}">
       @csrf
       <div>
-        <div class="flex justify-between items-center px-4 border-b border-teal-400">
+        <div class="flex justify-between items-center px-4 border-b border-gray-700">
           <div class="flex items-center">
              <input class="check_all form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none" type="checkbox">
               <button type="button" class="trash delete_checked_items hidden focus:outline-none text-red-600 hover:text-red-700"><i class="transition ease-out duration-500 transform hover:scale-110 fas fa-trash fa-lg ml-8"></i></button>
           </div>
-          <p class="sm:w-1/3 md:w-1/3 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+          <p class="sm:w-1/3 md:w-1/3 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center">
             Ime
           </p>
-          <p class="sm:w-1/3 md:w-1/3 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+          <p class="sm:w-1/3 md:w-1/3 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center">
             Prezime
           </p>
-          <p class="sm:w-1/3 md:w-1/3 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+          <p class="sm:w-1/3 md:w-1/3 lg:w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center">
             Email
           </p>
-          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center">
             Prikaži
           </p>
-          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+          <p class="hidden lg:block w-1/5 py-3 tracking-wider text-gray-100 text-sm text-center">
             Obriši
           </p>
         </div>

@@ -1,19 +1,19 @@
 <div class="hidden sm:block md:block lg:block">
   @foreach($incoming as $item)
-<div class="flex justify-between items-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700 px-4">
+<div class="group flex justify-between items-center px-4">
   <p class="py-3">
   <input type="checkbox" name="deleteChecked[]" value="{{ $item->id }}" class="form-checkbox border-2 border-gray-400 appearance-none checked:bg-green-600 checked:border-transparent px-2 py-2 focus:outline-none">
 </p>
-<p onclick="window.location = '{{ route('clients.show',$item->clients->id )}}'" class="w-1/5 cursor-pointer py-3 text-center text-sm text-gray-200 hover:text-teal-600">
+<p onclick="window.location = '{{ route('clients.show',$item->clients->id )}}'" class="w-1/5 cursor-pointer py-3 text-center text-sm text-gray-200 group-hover:text-teal-600">
   {{ ucfirst($item->clients->name ?: '/') }}
 </p>
-<p class="w-1/5 cursor-pointer py-3 text-center text-sm text-gray-200 hover:text-teal-600">
+<p class="w-1/5 cursor-pointer py-3 text-center text-sm text-gray-200 group-hover:text-teal-600">
   {{ $item->notes ?: '/' }}
 </p>
-<p class="w-1/5 cursor-pointer py-3 text-center text-sm text-gray-200 hover:text-teal-600">
+<p class="w-1/5 cursor-pointer py-3 text-center text-sm text-gray-200 group-hover:text-teal-600">
   {{ $item->created_at->format('d-m-Y') }}
 </p>
-<p onclick="window.location = '{{ route('incoming.show',$item )}}'" class="w-1/5 cursor-pointer py-3 text-center text-sm text-teal-400 hover:text-teal-600">
+<p onclick="window.location = '{{ route('incoming.show',$item )}}'" class="w-1/5 cursor-pointer py-3 text-center text-sm text-teal-400 group-hover:text-teal-600">
   <i class="transition ease-out duration-500 transform hover:scale-110 far fa-eye fa-lg"></i>
 </p>
 <p class="w-1/5 cursor-pointer get_route_id text-red-600 hover:text-red-700 text-center">

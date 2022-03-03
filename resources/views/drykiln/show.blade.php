@@ -5,7 +5,7 @@
     <span class="hidden md:inline-block">Nazad</span>
   </p>
 <div class="flex flex-wrap justify-between items-center">
-	<div class="w-full md:w-2/3 md:px-4">
+	<div class="w-full md:w-2/3">
 		<div class="flex justify-center">
 			@if(!$drykiln->dry_kiln_config->dry_kiln_status)
 			<img class="h-20 w-20" src="/img/vent.png">
@@ -190,7 +190,7 @@
 	</div>
 </div>
 
-<div class="w-full md:px-4 py-4">
+<div class="w-full py-4">
 	<div class="flex px-4 justify-between items-center w-full mb-6 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <p class="md:px-8 text-gray-200">Očitavanja sondi</p>
     <div class="flex space-x-4">
