@@ -1148,6 +1148,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
+.bg-gray-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1606,6 +1610,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .shadow-cyan-400\/50{
   --tw-shadow-color: rgb(34 211 238 / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-gray-400\/20{
+  --tw-shadow-color: rgb(156 163 175 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-gray-400\/50{
+  --tw-shadow-color: rgb(156 163 175 / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-gray-900\/50{
+  --tw-shadow-color: rgb(17 24 39 / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-gray-800\/50{
+  --tw-shadow-color: rgb(31 41 55 / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-gray-700\/50{
+  --tw-shadow-color: rgb(55 65 81 / 0.5);
   --tw-shadow: var(--tw-shadow-colored);
 }
 .outline{
