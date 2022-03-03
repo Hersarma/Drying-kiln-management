@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="flex justify-between items-center px-2 md:px-10 mb-10 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-xl">
+<div class="relative flex justify-between items-center px-2 md:px-10 mb-10 py-6 overflow-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+	<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+	<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
 	<p class="text-gray-200">Prikaz sušara</p>
 	<button
 	class="toggle_modal_create_drykiln transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-lg shadow-teal-400/20">
@@ -17,7 +19,9 @@
 			<img class="animate-spin-slow h-20 w-20" src="img/vent.png">
 			@endif
 		</div>
-		<div onclick="window.location = '{{ route('drykiln.show',$drykiln )}}'" class="cursor-pointer transition ease-out duration-200 transform hover:scale-105 border-l-4 border-r-4 border-teal-400 rounded-xl overflow-auto px-2 py-2 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 shadow-lg shadow-cyan-400/50">
+		<div onclick="window.location = '{{ route('drykiln.show',$drykiln )}}'" class="relative cursor-pointer transition ease-out duration-200 transform hover:scale-105 overflow-auto px-2 py-2 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
 			<div>
 				<div class="md:flex md:justify-between md:items-center py-4 px-4">
 					<p class="py-1 px-1 text-white text-xl font-bold">Sušara: {{ $drykiln->name }}</p>
