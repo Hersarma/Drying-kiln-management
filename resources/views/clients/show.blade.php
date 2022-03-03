@@ -5,10 +5,14 @@
     <span class="hidden md:inline-block">Nazad</span>
   </p>
 <section class="px-1 md:px-8 lg:px-8">
-  <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+  <div class="relative w-full lg:w-1/4 md:w-1/2 mb-6 py-6 overflow-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+  <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
     <p class="px-8 text-gray-200">{{ Ucfirst($client->name)}}</p>
   </div>
-  <div class="md:flex lg:flex flex-wrap items-center justify-between border-l-4 border-teal-400 rounded-xl overflow-auto md:px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+  <div class="relative md:flex lg:flex flex-wrap items-center justify-between overflow-auto md:px-4 py-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+  <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
     <div class="">
       <div class="flex ustify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
       <i class="fas fa-flag px-4"></i>

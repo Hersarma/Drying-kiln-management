@@ -5,10 +5,14 @@
     <span class="hidden md:inline-block">Nazad</span>
   </p>
 <section class="">
-  <div class="w-full lg:w-1/4 md:w-1/2 mb-6 py-6 border-l-4 border-teal-400 rounded-xl overflow-auto bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+  <div class="relative w-full lg:w-1/4 md:w-1/2 mb-6 py-6 overflow-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+    <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+  <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
     <p class="px-8 text-gray-200">Detaljni prikaz</p>
   </div>
-  <div class="w-full border-l-4 border-teal-400 rounded-xl overflow-auto px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+  <div class="relative w-full overflow-auto px-4 py-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
+  <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+  <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
     <div class="flex flex-wrap justify-between items-center md:px-24 lg:px-24">
         <div class="w-full md:w-auto">
           <div class="flex md:justify-between items-center text-gray-200">
@@ -51,16 +55,16 @@
       <table class="table-auto w-full text-left whitespace-normal">
                         <thead>
                           <tr class="border-b border-teal-400">
-                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
                               
                             </th>
-                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
                               Vrsta građe
                             </th>
-                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
                               Broj paleta
                             </th>
-                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+                            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
                               Kubikaža
                             </th>
                           </tr>
@@ -68,7 +72,7 @@
                         <tbody>
                             @foreach($items as $item)
                          <tr
-                          class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
+                          class="border-b border-gray-700">
                           <td class="px-4 py-3 text-left md:text-center text-gray-200">
                             {{ $loop->iteration }}
                           </td>
