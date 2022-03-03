@@ -10,53 +10,73 @@
   </div>
   <div class="md:flex lg:flex flex-wrap items-center justify-between border-l-4 border-teal-400 rounded-xl overflow-auto md:px-4 py-4 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
     <div class="">
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
-        <i class="fas fa-flag px-4"></i>
+      <div class="flex ustify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
+      <i class="fas fa-flag px-4"></i>
+      <p class="py-4 px-4">
         {{ Ucfirst($client->state ?: '/')}}
       </p>
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      </div>
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-building px-4"></i>
+        <p class="py-4 px-4">
         {{ Ucfirst($client->city ?: '/')}}
       </p>
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      </div>
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-address-card px-4"></i>
+        <p class="py-4 px-4">
         {{ Ucfirst($client->address_1 ?: '/')}}
       </p>
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      </div>
+       <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-address-card px-4"></i>
+        <p class="py-4 px-4">
         {{ Ucfirst($client->address_2 ?: '/')}}
       </p>
+      </div>
     </div>
     <div class="">
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-phone px-4"></i>
-        {{ $client->phone_number ?: '/'}}
+        <p class="py-4 px-4">
+        {{ Ucfirst($client->phone_number ?: '/')}}
       </p>
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      </div>
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-envelope px-4"></i>
-        {{ $client->email ?: '/'}}
+        <p class="py-4 px-4">
+        {{ Ucfirst($client->email ?: '/')}}
       </p>
+      </div>
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
+        <i class="fab fa-firefox px-4"></i>
         <a class="text-teal-500 underline" href="https://{{ $client->website }}"
           target="_blank">
-            <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
-              <i class="fab fa-firefox px-4"></i>
-              {{ $client->website ?: '/' }}
-            </p>
-          </a>
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+          <p class="py-4 px-4">
+          {{ $client->website ?: '/' }}
+          </p>
+        </a>
+      </div>
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-sticky-note px-4"></i>
+        <p class="py-4 px-4">
         {{ Ucfirst($client->notes ?: '/')}}
       </p>
+      </div>
     </div>
     <div class="">
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-sort-down px-4">pib</i>
-        {{ $client->pib ?: '/'}}
+        <p class="py-4 px-4">
+        {{ Ucfirst($client->pib ?: '/')}}
       </p>
-      <p class="py-4 md:px-4 text-sm md:text-base lg:text-lg text-gray-200">
+      </div>
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
         <i class="fas fa-sort-down px-4">mb</i>
-        {{ $client->mb ?: '/'}}
+        <p class="py-4 px-4">
+        {{ Ucfirst($client->mb ?: '/')}}
       </p>
+      </div>
     </div>
   </div>
   <div class="flex mx-auto">

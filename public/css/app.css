@@ -890,6 +890,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .items-center{
   align-items: center;
 }
+.justify-start{
+  justify-content: flex-start;
+}
 .justify-end{
   justify-content: flex-end;
 }
@@ -2080,6 +2083,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:items-center{
     align-items: center;
   }
+  .md\:justify-start{
+    justify-content: flex-start;
+  }
   .md\:justify-between{
     justify-content: space-between;
   }
@@ -2180,11 +2186,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:w-1\/6{
     width: 16.666667%;
   }
-  .lg\:w-1\/2{
-    width: 50%;
-  }
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .lg\:justify-start{
+    justify-content: flex-start;
   }
   .lg\:px-8{
     padding-left: 2rem;
