@@ -83,7 +83,7 @@
 			</div>
 			<div class="flex justify-center py-4">
 				<button
-				class="font-bold transition ease-out duration-500 transform hover:scale-110 mx-4 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-lg shadow-teal-400/20">
+				class="toggle_modal_edit_drykiln font-bold transition ease-out duration-500 transform hover:scale-110 mx-4 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none shadow-lg shadow-teal-400/20">
 				Podešavanja
 				</button>
 				@if(!$drykiln->dry_kiln_config->dry_kiln_status)
@@ -289,6 +289,7 @@
         
   </div>
 	@endif
+@include('drykiln.modals.edit')
 @include('drykiln.modals.create_drykiln_config')
 @if($drykiln->dry_kiln_config()->exists())
 @include('drykiln.modals.edit_drykiln_config')

@@ -106,6 +106,10 @@ $(document).on('click', '.toggle_modal_create_drykiln', function(e){
     e.preventDefault();
     $('.modal_create_drykiln').toggle(500);
 });
+$(document).on('click', '.toggle_modal_edit_drykiln', function(e){
+    e.preventDefault();
+    $('.modal_edit_drykiln').toggle(500);
+});
 
 /*Drykiln config create*/
 $(document).on('click', '.toggle_modal_create_drykiln_config', function(e){

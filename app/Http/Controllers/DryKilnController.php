@@ -15,13 +15,28 @@ public function index(){
 }
 public function store(Request $request){
 
-    $validator = $request->validateWithBag('create_drykiln', [
+    $validate = $request->validateWithBag('create_drykiln', [
     'name' => 'required|unique:dry_kilns'
     ]);
 
-    DryKiln::create($validator);
+    DryKiln::create($validate);
 
     return redirect(route('drykiln.index'))->with('message', 'Susara uspešno snimljena');
+}
+
+public function update(DryKiln $drykiln, Request $request){
+    if ($request['name'] == $drykiln->name) {
+        $validate = $request->validateWithBag('edit_drykiln', [
+        'name' => 'required'
+        ]);
+    } else{
+         $validate = $request->validateWithBag('edit_drykiln', [
+        'name' => 'required|unique:dry_kilns'
+        ]);
+    }
+    $drykiln->update($validate);
+
+    return redirect(route('drykiln.show', $drykiln))->with('message', 'Sušara uspešno izmenjena.');
 }
 
 public function show(DryKiln $drykiln){
@@ -40,6 +55,6 @@ public function show(DryKiln $drykiln){
 
 public function destroy(DryKiln $drykiln){
     $drykiln->delete();
-    return redirect(route('drykiln.index'));
+    return redirect(route('drykiln.index'))->with('message', 'Sušara uspešno izbrisana.');
 }
 }
