@@ -9,8 +9,8 @@
   <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
   <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
     <div class="px-4 py-4">
-      <p class="text-xl font-bold py-2 px-2 text-gray-200">Očitavanja sondi</p>
-      <p class="text-xl font-bold py-2 px-2 text-gray-200">Klijenti: {{ Str::of($dryingProces->client)->replaceLast(',', '.')  ?: '/' }}</p>
+      <p class="text-sm md:text-xl font-bold py-2 px-2 text-gray-200">Očitavanja sondi</p>
+      <p class="text-sm md:text-xl font-bold py-2 px-2 text-gray-200">Klijenti: {{ Str::of($dryingProces->client)->replaceLast(',', '.')  ?: '/' }}</p>
     </div>
   <div class="w-full mx-auto overflow-auto">
       <div>
