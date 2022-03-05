@@ -290,7 +290,8 @@ $(document).ready(function () {
       fetch_users(page, query);
     });
 
-
+    //Drykiln readings//
+    
     $(document).on('keyup', '.search_clients_edit', function () {
         let query = $('.search_clients_edit').val();
         let url_name = $('#url_name').text().split('/')[0];
