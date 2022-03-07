@@ -40,7 +40,10 @@
    composer install
    ```
    ```sh
-   nmp run dev
+   npm install
+   ```
+   ```sh
+   npm run dev
    ```
 3. Create database
 
