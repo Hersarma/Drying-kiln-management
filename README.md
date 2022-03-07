@@ -35,8 +35,12 @@
     cd Drying-kiln-management
    ```
 2. Install and run NPM packages
+
    ```sh
-   npm install && nmp run
+    composer install
+   ```
+   ```sh
+   npm install && nmp run dev
    ```
 3. Create database
 
