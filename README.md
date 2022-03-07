@@ -52,6 +52,10 @@
 
 2. Edit email config in app settings
 
+<div align="center">
+  <img src="public/img/github_img/email_settings" alt="Logo" width="80" height="80">
+</div>
+
 3. Get mail locally
  Run artisan command
    ```sh
