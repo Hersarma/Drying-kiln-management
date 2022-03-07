@@ -66,7 +66,7 @@
    php artisan serve
    ```
 9. Visit in browser
-   <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>
+   <a href="http://localhost:8000" target="_blank">localhost:8000</a>
 
 10. Login with username->admin@admin.com, password->admin
 
