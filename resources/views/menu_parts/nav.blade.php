@@ -18,11 +18,11 @@
       <div class="flex py-4 items-center">
         <a href="{{ route('mail_index') }}"
           class="px-6 md:px-8 py-2 text-lg font-bold leading-5 text-gray-200 hover:text-white focus:outline-none">
-          <!--<i class="fas fa-envelope fa-fade" style="--fa-animation-duration: 1s; --fa-fade-opacity: 0.2;">
-          </i>-->
           <i class="fas fa-envelope"></i>
         </a>
-        @widget('update_notifications')
+        <a href="#" class="focus:outline-none py-2">
+          <i class="fa fa-bell text-gray-200 hover:text-white" aria-hidden="true"></i>
+        </a>
         <!-- Profile dropdown -->
         <div class="relative px-4">
           <div class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 rounded-xl">

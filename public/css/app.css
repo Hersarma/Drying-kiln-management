@@ -866,6 +866,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
 }
+@-webkit-keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+@keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+.animate-pulse{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@-webkit-keyframes ping{
+  75%, 100%{
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes ping{
+  75%, 100%{
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping{
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
 .cursor-pointer{
   cursor: pointer;
 }

@@ -116,7 +116,7 @@
 	</div>
 	<div class="hidde_notifications w-full md:w-2/3">
 		@if(empty($mailConfigIncoming) or empty($mailConfigOutgoing))
-		<div class="relative mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
+		<div class="relative animate-pulse mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
 			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
 			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
 			<p class="text-gray-200 px-4">Imejl konfiguracija nije podešena</p>
