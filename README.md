@@ -32,22 +32,22 @@
    ```
    
    ```sh
-    cd Drying-kiln-management
+   cd Drying-kiln-management
    ```
 2. Install and run NPM packages
 
    ```sh
-    composer install
+   composer install
    ```
    ```sh
-   npm install && nmp run dev
+   nmp run dev
    ```
 3. Create database
 
 4. Create and edit .env file with database credentials
 
 5. Create APP_KEY in .env file
-    ```sh
+   ```sh
    php artisan key:generate
    ```
 6. Run migrations
