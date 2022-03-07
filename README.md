@@ -36,15 +36,19 @@
    ```
 4. Create database
 
-5. Edit env file with database credentials
+5. Create and edit .env file with database credentials
 
+6. Create APP_KEY in .env file
+    ```sh
+   php artisan key:generate
+   ```
 4. Run migrations
 
 5. Run seeders
    ```sh
    php artisan db:seed
    ```
-6. Change your credentials in app settings
+6. Change your login credentials in app settings
 
 ### Email usage locally
 
