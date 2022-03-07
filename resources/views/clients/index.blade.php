@@ -10,7 +10,7 @@
     
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-        <input type="search" name="search_clients" placeholder="Pretraga"
+        <input type="search" name="search_clients" placeholder="Pretraga po imenu"
         class="search_clients bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
          <p id="url_name" class="hidden">{{ Request::path() }}</p>
          <div class="flex px-2 md:px-12 py-4 md:py-8">

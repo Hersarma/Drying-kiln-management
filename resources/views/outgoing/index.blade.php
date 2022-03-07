@@ -10,7 +10,7 @@
     
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">
         <i class="fa fa-search fa-lg px-4 text-gray-400" aria-hidden="true"></i>
-        <input type="search" name="search_outgoing" placeholder="Pretraga"
+        <input type="search" name="search_outgoing" placeholder="Pretraga po klijentu"
         class="search_outgoing bg-transparent text-gray-100 border-b border-gray-200 focus:outline-none">
          <div class="flex px-2 md:px-12 py-4 md:py-8">
         <button type="button"
