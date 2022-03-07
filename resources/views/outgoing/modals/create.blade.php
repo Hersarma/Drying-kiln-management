@@ -94,40 +94,40 @@
 						<table id="items" class="table-auto w-full text-left whitespace-normal">
 				        <thead>
 				          <tr class="border-b border-teal-400">
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Artikal
 				            </th>
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Kolicina
 				            </th>
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Kubikaža
 				            </th>
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Kontrole
 				            </th>
 				          </tr>
 				        </thead>
 				        <tbody>
 				         <tr
-						  class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
+						  class="border-b border-gray-700">
 						  
 						  @if($errors->create_outgoing->any())
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500" type="text" name="items[0][item_name]">
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500 focus:outline-none" type="text" name="items[0][item_name]">
 						  	<p class="text-red-500 mt-2">Obavezno polje</p>
 						  </td>
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500" type="text" name="items[0][quantity]" placeholder="broj paleta opciono">
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500 focus:outline-none" type="text" name="items[0][quantity]" placeholder="broj paleta opciono">
 						  <p class="text-red-500 mt-2">Obavezno polje</p>
 						  </td>
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl border border-red-500" type="text" name="items[0][cubic_metre]">
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl border border-red-500 focus:outline-none" type="text" name="items[0][cubic_metre]">
 						  <p class="text-red-500 mt-2">Obavezno polje</p>
 						  </td>
 						  @else
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[0][item_name]">
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl focus:outline-none" type="text" name="items[0][item_name]">
 						  </td>
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[0][quantity]" placeholder="broj paleta opciono">
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl focus:outline-none" type="text" name="items[0][quantity]" placeholder="broj paleta opciono">
 						  </td>
-						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl" type="text" name="items[0][cubic_metre]">
+						  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl focus:outline-none" type="text" name="items[0][cubic_metre]">
 						  </td>
 						  @endif
 						   <td id="add" class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button"
@@ -161,7 +161,7 @@
     var i = 0;
     $("#add").click(function(){
         ++i;
-        $("#items").append('<tr class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700"><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][item_name]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items['+i+'][quantity]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl" type="text" name="items['+i+'][cubic_metre]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button" class="remove-tr transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none shadow-xl"><i class="fa fa-minus" aria-hidden="true"></i></button></td></tr>');
+        $("#items").append('<tr class="border-b border-gray-700"><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl focus:outline-none" type="text" name="items['+i+'][item_name]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl focus:outline-none" type="text" name="items['+i+'][quantity]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl focus:outline-none" type="text" name="items['+i+'][cubic_metre]"></td><td class="px-4 py-3 text-left md:text-center text-gray-700"><button type="button" class="remove-tr transition ease-out duration-500 transform hover:scale-110 py-1 px-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none shadow-xl"><i class="fa fa-minus" aria-hidden="true"></i></button></td></tr>');
 
     });
 

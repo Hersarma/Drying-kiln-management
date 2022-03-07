@@ -89,13 +89,13 @@
 						<table id="items" class="table-auto w-full text-left whitespace-normal">
 				        <thead>
 				          <tr class="border-b border-teal-400">
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Artikal
 				            </th>
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 ">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Količina
 				            </th>
-				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900">
+				            <th class="px-2 md:px-4 py-3 tracking-wider text-gray-100 text-sm text-left md:text-center">
 				              Kubikaža
 				            </th>
 				          </tr>
@@ -103,23 +103,23 @@
 				        <tbody>
 				        	@foreach($items as $item)
 				        	<tr
-							  class="bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 border-b border-gray-700">
+							  class="border-b border-gray-700">
 							   <input class="hidden" type="hidden" name="items[{{ $loop->index }}][id]" value="{{ $item->id }}">
 							   @if($errors->edit_incoming_items->any())
-							   <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
+							   <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500 focus:outline-none" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
 							   	<p class="text-red-500 mt-2">Obavezno polje</p>
 							  </td>
-							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}">
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl border border-red-500 focus:outline-none" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}">
 							  	<p class="text-red-500 mt-2">Obavezno polje</p>
 							  </td>
-							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl border border-red-500" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}">
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl border border-red-500 focus:outline-none" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}">
 							  	<p class="text-red-500 mt-2">Obavezno polje</p>
 							  </td>
 							   @else
-							   <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
+							   <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl focus:outline-none" type="text" name="items[{{ $loop->index }}][item_name]" value="{{ $item->item_name }}">
 							  </td>
-							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}"></td>
-							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}"></td>
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="py-1 text-xl focus:outline-none" type="text" name="items[{{ $loop->index }}][quantity]"value="{{ $item->quantity }}"></td>
+							  <td class="px-4 py-3 text-left md:text-center text-gray-700"><input class="comma py-1 text-xl focus:outline-none" type="text" name="items[{{ $loop->index }}][cubic_metre]"value="{{ $item->cubic_metre }}"></td>
 							   @endif
 						  	</tr>
 				        	@endforeach
