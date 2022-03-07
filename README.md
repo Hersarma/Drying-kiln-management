@@ -52,7 +52,7 @@
 
 2. Edit email config in app settings
 
-<div align="center">
+<div align="left">
   <img src="public/img/github_img/email_settings.png" alt="Logo" width="750" height="500">
 </div>
 
