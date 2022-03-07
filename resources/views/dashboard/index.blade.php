@@ -110,10 +110,11 @@
 	</div>
 </section>
 <section class="mb-5">
-	<div class="mb-10 px-2">
-		<p class="text-gray-200 text-lg font-bold">Notifikacije</p>
+	<div class="mb-10 px-2 flex">
+		<p class="cursor-pointer toggle_notfications text-gray-200 text-lg font-bold">Notifikacije</p>
+		<p class="cursor-pointer toggle_notfications text-gray-200 text-lg font-bold px-4"><i class="fas fa-angle-down"></i></p>
 	</div>
-	<div class="w-full md:w-2/3">
+	<div class="hidde_notifications w-full md:w-2/3">
 		@if(empty($mailConfigIncoming) or empty($mailConfigOutgoing))
 		<div class="relative mb-5 flex justify-between items-center py-3 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-lg shadow-lg">
 			<p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>

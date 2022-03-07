@@ -4,7 +4,9 @@
       <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
     </div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-    <div class="inline-block rounded-xl border-l-4 border-teal-400 bg-gradient-to-r from-blue_gray-900 via-blue_gray-800 to-blue_gray-900 overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3 shadow-2xl">
+    <div class="relative inline-block bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-2xl overflow-hidden transform transition-all sm:my-8 align-middle w-full sm:w-3/4 md:2/3">
+      <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
+      <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-base text-gray-200 leading-6 font-bold">
         Izmena Korisnika
@@ -52,20 +54,6 @@
               id="email" name="email" value="{{ $user->email }}">
               <p class="text-red-500 text-sm italic mt-4">
                 {{ $errors->edit_user->first('email') }}
-              </p>
-            </div>
-          </div>
-          <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
-            <div class="md:w-1/3">
-              <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-password">
-                Lozinka
-              </label>
-            </div>
-            <div class="md:w-2/3">
-              <input type="password" class="appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
-              id="password" name="password">
-              <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->edit_user->first('password') }}
               </p>
             </div>
           </div>

@@ -33,20 +33,24 @@ $(document).on('click', '#hamburger', function(e){
     }
 });
 
-/*User profile toogle*/
+/*User profile toggle*/
 
 $(document).on('click', '#user_open', function(e){
     e.preventDefault();
     $('#user_profile').toggle(500);
 });
-/*Legend toogle*/
+/*Legend toggle*/
+$(document).on('click', '.toggle_notfications', function(e){
+    e.preventDefault();
+    $('.hidde_notifications').slideToggle(500); 
+});
 
+/*Notifications toggle*/
 $(document).on('click', '#legend_open', function(e){
     e.preventDefault();
     $('#legend_show').slideToggle(500);
     
-});
-
+})
 /*Warning message modal*/
 
 $(document).on('click', '.close_modal_warning', function(e){

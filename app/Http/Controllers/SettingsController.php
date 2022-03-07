@@ -193,15 +193,13 @@ class SettingsController extends Controller
             $validate = request()->validateWithBag('edit_user', [
             'name' => 'required',
             'last_name' => 'nullable',
-            'email' => 'required',
-            'password' => 'required'
+            'email' => 'required'
         ]);
         }else{
             $validate = request()->validateWithBag('edit_user', [
             'name' => 'required',
             'last_name' => 'nullable',
-            'email' => 'required|unique:users',
-            'password' => 'required'
+            'email' => 'required|unique:users'
         ]);
         }
         
@@ -209,7 +207,6 @@ class SettingsController extends Controller
             'name' => $request->name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
         ]);
         return redirect(route('user_show', $user))->with('message', 'Korisnik uspešno izmenjen.');
     }
