@@ -30,9 +30,10 @@
    ```sh
    git clone https://github.com/Hersarma/Drying-kiln-management.git
    ```
+   
    ```sh
     cd Drying-kiln-management
-   ```sh
+   ```
 2. Install and run NPM packages
    ```sh
    npm install && nmp run
