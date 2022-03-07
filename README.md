@@ -53,7 +53,7 @@
 2. Edit email config in app settings
 
 <div align="center">
-  <img src="public/img/github_img/email_settings.png" alt="Logo" width="500" height="500">
+  <img src="public/img/github_img/email_settings.png" alt="Logo" width="750" height="500">
 </div>
 
 3. Get mail locally
