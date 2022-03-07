@@ -30,25 +30,27 @@
    ```sh
    git clone https://github.com/Hersarma/Drying-kiln-management.git
    ```
-3. Install and run NPM packages
+2. Install and run NPM packages
    ```sh
    npm install && nmp run
    ```
-4. Create database
+3. Create database
 
-5. Create and edit .env file with database credentials
+4. Create and edit .env file with database credentials
 
-6. Create APP_KEY in .env file
+5. Create APP_KEY in .env file
     ```sh
    php artisan key:generate
    ```
-4. Run migrations
+6. Run migrations
 
-5. Run seeders
+7. Run seeders
    ```sh
    php artisan db:seed
    ```
-6. Change your login credentials in app settings
+8. Login with username->admin@admin.com, password->admin
+
+9. Change your login credentials in app settings
 
 ### Email usage locally
 
