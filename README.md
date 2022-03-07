@@ -54,14 +54,23 @@
    php artisan key:generate
    ```
 6. Run migrations
-
+   ```sh
+   php artisan migrate
+   ```
 7. Run seeders
    ```sh
    php artisan db:seed
    ```
-8. Login with username->admin@admin.com, password->admin
+8. Run server locally
+   ```sh
+   php artisan serve
+   ```
+9. Visit in browser
+   http://localhost:8000
 
-9. Change your login credentials in app settings
+10. Login with username->admin@admin.com, password->admin
+
+11. Change your login credentials in app settings
 
 ### Email usage locally
 
