@@ -74,6 +74,11 @@
 
 ### Email usage locally
 
+0.Link public folder to storage folder
+ ```sh
+ php artisan storage:link
+ ```
+
 1.Create an email account at your hosting provider
 
 2. Edit email config in app settings
