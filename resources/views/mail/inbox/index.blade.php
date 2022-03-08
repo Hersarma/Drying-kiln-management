@@ -4,9 +4,9 @@
 	<section class="relative hidden sm:block md:block lg:block w-full overflow-auto py-2 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded shadow-lg">
   <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
   <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
-  <div class="md:px-8 md:flex justify-between w-full text-center">
+  <div class="md:px-8 md:flex justify-between items-center w-full">
     <div class="px-8 py-8">
-      <h1 class="text-xl font-bold text-gray-200">Primljene</h1>
+      <p class="text-xl font-bold text-gray-200">Vaša imejl adresa: {{ $yourMail->username }}</p>
     </div>
     
       <div class="flex items-center text-gray-600 px-4 md:px-12 py-4 md:py-8">

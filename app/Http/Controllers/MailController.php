@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Mail;
+use App\Models\MailConfigIncoming;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,9 @@ class MailController extends Controller
      */
     public function index()
     {
-        
+        $yourMail = MailConfigIncoming::first('username');
         $mailInbox = Mail::orderBy('created_at', 'desc')->simplePaginate(10);
-        return view('mail.inbox.index', compact('mailInbox'));
+        return view('mail.inbox.index', compact('mailInbox', 'yourMail'));
     }
 
     public function indexDeleted()
