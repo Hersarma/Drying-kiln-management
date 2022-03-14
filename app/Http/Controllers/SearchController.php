@@ -59,8 +59,12 @@ class SearchController extends Controller
     {
         $query = $request->get('query');
         $query = str_replace(" ", "%", $query);
-        $mailInboxDeleted = Mail::onlyTrashed()->where('name', 'like', '%' . $query . '%')
-        ->orWhere('from', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(10);
+        $mailInboxDeleted = Mail::onlyTrashed()->where(function($q) use($query) {
+            $q->where('name', 'like', "%{$query}%")
+            ->orWhere('from', 'like', "%{$query}%");
+        })->orderBy('created_at', 'desc')->simplePaginate(10);
+        //$mailInboxDeleted = Mail::onlyTrashed()->where('name', 'like', '%' . $query . '%')
+        //->orWhere('from', 'like', '%' . $query . '%')->orderBy('created_at', 'desc')->simplePaginate(10);
        
         return view('mail.deleted.search_mail_inbox_deleted', compact('mailInboxDeleted'))->render();
     }
