@@ -64,6 +64,10 @@ Route::middleware('mailConfigOutgoing')->group(function (){
 	Route::get('/mail/sent/download_attachment/{attachment}', 'SendMailController@downloadSentMailAttachment')->name('download_sent_mail_attachment');
 });
 
+/*Notifications*/
+Route::get('/notifications_index', 'NotificationMessageController@index')->name('notifications_index');
+Route::delete('/notifications_delete/{notification}', 'NotificationMessageController@destroy')->name('notifications_destroy');
+
 /*Search*/
 Route::get('search_clients', 'SearchController@search_clients');
 Route::get('search_incomings', 'SearchController@search_incomings');

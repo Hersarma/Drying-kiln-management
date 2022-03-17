@@ -117,7 +117,8 @@ class ClientController extends Controller
     public function destroyChecked(Request $request)
     {
         Client::whereIn('id', $request->input('deleteChecked'))->delete();
-        return back()->with('message', 'Klijent uspešno izbrisan');
+        
+        return redirect(route('clients.index'))->with('message', 'Klijent uspešno izbrisan');
     }
 
 

@@ -20,7 +20,7 @@
           class="px-6 md:px-8 py-2 text-lg font-bold leading-5 text-gray-200 hover:text-white focus:outline-none">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="#" class="focus:outline-none py-2">
+        <a href="{{ route('notifications_index') }}" class="focus:outline-none py-2">
           <i class="fa fa-bell text-gray-200 hover:text-white" aria-hidden="true"></i>
         </a>
         <!-- Profile dropdown -->
