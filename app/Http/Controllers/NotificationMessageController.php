@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class NotificationMessageController extends Controller
 {
     public function index(){
-        $notifications = NotificationMessage::orderBy('created_at', 'desc')->simplePaginate(3);
+        $notifications = NotificationMessage::orderBy('created_at', 'desc')->simplePaginate(10);
 
         return view('notifications.index', compact('notifications'));
     }
