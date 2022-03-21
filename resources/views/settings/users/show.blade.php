@@ -15,13 +15,13 @@
   <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
     <div class="">
       <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
-        <i class="fas fa-phone px-4"></i>
+        <i class="fas fa-user px-4"></i>
         <p class="py-4 px-4">
         {{ Ucfirst($user->name)}}
       </p>
       </div>
       <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
-        <i class="fas fa-sticky-note px-4"></i>
+        <i class="fas fa-user px-4"></i>
         <p class="py-4 px-4">
         {{ Ucfirst($user->last_name)}}
       </p>
