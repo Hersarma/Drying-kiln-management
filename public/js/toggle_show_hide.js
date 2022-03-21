@@ -13,24 +13,11 @@ $(document).on('click', '.client_edit', function(e){
 
 $(document).on('click', '#hamburger', function(e){
     e.preventDefault();
-    if ($('#side_bar').is(':visible')) {
-      $('#side_bar').animate({
-        'width': '0px'
-      }, 'slow', function() {
-        $('#side_bar').hide();
-      });
-      $('#content').animate({
-        'margin-left':'0px'
-      }, 'slow');
-    } else {
-      $('#side_bar').show();
-      $('#side_bar').animate({
-        'width': '14rem'
-      }, 'slow');
-      $('#content').animate({
-        'margin-left':'14rem'
-      }, 'slow');
-    }
+    $('#side_bar').show('slide',300);
+});
+$(document).on('click', '#hamburger_close', function(e){
+    e.preventDefault();
+    $('#side_bar').hide('slide',300);
 });
 
 /*User profile toggle*/
