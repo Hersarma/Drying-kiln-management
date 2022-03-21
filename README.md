@@ -16,6 +16,12 @@
     <br />
     <br />
   </p>
+  <p>
+     username:testuser@it.com
+  </p>
+  <p>
+     password:test
+  </p>
 </div>
 
 ## Built With
