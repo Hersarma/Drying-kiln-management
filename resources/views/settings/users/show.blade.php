@@ -32,7 +32,15 @@
         {{ $user->email}}
       </p>
       </div>
-
+      <div class="flex justify-start items-center text-sm md:text-base lg:text-lg text-gray-200">
+        <i class="fa fa-lock px-4"></i>
+        <p class="py-4 px-4">
+        <a href="#">
+          <button type="button" class="transition ease-out duration-500 transform hover:scale-110 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-lg shadow-teal-400/20"><i
+          class="px-2 fas fa-edit"></i>Izmeni lozinku</button>
+        </a>
+      </p>
+      </div>
     </div>
   </div>
   <div class="flex mx-auto">
