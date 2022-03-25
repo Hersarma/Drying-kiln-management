@@ -90,6 +90,7 @@ Route::post('/settings/update_mail_outgoing_config/{mailConfigOutgoing}', 'Setti
 /*User-Settings*/
 Route::get('/settings/users', 'SettingsController@userIndex')->name('users_index');
 Route::get('/settings/user_show/{user}', 'SettingsController@userShow')->name('user_show');
+Route::post('/settings/user_change_password/{user}', 'SettingsController@changeUserPassword')->name('changeUserPassword');
 Route::post('/settings/create_user', 'SettingsController@userStore')->name('create_user');
 Route::post('/settings/edit_user/{user}', 'SettingsController@userUpdate')->name('edit_user');
 Route::delete('/settings/delete/{user}', 'SettingsController@userDestroy')->name('user_delete');

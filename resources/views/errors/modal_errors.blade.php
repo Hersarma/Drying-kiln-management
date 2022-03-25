@@ -106,4 +106,10 @@ $(document).ready(function() {
 	$('.modal_edit_user').show();
 });
 </script>
+@elseif(count($errors->change_password) > 0 || session('message_warning_password'))
+<script>
+$(document).ready(function() {
+	$('.modal_edit_user_password').show();
+});
+</script>
 @endif

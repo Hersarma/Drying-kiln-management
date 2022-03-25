@@ -36,7 +36,7 @@
         <i class="fa fa-lock px-4"></i>
         <p class="py-4 px-4">
         <a href="#">
-          <button type="button" class="transition ease-out duration-500 transform hover:scale-110 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-lg shadow-teal-400/20"><i
+          <button type="button" class="toggle_modal_edit_user_password transition ease-out duration-500 transform hover:scale-110 text-white bg-teal-400 border-0 py-2 px-4 focus:outline-none hover:bg-teal-500 rounded text-base shadow-lg shadow-teal-400/20"><i
           class="px-2 fas fa-edit"></i>Izmeni lozinku</button>
         </a>
       </p>
@@ -53,4 +53,5 @@
 </div>
 </section>
 @include('settings.users.modals.edit')
+@include('settings.users.modals.change_password')
 @endsection

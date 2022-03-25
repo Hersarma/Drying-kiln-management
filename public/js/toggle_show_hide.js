@@ -154,4 +154,9 @@ $(document).on('click', '.toggle_modal_edit_user', function(e){
     $('.modal_edit_user').toggle(500);
 });
 
+$(document).on('click', '.toggle_modal_edit_user_password', function(e){
+    e.preventDefault();
+    $('.modal_edit_user_password').toggle(500);
+});
+
 

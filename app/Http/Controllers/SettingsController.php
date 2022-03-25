@@ -211,6 +211,19 @@ class SettingsController extends Controller
         return redirect(route('user_show', $user))->with('message', 'Korisnik uspešno izmenjen.');
     }
 
+    public function changeUserPassword(User $user, Request $request){
+        if (Hash::check($request->current_password, $user->password))
+            {
+                $request->validateWithBag('change_password', [
+                'new_password' => 'required',
+                'new_confirm_password' => 'same:new_password',
+                ]);
+                $user->update(['password'=> Hash::make($request->new_password)]);
+                return redirect(route('user_show', $user))->with('message', 'Korisnik uspešno izmenjen.');
+            }
+            return redirect(route('user_show', $user))->with('message_warning_password', 'Netačna lozinka.');
+    }
+
     public function userDestroy(User $user){
 
         $user->delete();
