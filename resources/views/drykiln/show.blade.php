@@ -226,60 +226,87 @@
     <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
 			<p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
         <div class="flex justify-between items-center border-b border-gray-700 md:px-4">
-          <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_1_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+        	@if($drykiln->dry_kiln_config->probe_1_status)
+						<p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Sonda 1</span>
             <span class="md:hidden lg:hidden">1<i class="fas fa-thermometer"></i></span>
-          </p>
-          <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_2_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+          	</p>
+        	@endif
+        	@if($drykiln->dry_kiln_config->probe_2_status)
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Sonda 2</span>
             <span class="md:hidden lg:hidden">2<i class="fas fa-thermometer"></i></span>
           </p>
-          <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_3_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+          @endif
+          @if($drykiln->dry_kiln_config->probe_3_status)
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Sonda 3</span>
             <span class="md:hidden lg:hidden">3<i class="fas fa-thermometer"></i></span>
           </p>
-          <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_4_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+          @endif
+          @if($drykiln->dry_kiln_config->probe_4_status)
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Sonda 4</span>
             <span class="md:hidden lg:hidden">4<i class="fas fa-thermometer"></i></span>
           </p>
-          <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_5_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+          @endif
+          @if($drykiln->dry_kiln_config->probe_5_status)
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Sonda 5</span>
             <span class="md:hidden lg:hidden">5<i class="fas fa-thermometer"></i></span>
           </p>
-          <p class="w-1/7 py-3 tracking-wider {!! !empty($drykiln->dry_kiln_config->probe_6_status) ? 'text-gray-200' : 'text-gray-600' !!} text-sm text-center">
+          @endif
+          @if($drykiln->dry_kiln_config->probe_6_status)
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Sonda 6</span>
             <span class="md:hidden lg:hidden">6<i class="fas fa-thermometer"></i></span>
           </p>
-          <p class="w-1/7 py-3 tracking-wider text-gray-200 text-sm text-center">
+          @endif
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
+            Prosek
+          </p>
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             <span class="hidden md:block lg:block">Vreme</span>
             <span class="md:hidden lg:hidden"><i class="fa-solid fa-clock text-gray-200"></i></span>
           </p>
         </div>
         @foreach($readings as $reading)
         <div class="group flex justify-between items-center md:px-4">
-          <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->moisture_probe_1 ?: '/'}}
+        	@if($drykiln->dry_kiln_config->probe_1_status)
+					<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+					{{ $reading->moisture_probe_1 ?: '/' }}
+					</p>
+        	@endif
+          @if($drykiln->dry_kiln_config->probe_2_status)
+					<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+					{{ $reading->moisture_probe_2 ?: '/' }}
+					</p>
+        	@endif
+          @if($drykiln->dry_kiln_config->probe_3_status)
+					<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+					{{ $reading->moisture_probe_3 ?: '/' }}
+					</p>
+        	@endif
+          @if($drykiln->dry_kiln_config->probe_4_status)
+					<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+					{{ $reading->moisture_probe_4 ?: '/' }}
+					</p>
+        	@endif
+          @if($drykiln->dry_kiln_config->probe_5_status)
+					<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+					{{ $reading->moisture_probe_5 ?: '/' }}
+					</p>
+        	@endif
+          @if($drykiln->dry_kiln_config->probe_6_status)
+					<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+					{{ $reading->moisture_probe_6 ?: '/' }}
+					</p>
+        	@endif
+          <p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+            {{ $reading->moisture_probes_average ?: '/' }}
           </p>
-          <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->moisture_probe_2 ?: '/'}}
-          </p>
-          <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->moisture_probe_3 ?: '/'}}
-          </p>
-          <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->moisture_probe_4 ?: '/'}}
-          </p>
-          <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->moisture_probe_5 ?: '/'}}
-          </p>
-          <p class="w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->moisture_probe_6 ?: '/'}}
-          </p>
-          <p class="hidden md:block lg:block w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ $reading->created_at->format('d-m-Y H:i') }}
-          </p>
-          <p class="md:hidden lg:hidden w-1/7 py-3 tracking-wider text-gray-100 text-sm text-center group-hover:text-teal-600">
-            {{ Str::limit($reading->created_at->format('d. F'), 7, $end='') }}
+          <p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+            {{ $reading->created_at->format('d-m H:i') }}
           </p>
         </div>
         @endforeach
