@@ -144,6 +144,20 @@
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
+                Potrebna temperatura
+              </label>
+              </div>
+              <div class="md:w-2/3">
+              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
+              id="temp_needed" name="temp_needed">
+              <p class="text-red-500 text-sm italic mt-4">
+                {{ $errors->create_drykiln_readings->first('temp_needed') }}
+              </p>
+              </div>
+              </div>
+              <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
+              <div class="md:w-1/3">
+              <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
                 Trenutna temperatura
               </label>
               </div>
@@ -158,14 +172,14 @@
                <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
-                Potrebna temperatura
+                Potrebna vlaga
               </label>
               </div>
               <div class="md:w-2/3">
               <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
-              id="temp_needed" name="temp_needed">
+              id="moisture_needed" name="moisture_needed">
               <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->create_drykiln_readings->first('temp_needed') }}
+                {{ $errors->create_drykiln_readings->first('moisture_needed') }}
               </p>
               </div>
               </div>
@@ -183,20 +197,7 @@
               </p>
               </div>
               </div>
-              <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
-              <div class="md:w-1/3">
-              <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
-                Potrebna vlaga
-              </label>
-              </div>
-              <div class="md:w-2/3">
-              <input class="comma appearance-none bg-gradient-to-r from-blue_gray-800 via-blue_gray-700 to-blue_gray-800 rounded-xl border-l-4 border-gray-400 w-full py-3 px-4 text-gray-200 leading-tight focus:outline-none focus:border-teal-400 focus:shadow-xl focus:shadow-teal-400/20"
-              id="moisture_needed" name="moisture_needed">
-              <p class="text-red-500 text-sm italic mt-4">
-                {{ $errors->create_drykiln_readings->first('moisture_needed') }}
-              </p>
-              </div>
-              </div>
+              
               <div class="md:flex md:items-center mb-6 text-gray-200 text-opacity-80 focus-within:text-opacity-100">
               <div class="md:w-1/3">
               <label class="block font-bold md:text-left mb-1 md:mb-0 px-4" for="inline-full-name">
