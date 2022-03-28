@@ -40,6 +40,7 @@
 								<ul class="searchClient">
 									@include('outgoing.search_client')
 								</ul>
+								<p class="show_client_link hidden"><a href="{{ route('clients.index') }}"><button type="button" class="transition ease-out duration-500 transform hover:scale-110 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-400 hover:bg-teal-500 focus:outline-none">Dodaj novog klijenta</button></a></p>
 							</div>
 						</div>
 					</div>
