@@ -24,6 +24,10 @@
   </p>
 </div>
 
+## Requires
+* requires a minimum PHP version of 8.0.
+
+
 ## Built With
 
 * [Laravel](https://laravel.com)
