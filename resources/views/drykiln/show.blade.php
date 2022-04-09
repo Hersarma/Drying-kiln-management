@@ -263,6 +263,14 @@
           </p>
           @endif
           <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
+            <span class="hidden md:block lg:block">Temp</span>
+            <span class="md:hidden lg:hidden"><i class="fas fa-temperature-high text-red-500"></i></span>
+          </p>
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
+            <span class="hidden md:block lg:block">Vlaga</span>
+            <span class="md:hidden lg:hidden"><i class="fas fa-tint text-blue-300"></i></span>
+          </p>
+          <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
             Prosek
           </p>
           <p class="w-1/6 py-3 tracking-wider text-gray-200 text-center text-sm">
@@ -302,6 +310,12 @@
 					{{ $reading->moisture_probe_6 ?: '/' }}
 					</p>
         	@endif
+        	<p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+            {{ $reading->temp_needed ?: '/' }}/{{ $reading->temp_current ?: '/' }}
+          </p>
+          <p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
+            {{ $reading->moisture_needed ?: '/' }}/{{ $reading->moisture_current ?: '/' }}
+          </p>
           <p class="w-1/6 py-3 tracking-wider text-gray-100 text-center text-sm group-hover:text-teal-600">
             {{ $reading->moisture_probes_average ?: '/' }}
           </p>
