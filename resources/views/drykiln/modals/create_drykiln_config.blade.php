@@ -8,9 +8,9 @@
       <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
       <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
       <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-base text-gray-200 leading-6 font-bold">
-        Podešavanje sušare
-        </h3>
+        <p class="text-base text-gray-200 leading-6 font-bold">
+        Podešavanje sušare {{ $drykiln->name }}
+        </p>
       </div>
       <div class="w-full px-4 mx-auto">
         <form method="post" action="{{ route('create_drykiln_config') }}" class="py-8">

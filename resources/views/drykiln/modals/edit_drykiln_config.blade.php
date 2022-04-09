@@ -9,9 +9,9 @@
       <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
       <div class="md:flex justify-between items-center md:px-20 md:py-8">
         <div>
-          <h3 class="text-base text-gray-200 leading-6 font-bold py-4">
-        Podešavanje sušare
-        </h3>
+        <p class="text-base text-gray-200 leading-6 font-bold py-4">
+        Podešavanje sušare {{ $drykiln->name }}
+        </p>
         </div>
         
         <div class="mt-6 mb-6">

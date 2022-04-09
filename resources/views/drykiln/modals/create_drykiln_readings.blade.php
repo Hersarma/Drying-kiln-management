@@ -8,9 +8,12 @@
       <p class="absolute top-0 left-0 px-2 py-2 border-l-2 border-t-2 border-teal-400"></p>
       <p class="absolute bottom-0 right-0 px-2 py-2 border-r-2 border-b-2 border-teal-400"></p>
       <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-base text-gray-200 leading-6 font-bold">
+        <p class="text-base text-gray-200 leading-6 font-bold">
+        {{ $drykiln->name }}
+        </p>
+        <p class="text-base text-gray-200 leading-6 font-bold">
         Nova očitavanja sondi
-        </h3>
+        </p>
       </div>
       <div class="w-3/4 md:w-full mx-auto">
         <form method="post" action="{{ route('create_drykiln_reading') }}" class="py-8">
