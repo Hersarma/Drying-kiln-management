@@ -27,7 +27,7 @@ class DryKilnReadingsController extends Controller
 
         DryKilnReadings::create($validator);
 
-        if ($request->moisture_probes_average < 10) {
+        if ($request->moisture_probes_average != '' && $request->moisture_probes_average < 10) {
             $drykiln = DryKiln::where('id', $request->dry_kiln_id)->first();
              NotificationMessage::create([
             'message' => 'Prosek vlage u sušari '.$drykiln->name.' je ispod 10%.'
