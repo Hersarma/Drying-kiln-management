@@ -11,6 +11,8 @@
   <p align="center">
     Web app for dry kiln management.
     <br />
+    Clients, inventory, dry kilns, E-mail client.
+    <br />
     <br />
     <a href="https://hersarma.in.rs" target="_blank">View Demo</a>
     <br />
