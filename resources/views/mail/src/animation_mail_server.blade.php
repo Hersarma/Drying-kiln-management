@@ -8,7 +8,7 @@
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
             <div class="inline-block bg-transparent overflow-hidden transform transition-all py-3 sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <i class="fas fa-sync-alt fa-spin fa-5x text-orange-500" data-fa-transform="shrink-8"></i>
+                <i class="fas fa-sync-alt fa-5x text-orange-500 animate-spin-slow" data-fa-transform="shrink-8"></i>
                 <p class="py-4 text-gray-200 text-xl font-bold">Sačekajte...</p>
 
                 <p class="py-4 text-gray-200 text-xl font-bold">Proverava se konekcija sa imejl serverom...</p>
